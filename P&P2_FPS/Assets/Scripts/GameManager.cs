@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject m_menuActive = null;
-    [SerializeField] GameObject m_menuPause = null;
-    [SerializeField] GameObject m_menuWin, m_menuLoss = null;
-    [SerializeField] TMP_Text m_goalCountText = null;
+    [SerializeField] private GameObject m_menuActive = null;
+    [SerializeField] private GameObject m_menuPause = null;
+    [SerializeField] private GameObject m_menuWin, m_menuLoss = null;
+    [SerializeField] private TMP_Text m_goalCountText = null;
 
+    public GameObject m_damageFlash = null;
+    public Image m_playerHealthBar = null;
     public bool m_isPaused = false;
     public GameObject m_player = null;
     public PlayerController m_playerController = null;

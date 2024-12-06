@@ -36,13 +36,15 @@ public class PlayerController : MonoBehaviour, IDamage
     private Vector3 m_moveDir = Vector3.zero;
     private Vector3 m_playerVelocity = Vector3.zero;
     private int m_jumpCount = 0;
+    private int m_playerHealthOrig = 100;
     private bool m_isSprinting = false;
     private bool m_isShooting = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_playerHealthOrig = m_health;
+        UpdatePlayerUI();
     }
 
     // Update is called once per frame
@@ -125,10 +127,25 @@ public class PlayerController : MonoBehaviour, IDamage
     public void TakeDamage(int amount)
     {
         m_health -= amount;
-
+        UpdatePlayerUI();
+        StartCoroutine(DamageFlashCoroutine());
         if(m_health <= 0)
         {
             GameManager.Instance.Lose();
         }
+    }
+
+    private IEnumerator DamageFlashCoroutine()
+    {
+        GameManager.Instance.m_damageFlash.SetActive(true);
+
+        yield return new WaitForSeconds(.1f);
+        
+        GameManager.Instance.m_damageFlash.SetActive(false);
+    }
+
+    public void UpdatePlayerUI()
+    {
+        GameManager.Instance.m_playerHealthBar.fillAmount = m_health / (float)m_playerHealthOrig;
     }
 }

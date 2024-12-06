@@ -10,6 +10,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField]
     private Transform m_shootPos = null;
     [SerializeField]
+    private Transform m_headPos = null;
+    [SerializeField]
     private NavMeshAgent m_navMeshAgent = null;
 
     [SerializeField]
@@ -22,12 +24,14 @@ public class EnemyAI : MonoBehaviour, IDamage
     GameObject m_bullet = null;
     [SerializeField]
     float m_fireRate = 10.0f;
+    [SerializeField]
+    private int m_fieldOfView = 90;
 
     private bool m_isShooting = false;
     private bool m_isPlayerInRange = false;
     private Color m_colorOriginal = Color.white;
     private Vector3 m_playerDirection = Vector3.zero;
-
+    private float m_angleToPlayer = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,31 +42,48 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
     }
 
-    private void OnDestroy()
-    {
-        GameManager.Instance.UpdateGameGoal(-1);
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (m_isPlayerInRange)
+        if (m_isPlayerInRange && CanSeePlayer())
         {
-            m_playerDirection = GameManager.Instance.m_player.transform.position - gameObject.transform.position;
-            m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
-
-            if(m_navMeshAgent.remainingDistance < m_navMeshAgent.stoppingDistance)
-            {
-                FaceTarget();
-            }
-
-            if(!m_isShooting)
-            {
-                StartCoroutine(Shoot());
-            }
+            
         }
     }
 
+    public bool CanSeePlayer()
+    {
+        m_playerDirection = GameManager.Instance.m_player.transform.position - m_headPos.position;
+        m_angleToPlayer = Vector3.Angle(m_playerDirection, transform.forward);
+        
+        
+        Debug.DrawRay(m_headPos.position, m_playerDirection);
+
+        RaycastHit hit;
+        if(Physics.Raycast(m_headPos.position, m_playerDirection, out hit))
+        {
+            if(hit.collider.CompareTag("Player") && m_angleToPlayer <= m_fieldOfView)
+            {
+                m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+
+                if(m_navMeshAgent.remainingDistance < m_navMeshAgent.stoppingDistance)
+                {
+                    FaceTarget();
+                }
+
+                if(!m_isShooting)
+                {
+                    StartCoroutine(Shoot());
+                }
+
+                return true;
+            }
+
+        }
+
+        return false;
+    }
+    
     public void TakeDamage(int amount)
     {
         m_health -= amount;
@@ -70,6 +91,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         if(m_health <= 0)
         {
+            GameManager.Instance.UpdateGameGoal(-1);
             Destroy(gameObject);
         }
     }
@@ -109,7 +131,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     public void FaceTarget()
     {
-        Quaternion rot = Quaternion.LookRotation(m_playerDirection);
+        Quaternion rot = Quaternion.LookRotation(new Vector3(m_playerDirection.x, 0, m_playerDirection.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * m_faceTargetSpeed);
     }
 }
