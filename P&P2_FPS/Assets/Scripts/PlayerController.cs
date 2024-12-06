@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamage
 {
     [Header("Components")]
     [SerializeField]
@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private LayerMask m_ignoreMask = 0;
 
-    [Space][Header("Movement Settings")]
+    [Space][Header("Player Settings")]
     [SerializeField]
     private float m_speed = 10.0f;
     [SerializeField]
@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private int m_jumpSpeed = 10;
     [SerializeField]
     private int m_gravity = 5;
+    [SerializeField]
+    private int m_health = 10;
 
     [Space][Header("Shooting Settings")]
     [SerializeField]
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private int m_shootDistance = 50;
     [SerializeField]
     private int m_fireRate = 20;
+
 
     private Vector3 m_moveDir = Vector3.zero;
     private Vector3 m_playerVelocity = Vector3.zero;
@@ -117,5 +120,15 @@ public class PlayerController : MonoBehaviour
         }
         yield return new WaitForSeconds(m_fireRate);
         m_isShooting = false;
+    }
+
+    public void TakeDamage(int amount)
+    {
+        m_health -= amount;
+
+        if(m_health <= 0)
+        {
+            GameManager.Instance.Lose();
+        }
     }
 }
