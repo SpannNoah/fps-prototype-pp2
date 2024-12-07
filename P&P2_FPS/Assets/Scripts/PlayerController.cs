@@ -40,6 +40,19 @@ public class PlayerController : MonoBehaviour, IDamage
     private bool m_isSprinting = false;
     private bool m_isShooting = false;
 
+    //getters
+    public int Health { get { return m_health; } }
+    public float Speed { get { return m_speed; } }
+
+    public float SprintModifier { get { return m_sprintModifier; } }
+
+    // setters
+    public void SetHealth(int health) { m_health = health; }
+    public void SetSpeed(float speed) { m_speed = speed; }
+
+    public void SetSprintModifier(float sprintModifier) { m_sprintModifier = sprintModifier; }
+
+
     // Start is called before the first frame update
     void Start()
     {
