@@ -7,11 +7,14 @@ public class BuffSystem : MonoBehaviour
 {
     [Header("Buff Settings")]
     [SerializeField] private float healthMult = 2f;
-    [SerializeField] private float speedMult = 5f;
+    [SerializeField] private float speedMult = 2f;
     [SerializeField] private float sprintMult = 5f;
     [SerializeField] private float buffDuration = 6f;
 
     private PlayerController playerController;
+    private bool isBuffActive = false;
+    private float origSpeed;
+    private float origSprintMod;
 
     private void Start()
     {
@@ -20,18 +23,36 @@ public class BuffSystem : MonoBehaviour
 
     public void ApplyBuff()
     {
-        StartCoroutine(BuffCoroutine());
+        if (!isBuffActive)
+        {
+            isBuffActive = true;
+            StartCoroutine(BuffCoroutine());
+        }
     }
 
     private IEnumerator BuffCoroutine()
     {
+        origSpeed = playerController.Speed;
+        origSprintMod = playerController.SprintModifier;
+
         playerController.SetHealth((int)(playerController.Health * healthMult));
-        playerController.SetSpeed(playerController.Speed * speedMult);
-        playerController.SetSprintModifier(playerController.SprintModifier * sprintMult);
+        playerController.SetSpeed(origSpeed * speedMult);
+        playerController.SetSprintModifier(origSprintMod * sprintMult);
+        Debug.Log("Buff Applied");
+
         yield return new WaitForSeconds(buffDuration);
-        playerController.SetHealth((int)(playerController.Health / healthMult));
-        playerController.SetSpeed(playerController.Speed / speedMult);
-        playerController.SetSprintModifier(playerController.SprintModifier / sprintMult);
+
+        RemoveBuff(origSpeed, origSprintMod);
+
+    }
+
+    private void RemoveBuff(float origSpeed, float origSprintMod)
+    {
+        playerController.SetHealth(playerController.playerHealthOrig);
+        playerController.SetSpeed(origSpeed);
+        playerController.SetSprintModifier(origSprintMod);
+        isBuffActive = false;
+        Debug.Log("Buff Removed");
     }
 
 }

@@ -13,9 +13,9 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Space]
     [Header("Player Settings")]
-    [SerializeField] [Range(1, 20)]
+    [SerializeField] [Range(5, 20)]
     private float m_speed;
-    [SerializeField] [Range(1, 5)]
+    [SerializeField] [Range(2, 20)]
     private float m_sprintModifier;
     [SerializeField]
     private int m_jumpMax = 2;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_jumpSpeed = 10;
     [SerializeField]
     private int m_gravity = 5;
-    [SerializeField] [Range(10, 20)]
+    [SerializeField] [Range(100, 200)]
     private int m_health;
    
 
@@ -42,12 +42,15 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_playerHealthOrig = 100;
     private bool m_isSprinting = false;
     private bool m_isShooting = false;
+    private float m_baseSpeed;
 
     //getters
     public int Health { get { return m_health; } }
     public float Speed { get { return m_speed; } }
     public float SprintModifier { get { return m_sprintModifier; } }
-  
+    public int playerHealthOrig { get { return m_playerHealthOrig; } }
+
+
 
     // setters
     public void SetHealth(int health) { m_health = health; }
@@ -60,7 +63,9 @@ public class PlayerController : MonoBehaviour, IDamage
     // Start is called before the first frame update
     void Start()
     {
+
         m_playerHealthOrig = m_health;
+        m_baseSpeed = m_speed;
         UpdatePlayerUI();
     }
 
@@ -113,12 +118,12 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         if(Input.GetButtonDown("Sprint"))
         {
-            m_speed *= m_sprintModifier;
+            m_speed = m_baseSpeed * m_sprintModifier;
             m_isSprinting = true;
         }
         else if(Input.GetButtonUp("Sprint"))
         {
-            m_speed /= m_sprintModifier;
+            m_speed = m_baseSpeed;
             m_isSprinting = false;
         }
     }
