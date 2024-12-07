@@ -17,14 +17,15 @@ public class GameManager : MonoBehaviour
     public GameObject m_player = null;
     public PlayerController m_playerController = null;
 
+    private WaveManager waveManager;
     private float m_timeScaleOriginal = 1.0f;
     private int m_goalCount = 0;
 
     public static GameManager Instance { get; private set; }
-    // Start is called before the first frame update
+
     void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -35,20 +36,20 @@ public class GameManager : MonoBehaviour
         m_timeScaleOriginal = Time.timeScale;
         m_player = GameObject.FindWithTag("Player");
         m_playerController = m_player.GetComponent<PlayerController>();
+        waveManager = FindObjectOfType<WaveManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel"))
         {
-            if(m_menuActive == null)
+            if (m_menuActive == null)
             {
                 StatePaused();
                 m_menuActive = m_menuPause;
                 m_menuActive.SetActive(true);
             }
-            else if(m_menuActive == m_menuPause)
+            else if (m_menuActive == m_menuPause)
             {
                 StateUnpaused();
             }
@@ -76,15 +77,28 @@ public class GameManager : MonoBehaviour
     public void UpdateGameGoal(int amount)
     {
         m_goalCount += amount;
-        m_goalCountText.text = m_goalCount.ToString("F0");
 
-        if(m_goalCount <= 0)
+        if (m_goalCountText != null)
         {
-            StatePaused();
-            m_menuActive = m_menuWin;
-            m_menuActive.SetActive(true);
+            m_goalCountText.text = m_goalCount.ToString("F0");
         }
 
+        if (m_goalCount <= 0)
+        {
+            Debug.Log("No enemies left. Starting next wave...");
+
+            if (waveManager != null)
+            {
+                waveManager.StartNextWave();
+            }
+            else
+            {
+                Debug.LogError("WaveManager not found! Ending the game.");
+                StatePaused();
+                m_menuActive = m_menuWin;
+                m_menuActive.SetActive(true);
+            }
+        }
     }
 
     public void Lose()
@@ -94,3 +108,5 @@ public class GameManager : MonoBehaviour
         m_menuActive.SetActive(true);
     }
 }
+
+
