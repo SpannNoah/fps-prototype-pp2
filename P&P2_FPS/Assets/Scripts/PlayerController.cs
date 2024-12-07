@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamage
@@ -10,19 +11,21 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField]
     private LayerMask m_ignoreMask = 0;
 
-    [Space][Header("Player Settings")]
-    [SerializeField]
-    private float m_speed = 10.0f;
-    [SerializeField]
-    private float m_sprintModifier = 2.0f;
+    [Space]
+    [Header("Player Settings")]
+    [SerializeField] [Range(1, 20)]
+    private float m_speed;
+    [SerializeField] [Range(1, 5)]
+    private float m_sprintModifier;
     [SerializeField]
     private int m_jumpMax = 2;
     [SerializeField]
     private int m_jumpSpeed = 10;
     [SerializeField]
     private int m_gravity = 5;
-    [SerializeField]
-    private int m_health = 10;
+    [SerializeField] [Range(10, 20)]
+    private int m_health;
+   
 
     [Space][Header("Shooting Settings")]
     [SerializeField]
@@ -43,14 +46,15 @@ public class PlayerController : MonoBehaviour, IDamage
     //getters
     public int Health { get { return m_health; } }
     public float Speed { get { return m_speed; } }
-
     public float SprintModifier { get { return m_sprintModifier; } }
+  
 
     // setters
     public void SetHealth(int health) { m_health = health; }
     public void SetSpeed(float speed) { m_speed = speed; }
-
     public void SetSprintModifier(float sprintModifier) { m_sprintModifier = sprintModifier; }
+
+
 
 
     // Start is called before the first frame update

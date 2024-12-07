@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6858367874845944815}
-  - component: {fileID: -620961302070883123}
+  - component: {fileID: 2392314920261757689}
   - component: {fileID: 7888190366690436004}
   - component: {fileID: 7397281534446782645}
   - component: {fileID: 6507085592815544304}
   m_Layer: 0
-  m_Name: OverShield
+  m_Name: PowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-620961302070883123
+--- !u!114 &2392314920261757689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,22 +44,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7802160982384059065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a1fa32467e8e6b41b6bcce3cf8d7b75, type: 3}
+  m_Script: {fileID: 11500000, guid: caf892227e3a580499c7a0bdf37daa7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_controller: {fileID: 0}
-  m_ignoreMask:
-    serializedVersion: 2
-    m_Bits: 0
-  m_speed: 10
-  m_sprintModifier: 2
-  m_jumpMax: 2
-  m_jumpSpeed: 10
-  m_gravity: 5
-  m_health: 10
-  m_shootDamage: 25
-  m_shootDistance: 50
-  m_fireRate: 20
 --- !u!33 &7888190366690436004
 MeshFilter:
   m_ObjectHideFlags: 0
