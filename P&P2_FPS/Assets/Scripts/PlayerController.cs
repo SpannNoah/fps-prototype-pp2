@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private bool m_isSprinting = false;
     private bool m_isShooting = false;
     private float m_baseSpeed;
+    
 
     //getters
     public int Health { get { return m_health; } }
@@ -169,5 +170,6 @@ public class PlayerController : MonoBehaviour, IDamage
     public void UpdatePlayerUI()
     {
         GameManager.Instance.m_playerHealthBar.fillAmount = m_health / (float)m_playerHealthOrig;
+        
     }
 }
