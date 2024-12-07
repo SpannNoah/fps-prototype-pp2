@@ -25,7 +25,9 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_gravity = 5;
     [SerializeField]
     private int m_health = 10;
-
+    [SerializeField]
+    private float m_healthLerpSpeed = .25f;
+    
     [Space][Header("Shooting Settings")]
     [SerializeField]
     private int m_shootDamage = 25;
@@ -43,6 +45,8 @@ public class PlayerController : MonoBehaviour, IDamage
     private bool m_isShooting = false;
     public float m_baseSpeed = 0.0f;
     public float m_baseSprintModifier = 0.0f;
+
+    private Coroutine m_healthLerpCoroutine = null;
 
     // getters
     public int Health { get { return m_health; } }
@@ -163,6 +167,7 @@ public class PlayerController : MonoBehaviour, IDamage
             if(m_healthLerpCoroutine != null)
             {
                 StopCoroutine(m_healthLerpCoroutine);
+                m_healthLerpCoroutine = null;
             }
             GameManager.Instance.m_playerHealthBar.fillAmount = 0.0f;
             GameManager.Instance.Lose();
@@ -180,6 +185,25 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void UpdatePlayerUI()
     {
-        GameManager.Instance.m_playerHealthBar.fillAmount = m_health / (float)m_playerHealthOrig;
+        m_healthLerpCoroutine = StartCoroutine(LerpPlayerHealthCoroutine());
+    }
+    
+    private IEnumerator LerpPlayerHealthCoroutine()
+    {
+        float startValue = GameManager.Instance.m_playerHealthBar.fillAmount;
+        float endValue = m_health / (float)m_playerHealthOrig;
+
+        float elapsedTime = 0;
+
+        while (elapsedTime < m_healthLerpSpeed)
+        {
+            GameManager.Instance.m_playerHealthBar.fillAmount =
+                Mathf.Lerp(startValue, endValue, elapsedTime / m_healthLerpSpeed);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        GameManager.Instance.m_playerHealthBar.fillAmount = endValue;
     }
 }
