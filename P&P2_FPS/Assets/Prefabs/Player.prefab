@@ -178,9 +178,12 @@ MonoBehaviour:
   m_jumpSpeed: 12
   m_gravity: 28
   m_health: 10
+  m_healthLerpSpeed: 0.25
   m_shootDamage: 1
-  m_shootDistance: 5
+  m_shootDistance: 20
   m_fireRate: 1
+  m_baseSpeed: 0
+  m_baseSprintModifier: 0
 --- !u!114 &-6383585083548171437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,9 +196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c79c015a4c66aa40a9e87e3fbd5900b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overShieldDuration: 5
-  speedBoostMultiplier: 2
-  sprintModfier: 0.5
+  healthMult: 2
+  speedMult: 2
+  sprintMult: 5
+  buffDuration: 6
 --- !u!33 &5553137498959758511
 MeshFilter:
   m_ObjectHideFlags: 0
