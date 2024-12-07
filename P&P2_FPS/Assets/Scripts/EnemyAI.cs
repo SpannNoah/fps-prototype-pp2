@@ -44,7 +44,8 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
         if (m_isPlayerInRange && CanSeePlayer())
         {
             
@@ -58,13 +59,13 @@ public class EnemyAI : MonoBehaviour, IDamage
         
         
         Debug.DrawRay(m_headPos.position, m_playerDirection);
+       
 
         RaycastHit hit;
         if(Physics.Raycast(m_headPos.position, m_playerDirection, out hit))
         {
             if(hit.collider.CompareTag("Player") && m_angleToPlayer <= m_fieldOfView)
             {
-                m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
 
                 if(m_navMeshAgent.remainingDistance < m_navMeshAgent.stoppingDistance)
                 {
@@ -87,6 +88,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void TakeDamage(int amount)
     {
         m_health -= amount;
+        m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
         StartCoroutine(DamageFlashCoroutine());
 
         if(m_health <= 0)
