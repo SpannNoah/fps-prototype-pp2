@@ -13,13 +13,16 @@ public class GameManager : MonoBehaviour
 
     public GameObject m_damageFlash = null;
     public Image m_playerHealthBar = null;
+    public Image m_playerOverShield = null;
     public bool m_isPaused = false;
     public GameObject m_player = null;
     public PlayerController m_playerController = null;
+    public bool m_isBuffActive = false;
 
     private WaveManager waveManager;
     private float m_timeScaleOriginal = 1.0f;
     private int m_goalCount = 0;
+    
 
     public static GameManager Instance { get; private set; }
 

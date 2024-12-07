@@ -23,10 +23,11 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_jumpSpeed = 10;
     [SerializeField]
     private int m_gravity = 5;
-    [SerializeField] [Range(100, 200)]
-    private int m_health;
-   
-
+    [SerializeField]
+    private int m_health = 10;
+    [SerializeField]
+    private float m_healthLerpSpeed = .25f;
+    
     [Space][Header("Shooting Settings")]
     [SerializeField]
     private int m_shootDamage = 25;
@@ -42,23 +43,32 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_playerHealthOrig = 100;
     private bool m_isSprinting = false;
     private bool m_isShooting = false;
-    private float m_baseSpeed;
+    public float m_baseSpeed = 0.0f;
+    public float m_baseSprintModifier = 0.0f;
 
-    //getters
+    private Coroutine m_healthLerpCoroutine = null;
+
+    // getters
     public int Health { get { return m_health; } }
     public float Speed { get { return m_speed; } }
     public float SprintModifier { get { return m_sprintModifier; } }
     public int playerHealthOrig { get { return m_playerHealthOrig; } }
 
-
-
     // setters
-    public void SetHealth(int health) { m_health = health; }
-    public void SetSpeed(float speed) { m_speed = speed; }
-    public void SetSprintModifier(float sprintModifier) { m_sprintModifier = sprintModifier; }
+    public void SetSpeed(float v)
+    {
+        m_speed = m_baseSpeed;
+    }
 
+    public void SetSprintModifier(float v)
+    {
+        m_sprintModifier = m_baseSprintModifier;
+    }
 
-
+    public void SetHealth(int v)
+    {
+        m_health = m_playerHealthOrig;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +76,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
         m_playerHealthOrig = m_health;
         m_baseSpeed = m_speed;
+        m_baseSprintModifier = m_sprintModifier;
         UpdatePlayerUI();
     }
 
@@ -153,6 +164,12 @@ public class PlayerController : MonoBehaviour, IDamage
         StartCoroutine(DamageFlashCoroutine());
         if(m_health <= 0)
         {
+            if(m_healthLerpCoroutine != null)
+            {
+                StopCoroutine(m_healthLerpCoroutine);
+                m_healthLerpCoroutine = null;
+            }
+            GameManager.Instance.m_playerHealthBar.fillAmount = 0.0f;
             GameManager.Instance.Lose();
         }
     }
@@ -168,6 +185,25 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void UpdatePlayerUI()
     {
-        GameManager.Instance.m_playerHealthBar.fillAmount = m_health / (float)m_playerHealthOrig;
+        m_healthLerpCoroutine = StartCoroutine(LerpPlayerHealthCoroutine());
+    }
+    
+    private IEnumerator LerpPlayerHealthCoroutine()
+    {
+        float startValue = GameManager.Instance.m_playerHealthBar.fillAmount;
+        float endValue = m_health / (float)m_playerHealthOrig;
+
+        float elapsedTime = 0;
+
+        while (elapsedTime < m_healthLerpSpeed)
+        {
+            GameManager.Instance.m_playerHealthBar.fillAmount =
+                Mathf.Lerp(startValue, endValue, elapsedTime / m_healthLerpSpeed);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        GameManager.Instance.m_playerHealthBar.fillAmount = endValue;
     }
 }
