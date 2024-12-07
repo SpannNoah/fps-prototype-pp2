@@ -128,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5553137498959758510}
   - component: {fileID: 5553137498959758498}
+  - component: {fileID: -6383585083548171437}
   - component: {fileID: 5553137498959758511}
   - component: {fileID: 5553137498959758508}
   - component: {fileID: 5553137498959758509}
@@ -180,6 +181,21 @@ MonoBehaviour:
   m_shootDamage: 1
   m_shootDistance: 5
   m_fireRate: 1
+--- !u!114 &-6383585083548171437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5553137498959758499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c79c015a4c66aa40a9e87e3fbd5900b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overShieldDuration: 5
+  speedBoostMultiplier: 2
+  sprintModfier: 0.5
 --- !u!33 &5553137498959758511
 MeshFilter:
   m_ObjectHideFlags: 0
