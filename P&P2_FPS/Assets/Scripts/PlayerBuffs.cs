@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buffs : MonoBehaviour
+public class PlayerBuffs : MonoBehaviour
 {
     [Header("Player Buffs")]
     [SerializeField] private float overShieldDuration = 5f;
