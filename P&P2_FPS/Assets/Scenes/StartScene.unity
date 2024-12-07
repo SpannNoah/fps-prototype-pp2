@@ -1616,6 +1616,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7065373620522722979, guid: 7385e29508fb025418807ca530aaac08, type: 3}
   m_PrefabInstance: {fileID: 754542215}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &173230914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6586271010861601645, guid: 1352d98cc3fa3de4398e13f361202c4d, type: 3}
+  m_PrefabInstance: {fileID: 6586271011048942073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fa3076e020c2e4aa6395dd0df8debe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &179096921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10419,15 +10430,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3288eec791941a94799e0f07b70267b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1816205856}
+  enemyPrefab: {fileID: 2656379725377337012, guid: 3ff5b237a4a20984289bff18f6783fef, type: 3}
   spawnPoints:
   - {fileID: 1608640145}
   - {fileID: 600346635}
   - {fileID: 1158306367}
-  initialEnemies: 10
-  spawnDelay: 0
+  initialEnemies: 2
+  spawnDelay: 5
   timeBetweenWaves: 5
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 173230914}
 --- !u!4 &530017220
 Transform:
   m_ObjectHideFlags: 0
@@ -24247,11 +24258,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7385e29508fb025418807ca530aaac08, type: 3}
---- !u!1 &1816205856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2656379725377337012, guid: 3ff5b237a4a20984289bff18f6783fef, type: 3}
-  m_PrefabInstance: {fileID: 1709720160}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1824002527
 PrefabInstance:
   m_ObjectHideFlags: 0

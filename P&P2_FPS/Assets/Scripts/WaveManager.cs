@@ -18,6 +18,10 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private GameManager gameManager; // Reference to the GameManager
     private bool isWaveActive = false; // Tracks if a wave is currently active
 
+    public int GetCurrentWave()
+    {
+        return currentWave;
+    }
     private void Start()
     {
         if (gameManager == null)

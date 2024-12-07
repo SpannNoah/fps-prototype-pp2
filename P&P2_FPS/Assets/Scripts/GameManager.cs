@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject m_menuPause = null;
     [SerializeField] private GameObject m_menuWin, m_menuLoss = null;
     [SerializeField] private TMP_Text m_goalCountText = null;
+    [SerializeField] private int m_wavesRequired = 2;
 
     public GameObject m_damageFlash = null;
     public Image m_playerHealthBar = null;
@@ -88,10 +89,19 @@ public class GameManager : MonoBehaviour
 
         if (m_goalCount <= 0)
         {
-            Debug.Log("No enemies left. Starting next wave...");
 
             if (waveManager != null)
             {
+                int currentWaveNumber = waveManager.GetCurrentWave();
+                if(currentWaveNumber >= m_wavesRequired)
+                {
+                    StatePaused();
+                    m_menuActive = m_menuWin;
+                    m_menuActive.SetActive(true);
+                    return;
+                }
+                
+                Debug.Log("No enemies left. Starting next wave...");
                 waveManager.StartNextWave();
             }
             else
