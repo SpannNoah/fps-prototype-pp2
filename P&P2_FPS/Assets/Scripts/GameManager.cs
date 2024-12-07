@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject m_menuPause = null;
     [SerializeField] private GameObject m_menuWin, m_menuLoss = null;
     [SerializeField] private TMP_Text m_goalCountText = null;
+    [SerializeField] private int m_wavesRequired = 2;
 
     public GameObject m_damageFlash = null;
     public Image m_playerHealthBar = null;
@@ -19,15 +20,16 @@ public class GameManager : MonoBehaviour
     public PlayerController m_playerController = null;
     public bool m_isBuffActive = false;
 
+    private WaveManager waveManager;
     private float m_timeScaleOriginal = 1.0f;
     private int m_goalCount = 0;
     
 
     public static GameManager Instance { get; private set; }
-    // Start is called before the first frame update
+
     void Awake()
     {
-        if(Instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -38,20 +40,20 @@ public class GameManager : MonoBehaviour
         m_timeScaleOriginal = Time.timeScale;
         m_player = GameObject.FindWithTag("Player");
         m_playerController = m_player.GetComponent<PlayerController>();
+        waveManager = FindObjectOfType<WaveManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel"))
         {
-            if(m_menuActive == null)
+            if (m_menuActive == null)
             {
                 StatePaused();
                 m_menuActive = m_menuPause;
                 m_menuActive.SetActive(true);
             }
-            else if(m_menuActive == m_menuPause)
+            else if (m_menuActive == m_menuPause)
             {
                 StateUnpaused();
             }
@@ -79,15 +81,37 @@ public class GameManager : MonoBehaviour
     public void UpdateGameGoal(int amount)
     {
         m_goalCount += amount;
-        m_goalCountText.text = m_goalCount.ToString("F0");
 
-        if(m_goalCount <= 0)
+        if (m_goalCountText != null)
         {
-            StatePaused();
-            m_menuActive = m_menuWin;
-            m_menuActive.SetActive(true);
+            m_goalCountText.text = m_goalCount.ToString("F0");
         }
 
+        if (m_goalCount <= 0)
+        {
+
+            if (waveManager != null)
+            {
+                int currentWaveNumber = waveManager.GetCurrentWave();
+                if(currentWaveNumber >= m_wavesRequired)
+                {
+                    StatePaused();
+                    m_menuActive = m_menuWin;
+                    m_menuActive.SetActive(true);
+                    return;
+                }
+                
+                Debug.Log("No enemies left. Starting next wave...");
+                waveManager.StartNextWave();
+            }
+            else
+            {
+                Debug.LogError("WaveManager not found! Ending the game.");
+                StatePaused();
+                m_menuActive = m_menuWin;
+                m_menuActive.SetActive(true);
+            }
+        }
     }
 
     public void Lose()
@@ -97,3 +121,5 @@ public class GameManager : MonoBehaviour
         m_menuActive.SetActive(true);
     }
 }
+
+
