@@ -32,8 +32,8 @@ public class BuffSystem : MonoBehaviour
 
     private IEnumerator BuffCoroutine()
     {
-        origSpeed = playerController.Speed;
-        origSprintMod = playerController.SprintModifier;
+        origSpeed = playerController.m_baseSpeed;
+        origSprintMod = playerController.m_baseSprintModifier;
 
         playerController.SetHealth((int)(playerController.Health * healthMult));
         playerController.SetSpeed(origSpeed * speedMult);
