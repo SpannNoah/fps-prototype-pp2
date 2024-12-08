@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
+   Rigidbody rb;
+
     [Header("Components")]
     [SerializeField]
     private CharacterController m_controller = null;
@@ -36,6 +38,13 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField]
     private int m_fireRate = 20;
 
+    [Header("Crouching")]
+    public float crouchSpeed;
+    public float crouchYScale;
+    private float startYScale;
+
+    [Header("Keybinds")]
+    public KeyCode crouchKey = KeyCode.LeftControl;
 
     private Vector3 m_moveDir = Vector3.zero;
     private Vector3 m_playerVelocity = Vector3.zero;
@@ -78,6 +87,9 @@ public class PlayerController : MonoBehaviour, IDamage
         m_baseSpeed = m_speed;
         m_baseSprintModifier = m_sprintModifier;
         UpdatePlayerUI();
+
+        // Sets starting Y scale
+        startYScale = transform.localScale.y;
     }
 
     // Update is called once per frame
@@ -86,6 +98,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * m_shootDistance, Color.red);
         Move();
         Sprint();
+        Crouch();
     }
 
     private void Move()
@@ -114,6 +127,8 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             StartCoroutine(ShootingCoroutine());
         }
+
+        // start crouch
     }
 
     private void Jump()
@@ -122,6 +137,20 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             m_jumpCount++;
             m_playerVelocity.y = m_jumpSpeed;
+        }
+    }
+
+    private void Crouch()
+    {
+        if(Input.GetKeyDown(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyUp(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
     }
 
