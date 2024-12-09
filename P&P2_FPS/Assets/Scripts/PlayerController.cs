@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
-   Rigidbody rb;
+    Rigidbody rb;
 
     [Header("Components")]
     [SerializeField]
@@ -15,9 +15,11 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Space]
     [Header("Player Settings")]
-    [SerializeField] [Range(5, 20)]
+    [SerializeField]
+    [Range(5, 20)]
     private float m_speed;
-    [SerializeField] [Range(2, 20)]
+    [SerializeField]
+    [Range(2, 20)]
     private float m_sprintModifier;
     [SerializeField]
     private int m_jumpMax = 2;
@@ -29,8 +31,9 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_health = 10;
     [SerializeField]
     private float m_healthLerpSpeed = .25f;
-    
-    [Space][Header("Shooting Settings")]
+
+    [Space]
+    [Header("Shooting Settings")]
     [SerializeField]
     private int m_shootDamage = 25;
     [SerializeField]
@@ -40,8 +43,10 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Header("Crouching")]
     public float crouchSpeed;
+    public float crouchMoveSpeed;
     public float crouchYScale;
     private float startYScale;
+    private bool isCrouched;
 
     [Header("Keybinds")]
     public KeyCode crouchKey = KeyCode.LeftControl;
@@ -103,7 +108,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Move()
     {
-        if(m_controller.isGrounded)
+        if (m_controller.isGrounded)
         {
             m_jumpCount = 0;
             m_playerVelocity = Vector3.zero;
@@ -118,12 +123,12 @@ public class PlayerController : MonoBehaviour, IDamage
         m_controller.Move(m_playerVelocity * Time.deltaTime);
         m_playerVelocity.y -= m_gravity * Time.deltaTime;
 
-        if((m_controller.collisionFlags & CollisionFlags.Above) != 0)
+        if ((m_controller.collisionFlags & CollisionFlags.Above) != 0)
         {
             m_playerVelocity.y -= m_jumpSpeed;
         }
 
-        if(Input.GetButton("Fire1") && !m_isShooting)
+        if (Input.GetButton("Fire1") && !m_isShooting)
         {
             StartCoroutine(ShootingCoroutine());
         }
@@ -133,7 +138,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Jump()
     {
-        if(Input.GetButtonDown("Jump") && m_jumpCount < m_jumpMax)
+        if (Input.GetButtonDown("Jump") && m_jumpCount < m_jumpMax)
         {
             m_jumpCount++;
             m_playerVelocity.y = m_jumpSpeed;
@@ -142,26 +147,31 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Crouch()
     {
-        if(Input.GetKeyDown(crouchKey))
+        if (Input.GetKeyDown(crouchKey))
         {
+            m_speed = crouchMoveSpeed;
+            isCrouched = true;
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
 
         if (Input.GetKeyUp(crouchKey))
         {
+            m_speed = m_baseSpeed;
+            isCrouched = false;
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+
         }
     }
 
     private void Sprint()
     {
-        if(Input.GetButtonDown("Sprint"))
+        if (Input.GetButtonDown("Sprint") && !isCrouched)
         {
             m_speed = m_baseSpeed * m_sprintModifier;
             m_isSprinting = true;
         }
-        else if(Input.GetButtonUp("Sprint"))
+        else if (Input.GetButtonUp("Sprint") && !isCrouched)
         {
             m_speed = m_baseSpeed;
             m_isSprinting = false;
@@ -173,11 +183,11 @@ public class PlayerController : MonoBehaviour, IDamage
         m_isShooting = true;
         RaycastHit hit;
 
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_shootDistance, ~m_ignoreMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_shootDistance, ~m_ignoreMask))
         {
             IDamage damage;
 
-            if(hit.collider.TryGetComponent<IDamage>(out damage))
+            if (hit.collider.TryGetComponent<IDamage>(out damage))
             {
                 damage.TakeDamage(m_shootDamage);
             }
@@ -191,9 +201,9 @@ public class PlayerController : MonoBehaviour, IDamage
         m_health -= amount;
         UpdatePlayerUI();
         StartCoroutine(DamageFlashCoroutine());
-        if(m_health <= 0)
+        if (m_health <= 0)
         {
-            if(m_healthLerpCoroutine != null)
+            if (m_healthLerpCoroutine != null)
             {
                 StopCoroutine(m_healthLerpCoroutine);
                 m_healthLerpCoroutine = null;
@@ -208,7 +218,7 @@ public class PlayerController : MonoBehaviour, IDamage
         GameManager.Instance.m_damageFlash.SetActive(true);
 
         yield return new WaitForSeconds(.1f);
-        
+
         GameManager.Instance.m_damageFlash.SetActive(false);
     }
 
@@ -216,7 +226,7 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         m_healthLerpCoroutine = StartCoroutine(LerpPlayerHealthCoroutine());
     }
-    
+
     private IEnumerator LerpPlayerHealthCoroutine()
     {
         float startValue = GameManager.Instance.m_playerHealthBar.fillAmount;

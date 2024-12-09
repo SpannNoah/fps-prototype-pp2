@@ -27749,7 +27749,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
       propertyPath: crouchYScale
-      value: 0.5
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: crouchMoveSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
       propertyPath: m_shootDistance
