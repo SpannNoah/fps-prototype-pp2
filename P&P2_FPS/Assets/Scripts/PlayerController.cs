@@ -40,8 +40,10 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Header("Crouching")]
     public float crouchSpeed;
+    public float crouchMoveSpeed;
     public float crouchYScale;
     private float startYScale;
+    private bool isCrouched;
 
     [Header("Keybinds")]
     public KeyCode crouchKey = KeyCode.LeftControl;
@@ -144,24 +146,29 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         if(Input.GetKeyDown(crouchKey))
         {
+            m_speed = crouchMoveSpeed;
+            isCrouched = true;
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
 
         if (Input.GetKeyUp(crouchKey))
         {
+            m_speed = m_baseSpeed;
+            isCrouched = false;
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+
         }
     }
 
     private void Sprint()
     {
-        if(Input.GetButtonDown("Sprint"))
+        if(Input.GetButtonDown("Sprint") && !isCrouched)
         {
             m_speed = m_baseSpeed * m_sprintModifier;
             m_isSprinting = true;
         }
-        else if(Input.GetButtonUp("Sprint"))
+        else if(Input.GetButtonUp("Sprint") && !isCrouched)
         {
             m_speed = m_baseSpeed;
             m_isSprinting = false;
