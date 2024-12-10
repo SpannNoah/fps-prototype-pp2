@@ -15,3 +15,4 @@ MonoBehaviour:
   m_rewardType: 1
   m_rewardName: TestBuff
   m_rewardPrefab: {fileID: 8775764944603640349, guid: e31edd3775829764c9e311afd1b9a83b, type: 3}
+  m_yOffset: 0.5

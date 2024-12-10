@@ -11,26 +11,10 @@ public class RewardConfig : ScriptableObject
         Weapon,
         Buff
     }
-
-    [SerializeField]
-    private RewardType m_rewardType = RewardType.Weapon;
-    [SerializeField]
-    private string m_rewardName = String.Empty;
-    [SerializeField]
-    private GameObject m_rewardPrefab = null;
-
-    public RewardType GetRewardType()
-    {
-        return m_rewardType;
-    }
-
-    public string GetRewardName()
-    {
-        return m_rewardName;
-    }
-
-    public GameObject GetRewardPrefab()
-    {
-        return m_rewardPrefab;
-    }
+    
+    public RewardType m_rewardType = RewardType.Weapon;
+    public string m_rewardName = String.Empty;
+    public GameObject m_rewardPrefab = null;
+    [Tooltip("Dictates Y Offset from Platform on Spawn")]
+    public float m_yOffset = 0.0f;
 }

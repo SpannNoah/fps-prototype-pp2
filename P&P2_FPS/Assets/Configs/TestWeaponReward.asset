@@ -15,3 +15,4 @@ MonoBehaviour:
   m_rewardType: 0
   m_rewardName: TestWeapon
   m_rewardPrefab: {fileID: 2526666112030750112, guid: 645a808cfa15c264991332d552ddec29, type: 3}
+  m_yOffset: 1

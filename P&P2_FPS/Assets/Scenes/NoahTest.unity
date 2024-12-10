@@ -903,6 +903,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 974824594488782581, guid: 1d9ef58980823914d8f66059eb39f45c, type: 3}
+      propertyPath: m_platformPrefab
+      value: 
+      objectReference: {fileID: 6817318709640852780, guid: c570d3691163edc4093f0cdb975bbc0a, type: 3}
+    - target: {fileID: 974824594488782581, guid: 1d9ef58980823914d8f66059eb39f45c, type: 3}
       propertyPath: m_buffRewards.Array.size
       value: 1
       objectReference: {fileID: 0}
