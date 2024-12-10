@@ -226,6 +226,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!143 &1091599645 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 5553137498959758505, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+  m_PrefabInstance: {fileID: 5553137498930805349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1277794949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -625,6 +630,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: crouchSpeed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: crouchYScale
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: crouchMoveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: m_characterController
+      value: 
+      objectReference: {fileID: 1091599645}
     - target: {fileID: 5553137498959758499, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
       propertyPath: m_Name
       value: Player
