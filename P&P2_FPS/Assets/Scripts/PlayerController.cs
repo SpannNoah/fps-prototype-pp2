@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
-    Rigidbody rb;
-
     [Header("Components")]
+    [SerializeField]
+    private CharacterController m_characterController = null;
     [SerializeField]
     private CharacterController m_controller = null;
     [SerializeField]
@@ -17,10 +19,10 @@ public class PlayerController : MonoBehaviour, IDamage
     [Header("Player Settings")]
     [SerializeField]
     [Range(5, 20)]
-    private float m_speed;
+    private float m_speed = 10.0f;
     [SerializeField]
     [Range(2, 20)]
-    private float m_sprintModifier;
+    private float m_sprintModifier = 2.0f;
     [SerializeField]
     private int m_jumpMax = 2;
     [SerializeField]
@@ -42,11 +44,13 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_fireRate = 20;
 
     [Header("Crouching")]
-    public float crouchSpeed;
-    public float crouchMoveSpeed;
-    public float crouchYScale;
-    private float startYScale;
-    private bool isCrouched;
+    [SerializeField] 
+    private float crouchSpeed = 3.5f;
+    [SerializeField]
+    private float crouchMoveSpeed = 5.0f;
+    [SerializeField]
+    private float crouchYScale = .5f;
+    
 
     [Header("Keybinds")]
     public KeyCode crouchKey = KeyCode.LeftControl;
@@ -61,6 +65,9 @@ public class PlayerController : MonoBehaviour, IDamage
     public float m_baseSprintModifier = 0.0f;
 
     private Coroutine m_healthLerpCoroutine = null;
+    private float m_originalHeight = 2.0f;
+    private float startYScale = 1.0f;
+    private bool isCrouched = false;
 
     // getters
     public int Health { get { return m_health; } }
@@ -84,6 +91,10 @@ public class PlayerController : MonoBehaviour, IDamage
         m_health = m_playerHealthOrig;
     }
 
+    private void Awake()
+    {
+        m_originalHeight = m_characterController.height;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -103,7 +114,6 @@ public class PlayerController : MonoBehaviour, IDamage
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * m_shootDistance, Color.red);
         Move();
         Sprint();
-        Crouch();
     }
 
     private void Move()
@@ -119,7 +129,7 @@ public class PlayerController : MonoBehaviour, IDamage
         m_controller.Move(m_moveDir * m_speed * Time.deltaTime);
 
         Jump();
-
+        Crouch();
         m_controller.Move(m_playerVelocity * Time.deltaTime);
         m_playerVelocity.y -= m_gravity * Time.deltaTime;
 
@@ -151,16 +161,14 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             m_speed = crouchMoveSpeed;
             isCrouched = true;
-            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            m_characterController.height /= 2;
         }
 
         if (Input.GetKeyUp(crouchKey))
         {
             m_speed = m_baseSpeed;
             isCrouched = false;
-            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
-
+            m_characterController.height = m_originalHeight;
         }
     }
 
