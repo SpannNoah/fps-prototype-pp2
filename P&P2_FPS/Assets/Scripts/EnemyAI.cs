@@ -161,7 +161,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     private IEnumerator Shoot()
     {
         m_isShooting = true;
-
+        m_animator.SetTrigger("Shoot");
         Instantiate(m_bullet, m_shootPos.position, transform.rotation);
         yield return new WaitForSeconds(m_fireRate);
 
