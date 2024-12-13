@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
@@ -12,6 +14,18 @@ public class PlayerController : MonoBehaviour, IDamage
     private CharacterController m_controller = null;
     [SerializeField]
     private LayerMask m_ignoreMask = 0;
+
+    [Header("Collider Settings")]
+    private CapsuleCollider playerCollider;
+    public float crouchColliderHeight = 1.0f;
+    private float originalColliderHeight;
+    private Vector3 originalColliderCenter;
+
+    [Header("Camera Settings")]
+    public Camera playerCamera; // Reference to the player camera
+    public float crouchCameraHeight; // Camera Height when crouched
+    private float originalCameraHeight; // Original camera's height
+
 
     [Space]
     [Header("Player Settings")]
@@ -34,20 +48,29 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField]
     private int m_shootDamage = 25;
     [SerializeField]
-    private int m_shootDistance = 50;
+    private float m_shootDistance = 50;
     [SerializeField]
-    private int m_fireRate = 20;
+    private float m_fireRate = 20;
+    [SerializeField] GameObject gunModel;
+    [SerializeField] GameObject[] m4_Attachments;
+    [SerializeField] List<gunStats> weaponInventory = new List<gunStats>();
+    private int weaponInvPos;
+
 
     [Header("Crouching")]
     public float crouchSpeed;
     public float crouchMoveSpeed;
-    public float crouchYScale;
-    private float startYScale;
     private bool isCrouched;
 
     [Header("Keybinds")]
     public KeyCode crouchKey = KeyCode.LeftControl;
 
+    [Header("IK Settings")]
+    [SerializeField] private TwoBoneIKConstraint rightHandIK;
+    [SerializeField] private TwoBoneIKConstraint leftHandIK;
+
+
+    [Header("Other")]
     private Vector3 m_moveDir = Vector3.zero;
     private Vector3 m_playerVelocity = Vector3.zero;
     private int m_jumpCount = 0;
@@ -84,6 +107,10 @@ public class PlayerController : MonoBehaviour, IDamage
     // Start is called before the first frame update
     void Start()
     {
+        originalCameraHeight = playerCamera.transform.localPosition.y;
+        playerCollider = GetComponent<CapsuleCollider>();
+        originalColliderHeight = playerCollider.height;
+        originalColliderCenter = playerCollider.center;
 
         m_playerHealthOrig = m_health;
         m_baseSpeed = m_speed;
@@ -91,7 +118,7 @@ public class PlayerController : MonoBehaviour, IDamage
         UpdatePlayerUI();
 
         // Sets starting Y scale
-        startYScale = transform.localScale.y;
+
     }
 
     // Update is called once per frame
@@ -101,6 +128,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Move();
         Sprint();
         Crouch();
+        selectedGun();
     }
 
     private void Move()
@@ -129,8 +157,6 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             StartCoroutine(ShootingCoroutine());
         }
-
-        // start crouch
     }
 
     private void Jump()
@@ -148,7 +174,12 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             m_speed = crouchMoveSpeed;
             isCrouched = true;
-            transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
+
+            playerCollider.height = crouchColliderHeight;
+            playerCollider.center = new Vector3(playerCollider.center.x, playerCollider.center.y / 2, playerCollider.center.z);
+
+            playerCamera.transform.localPosition = new Vector3(playerCamera.transform.localPosition.x, crouchCameraHeight, playerCamera.transform.localPosition.z);
+
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
 
@@ -156,8 +187,11 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             m_speed = m_baseSpeed;
             isCrouched = false;
-            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
 
+            playerCollider.height = originalColliderHeight;
+            playerCollider.center = originalColliderCenter;
+
+            playerCamera.transform.localPosition = new Vector3(playerCamera.transform.localPosition.x, originalCameraHeight, playerCamera.transform.localPosition.z);
         }
     }
 
@@ -242,4 +276,79 @@ public class PlayerController : MonoBehaviour, IDamage
 
         GameManager.Instance.m_playerHealthBar.fillAmount = endValue;
     }
+
+    public void getGunStats(gunStats gun)
+    {
+        weaponInventory.Add(gun);
+
+        m_shootDamage = gun.shootDamage;
+        m_shootDistance = gun.shootDist;
+        m_fireRate = gun.shootRate;
+
+        gunModel.GetComponent<MeshFilter>().sharedMesh = gun.gunModel.GetComponent<MeshFilter>().sharedMesh;
+        gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.gunModel.GetComponent<MeshRenderer>().sharedMaterial;
+
+        if (gun.name == "M4")
+        {
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(true);
+            }
+        }
+    }
+
+    void selectedGun()
+    {
+        if(Input.GetAxis("Mouse ScrollWheel") > 0 && weaponInvPos < weaponInventory.Count - 1)
+        {
+            weaponInvPos++;
+            changeWeapon();
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && weaponInvPos > 0)
+        {
+            weaponInvPos--;
+            changeWeapon();
+        }
+    }
+
+    void changeWeapon()
+    {
+        m_shootDamage = weaponInventory[weaponInvPos].shootDamage;
+        m_shootDistance = weaponInventory[weaponInvPos].shootDist;
+        m_fireRate = weaponInventory[weaponInvPos].shootRate;
+
+        gunModel.GetComponent<MeshFilter>().sharedMesh = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshFilter>().sharedMesh;
+        gunModel.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
+
+        if (weaponInventory[weaponInvPos].name == "M4")
+        {
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(true);
+            }
+        }
+
+        if (weaponInventory[weaponInvPos].name == "M1911")
+        {
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(false);
+            }
+        }
+
+       Transform newTargetRight = weaponInventory[weaponInvPos].rightHandTarget.transform;
+       Transform newTargetLeft = weaponInventory[weaponInvPos].leftHandTarget.transform;
+
+       if (newTargetRight != null && newTargetLeft != null) 
+       { changeIKTarget(newTargetRight, newTargetLeft); }
+       else { Debug.LogWarning("IK targets not found for the selected weapon."); }
+    }
+
+    void changeIKTarget(Transform newTargetRight, Transform newTargetLeft)
+    {
+        rightHandIK.data.target = newTargetRight;
+        leftHandIK.data.target = newTargetLeft;
+    }
+
 }
