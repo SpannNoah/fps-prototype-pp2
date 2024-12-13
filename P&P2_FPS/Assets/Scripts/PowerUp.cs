@@ -17,7 +17,7 @@ public class PowerUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            buffSystem.ApplyBuff();
+            GameManager.Instance.m_playerController.ApplyBuff(buffSystem);
             Destroy(gameObject);
         }
     }

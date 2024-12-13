@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_health = 10;
     [SerializeField]
     private float m_healthLerpSpeed = .25f;
+    [SerializeField] List<BuffSystem> buffList = new List<BuffSystem>();
 
     [Space]
     [Header("Shooting Settings")]
@@ -252,5 +253,16 @@ public class PlayerController : MonoBehaviour, IDamage
         }
 
         GameManager.Instance.m_playerHealthBar.fillAmount = endValue;
+    }
+
+   public void ApplyBuff(BuffSystem buff)
+    {
+        if (buff.healthResotration > 0)
+        {
+            m_health = m_playerHealthOrig;
+        }else
+        {
+
+        }
     }
 }
