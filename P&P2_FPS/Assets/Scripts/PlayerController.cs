@@ -208,6 +208,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public void TakeDamage(int amount)
     {
         m_health -= amount;
+        
         UpdatePlayerUI();
         StartCoroutine(DamageFlashCoroutine());
         if (m_health <= 0)
@@ -260,9 +261,40 @@ public class PlayerController : MonoBehaviour, IDamage
         if (buff.healthResotration > 0)
         {
             m_health = m_playerHealthOrig;
-        }else
-        {
-
         }
+       else if (buff.healthMult > 0)
+        {
+            m_health = (int)(m_health * buff.healthMult);
+            GameManager.Instance.ActivateOverShieldUI();
+        }
+        else
+        {
+            GameManager.Instance.DeactivateOverShieldUI();
+        }
+        if (buff.speedMult > 0)
+        {
+            m_speed = m_baseSpeed * buff.speedMult;
+        }
+        
+       
+        UpdatePlayerUI();
+
+        StartCoroutine(RemoveBuff(buff));
+
+    }
+
+    private IEnumerator RemoveBuff(BuffSystem buff)
+    {
+        yield return new WaitForSeconds(buff.duration);
+        if (buff.healthMult > 0)
+        {
+            m_health = (int)(m_health / buff.healthMult);
+            GameManager.Instance.DeactivateOverShieldUI();
+        }
+        if (buff.speedMult > 0)
+        {
+            m_speed = m_baseSpeed;
+        }
+        UpdatePlayerUI();
     }
 }

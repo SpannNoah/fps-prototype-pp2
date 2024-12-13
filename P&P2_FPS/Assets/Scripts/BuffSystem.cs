@@ -12,6 +12,7 @@ public class BuffSystem : ScriptableObject
     public float speedMult;
     public float duration;
     public float healthResotration;
+    public bool isOverShield;
 
     public enum BuffType
     {
