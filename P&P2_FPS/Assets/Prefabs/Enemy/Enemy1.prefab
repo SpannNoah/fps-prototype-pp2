@@ -948,12 +948,15 @@ MonoBehaviour:
   m_shootPos: {fileID: 5636851919044724014}
   m_headPos: {fileID: 2656379725377456884}
   m_navMeshAgent: {fileID: 2656379725370031830}
+  m_animator: {fileID: 2656379725370031826}
   m_health: 3
   m_faceTargetSpeed: 20
   m_damageColor: {r: 1, g: 0, b: 0, a: 1}
   m_bullet: {fileID: 1793486040539745426, guid: 9d722aa10d4e9dc438118d1444c4a178, type: 3}
   m_fireRate: 0.25
   m_fieldOfView: 90
+  m_roamDistance: 10
+  m_roamTimer: 3
 --- !u!136 &2656379725370031824
 CapsuleCollider:
   m_ObjectHideFlags: 0
