@@ -1,15 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
-   Rigidbody rb;
-
     [Header("Components")]
+    [SerializeField]
+    private CharacterController m_characterController = null;
     [SerializeField]
     private CharacterController m_controller = null;
     [SerializeField]
@@ -29,10 +31,12 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Space]
     [Header("Player Settings")]
-    [SerializeField] [Range(5, 20)]
-    private float m_speed;
-    [SerializeField] [Range(2, 20)]
-    private float m_sprintModifier;
+    [SerializeField]
+    [Range(5, 20)]
+    private float m_speed = 10.0f;
+    [SerializeField]
+    [Range(2, 20)]
+    private float m_sprintModifier = 2.0f;
     [SerializeField]
     private int m_jumpMax = 2;
     [SerializeField]
@@ -43,8 +47,9 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_health = 10;
     [SerializeField]
     private float m_healthLerpSpeed = .25f;
-    
-    [Space][Header("Shooting Settings")]
+
+    [Space]
+    [Header("Shooting Settings")]
     [SerializeField]
     private int m_shootDamage = 25;
     [SerializeField]
@@ -58,9 +63,13 @@ public class PlayerController : MonoBehaviour, IDamage
 
 
     [Header("Crouching")]
-    public float crouchSpeed;
-    public float crouchMoveSpeed;
-    private bool isCrouched;
+    [SerializeField] 
+    private float crouchSpeed = 3.5f;
+    [SerializeField]
+    private float crouchMoveSpeed = 5.0f;
+    [SerializeField]
+    private float crouchYScale = .5f;
+    
 
     [Header("Keybinds")]
     public KeyCode crouchKey = KeyCode.LeftControl;
@@ -81,6 +90,9 @@ public class PlayerController : MonoBehaviour, IDamage
     public float m_baseSprintModifier = 0.0f;
 
     private Coroutine m_healthLerpCoroutine = null;
+    private float m_originalHeight = 2.0f;
+    private float startYScale = 1.0f;
+    private bool isCrouched = false;
 
     // getters
     public int Health { get { return m_health; } }
@@ -104,6 +116,10 @@ public class PlayerController : MonoBehaviour, IDamage
         m_health = m_playerHealthOrig;
     }
 
+    private void Awake()
+    {
+        m_originalHeight = m_characterController.height;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -133,7 +149,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Move()
     {
-        if(m_controller.isGrounded)
+        if (m_controller.isGrounded)
         {
             m_jumpCount = 0;
             m_playerVelocity = Vector3.zero;
@@ -144,16 +160,16 @@ public class PlayerController : MonoBehaviour, IDamage
         m_controller.Move(m_moveDir * m_speed * Time.deltaTime);
 
         Jump();
-
+        Crouch();
         m_controller.Move(m_playerVelocity * Time.deltaTime);
         m_playerVelocity.y -= m_gravity * Time.deltaTime;
 
-        if((m_controller.collisionFlags & CollisionFlags.Above) != 0)
+        if ((m_controller.collisionFlags & CollisionFlags.Above) != 0)
         {
             m_playerVelocity.y -= m_jumpSpeed;
         }
 
-        if(Input.GetButton("Fire1") && !m_isShooting)
+        if (Input.GetButton("Fire1") && !m_isShooting)
         {
             StartCoroutine(ShootingCoroutine());
         }
@@ -161,7 +177,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Jump()
     {
-        if(Input.GetButtonDown("Jump") && m_jumpCount < m_jumpMax)
+        if (Input.GetButtonDown("Jump") && m_jumpCount < m_jumpMax)
         {
             m_jumpCount++;
             m_playerVelocity.y = m_jumpSpeed;
@@ -170,7 +186,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Crouch()
     {
-        if(Input.GetKeyDown(crouchKey))
+        if (Input.GetKeyDown(crouchKey))
         {
             m_speed = crouchMoveSpeed;
             isCrouched = true;
@@ -197,12 +213,12 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Sprint()
     {
-        if(Input.GetButtonDown("Sprint") && !isCrouched)
+        if (Input.GetButtonDown("Sprint") && !isCrouched)
         {
             m_speed = m_baseSpeed * m_sprintModifier;
             m_isSprinting = true;
         }
-        else if(Input.GetButtonUp("Sprint") && !isCrouched)
+        else if (Input.GetButtonUp("Sprint") && !isCrouched)
         {
             m_speed = m_baseSpeed;
             m_isSprinting = false;
@@ -214,11 +230,11 @@ public class PlayerController : MonoBehaviour, IDamage
         m_isShooting = true;
         RaycastHit hit;
 
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_shootDistance, ~m_ignoreMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_shootDistance, ~m_ignoreMask))
         {
             IDamage damage;
 
-            if(hit.collider.TryGetComponent<IDamage>(out damage))
+            if (hit.collider.TryGetComponent<IDamage>(out damage))
             {
                 damage.TakeDamage(m_shootDamage);
             }
@@ -232,9 +248,9 @@ public class PlayerController : MonoBehaviour, IDamage
         m_health -= amount;
         UpdatePlayerUI();
         StartCoroutine(DamageFlashCoroutine());
-        if(m_health <= 0)
+        if (m_health <= 0)
         {
-            if(m_healthLerpCoroutine != null)
+            if (m_healthLerpCoroutine != null)
             {
                 StopCoroutine(m_healthLerpCoroutine);
                 m_healthLerpCoroutine = null;
@@ -249,7 +265,7 @@ public class PlayerController : MonoBehaviour, IDamage
         GameManager.Instance.m_damageFlash.SetActive(true);
 
         yield return new WaitForSeconds(.1f);
-        
+
         GameManager.Instance.m_damageFlash.SetActive(false);
     }
 
@@ -257,7 +273,7 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         m_healthLerpCoroutine = StartCoroutine(LerpPlayerHealthCoroutine());
     }
-    
+
     private IEnumerator LerpPlayerHealthCoroutine()
     {
         float startValue = GameManager.Instance.m_playerHealthBar.fillAmount;
