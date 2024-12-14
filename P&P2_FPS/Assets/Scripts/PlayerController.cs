@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField]
     private CharacterController m_characterController = null;
     [SerializeField]
-    private CharacterController m_controller = null;
-    [SerializeField]
     private LayerMask m_ignoreMask = 0;
 
     [Header("Collider Settings")]
@@ -149,7 +147,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Move()
     {
-        if (m_controller.isGrounded)
+        if (m_characterController.isGrounded)
         {
             m_jumpCount = 0;
             m_playerVelocity = Vector3.zero;
@@ -157,14 +155,14 @@ public class PlayerController : MonoBehaviour, IDamage
 
         m_moveDir = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
 
-        m_controller.Move(m_moveDir * m_speed * Time.deltaTime);
+        m_characterController.Move(m_moveDir * m_speed * Time.deltaTime);
 
         Jump();
         Crouch();
-        m_controller.Move(m_playerVelocity * Time.deltaTime);
+        m_characterController.Move(m_playerVelocity * Time.deltaTime);
         m_playerVelocity.y -= m_gravity * Time.deltaTime;
 
-        if ((m_controller.collisionFlags & CollisionFlags.Above) != 0)
+        if ((m_characterController.collisionFlags & CollisionFlags.Above) != 0)
         {
             m_playerVelocity.y -= m_jumpSpeed;
         }
@@ -195,8 +193,6 @@ public class PlayerController : MonoBehaviour, IDamage
             playerCollider.center = new Vector3(playerCollider.center.x, playerCollider.center.y / 2, playerCollider.center.z);
 
             playerCamera.transform.localPosition = new Vector3(playerCamera.transform.localPosition.x, crouchCameraHeight, playerCamera.transform.localPosition.z);
-
-            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
 
         if (Input.GetKeyUp(crouchKey))

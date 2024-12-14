@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: M1911
   m_EditorClassIdentifier: 
   gunModel: {fileID: 1694449805434718, guid: 6f1a7354265853f44b0ed5e2e43676ad, type: 3}
-  rightHandTarget: {fileID: 0}
-  leftHandTarget: {fileID: 0}
+  rightHandTarget: {fileID: 3687575751220967795, guid: 82576317f54967a43a8ac1dcc4074632, type: 3}
+  leftHandTarget: {fileID: 2721528322915776048, guid: 3b561e8c2aec0ef4496082a4ff5346e7, type: 3}
   shootDamage: 1
   shootRate: 0.75
   shootDist: 50
