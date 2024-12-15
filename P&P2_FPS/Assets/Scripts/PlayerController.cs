@@ -6,6 +6,7 @@ using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
@@ -42,9 +43,12 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField]
     private int m_gravity = 5;
     [SerializeField]
-    private int m_health = 10;
+    private float m_health = 10;
     [SerializeField]
     private float m_healthLerpSpeed = .25f;
+
+    public float m_baseSpeed = 0.0f;
+    public float m_baseSprintModifier = 0.0f;
 
     [Space]
     [Header("Shooting Settings")]
@@ -57,6 +61,8 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] GameObject gunModel;
     [SerializeField] GameObject[] m4_Attachments;
     [SerializeField] List<gunStats> weaponInventory = new List<gunStats>();
+    [SerializeField]
+    private float m_headShotMultiplier = 2.0f;
     private int weaponInvPos;
 
 
@@ -76,27 +82,47 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] private TwoBoneIKConstraint rightHandIK;
     [SerializeField] private TwoBoneIKConstraint leftHandIK;
 
+    [Header("Audio Settings")]
+    [SerializeField]
+    private AudioSource m_audioSource = null;
+    [SerializeField]
+    private AudioClip[] m_audioJump = null;
+    [SerializeField]
+    [Range(0, 1)]
+    private float m_audioJumpVolume = .5f;
+    [SerializeField]
+    private AudioClip[] m_audioHurt = null;
+    [SerializeField]
+    [Range(0, 1)]
+    private float m_audioHurtVolume = .5f;
+    [SerializeField]
+    private AudioClip[] m_audioSteps = null;
+    [SerializeField]
+    [Range(0, 1)]
+    private float m_audioStepsVolume = .5f;
+    [SerializeField]
+    private float m_audioStepFrequencyWalking = .75f;
+    [SerializeField]
+    private float m_audioStepFrequencySprinting = .3f;
 
-    [Header("Other")]
     private Vector3 m_moveDir = Vector3.zero;
     private Vector3 m_playerVelocity = Vector3.zero;
     private int m_jumpCount = 0;
-    private int m_playerHealthOrig = 100;
+    private float m_playerHealthOrig = 100;
     private bool m_isSprinting = false;
     private bool m_isShooting = false;
-    public float m_baseSpeed = 0.0f;
-    public float m_baseSprintModifier = 0.0f;
 
     private Coroutine m_healthLerpCoroutine = null;
     private float m_originalHeight = 2.0f;
     private float startYScale = 1.0f;
     private bool isCrouched = false;
+    private bool m_isPlayingStep = false;
 
     // getters
-    public int Health { get { return m_health; } }
+    public float Health { get { return m_health; } }
     public float Speed { get { return m_speed; } }
     public float SprintModifier { get { return m_sprintModifier; } }
-    public int playerHealthOrig { get { return m_playerHealthOrig; } }
+    public float playerHealthOrig { get { return m_playerHealthOrig; } }
 
     // setters
     public void SetSpeed(float v)
@@ -109,7 +135,7 @@ public class PlayerController : MonoBehaviour, IDamage
         m_sprintModifier = m_baseSprintModifier;
     }
 
-    public void SetHealth(int v)
+    public void SetHealth(float v)
     {
         m_health = m_playerHealthOrig;
     }
@@ -139,16 +165,25 @@ public class PlayerController : MonoBehaviour, IDamage
     void Update()
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * m_shootDistance, Color.red);
-        Move();
+
+        if(!GameManager.Instance.m_isPaused)
+        {
+            Move();
+            selectedGun();
+        }
         Sprint();
         Crouch();
-        selectedGun();
     }
 
     private void Move()
     {
         if (m_characterController.isGrounded)
         {
+            if (m_moveDir.magnitude > 0.3f && !m_isPlayingStep)
+            {
+                StartCoroutine(PlayStepAudioCoroutine());
+            }
+
             m_jumpCount = 0;
             m_playerVelocity = Vector3.zero;
         }
@@ -167,10 +202,11 @@ public class PlayerController : MonoBehaviour, IDamage
             m_playerVelocity.y -= m_jumpSpeed;
         }
 
-        if (Input.GetButton("Fire1") && !m_isShooting)
+        if (Input.GetButton("Fire1") && !m_isShooting && weaponInventory.Count > 0)
         {
             StartCoroutine(ShootingCoroutine());
         }
+
     }
 
     private void Jump()
@@ -179,6 +215,7 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             m_jumpCount++;
             m_playerVelocity.y = m_jumpSpeed;
+            m_audioSource.PlayOneShot(m_audioJump[Random.Range(0, m_audioJump.Length)], m_audioJumpVolume);
         }
     }
 
@@ -224,6 +261,10 @@ public class PlayerController : MonoBehaviour, IDamage
     private IEnumerator ShootingCoroutine()
     {
         m_isShooting = true;
+
+        gunStats currentGun = weaponInventory[weaponInvPos];
+        m_audioSource.PlayOneShot(currentGun.shootSound[Random.Range(0, currentGun.shootSound.Length)], currentGun.shootSoundVol);
+
         RaycastHit hit;
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_shootDistance, ~m_ignoreMask))
@@ -232,18 +273,33 @@ public class PlayerController : MonoBehaviour, IDamage
 
             if (hit.collider.TryGetComponent<IDamage>(out damage))
             {
-                damage.TakeDamage(m_shootDamage);
+                // Headshot
+                if(hit.collider is SphereCollider)
+                {
+                    damage.TakeDamage(m_shootDamage * m_headShotMultiplier);
+                }
+                else // Body Shot
+                {
+                    damage.TakeDamage(m_shootDamage);
+                }
+
+            }
+
+            if (weaponInventory[weaponInvPos].hitEffect != null)
+            {
+                Instantiate(weaponInventory[weaponInvPos].hitEffect, hit.point, Quaternion.identity);
             }
         }
         yield return new WaitForSeconds(m_fireRate);
         m_isShooting = false;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         m_health -= amount;
         UpdatePlayerUI();
         StartCoroutine(DamageFlashCoroutine());
+        m_audioSource.PlayOneShot(m_audioHurt[Random.Range(0, m_audioHurt.Length)], m_audioHurtVolume);
         if (m_health <= 0)
         {
             if (m_healthLerpCoroutine != null)
@@ -273,7 +329,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private IEnumerator LerpPlayerHealthCoroutine()
     {
         float startValue = GameManager.Instance.m_playerHealthBar.fillAmount;
-        float endValue = m_health / (float)m_playerHealthOrig;
+        float endValue = m_health / m_playerHealthOrig;
 
         float elapsedTime = 0;
 
@@ -292,6 +348,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public void getGunStats(gunStats gun)
     {
         weaponInventory.Add(gun);
+        weaponInvPos = weaponInventory.Count - 1;
 
         m_shootDamage = gun.shootDamage;
         m_shootDistance = gun.shootDist;
@@ -363,4 +420,22 @@ public class PlayerController : MonoBehaviour, IDamage
         leftHandIK.data.target = newTargetLeft;
     }
 
+    private IEnumerator PlayStepAudioCoroutine()
+    {
+        m_isPlayingStep = true;
+
+        m_audioSource.PlayOneShot(m_audioSteps[Random.Range(0, m_audioSteps.Length)], m_audioStepsVolume);
+
+        if(!m_isSprinting)
+        {
+            yield return new WaitForSeconds(m_audioStepFrequencyWalking);
+        }
+        else
+        {
+            yield return new WaitForSeconds(m_audioStepFrequencySprinting);
+        }
+
+        m_isPlayingStep = false;
+
+    }
 }
