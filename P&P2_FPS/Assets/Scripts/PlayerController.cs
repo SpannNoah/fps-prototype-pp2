@@ -51,15 +51,6 @@ public class PlayerController : MonoBehaviour, IDamage
     public float m_baseSprintModifier = 0.0f;
 
     [Space]
-    [Header("Buff Settings")]
-    [SerializeField] List<BuffSystem> buffList = new List<BuffSystem>();
-    [SerializeField] private float m_buffDuration = 0.0f;
-    [SerializeField] private float m_maxOverShield = 100.0f;
-    [SerializeField] private float m_damageTaken = 0.0f;
-
-
-
-    [Space]
     [Header("Shooting Settings")]
     [SerializeField]
     private int m_shootDamage = 25;
@@ -122,7 +113,6 @@ public class PlayerController : MonoBehaviour, IDamage
     private bool m_isShooting = false;
 
     private Coroutine m_healthLerpCoroutine = null;
-    private Coroutine m_overShieldLerpCoroutine = null;
     private float m_originalHeight = 2.0f;
     private float startYScale = 1.0f;
     private bool isCrouched = false;
@@ -309,6 +299,7 @@ public class PlayerController : MonoBehaviour, IDamage
         m_health -= amount;
         UpdatePlayerUI();
         StartCoroutine(DamageFlashCoroutine());
+        m_audioSource.PlayOneShot(m_audioHurt[Random.Range(0, m_audioHurt.Length)], m_audioHurtVolume);
         if (m_health <= 0)
         {
             if (m_healthLerpCoroutine != null)
@@ -333,8 +324,6 @@ public class PlayerController : MonoBehaviour, IDamage
     public void UpdatePlayerUI()
     {
         m_healthLerpCoroutine = StartCoroutine(LerpPlayerHealthCoroutine());
-        m_overShieldLerpCoroutine = StartCoroutine(LerpOverShieldCoroutine());
-        // GameManager.Instance.m_playerOverShield.fillAmount = m_maxOverShield / m_maxOverShield;
     }
 
     private IEnumerator LerpPlayerHealthCoroutine()
@@ -354,5 +343,99 @@ public class PlayerController : MonoBehaviour, IDamage
         }
 
         GameManager.Instance.m_playerHealthBar.fillAmount = endValue;
+    }
+
+    public void getGunStats(gunStats gun)
+    {
+        weaponInventory.Add(gun);
+        weaponInvPos = weaponInventory.Count - 1;
+
+        m_shootDamage = gun.shootDamage;
+        m_shootDistance = gun.shootDist;
+        m_fireRate = gun.shootRate;
+
+        gunModel.GetComponent<MeshFilter>().sharedMesh = gun.gunModel.GetComponent<MeshFilter>().sharedMesh;
+        gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.gunModel.GetComponent<MeshRenderer>().sharedMaterial;
+
+        if (gun.name == "M4")
+        {
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(true);
+            }
+        }
+    }
+
+    void selectedGun()
+    {
+        if(Input.GetAxis("Mouse ScrollWheel") > 0 && weaponInvPos < weaponInventory.Count - 1)
+        {
+            weaponInvPos++;
+            changeWeapon();
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && weaponInvPos > 0)
+        {
+            weaponInvPos--;
+            changeWeapon();
+        }
+    }
+
+    void changeWeapon()
+    {
+        m_shootDamage = weaponInventory[weaponInvPos].shootDamage;
+        m_shootDistance = weaponInventory[weaponInvPos].shootDist;
+        m_fireRate = weaponInventory[weaponInvPos].shootRate;
+
+        gunModel.GetComponent<MeshFilter>().sharedMesh = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshFilter>().sharedMesh;
+        gunModel.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
+
+        if (weaponInventory[weaponInvPos].name == "M4")
+        {
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(true);
+            }
+        }
+
+        if (weaponInventory[weaponInvPos].name == "M1911")
+        {
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(false);
+            }
+        }
+
+       Transform newTargetRight = weaponInventory[weaponInvPos].rightHandTarget.transform;
+       Transform newTargetLeft = weaponInventory[weaponInvPos].leftHandTarget.transform;
+
+       if (newTargetRight != null && newTargetLeft != null) 
+       { changeIKTarget(newTargetRight, newTargetLeft); }
+       else { Debug.LogWarning("IK targets not found for the selected weapon."); }
+    }
+
+    void changeIKTarget(Transform newTargetRight, Transform newTargetLeft)
+    {
+        rightHandIK.data.target = newTargetRight;
+        leftHandIK.data.target = newTargetLeft;
+    }
+
+    private IEnumerator PlayStepAudioCoroutine()
+    {
+        m_isPlayingStep = true;
+
+        m_audioSource.PlayOneShot(m_audioSteps[Random.Range(0, m_audioSteps.Length)], m_audioStepsVolume);
+
+        if(!m_isSprinting)
+        {
+            yield return new WaitForSeconds(m_audioStepFrequencyWalking);
+        }
+        else
+        {
+            yield return new WaitForSeconds(m_audioStepFrequencySprinting);
+        }
+
+        m_isPlayingStep = false;
+
     }
 }
