@@ -33,7 +33,15 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_health = 10;
     [SerializeField]
     private float m_healthLerpSpeed = .25f;
+
+    [Space]
+    [Header("Buff Settings")]
     [SerializeField] List<BuffSystem> buffList = new List<BuffSystem>();
+    [SerializeField] private float m_buffDuration = 0.0f;
+    [SerializeField] private float m_maxOverShield = 100.0f;
+    [SerializeField] private float m_damageTaken = 0.0f;
+
+
 
     [Space]
     [Header("Shooting Settings")]
@@ -66,6 +74,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public float m_baseSprintModifier = 0.0f;
 
     private Coroutine m_healthLerpCoroutine = null;
+    private Coroutine m_overShieldLerpCoroutine = null;
     private float m_originalHeight = 2.0f;
     private float startYScale = 1.0f;
     private bool isCrouched = false;
@@ -207,19 +216,40 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void TakeDamage(int amount)
     {
-        m_health -= amount;
-        
-        UpdatePlayerUI();
-        StartCoroutine(DamageFlashCoroutine());
-        if (m_health <= 0)
+        if (m_maxOverShield > 0)
         {
-            if (m_healthLerpCoroutine != null)
+            float damageToOvershield = Mathf.Min(amount, m_maxOverShield);
+            m_maxOverShield -= damageToOvershield;
+            amount -= (int)damageToOvershield;
+
+            StartCoroutine(LerpOverShieldCoroutine());
+            //GameManager.Instance.m_playerOverShield.fillAmount = m_maxOverShield / m_maxOverShield;
+
+            if (m_maxOverShield <= 0)
             {
-                StopCoroutine(m_healthLerpCoroutine);
-                m_healthLerpCoroutine = null;
+                m_maxOverShield = 0;
+                GameManager.Instance.DeactivateOverShieldUI();
             }
-            GameManager.Instance.m_playerHealthBar.fillAmount = 0.0f;
-            GameManager.Instance.Lose();
+
+            m_health -= amount;
+
+            if (m_health <= 0)
+            {
+                m_health = 0;
+            }
+
+            UpdatePlayerUI();
+            StartCoroutine(DamageFlashCoroutine());
+            if (m_health <= 0)
+            {
+                if (m_healthLerpCoroutine != null)
+                {
+                    StopCoroutine(m_healthLerpCoroutine);
+                    m_healthLerpCoroutine = null;
+                }
+                GameManager.Instance.m_playerHealthBar.fillAmount = 0.0f;
+                GameManager.Instance.Lose();
+            }
         }
     }
 
@@ -235,6 +265,8 @@ public class PlayerController : MonoBehaviour, IDamage
     public void UpdatePlayerUI()
     {
         m_healthLerpCoroutine = StartCoroutine(LerpPlayerHealthCoroutine());
+        m_overShieldLerpCoroutine = StartCoroutine(LerpOverShieldCoroutine());
+        // GameManager.Instance.m_playerOverShield.fillAmount = m_maxOverShield / m_maxOverShield;
     }
 
     private IEnumerator LerpPlayerHealthCoroutine()
@@ -296,5 +328,23 @@ public class PlayerController : MonoBehaviour, IDamage
             m_speed = m_baseSpeed;
         }
         UpdatePlayerUI();
+    }
+
+    private IEnumerator LerpOverShieldCoroutine()
+    {
+        
+        float startValue = GameManager.Instance.m_playerOverShield.fillAmount;
+        float endValue = m_maxOverShield / m_maxOverShield;
+
+        float elapsedTime = 0;
+
+        while (elapsedTime < m_healthLerpSpeed)
+        {
+            GameManager.Instance.m_playerOverShield.fillAmount =
+                Mathf.Lerp(startValue, endValue, elapsedTime / m_healthLerpSpeed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        GameManager.Instance.m_playerOverShield.fillAmount = endValue;
     }
 }
