@@ -18,7 +18,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     private Animator m_animator = null;
 
     [SerializeField]
-    private float m_health = 100;
+    private int m_health = 100;
     [SerializeField]
     private int m_faceTargetSpeed = 20;
     [SerializeField]
@@ -136,7 +136,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         return false;
     }
     
-    public void TakeDamage(float amount)
+    public void TakeDamage(int amount)
     {
         m_health -= amount;
         m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
