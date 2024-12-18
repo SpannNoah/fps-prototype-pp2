@@ -3,56 +3,70 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class BuffSystem : MonoBehaviour
+[CreateAssetMenu(fileName = "BuffSystem", menuName = "Buffs/Buff Stats")]
+
+public class BuffSystem : ScriptableObject
 {
-    [Header("Buff Settings")]
-    [SerializeField] private float healthMult = 2f;
-    [SerializeField] private float speedMult = 2f;
-    [SerializeField] private float sprintMult = 5f;
-    [SerializeField] private float buffDuration = 6f;
+    public string buffName;
+    public float healthMult;
+    public float speedMult;
+    public float duration;
+    public bool healthResotration;
+    public bool isOverShield;
 
-    private PlayerController playerController;
-    private bool isBuffActive = false;
-    private float origSpeed;
-    private float origSprintMod;
-
-    private void Start()
+    public enum BuffType
     {
-        playerController = GameManager.Instance.m_playerController;
+        Health, Speed, Duration, HealthRestoration
     }
 
-    public void ApplyBuff()
-    {
-        if (!isBuffActive)
-        {
-            isBuffActive = true;
-            StartCoroutine(BuffCoroutine());
-        }
-    }
+    //[Header("Buff Settings")]
+    //[SerializeField] private float healthMult = 2f;
+    //[SerializeField] private float speedMult = 2f;
+    //[SerializeField] private float sprintMult = 5f;
+    //[SerializeField] private float buffDuration = 6f;
 
-    private IEnumerator BuffCoroutine()
-    {
-        origSpeed = playerController.m_baseSpeed;
-        origSprintMod = playerController.m_baseSprintModifier;
+    //private PlayerController playerController;
+    //private bool isBuffActive = false;
+    //private float origSpeed;
+    //private float origSprintMod;
 
-        playerController.SetHealth((int)(playerController.Health * healthMult));
-        playerController.SetSpeed(origSpeed * speedMult);
-        playerController.SetSprintModifier(origSprintMod * sprintMult);
-        Debug.Log("Buff Applied");
+    //private void Start()
+   // {
+    //    playerController = GameManager.Instance.m_playerController;
+  //  }
 
-        yield return new WaitForSeconds(buffDuration);
+    //public void ApplyBuff()
+    //{
+    //    if (!isBuffActive)
+    //    {
+    //        isBuffActive = true;
+    //        StartCoroutine(BuffCoroutine());
+    //    }
+    //}
 
-        RemoveBuff(origSpeed, origSprintMod);
+    //private IEnumerator BuffCoroutine()
+    //{
+    //    origSpeed = playerController.m_baseSpeed;
+    //    origSprintMod = playerController.m_baseSprintModifier;
 
-    }
+    //    playerController.SetHealth((int)(playerController.Health * healthMult));
+    //    playerController.SetSpeed(origSpeed * speedMult);
+    //    playerController.SetSprintModifier(origSprintMod * sprintMult);
+    //    Debug.Log("Buff Applied");
 
-    private void RemoveBuff(float origSpeed, float origSprintMod)
-    {
-        playerController.SetHealth(playerController.playerHealthOrig);
-        playerController.SetSpeed(origSpeed);
-        playerController.SetSprintModifier(origSprintMod);
-        isBuffActive = false;
-        Debug.Log("Buff Removed");
-    }
+    //    yield return new WaitForSeconds(buffDuration);
+
+    //    RemoveBuff(origSpeed, origSprintMod);
+
+    //}
+
+    //private void RemoveBuff(float origSpeed, float origSprintMod)
+    //{
+    //    playerController.SetHealth(playerController.playerHealthOrig);
+    //    playerController.SetSpeed(origSpeed);
+    //    playerController.SetSprintModifier(origSprintMod);
+    //    isBuffActive = false;
+    //    Debug.Log("Buff Removed");
+    //}
 
 }

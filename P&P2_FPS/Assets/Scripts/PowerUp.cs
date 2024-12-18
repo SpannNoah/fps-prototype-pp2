@@ -4,20 +4,22 @@ using System.Globalization;
 using UnityEngine;
 
 public class PowerUp : MonoBehaviour
-{
-    private BuffSystem buffSystem;
+{ 
+  [SerializeField] BuffSystem buffSystem;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        buffSystem = FindObjectOfType<BuffSystem>();
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            buffSystem.ApplyBuff();
+            GameManager.Instance.m_playerController.ApplyBuff(buffSystem);
             Destroy(gameObject);
         }
     }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text m_goalCountText = null;
     [SerializeField] private int m_wavesRequired = 2;
 
+    public AudioSource m_audioSource = null;
     public GameObject m_damageFlash = null;
     public Image m_playerHealthBar = null;
     public Image m_playerOverShield = null;
@@ -19,11 +20,12 @@ public class GameManager : MonoBehaviour
     public GameObject m_player = null;
     public PlayerController m_playerController = null;
     public bool m_isBuffActive = false;
+    public bool m_isOverShieldActive = false;
 
     private WaveManager waveManager;
     private float m_timeScaleOriginal = 1.0f;
     private int m_goalCount = 0;
-    
+
 
     public static GameManager Instance { get; private set; }
 
@@ -41,6 +43,8 @@ public class GameManager : MonoBehaviour
         m_player = GameObject.FindWithTag("Player");
         m_playerController = m_player.GetComponent<PlayerController>();
         waveManager = FindObjectOfType<WaveManager>();
+
+        m_playerOverShield.gameObject.SetActive(false);
     }
 
     void Update()
@@ -93,16 +97,19 @@ public class GameManager : MonoBehaviour
             if (waveManager != null)
             {
                 int currentWaveNumber = waveManager.GetCurrentWave();
-                if(currentWaveNumber >= m_wavesRequired)
+                if (currentWaveNumber >= m_wavesRequired)
                 {
                     StatePaused();
                     m_menuActive = m_menuWin;
                     m_menuActive.SetActive(true);
                     return;
                 }
-                
+
                 Debug.Log("No enemies left. Starting next wave...");
-                RewardManager.Instance.SpawnRewards();
+                if(RewardManager.Instance != null)
+                {
+                    RewardManager.Instance.SpawnRewards();
+                }
                 waveManager.StartNextWave();
             }
             else
@@ -120,6 +127,17 @@ public class GameManager : MonoBehaviour
         StatePaused();
         m_menuActive = m_menuLoss;
         m_menuActive.SetActive(true);
+    }
+
+    public void ActivateOverShieldUI()
+    {
+        m_playerOverShield.gameObject.SetActive(true);
+        m_playerOverShield.fillAmount = 1.0f;
+    }
+
+    public void DeactivateOverShieldUI()
+    {
+        m_playerOverShield.gameObject.SetActive(false);
     }
 }
 
