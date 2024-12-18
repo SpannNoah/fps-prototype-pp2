@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor.Build;
 using UnityEngine;
@@ -16,12 +18,14 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField]
     private LayerMask m_ignoreMask = 0;
 
+    [Space]
     [Header("Collider Settings")]
     private CapsuleCollider playerCollider;
     public float crouchColliderHeight = 1.0f;
     private float originalColliderHeight;
     private Vector3 originalColliderCenter;
 
+    [Space]
     [Header("Camera Settings")]
     public Camera playerCamera; // Reference to the player camera
     public float crouchCameraHeight; // Camera Height when crouched
@@ -51,6 +55,13 @@ public class PlayerController : MonoBehaviour, IDamage
     public float m_baseSprintModifier = 0.0f;
 
     [Space]
+    [Header("Buff Settings")]
+    [SerializeField] List<BuffSystem> buffList = new List<BuffSystem>();
+    [SerializeField] private float m_buffDuration = 0.0f;
+    [SerializeField] private float m_maxOverShield = 10.0f;
+    [SerializeField] private float m_damageTaken = 0.0f;
+
+    [Space]
     [Header("Shooting Settings")]
     [SerializeField]
     private int m_shootDamage = 25;
@@ -65,23 +76,25 @@ public class PlayerController : MonoBehaviour, IDamage
     private float m_headShotMultiplier = 2.0f;
     private int weaponInvPos;
 
-
+    [Space]
     [Header("Crouching")]
-    [SerializeField] 
+    [SerializeField]
     private float crouchSpeed = 3.5f;
     [SerializeField]
     private float crouchMoveSpeed = 5.0f;
     [SerializeField]
     private float crouchYScale = .5f;
-    
 
+    [Space]
     [Header("Keybinds")]
     public KeyCode crouchKey = KeyCode.LeftControl;
 
+    [Space]
     [Header("IK Settings")]
     [SerializeField] private TwoBoneIKConstraint rightHandIK;
     [SerializeField] private TwoBoneIKConstraint leftHandIK;
 
+    [Space]
     [Header("Audio Settings")]
     [SerializeField]
     private AudioSource m_audioSource = null;
@@ -108,15 +121,20 @@ public class PlayerController : MonoBehaviour, IDamage
     private Vector3 m_moveDir = Vector3.zero;
     private Vector3 m_playerVelocity = Vector3.zero;
     private int m_jumpCount = 0;
-    private float m_playerHealthOrig = 100;
+    private float m_playerHealthOrig = 10;
+    public int m_currentHealth;
     private bool m_isSprinting = false;
     private bool m_isShooting = false;
 
     private Coroutine m_healthLerpCoroutine = null;
+    private Coroutine m_overShieldLerpCoroutine = null;
     private float m_originalHeight = 2.0f;
     private float startYScale = 1.0f;
     private bool isCrouched = false;
     private bool m_isPlayingStep = false;
+
+    private float m_OrigSpeed;
+    private float m_OrigSprintSpeed;
 
     // getters
     public float Health { get { return m_health; } }
@@ -153,8 +171,11 @@ public class PlayerController : MonoBehaviour, IDamage
         originalColliderCenter = playerCollider.center;
 
         m_playerHealthOrig = m_health;
+
         m_baseSpeed = m_speed;
         m_baseSprintModifier = m_sprintModifier;
+        m_OrigSpeed = m_speed;
+        m_OrigSprintSpeed = m_sprintModifier;
         UpdatePlayerUI();
 
         // Sets starting Y scale
@@ -166,7 +187,7 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * m_shootDistance, Color.red);
 
-        if(!GameManager.Instance.m_isPaused)
+        if (!GameManager.Instance.m_isPaused)
         {
             Move();
             selectedGun();
@@ -274,7 +295,7 @@ public class PlayerController : MonoBehaviour, IDamage
             if (hit.collider.TryGetComponent<IDamage>(out damage))
             {
                 // Headshot
-                if(hit.collider is SphereCollider)
+                if (hit.collider is SphereCollider)
                 {
                     damage.TakeDamage(m_shootDamage * m_headShotMultiplier);
                 }
@@ -301,15 +322,40 @@ public class PlayerController : MonoBehaviour, IDamage
         StartCoroutine(DamageFlashCoroutine());
         m_audioSource.PlayOneShot(m_audioHurt[Random.Range(0, m_audioHurt.Length)], m_audioHurtVolume);
         if (m_health <= 0)
-        {
-            if (m_healthLerpCoroutine != null)
+            if (m_maxOverShield > 0)
             {
-                StopCoroutine(m_healthLerpCoroutine);
-                m_healthLerpCoroutine = null;
+                if (m_healthLerpCoroutine != null)
+                {
+                    float damageToOVerShield = Mathf.Min(m_maxOverShield - m_damageTaken, amount);
+                    m_maxOverShield -= damageToOVerShield;
+                    amount -= (int)damageToOVerShield;
+
+                    StartCoroutine(lerpPlayerOverShieldCoroutine());
+
+                    if (m_maxOverShield <= 0)
+                    {
+                        m_maxOverShield = 0;
+                        GameManager.Instance.DeactivateOverShieldUI();
+                    }
+
+                    m_health -= amount;
+
+                    UpdatePlayerUI();
+                    StartCoroutine(DamageFlashCoroutine());
+
+                    if (m_health <= 0)
+                    {
+                        if (m_healthLerpCoroutine != null)
+                        {
+                            StopCoroutine(m_healthLerpCoroutine);
+                            m_healthLerpCoroutine = null;
+                        }
+                        GameManager.Instance.m_playerHealthBar.fillAmount = 0;
+                        GameManager.Instance.Lose();
+                    }
+                }
             }
-            GameManager.Instance.m_playerHealthBar.fillAmount = 0.0f;
-            GameManager.Instance.Lose();
-        }
+
     }
 
     private IEnumerator DamageFlashCoroutine()
@@ -324,6 +370,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public void UpdatePlayerUI()
     {
         m_healthLerpCoroutine = StartCoroutine(LerpPlayerHealthCoroutine());
+        m_overShieldLerpCoroutine = StartCoroutine(lerpPlayerOverShieldCoroutine());
     }
 
     private IEnumerator LerpPlayerHealthCoroutine()
@@ -368,7 +415,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     void selectedGun()
     {
-        if(Input.GetAxis("Mouse ScrollWheel") > 0 && weaponInvPos < weaponInventory.Count - 1)
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && weaponInvPos < weaponInventory.Count - 1)
         {
             weaponInvPos++;
             changeWeapon();
@@ -406,12 +453,12 @@ public class PlayerController : MonoBehaviour, IDamage
             }
         }
 
-       Transform newTargetRight = weaponInventory[weaponInvPos].rightHandTarget.transform;
-       Transform newTargetLeft = weaponInventory[weaponInvPos].leftHandTarget.transform;
+        Transform newTargetRight = weaponInventory[weaponInvPos].rightHandTarget.transform;
+        Transform newTargetLeft = weaponInventory[weaponInvPos].leftHandTarget.transform;
 
-       if (newTargetRight != null && newTargetLeft != null) 
-       { changeIKTarget(newTargetRight, newTargetLeft); }
-       else { Debug.LogWarning("IK targets not found for the selected weapon."); }
+        if (newTargetRight != null && newTargetLeft != null)
+        { changeIKTarget(newTargetRight, newTargetLeft); }
+        else { Debug.LogWarning("IK targets not found for the selected weapon."); }
     }
 
     void changeIKTarget(Transform newTargetRight, Transform newTargetLeft)
@@ -426,7 +473,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
         m_audioSource.PlayOneShot(m_audioSteps[Random.Range(0, m_audioSteps.Length)], m_audioStepsVolume);
 
-        if(!m_isSprinting)
+        if (!m_isSprinting)
         {
             yield return new WaitForSeconds(m_audioStepFrequencyWalking);
         }
@@ -437,5 +484,52 @@ public class PlayerController : MonoBehaviour, IDamage
 
         m_isPlayingStep = false;
 
+    }
+
+    private IEnumerator lerpPlayerOverShieldCoroutine()
+    {
+        float startValue = GameManager.Instance.m_playerOverShield.fillAmount;
+        float endValue = m_damageTaken / m_maxOverShield;
+        float elapsedTime = 0;
+        while (elapsedTime < m_healthLerpSpeed)
+        {
+            GameManager.Instance.m_playerOverShield.fillAmount =
+                Mathf.Lerp(startValue, endValue, elapsedTime / m_healthLerpSpeed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        GameManager.Instance.m_playerOverShield.fillAmount = endValue;
+    }
+
+    public void ApplyBuff(BuffSystem buffSystem)
+    {
+        if (buffSystem.healthResotration)
+        {
+            m_health = m_playerHealthOrig;
+        }
+        else if (buffSystem.isOverShield)
+        {
+            m_playerHealthOrig = Mathf.RoundToInt(m_health * buffSystem.healthMult);
+            m_health = Mathf.Min(m_playerHealthOrig, m_health);
+        }
+        else
+        {
+            m_health = Mathf.RoundToInt(m_health * buffSystem.healthMult);
+            m_health = Mathf.Min(m_playerHealthOrig, m_health);
+        }
+        if (buffSystem.speedMult > 0)
+        {
+            m_speed = m_baseSpeed * buffSystem.speedMult;
+            m_sprintModifier = m_baseSprintModifier * buffSystem.speedMult;
+        }
+        StartCoroutine(RemoveBuff(buffSystem));
+    }
+
+    private IEnumerator RemoveBuff(BuffSystem buffSystem)
+    {
+        yield return new WaitForSeconds(buffSystem.duration);
+        m_speed = m_baseSpeed;
+        m_sprintModifier = m_baseSprintModifier;
+        m_playerHealthOrig = m_health;
     }
 }
