@@ -55,9 +55,14 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField]
     private float m_fireRate = 20;
     [SerializeField] GameObject gunModel;
-    [SerializeField] GameObject[] m4_Attachments;
     [SerializeField] List<gunStats> weaponInventory = new List<gunStats>();
     private int weaponInvPos;
+
+    [Header("Weapon Attachments")]
+    [SerializeField] GameObject[] m4_Attachments;
+    [SerializeField] GameObject[] m1911_Attachments;
+    [SerializeField] GameObject[] m107_Attachments;
+
 
 
     [Header("Crouching")]
@@ -74,7 +79,23 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Header("IK Settings")]
     [SerializeField] private TwoBoneIKConstraint rightHandIK;
+    [SerializeField] private Transform rightHandTarget;
+    [SerializeField] private Transform IKRightHandPos;
     [SerializeField] private TwoBoneIKConstraint leftHandIK;
+    [SerializeField] private Transform leftHandTarget;
+    [SerializeField] private Transform IKLeftHandPos;
+
+    [Header("Stored Weapon POS")]
+    [SerializeField] private Transform m4_LeftHandPos;
+    [SerializeField] private Transform m4_RightHandPos;
+    [Space]
+
+    [SerializeField] private Transform m1911_LeftHandPos;
+    [SerializeField] private Transform m1911_RightHandPos;
+    [Space]
+
+    [SerializeField] private Transform m107_LeftHandPos;
+    [SerializeField] private Transform m107_RightHandPos;
 
 
     [Header("Other")]
@@ -302,7 +323,61 @@ public class PlayerController : MonoBehaviour, IDamage
 
         if (gun.name == "M4")
         {
+
+            IKRightHandPos = m4_RightHandPos;
+            IKLeftHandPos = m4_LeftHandPos;
+            changeIKTarget();
+
+            foreach (var item in m1911_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m107_Attachments)
+            {
+                item.SetActive(false);
+            }
             foreach (var item in m4_Attachments)
+            {
+                item.SetActive(true);
+            }
+        }
+
+        if (gun.name == "M1911")
+        {
+            IKRightHandPos = m1911_RightHandPos;
+            IKLeftHandPos = m1911_LeftHandPos;
+            changeIKTarget();
+
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m107_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m1911_Attachments)
+            {
+                item.SetActive(true);
+            }
+        }
+
+
+        if (gun.name == "M107")
+        {
+            IKRightHandPos = m107_RightHandPos;
+            IKLeftHandPos = m107_LeftHandPos;
+            changeIKTarget();
+
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m1911_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m107_Attachments)
             {
                 item.SetActive(true);
             }
@@ -335,10 +410,21 @@ public class PlayerController : MonoBehaviour, IDamage
 
         if (weaponInventory[weaponInvPos].name == "M4")
         {
+            foreach (var item in m1911_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m107_Attachments)
+            {
+                item.SetActive(false);
+            }
             foreach (var item in m4_Attachments)
             {
                 item.SetActive(true);
             }
+            IKRightHandPos = m4_RightHandPos;
+            IKLeftHandPos = m4_LeftHandPos;
+            changeIKTarget();
         }
 
         if (weaponInventory[weaponInvPos].name == "M1911")
@@ -347,20 +433,48 @@ public class PlayerController : MonoBehaviour, IDamage
             {
                 item.SetActive(false);
             }
+            foreach (var item in m107_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m1911_Attachments)
+            {
+                item.SetActive(true);
+            }
+            IKRightHandPos = m1911_RightHandPos;
+            IKLeftHandPos = m1911_LeftHandPos;
+            changeIKTarget();
         }
 
-       Transform newTargetRight = weaponInventory[weaponInvPos].rightHandTarget.transform;
-       Transform newTargetLeft = weaponInventory[weaponInvPos].leftHandTarget.transform;
-
-       if (newTargetRight != null && newTargetLeft != null) 
-       { changeIKTarget(newTargetRight, newTargetLeft); }
-       else { Debug.LogWarning("IK targets not found for the selected weapon."); }
+        if (weaponInventory[weaponInvPos].name == "M107")
+        {
+            foreach (var item in m4_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m1911_Attachments)
+            {
+                item.SetActive(false);
+            }
+            foreach (var item in m107_Attachments)
+            {
+                item.SetActive(true);
+            }
+            IKRightHandPos = m107_RightHandPos;
+            IKLeftHandPos = m107_LeftHandPos;
+            changeIKTarget();
+        }
     }
 
-    void changeIKTarget(Transform newTargetRight, Transform newTargetLeft)
+    void changeIKTarget()
     {
-        rightHandIK.data.target = newTargetRight;
-        leftHandIK.data.target = newTargetLeft;
+        rightHandIK.weight = 1f;
+        leftHandIK.weight = 1f;
+        leftHandTarget.position = IKLeftHandPos.position;
+        leftHandTarget.rotation = IKLeftHandPos.rotation;
+
+        rightHandTarget.position = IKRightHandPos.position;
+        rightHandTarget.rotation = IKRightHandPos.rotation;
     }
 
 }
