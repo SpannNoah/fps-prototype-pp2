@@ -6,8 +6,6 @@ public class gunStats : ScriptableObject
 {
     [Header("Stats")]
     public GameObject gunModel;
-    public GameObject rightHandTarget;
-    public GameObject leftHandTarget;
     public int shootDamage;
     public float shootRate;
     public float shootDist;
