@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c79c015a4c66aa40a9e87e3fbd5900b, type: 3}
-  m_Name: Speed Boost
+  m_Name: HealthRestored
   m_EditorClassIdentifier: 
-  buffName: Speed Boost
-  healthMult: 0
-  speedMult: 0.5
-  duration: 10
-  healthResotration: 0
+  Duration: 0
+  speedBoost: 0
+  HealthRestored: 10
+  Immunity: 0

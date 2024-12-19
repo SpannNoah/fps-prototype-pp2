@@ -5,19 +5,19 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
-    private BuffSystem buffSystem;
+    [SerializeField] ScriptableBuff buff;
 
     // Start is called before the first frame update
     void Start()
     {
-        buffSystem = FindObjectOfType<BuffSystem>();
+        buff = FindObjectOfType<ScriptableBuff>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            buffSystem.ApplyBuff();
+            GameManager.Instance.m_playerController.ApplyBuff(buff);
             Destroy(gameObject);
         }
     }

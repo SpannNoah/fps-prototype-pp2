@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_health = 10;
     [SerializeField]
     private float m_healthLerpSpeed = .25f;
+    private List<ScriptableBuff> activeBuff = new List<ScriptableBuff>();
+    private bool isImmune = false;
+
 
     [Space]
     [Header("Shooting Settings")]
@@ -112,6 +115,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private float m_originalHeight = 2.0f;
     private float startYScale = 1.0f;
     private bool isCrouched = false;
+    private bool isTakeDamage;
 
     // getters
     public int Health { get { return m_health; } }
@@ -262,6 +266,10 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void TakeDamage(int amount)
     {
+        if (isImmune)
+        {
+            return;
+        }
         m_health -= amount;
         UpdatePlayerUI();
         StartCoroutine(DamageFlashCoroutine());
@@ -477,4 +485,34 @@ public class PlayerController : MonoBehaviour, IDamage
         rightHandTarget.rotation = IKRightHandPos.rotation;
     }
 
+   public void ApplyBuff(ScriptableBuff buff)
+    {
+        if(buff.HealthRestored > 0)
+        {
+            m_health = m_playerHealthOrig;
+            UpdatePlayerUI();
+        }
+        if(buff.speedBoost > 0)
+        {
+            m_speed = m_baseSpeed * .5f;
+        }
+        if(buff.Immunity > 0)
+        {
+            isImmune = true;
+        }
+        
+    }
+
+    public void RemoveBuff(ScriptableBuff buff)
+    {
+     
+        if (buff.speedBoost > 0)
+        {
+            m_speed = m_baseSpeed;
+        }
+        if (buff.Immunity > 0)
+        {
+            isImmune = false;
+        }
+    }
 }
