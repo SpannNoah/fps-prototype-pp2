@@ -485,7 +485,13 @@ public class PlayerController : MonoBehaviour, IDamage
         rightHandTarget.rotation = IKRightHandPos.rotation;
     }
 
-   public void ApplyBuff(ScriptableBuff buff)
+    public void ApplyJumpPadForce(float force)
+    {
+        m_playerVelocity.y = 0;
+        m_playerVelocity.y = force;
+    }
+
+    public void ApplyBuff(ScriptableBuff buff)
     {
         if(buff.HealthRestored > 0)
         {
@@ -502,10 +508,9 @@ public class PlayerController : MonoBehaviour, IDamage
         }
         
     }
-
     public void RemoveBuff(ScriptableBuff buff)
     {
-     
+
         if (buff.speedBoost > 0)
         {
             m_speed = m_baseSpeed;
@@ -514,5 +519,7 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             isImmune = false;
         }
+
+
     }
 }
