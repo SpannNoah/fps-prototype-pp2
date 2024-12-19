@@ -50,7 +50,6 @@ public class EnemyAI : MonoBehaviour, IDamage
     private float m_originalStoppingDist = 0.0f;
     private Coroutine m_coroutine = null;
     private int m_originalHP = 0;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -150,11 +149,19 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void TakeDamage(int amount)
     {
         m_health -= amount;
-        UpdateUI();
-        m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
-        StopCoroutine(m_coroutine);
+
+        if(m_navMeshAgent.isActiveAndEnabled)
+        {
+            m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+        }
+        if(m_coroutine != null)
+        {
+            StopCoroutine(m_coroutine);
+        }
         m_isRoaming = false;
+        
         StartCoroutine(DamageFlashCoroutine());
+        UpdateUI();
 
         if(m_health <= 0)
         {
