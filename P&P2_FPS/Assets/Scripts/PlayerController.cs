@@ -493,33 +493,33 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void ApplyBuff(ScriptableBuff buff)
     {
-        if(buff.HealthRestored > 0)
+        if (activeBuff.Contains(buff))
         {
-            m_health = m_playerHealthOrig;
-            UpdatePlayerUI();
+            return;
         }
-        if(buff.speedBoost > 0)
-        {
-            m_speed = m_baseSpeed * .5f;
-        }
-        if(buff.Immunity > 0)
-        {
-            isImmune = true;
-        }
-        
-    }
-    public void RemoveBuff(ScriptableBuff buff)
-    {
-
+        activeBuff.Add(buff);
         if (buff.speedBoost > 0)
         {
-            m_speed = m_baseSpeed;
+            m_speed += buff.speedBoost;
+        }
+        if (buff.HealthRestored > 0)
+        {
+            m_health += (int)buff.HealthRestored;
+            UpdatePlayerUI();
         }
         if (buff.Immunity > 0)
         {
-            isImmune = false;
+            isImmune = true;
+          
         }
+       
+    }
 
-
+    public void RemoveBuff(ScriptableBuff buff)
+    {
+        if (activeBuff.Contains(buff))
+        {
+            activeBuff.Remove(buff);
+        }
     }
 }
