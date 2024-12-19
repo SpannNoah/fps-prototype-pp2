@@ -286,6 +286,7 @@ Transform:
   - {fileID: 6416789060556176611}
   - {fileID: 6416789060556176621}
   - {fileID: 6416789060556176623}
+  - {fileID: 1469945894204130912}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -364,6 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74fa2b6f16028d24b962fb0d827b6f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_isReward: 0
   type: 0
   gun: {fileID: 11400000, guid: 6c4c3c020d3afce4bbd63d6e6a681ffd, type: 2}
 --- !u!1 &6416789060556660941
@@ -532,3 +534,65 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1516825486502134362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6416789060556176615}
+    m_Modifications:
+    - target: {fileID: 102057489531192377, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_Name
+      value: CFXR4 Bouncing Glows Bubble (Blue Purple)
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+--- !u!4 &1469945894204130912 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+  m_PrefabInstance: {fileID: 1516825486502134362}
+  m_PrefabAsset: {fileID: 0}
