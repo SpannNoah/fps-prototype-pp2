@@ -61,25 +61,28 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        float agentSpeed = m_navMeshAgent.velocity.normalized.magnitude;
-        float animSpeed = m_animator.GetFloat("Speed");
-        
-        
-        m_animator.SetFloat("Speed", Mathf.MoveTowards(animSpeed, agentSpeed, Time.deltaTime * m_speedTransition));
-        
-        m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
-        if (m_isPlayerInRange && !CanSeePlayer())
+        if (m_navMeshAgent.isActiveAndEnabled)
         {
-            if(!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+            float agentSpeed = m_navMeshAgent.velocity.normalized.magnitude;
+            float animSpeed = m_animator.GetFloat("Speed");
+
+
+            m_animator.SetFloat("Speed", Mathf.MoveTowards(animSpeed, agentSpeed, Time.deltaTime * m_speedTransition));
+
+            //m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+            if (m_isPlayerInRange && !CanSeePlayer())
             {
-                m_coroutine = StartCoroutine(RoamCoroutine());
+                if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+                {
+                    m_coroutine = StartCoroutine(RoamCoroutine());
+                }
             }
-        }
-        else if(!m_isPlayerInRange)
-        {
-            if(!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+            else if (!m_isPlayerInRange)
             {
-                m_coroutine = StartCoroutine(RoamCoroutine());
+                if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+                {
+                    m_coroutine = StartCoroutine(RoamCoroutine());
+                }
             }
         }
     }

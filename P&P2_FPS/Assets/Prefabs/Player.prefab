@@ -3350,7 +3350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5553137498959758510}
   - component: {fileID: 5553137498959758498}
-  - component: {fileID: -6383585083548171437}
+  - component: {fileID: 8538384953006146069}
   - component: {fileID: 5553137498959758508}
   - component: {fileID: 5553137498959758509}
   - component: {fileID: 5553137498959758505}
@@ -3430,20 +3430,10 @@ MonoBehaviour:
   crouchYScale: 0.65
   crouchKey: 306
   rightHandIK: {fileID: 287814238}
-  rightHandTarget: {fileID: 1561435038}
-  IKRightHandPos: {fileID: 0}
   leftHandIK: {fileID: 333806072}
-  leftHandTarget: {fileID: 1741774143}
-  IKLeftHandPos: {fileID: 0}
-  m4_LeftHandPos: {fileID: 1448121611}
-  m4_RightHandPos: {fileID: 1775744067}
-  m1911_LeftHandPos: {fileID: 1237855307}
-  m1911_RightHandPos: {fileID: 1129554598}
-  m107_LeftHandPos: {fileID: 619146443}
-  m107_RightHandPos: {fileID: 1376043802}
   m_baseSpeed: 0
   m_baseSprintModifier: 0
---- !u!114 &-6383585083548171437
+--- !u!114 &8538384953006146069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3458,7 +3448,7 @@ MonoBehaviour:
   healthMult: 2
   speedMult: 2
   sprintMult: 5
-  buffDuration: 6
+  buffDuration: 10
 --- !u!23 &5553137498959758508
 MeshRenderer:
   m_ObjectHideFlags: 0

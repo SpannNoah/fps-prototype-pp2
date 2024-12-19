@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1146794332468315095}
-  - component: {fileID: 4054894205610986892}
+  - component: {fileID: 4876918307406495515}
   - component: {fileID: 4054894205610986610}
   - component: {fileID: 2279128734565628088}
   - component: {fileID: 6702120710546247346}
   - component: {fileID: 4054894205610986611}
   m_Layer: 0
-  m_Name: OverShield
+  m_Name: speedBoost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4054894205610986892
+--- !u!114 &4876918307406495515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf892227e3a580499c7a0bdf37daa7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffSystem: {fileID: 11400000, guid: edbe7c4bb577b614496042303c3fe5f9, type: 2}
+  buff: {fileID: 11400000, guid: 2d2444c9a1ba0bc4c86b57de7a8074c0, type: 2}
 --- !u!33 &4054894205610986610
 MeshFilter:
   m_ObjectHideFlags: 0
