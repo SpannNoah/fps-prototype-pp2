@@ -10,7 +10,7 @@ public class PowerUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buff = FindObjectOfType<ScriptableBuff>();
+        //buff = FindObjectOfType<ScriptableBuff>();
     }
 
     private void OnTriggerEnter(Collider other)

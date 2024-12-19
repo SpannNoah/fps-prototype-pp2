@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour, IDamage
 {
@@ -20,6 +22,11 @@ public class EnemyAI : MonoBehaviour, IDamage
     private NavMeshAgent m_navMeshAgent = null;
     [SerializeField]
     private Animator m_animator = null;
+
+    [SerializeField]
+    private List<PowerUp> m_powerUps = new List<PowerUp>();
+    [SerializeField]
+    private int m_chanceToDropPowerUp = 25;
 
     [SerializeField]
     private int m_health = 100;
@@ -166,6 +173,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         if(m_health <= 0)
         {
             GameManager.Instance.UpdateGameGoal(-1);
+            DropRandomPowerUp();
             Destroy(gameObject);
         }
     }
@@ -214,5 +222,16 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         m_healthBar.fillAmount = m_health / (float)m_originalHP;
         
+    }
+
+    public void DropRandomPowerUp()
+    {
+        print("Dropping Powerup");
+        int rand = Random.Range(0, 100);
+
+        if(m_chanceToDropPowerUp <= rand)
+        {
+            Instantiate(m_powerUps[Random.Range(0, m_powerUps.Count)].gameObject, gameObject.transform.position, quaternion.identity);
+        }
     }
 }

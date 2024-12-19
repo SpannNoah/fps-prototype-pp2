@@ -1035,6 +1035,11 @@ MonoBehaviour:
   m_headPos: {fileID: 2656379725377456884}
   m_navMeshAgent: {fileID: 2656379725370031830}
   m_animator: {fileID: 2656379725370031826}
+  m_powerUps:
+  - {fileID: 3109077923652766547, guid: 0f7003fbd10f0a24ebe8d2d6ecb0117b, type: 3}
+  - {fileID: 4564341751755936507, guid: 167d124cc9ec0aa4bb3826aca7ce60b0, type: 3}
+  - {fileID: 4876918307406495515, guid: 9cdc67cb01c266149800e8f82825d7bd, type: 3}
+  m_chanceToDropPowerUp: 25
   m_health: 3
   m_faceTargetSpeed: 20
   m_damageColor: {r: 1, g: 0, b: 0, a: 1}
