@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class RewardManager : MonoBehaviour
 {
     [SerializeField]
-    private List<RewardConfig> m_weaponRewards = new List<RewardConfig>();
+    private List<GameObject> m_weaponRewards = new List<GameObject>();
     [SerializeField]
     private List<RewardConfig> m_buffRewards = new List<RewardConfig>();
     [SerializeField]
@@ -15,10 +15,12 @@ public class RewardManager : MonoBehaviour
     
     private Vector3 m_reward1SpawnPos = Vector3.zero;
     private Vector3 m_reward2SpawnPos = Vector3.zero;
-    private RewardConfig m_currentWeaponReward = null;
+    private GameObject m_currentWeaponReward = null;
     private RewardConfig m_currentBuffReward = null;
     private GameObject m_currentRewardPlatformWeapon = null;
     private GameObject m_currentRewardPlatformBuff = null;
+    private List<GameObject> m_rewardPlatforms = new List<GameObject>();
+    private List<GameObject> m_currentRewards = new List<GameObject>();
     
     public static RewardManager Instance { get; private set; }
     
@@ -48,24 +50,44 @@ public class RewardManager : MonoBehaviour
         
         m_currentRewardPlatformWeapon = Instantiate(m_platformPrefab, m_reward1SpawnPos, Quaternion.identity);
         m_currentRewardPlatformBuff = Instantiate(m_platformPrefab, m_reward2SpawnPos, Quaternion.identity);
-        
-        float weaponYOffset = m_currentWeaponReward.m_yOffset;
+
+        m_rewardPlatforms.Add(m_currentRewardPlatformBuff);
+        m_rewardPlatforms.Add(m_currentRewardPlatformWeapon);
+
+        //float weaponYOffset = m_currentWeaponReward.m_yOffset;
         float buffYOffset = m_currentBuffReward.m_yOffset;
         
         Vector3 weaponPlatformPos = m_currentRewardPlatformWeapon.transform.position;
         Vector3 buffPlatformPos = m_currentRewardPlatformBuff.transform.position;
 
         Vector3 weaponSpawnPos =
-            new Vector3(weaponPlatformPos.x, weaponPlatformPos.y + weaponYOffset, weaponPlatformPos.z);
+            new Vector3(weaponPlatformPos.x, weaponPlatformPos.y + .5f, weaponPlatformPos.z);
         Vector3 buffSpawnPos = 
             new Vector3(buffPlatformPos.x, buffPlatformPos.y + buffYOffset, buffPlatformPos.z);
 
-        Instantiate(m_currentWeaponReward.m_rewardPrefab, weaponSpawnPos, Quaternion.identity);
-        Instantiate(m_currentBuffReward.m_rewardPrefab, buffSpawnPos, Quaternion.identity);
+        GameObject weapon = Instantiate(m_currentWeaponReward, weaponSpawnPos, Quaternion.identity);
+        if(weapon.TryGetComponent<pickup>(out pickup pickup))
+        {
+            pickup.m_isReward = true;
+        }
+        GameObject buff = Instantiate(m_currentBuffReward.m_rewardPrefab, buffSpawnPos, Quaternion.identity);
+
+        m_currentRewards.Add(weapon);
+        m_currentRewards.Add(buff);
     }
 
-    public void ClaimReward(RewardConfig reward)
+    public void ClaimReward(GameObject reward)
     {
-        Debug.Log($"Player has claimed {reward.m_rewardName}");
+        Debug.Log($"Player has claimed {reward.name}");
+        
+        foreach(GameObject platform in m_rewardPlatforms)
+        {
+            if(platform != null) Destroy(platform);
+        }
+
+        foreach(GameObject obj in m_currentRewards)
+        {
+            if(obj != null) Destroy(obj);
+        }
     }
 }

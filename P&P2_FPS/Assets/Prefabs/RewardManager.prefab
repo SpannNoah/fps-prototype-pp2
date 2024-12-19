@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244e18b3c15d6df4bbecde61bef4d32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponRewards: []
-  m_buffRewards: []
+  m_weaponRewards:
+  - {fileID: 11400000, guid: 754b390b08ed7944ab8d1ffc6ef2d241, type: 2}
+  - {fileID: 11400000, guid: 4eae4012c11d03a44ba734b93eacfd7e, type: 2}
+  - {fileID: 11400000, guid: 67bdb028617c48d4e8f466200cbae772, type: 2}
+  m_buffRewards:
+  - {fileID: 11400000, guid: 274e4274f11b1fb41a2179510eba9895, type: 2}
+  m_platformPrefab: {fileID: 6817318709640852780, guid: c570d3691163edc4093f0cdb975bbc0a, type: 3}
