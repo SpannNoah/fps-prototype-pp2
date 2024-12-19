@@ -168,6 +168,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Sprint();
         Crouch();
         selectedGun();
+        reload();
     }
 
     private void Move()
@@ -192,7 +193,7 @@ public class PlayerController : MonoBehaviour, IDamage
             m_playerVelocity.y -= m_jumpSpeed;
         }
 
-        if (Input.GetButton("Fire1") && !m_isShooting)
+        if (Input.GetButton("Fire1") && weaponInventory.Count > 0 && weaponInventory[weaponInvPos].ammoCur > 0 && !m_isShooting)
         {
             StartCoroutine(ShootingCoroutine());
         }
@@ -248,6 +249,8 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private IEnumerator ShootingCoroutine()
     {
+        weaponInventory[weaponInvPos].ammoCur--;
+        GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
         m_isShooting = true;
         RaycastHit hit;
 
@@ -321,10 +324,11 @@ public class PlayerController : MonoBehaviour, IDamage
     public void getGunStats(gunStats gun)
     {
         weaponInventory.Add(gun);
-
+        weaponInvPos = weaponInventory.Count - 1;
         m_shootDamage = gun.shootDamage;
         m_shootDistance = gun.shootDist;
         m_fireRate = gun.shootRate;
+        GameManager.Instance.AmmoCount(gun.ammoMax.ToString(), gun.ammoCur.ToString());
 
         gunModel.GetComponent<MeshFilter>().sharedMesh = gun.gunModel.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.gunModel.GetComponent<MeshRenderer>().sharedMaterial;
@@ -412,6 +416,7 @@ public class PlayerController : MonoBehaviour, IDamage
         m_shootDamage = weaponInventory[weaponInvPos].shootDamage;
         m_shootDistance = weaponInventory[weaponInvPos].shootDist;
         m_fireRate = weaponInventory[weaponInvPos].shootRate;
+        GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
 
         gunModel.GetComponent<MeshFilter>().sharedMesh = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
@@ -471,6 +476,15 @@ public class PlayerController : MonoBehaviour, IDamage
             IKRightHandPos = m107_RightHandPos;
             IKLeftHandPos = m107_LeftHandPos;
             changeIKTarget();
+        }
+    }
+
+    void reload()
+    {
+        if (Input.GetButtonDown("Reload") && weaponInventory.Count > 0)
+        {
+            weaponInventory[weaponInvPos].ammoCur = weaponInventory[weaponInvPos].ammoMax;
+            GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
         }
     }
 

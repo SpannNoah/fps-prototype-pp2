@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text m_goalCountText = null;
     [SerializeField] private int m_wavesRequired = 2;
 
+    [SerializeField] private TMP_Text m_currentAmmo;
+    [SerializeField] private TMP_Text m_MaxAmmo;
+
     public GameObject m_damageFlash = null;
     public Image m_playerHealthBar = null;
     public Image m_playerOverShield = null;
@@ -24,7 +27,7 @@ public class GameManager : MonoBehaviour
     private WaveManager waveManager;
     private float m_timeScaleOriginal = 1.0f;
     private int m_goalCount = 0;
-    
+    private gunStats m_gun;
 
     public static GameManager Instance { get; private set; }
 
@@ -125,6 +128,12 @@ public class GameManager : MonoBehaviour
         StatePaused();
         m_menuActive = m_menuLoss;
         m_menuActive.SetActive(true);
+    }
+
+    public void AmmoCount(string ammoMax, string ammoCurr)
+    {
+        m_currentAmmo.text = ammoCurr;
+        m_MaxAmmo.text = ammoMax;
     }
 }
 
