@@ -4,8 +4,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
+using UnityEngine.UI;
+
 public class EnemyAI : MonoBehaviour, IDamage
 {
+    [SerializeField]
+    private Image m_healthBar = null;
     [SerializeField]
     private Renderer m_model = null;
     [SerializeField]
@@ -45,6 +49,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     private Vector3 m_startingPos = Vector3.zero;
     private float m_originalStoppingDist = 0.0f;
     private Coroutine m_coroutine = null;
+    private int m_originalHP = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -56,6 +61,9 @@ public class EnemyAI : MonoBehaviour, IDamage
         {
             GameManager.Instance.UpdateGameGoal(1);
         }
+
+        m_originalHP = m_health;
+        UpdateUI();
     }
 
     // Update is called once per frame
@@ -142,6 +150,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void TakeDamage(int amount)
     {
         m_health -= amount;
+        UpdateUI();
         m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
         StopCoroutine(m_coroutine);
         m_isRoaming = false;
@@ -192,5 +201,11 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         Quaternion rot = Quaternion.LookRotation(new Vector3(m_playerDirection.x, 0, m_playerDirection.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * m_faceTargetSpeed);
+    }
+
+    public void UpdateUI()
+    {
+        m_healthBar.fillAmount = m_health / (float)m_originalHP;
+        
     }
 }
