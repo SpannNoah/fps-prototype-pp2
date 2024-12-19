@@ -5,6 +5,8 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     public float m_jumpPadForce = 10f;
+
+    [SerializeField] private LayerMask m_playerLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +21,13 @@ public class JumpPad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Trigger entered by: {other.name}");
-
-        if (other.TryGetComponent<PlayerController>(out PlayerController playerController))
+        if (((1 << other.gameObject.layer) & m_playerLayer) != 0)
         {
-            Debug.Log($"Player detected: {other.name}");
-            playerController.ApplyJumpPadForce(m_jumpPadForce);
-        }
-        else
-        {
-            Debug.Log($"PlayerController not found on: {other.name}");
+            PlayerController playerController = other.GetComponentInParent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.ApplyJumpPadForce(m_jumpPadForce);
+            }
         }
     }
 }
