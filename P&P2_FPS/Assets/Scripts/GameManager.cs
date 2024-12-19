@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject m_menuActive = null;
     [SerializeField] private GameObject m_menuPause = null;
     [SerializeField] private GameObject m_menuWin, m_menuLoss = null;
+    [SerializeField] private TMP_Text m_waveNumText = null;
     [SerializeField] private TMP_Text m_goalCountText = null;
     [SerializeField] private int m_wavesRequired = 2;
 
@@ -102,8 +103,12 @@ public class GameManager : MonoBehaviour
                 }
                 
                 Debug.Log("No enemies left. Starting next wave...");
-                RewardManager.Instance.SpawnRewards();
+                if(RewardManager.Instance != null)
+                {
+                    RewardManager.Instance.SpawnRewards();
+                }
                 waveManager.StartNextWave();
+                m_waveNumText.text = waveManager.GetCurrentWave().ToString();
             }
             else
             {
