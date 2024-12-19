@@ -3,6 +3,8 @@ using UnityEngine;
 public class pickup : MonoBehaviour
 {
     enum pickupType { gun, HP, armor, ammo}
+
+    public bool m_isReward = false;
     [SerializeField] pickupType type;
     [SerializeField] gunStats gun;
 
@@ -18,7 +20,16 @@ public class pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.m_playerController.getGunStats(gun);
+            if(type == pickupType.gun)
+            {
+                GameManager.Instance.m_playerController.getGunStats(gun);
+            }
+
+            if(m_isReward)
+            {
+                RewardManager.Instance.ClaimReward(gameObject);
+                return;
+            }
             Destroy(gameObject);
         }
     }
