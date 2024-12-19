@@ -477,4 +477,10 @@ public class PlayerController : MonoBehaviour, IDamage
         rightHandTarget.rotation = IKRightHandPos.rotation;
     }
 
+    public void ApplyJumpPadForce(float force)
+    {
+        m_playerVelocity.y = 0;
+        m_playerVelocity.y = force;
+    }
+
 }
