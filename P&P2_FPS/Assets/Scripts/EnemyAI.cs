@@ -69,6 +69,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
 
         m_originalHP = m_health;
+        
         UpdateUI();
     }
 
