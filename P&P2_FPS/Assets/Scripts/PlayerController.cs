@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEditor.Build;
 using UnityEngine;
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour, IDamage
     private float m_healthLerpSpeed = .25f;
     private List<ScriptableBuff> activeBuff = new List<ScriptableBuff>();
     private bool isImmune = false;
+    private List<scriptableDeBuff> activeDeBuff = new List<scriptableDeBuff>();
+    private Coroutine currentDoTCoroutine;
 
 
     [Space]
@@ -536,4 +539,49 @@ public class PlayerController : MonoBehaviour, IDamage
             activeBuff.Remove(buff);
         }
     }
+
+    private IEnumerator ApplyDamageOverTimeCoroutine()
+    {
+        while (true)
+        {
+            TakeDamage(1);
+            UpdatePlayerUI();
+            yield return new WaitForSeconds(1);
+        }
+        
+    }
+
+    public IEnumerator RemoveDeBuff(scriptableDeBuff debuff)
+    {
+        yield return new WaitForSeconds(debuff.Duration);
+        if (activeDeBuff.Contains(debuff))
+        {
+            activeDeBuff.Remove(debuff);
+        }
+    }
+
+ 
+    public void ApplyDeBuff(scriptableDeBuff debuff)
+    {
+        if (activeDeBuff.Contains(debuff))
+        {
+            return;
+        }
+        activeDeBuff.Add(debuff);
+        if (debuff.speedDeBuff > 0)
+        {
+            m_speed -= debuff.speedDeBuff;
+        }
+        if (debuff.applyDamageOverTime)
+        {
+            if (currentDoTCoroutine != null)
+            {
+                StopCoroutine(currentDoTCoroutine);
+            }
+            currentDoTCoroutine = StartCoroutine(ApplyDamageOverTimeCoroutine());
+        }
+        StartCoroutine(RemoveDeBuff(debuff));
+    }
+
+    
 }
