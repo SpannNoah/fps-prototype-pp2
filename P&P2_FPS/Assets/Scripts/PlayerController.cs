@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEditor.Build;
 using UnityEngine;
@@ -45,6 +46,11 @@ public class PlayerController : MonoBehaviour, IDamage
     private int m_health = 10;
     [SerializeField]
     private float m_healthLerpSpeed = .25f;
+    private List<ScriptableBuff> activeBuff = new List<ScriptableBuff>();
+    private bool isImmune = false;
+    private List<scriptableDeBuff> activeDeBuff = new List<scriptableDeBuff>();
+    private Coroutine currentDoTCoroutine;
+
 
     [Space]
     [Header("Shooting Settings")]
@@ -112,6 +118,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private float m_originalHeight = 2.0f;
     private float startYScale = 1.0f;
     private bool isCrouched = false;
+    private bool isTakeDamage;
 
     // getters
     public int Health { get { return m_health; } }
@@ -159,11 +166,12 @@ public class PlayerController : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * m_shootDistance, Color.red);
+        UnityEngine.Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * m_shootDistance, Color.red);
         Move();
         Sprint();
         Crouch();
         selectedGun();
+        reload();
     }
 
     private void Move()
@@ -188,7 +196,7 @@ public class PlayerController : MonoBehaviour, IDamage
             m_playerVelocity.y -= m_jumpSpeed;
         }
 
-        if (Input.GetButton("Fire1") && !m_isShooting)
+        if (Input.GetButton("Fire1") && weaponInventory.Count > 0 && weaponInventory[weaponInvPos].ammoCur > 0 && !m_isShooting)
         {
             StartCoroutine(ShootingCoroutine());
         }
@@ -244,6 +252,8 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private IEnumerator ShootingCoroutine()
     {
+        weaponInventory[weaponInvPos].ammoCur--;
+        GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
         m_isShooting = true;
         RaycastHit hit;
 
@@ -262,6 +272,10 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void TakeDamage(int amount)
     {
+        if (isImmune)
+        {
+            return;
+        }
         m_health -= amount;
         UpdatePlayerUI();
         StartCoroutine(DamageFlashCoroutine());
@@ -313,10 +327,11 @@ public class PlayerController : MonoBehaviour, IDamage
     public void getGunStats(gunStats gun)
     {
         weaponInventory.Add(gun);
-
+        weaponInvPos = weaponInventory.Count - 1;
         m_shootDamage = gun.shootDamage;
         m_shootDistance = gun.shootDist;
         m_fireRate = gun.shootRate;
+        GameManager.Instance.AmmoCount(gun.ammoMax.ToString(), gun.ammoCur.ToString());
 
         gunModel.GetComponent<MeshFilter>().sharedMesh = gun.gunModel.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.gunModel.GetComponent<MeshRenderer>().sharedMaterial;
@@ -404,6 +419,7 @@ public class PlayerController : MonoBehaviour, IDamage
         m_shootDamage = weaponInventory[weaponInvPos].shootDamage;
         m_shootDistance = weaponInventory[weaponInvPos].shootDist;
         m_fireRate = weaponInventory[weaponInvPos].shootRate;
+        GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
 
         gunModel.GetComponent<MeshFilter>().sharedMesh = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshFilter>().sharedMesh;
         gunModel.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
@@ -466,6 +482,15 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
+    void reload()
+    {
+        if (Input.GetButtonDown("Reload") && weaponInventory.Count > 0)
+        {
+            weaponInventory[weaponInvPos].ammoCur = weaponInventory[weaponInvPos].ammoMax;
+            GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
+        }
+    }
+
     void changeIKTarget()
     {
         rightHandIK.weight = 1f;
@@ -483,4 +508,80 @@ public class PlayerController : MonoBehaviour, IDamage
         m_playerVelocity.y = force;
     }
 
+    public void ApplyBuff(ScriptableBuff buff)
+    {
+        if (activeBuff.Contains(buff))
+        {
+            return;
+        }
+        activeBuff.Add(buff);
+        if (buff.speedBoost > 0)
+        {
+            m_speed += buff.speedBoost;
+        }
+        if (buff.HealthRestored > 0)
+        {
+            m_health += (int)buff.HealthRestored;
+            UpdatePlayerUI();
+        }
+        if (buff.Immunity > 0)
+        {
+            isImmune = true;
+          
+        }
+       
+    }
+
+    public void RemoveBuff(ScriptableBuff buff)
+    {
+        if (activeBuff.Contains(buff))
+        {
+            activeBuff.Remove(buff);
+        }
+    }
+
+    private IEnumerator ApplyDamageOverTimeCoroutine()
+    {
+        while (true)
+        {
+            TakeDamage(1);
+            UpdatePlayerUI();
+            yield return new WaitForSeconds(1);
+        }
+        
+    }
+
+    public IEnumerator RemoveDeBuff(scriptableDeBuff debuff)
+    {
+        yield return new WaitForSeconds(debuff.Duration);
+        if (activeDeBuff.Contains(debuff))
+        {
+            activeDeBuff.Remove(debuff);
+        }
+    }
+
+ 
+    public void ApplyDeBuff(scriptableDeBuff debuff)
+    {
+        if (activeDeBuff.Contains(debuff))
+        {
+            return;
+        }
+        activeDeBuff.Add(debuff);
+        if (debuff.speedDeBuff > 0)
+        {
+            m_speed -= debuff.speedDeBuff;
+        }
+        if (debuff.applyDamageOverTime)
+        {
+            if (currentDoTCoroutine != null)
+            {
+                StopCoroutine(currentDoTCoroutine);
+            }
+            currentDoTCoroutine = StartCoroutine(ApplyDamageOverTimeCoroutine());
+        }
+        StartCoroutine(RemoveDeBuff(debuff));
+    }
+
+    
 }

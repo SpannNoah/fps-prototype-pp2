@@ -115,8 +115,9 @@ MonoBehaviour:
   m_damageType: 0
   m_rb: {fileID: 1793486040539745385}
   m_damageAmount: 1
-  m_speed: 5
+  m_speed: 6
   m_destroyTime: 3
+  m_isDamageOverTime: 0
 --- !u!54 &1793486040539745385
 Rigidbody:
   m_ObjectHideFlags: 0

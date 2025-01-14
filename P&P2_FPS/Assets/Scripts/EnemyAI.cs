@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
 public class EnemyAI : MonoBehaviour, IDamage
 {
+    [SerializeField]
+    private Image m_healthBar = null;
     [SerializeField]
     private Renderer m_model = null;
     [SerializeField]
@@ -16,6 +22,11 @@ public class EnemyAI : MonoBehaviour, IDamage
     private NavMeshAgent m_navMeshAgent = null;
     [SerializeField]
     private Animator m_animator = null;
+
+    [SerializeField]
+    private List<PowerUp> m_powerUps = new List<PowerUp>();
+    [SerializeField]
+    private int m_chanceToDropPowerUp = 25;
 
     [SerializeField]
     private int m_health = 100;
@@ -45,7 +56,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     private Vector3 m_startingPos = Vector3.zero;
     private float m_originalStoppingDist = 0.0f;
     private Coroutine m_coroutine = null;
-    
+    private int m_originalHP = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,30 +67,37 @@ public class EnemyAI : MonoBehaviour, IDamage
         {
             GameManager.Instance.UpdateGameGoal(1);
         }
+
+        m_originalHP = m_health;
+        
+        UpdateUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float agentSpeed = m_navMeshAgent.velocity.normalized.magnitude;
-        float animSpeed = m_animator.GetFloat("Speed");
-        
-        
-        m_animator.SetFloat("Speed", Mathf.MoveTowards(animSpeed, agentSpeed, Time.deltaTime * m_speedTransition));
-        
-        m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
-        if (m_isPlayerInRange && !CanSeePlayer())
+        if (m_navMeshAgent.isActiveAndEnabled)
         {
-            if(!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+            float agentSpeed = m_navMeshAgent.velocity.normalized.magnitude;
+            float animSpeed = m_animator.GetFloat("Speed");
+
+
+            m_animator.SetFloat("Speed", Mathf.MoveTowards(animSpeed, agentSpeed, Time.deltaTime * m_speedTransition));
+
+            //m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+            if (m_isPlayerInRange && !CanSeePlayer())
             {
-                m_coroutine = StartCoroutine(RoamCoroutine());
+                if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+                {
+                    m_coroutine = StartCoroutine(RoamCoroutine());
+                }
             }
-        }
-        else if(!m_isPlayerInRange)
-        {
-            if(!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+            else if (!m_isPlayerInRange)
             {
-                m_coroutine = StartCoroutine(RoamCoroutine());
+                if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+                {
+                    m_coroutine = StartCoroutine(RoamCoroutine());
+                }
             }
         }
     }
@@ -139,14 +157,24 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void TakeDamage(int amount)
     {
         m_health -= amount;
-        m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
-        StopCoroutine(m_coroutine);
+
+        if(m_navMeshAgent.isActiveAndEnabled)
+        {
+            m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+        }
+        if(m_coroutine != null)
+        {
+            StopCoroutine(m_coroutine);
+        }
         m_isRoaming = false;
+        
         StartCoroutine(DamageFlashCoroutine());
+        UpdateUI();
 
         if(m_health <= 0)
         {
             GameManager.Instance.UpdateGameGoal(-1);
+            DropRandomPowerUp();
             Destroy(gameObject);
         }
     }
@@ -189,5 +217,22 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         Quaternion rot = Quaternion.LookRotation(new Vector3(m_playerDirection.x, 0, m_playerDirection.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, rot, Time.deltaTime * m_faceTargetSpeed);
+    }
+
+    public void UpdateUI()
+    {
+        m_healthBar.fillAmount = m_health / (float)m_originalHP;
+        
+    }
+
+    public void DropRandomPowerUp()
+    {
+        print("Dropping Powerup");
+        int rand = Random.Range(0, 100);
+
+        if(m_chanceToDropPowerUp <= rand)
+        {
+            Instantiate(m_powerUps[Random.Range(0, m_powerUps.Count)].gameObject, gameObject.transform.position, quaternion.identity);
+        }
     }
 }
