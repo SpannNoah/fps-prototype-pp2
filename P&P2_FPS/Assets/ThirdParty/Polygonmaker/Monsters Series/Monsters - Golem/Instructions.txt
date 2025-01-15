@@ -1,0 +1,19 @@
+There are 3 skinned meshes:
+-RockGolem_1
+-RockGolem_2
+-RockGolem_3
+
+There are Three material types:
+\Materials-------------Default Materials
+\Materials-Cracks------Materials with Glowing Cracks
+\Materials-Runes-------Materials with glowing Runes
+
+On each material folder there are 4 materials types:
+-Crystal
+-Rock
+-Sand
+-Stone
+
+Select the desired material with same number of the selected mesh.
+E.g. RockGolem_2.fbx with Golem_2_Stone
+
