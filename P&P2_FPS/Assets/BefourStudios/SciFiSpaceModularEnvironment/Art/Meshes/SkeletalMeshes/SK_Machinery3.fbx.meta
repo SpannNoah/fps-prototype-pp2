@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: abc00000000008477871994142030520
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SK_Machinery3Base
+    100004: SK_Machinery3Door
+    100006: SK_AttacheDoor
+    100008: SK_PistonDoor
+    100010: SK_PistonSyst
+    100012: SK_AttacheBody
+    100014: SK_PistonBody
+    100016: SK_Crate
+    100018: SK_Tube
+    100020: SM_Door1
+    100022: SM_DoorCenter
+    100024: SM_Door2
+    100026: SK_Aimant
+    100028: SK_PistonSystCrate2
+    100030: SK_PistonSystCrate2b
+    100032: SK_MachineryBase2
+    100034: SK_Machinery3Base
+    100036: SK_Machinery3Door
+    100038: SK_AttacheDoor
+    100040: SK_PistonDoor
+    100042: SK_PistonSyst
+    100044: SK_AttacheBody
+    100046: SK_PistonBody
+    100048: SK_Crate
+    100050: SK_Tube
+    100052: SM_Door1
+    100054: SM_DoorCenter
+    100056: SM_Door2
+    100058: SK_Aimant
+    100060: SK_PistonSystCrate2
+    100062: SK_PistonSystCrate2b
+    100064: SK_MachineryBase2
+    100066: SK_Machinery3Base
+    100068: SK_Machinery3Door
+    100070: SK_AttacheDoor
+    100072: SK_PistonDoor
+    100074: SK_PistonSyst
+    100076: SK_AttacheBody
+    100078: SK_PistonBody
+    100080: SK_Crate
+    100082: SK_Tube
+    100084: SM_Door1
+    100086: SM_DoorCenter
+    100088: SM_Door2
+    100090: SK_Aimant
+    100092: SK_PistonSystCrate2
+    100094: SK_PistonSystCrate2b
+    100096: SK_MachineryBase2
+    400000: //RootNode
+    400002: SK_Machinery3Base
+    400004: SK_Machinery3Door
+    400006: SK_AttacheDoor
+    400008: SK_PistonDoor
+    400010: SK_PistonSyst
+    400012: SK_AttacheBody
+    400014: SK_PistonBody
+    400016: SK_Crate
+    400018: SK_Tube
+    400020: SM_Door1
+    400022: SM_DoorCenter
+    400024: SM_Door2
+    400026: SK_Aimant
+    400028: SK_PistonSystCrate2
+    400030: SK_PistonSystCrate2b
+    400032: SK_MachineryBase2
+    400034: SK_Machinery3Base
+    400036: SK_Machinery3Door
+    400038: SK_AttacheDoor
+    400040: SK_PistonDoor
+    400042: SK_PistonSyst
+    400044: SK_AttacheBody
+    400046: SK_PistonBody
+    400048: SK_Crate
+    400050: SK_Tube
+    400052: SM_Door1
+    400054: SM_DoorCenter
+    400056: SM_Door2
+    400058: SK_Aimant
+    400060: SK_PistonSystCrate2
+    400062: SK_PistonSystCrate2b
+    400064: SK_MachineryBase2
+    400066: SK_Machinery3Base
+    400068: SK_Machinery3Door
+    400070: SK_AttacheDoor
+    400072: SK_PistonDoor
+    400074: SK_PistonSyst
+    400076: SK_AttacheBody
+    400078: SK_PistonBody
+    400080: SK_Crate
+    400082: SK_Tube
+    400084: SM_Door1
+    400086: SM_DoorCenter
+    400088: SM_Door2
+    400090: SK_Aimant
+    400092: SK_PistonSystCrate2
+    400094: SK_PistonSystCrate2b
+    400096: SK_MachineryBase2
+    2100000: M_Inst_FloorX4_2_Light2
+    2100002: M_Inst_FloorX4_3
+    2100004: M_Inst_SGrilles
+    2100006: M_Inst_WallS04t1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: SK_Machinery3
+    4300002: SK_Machinery3_LOD0
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 0
+    preserveHierarchy: 0
+    indexFormat : 2
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant:
