@@ -82,6 +82,11 @@ public class EnemyAI : MonoBehaviour, IDamage
         UpdateUI();
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.UpdateGameGoal(-1);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -182,9 +187,10 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         if(m_health <= 0)
         {
-            GameManager.Instance.UpdateGameGoal(-1);
+            m_animator.SetTrigger("death");
+            
             DropRandomPowerUp();
-            Destroy(gameObject);
+            //Destroy(gameObject); --> Animation State Destroys Game Object Now to Allow for Death Animation to Complete
         }
     }
 
