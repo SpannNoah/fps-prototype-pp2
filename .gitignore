@@ -1,2 +1,6 @@
 
 P&P2_FPS/.idea/.idea.P&P2_FPS/.idea/workspace.xml
+/P&P2_FPS/Assets/Scripts/BulletDeBuff.cs.meta
+/P&P2_FPS/Assets/Scripts/DeBuff.cs.meta
+/P&P2_FPS/Assets/Scripts/ScriptableDeBuffs.cs.meta
+/.gitignore
