@@ -24,12 +24,6 @@ public class pickup : MonoBehaviour
             {
                 GameManager.Instance.m_playerController.getGunStats(gun);
             }
-
-            if(m_isReward)
-            {
-                RewardManager.Instance.ClaimReward(gameObject);
-                return;
-            }
             Destroy(gameObject);
         }
     }
