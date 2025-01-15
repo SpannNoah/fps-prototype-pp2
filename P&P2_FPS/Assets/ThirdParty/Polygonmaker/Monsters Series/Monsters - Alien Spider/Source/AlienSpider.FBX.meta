@@ -1,0 +1,1115 @@
+fileFormatVersion: 2
+guid: d50b1a64fad145e4884b95906be35ae0
+timeCreated: 1430328506
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Alien_Spider_LOD0
+    100004: Alien_Spider_LOD1
+    100006: Alien_Spider_LOD2
+    100008: spider alienBack
+    100010: spider alienHead
+    100012: spider alienHub
+    100014: spider alienJaw_R
+    100016: spider alienJawL
+    100018: spider alienLArm1
+    100020: spider alienLArm2
+    100022: spider alienLArmCollarbone
+    100024: spider alienLLeg21
+    100026: spider alienLLeg22
+    100028: spider alienLLeg23
+    100030: spider alienLLeg31
+    100032: spider alienLLeg32
+    100034: spider alienLLeg33
+    100036: spider alienLLeg41
+    100038: spider alienLLeg42
+    100040: spider alienLLeg43
+    100042: spider alienNeck
+    100044: spider alienRArm1
+    100046: spider alienRArm2
+    100048: spider alienRArmCollarbone
+    100050: spider alienRArmIKTarget
+    100052: spider alienRLeg21
+    100054: spider alienRLeg22
+    100056: spider alienRLeg23
+    100058: spider alienRLeg31
+    100060: spider alienRLeg32
+    100062: spider alienRLeg33
+    100064: spider alienRLeg41
+    100066: spider alienRLeg42
+    100068: spider alienRLeg43
+    100070: spider alienTransform
+    100072: Hub
+    100074: Armor
+    100076: root
+    400000: //RootNode
+    400002: Alien_Spider_LOD0
+    400004: Alien_Spider_LOD1
+    400006: Alien_Spider_LOD2
+    400008: spider alienBack
+    400010: spider alienHead
+    400012: spider alienHub
+    400014: spider alienJaw_R
+    400016: spider alienJawL
+    400018: spider alienLArm1
+    400020: spider alienLArm2
+    400022: spider alienLArmCollarbone
+    400024: spider alienLLeg21
+    400026: spider alienLLeg22
+    400028: spider alienLLeg23
+    400030: spider alienLLeg31
+    400032: spider alienLLeg32
+    400034: spider alienLLeg33
+    400036: spider alienLLeg41
+    400038: spider alienLLeg42
+    400040: spider alienLLeg43
+    400042: spider alienNeck
+    400044: spider alienRArm1
+    400046: spider alienRArm2
+    400048: spider alienRArmCollarbone
+    400050: spider alienRArmIKTarget
+    400052: spider alienRLeg21
+    400054: spider alienRLeg22
+    400056: spider alienRLeg23
+    400058: spider alienRLeg31
+    400060: spider alienRLeg32
+    400062: spider alienRLeg33
+    400064: spider alienRLeg41
+    400066: spider alienRLeg42
+    400068: spider alienRLeg43
+    400070: spider alienTransform
+    400072: Hub
+    400074: Armor
+    400076: root
+    2300000: //RootNode
+    2300002: spider alienTransform
+    3300000: //RootNode
+    3300002: spider alienTransform
+    4300000: Alien_Spider
+    4300002: Alien_Spider_LOD0
+    4300004: Alien_Spider_LOD1
+    4300006: Alien_Spider_LOD2
+    4300008: spider alienTransform
+    4300010: Armor
+    7400000: idle
+    7400002: taunt
+    7400004: hit
+    7400006: attack1
+    7400008: attack2
+    7400010: death1
+    7400012: run
+    7400014: walk
+    7400016: death2
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Alien_Spider_LOD0
+    13700002: Alien_Spider_LOD1
+    13700004: Alien_Spider_LOD2
+    13700006: Armor
+    20500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: taunt
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 140
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit
+      takeName: Take 001
+      firstFrame: 140
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack1
+      takeName: Take 001
+      firstFrame: 160
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack2
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 225
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: death1
+      takeName: Take 001
+      firstFrame: 230
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 320
+      lastFrame: 330
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 350
+      lastFrame: 375
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: death2
+      takeName: Take 001
+      firstFrame: 410
+      lastFrame: 440
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Alien_Spider_LOD0
+        weight: 1
+      - path: Alien_Spider_LOD1
+        weight: 1
+      - path: Alien_Spider_LOD2
+        weight: 1
+      - path: Armor
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/spider alienHub
+        weight: 1
+      - path: root/spider alienHub/spider alienBack
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienLArmCollarbone/spider alienLArm1/spider
+          alienLArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg21/spider alienLLeg22/spider alienLLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg31/spider alienLLeg32/spider alienLLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienLLeg41/spider alienLLeg42/spider alienLLeg43
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJaw_R
+        weight: 1
+      - path: root/spider alienHub/spider alienNeck/spider alienHead/spider alienJawL
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1
+        weight: 1
+      - path: root/spider alienHub/spider alienRArmCollarbone/spider alienRArm1/spider
+          alienRArm2
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg21/spider alienRLeg22/spider alienRLeg23
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg31/spider alienRLeg32/spider alienRLeg33
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42
+        weight: 1
+      - path: root/spider alienHub/spider alienRLeg41/spider alienRLeg42/spider alienRLeg43
+        weight: 1
+      - path: spider alienRArmIKTarget
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: spider alienHub
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 23ab773bcf6fee047acd574a1533e380,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
