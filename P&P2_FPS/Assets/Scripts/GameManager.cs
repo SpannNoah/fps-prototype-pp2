@@ -106,10 +106,6 @@ public class GameManager : MonoBehaviour
                 }
                 
                 Debug.Log("No enemies left. Starting next wave...");
-                if(RewardManager.Instance != null)
-                {
-                    RewardManager.Instance.SpawnRewards();
-                }
                 waveManager.StartNextWave();
                 m_waveNumText.text = waveManager.GetCurrentWave().ToString();
             }
