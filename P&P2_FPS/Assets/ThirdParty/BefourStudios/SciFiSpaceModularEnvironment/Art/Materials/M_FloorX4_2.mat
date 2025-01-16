@@ -8,11 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_FloorX4_2
-  m_Shader: {fileID: -6465566751694194690, guid: 1baaccdac47945d49a5e7dbc95a3213a,
-    type: 3}
-  m_ValidKeywords:
+  m_Shader: {fileID: -6465566751694194690, guid: 1baaccdac47945d49a5e7dbc95a3213a, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _DISABLE_SSR_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -41,6 +40,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: abc00000000018225083078691937072, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NMTextureDetail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Normal_Map_Detail:
         m_Texture: {fileID: 2800000, guid: abc00000000004293050134386254679, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -51,6 +54,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _RoughnessTexture:
         m_Texture: {fileID: 2800000, guid: abc00000000013027768148371446374, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_cd6dd9ba391846eba2469afbe1c91765_Texture_1:
+        m_Texture: {fileID: 2800000, guid: abc00000000017156887630946354568, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -94,9 +101,13 @@ Material:
     - _Emissive_Sine_Period: 0.035
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
+    - _Float: 1
+    - _Float_1: 1
+    - _Float_2: 1
     - _MetallicMAX: 0.38
     - _MetallicMIN: 0.39
     - _Mix_R_and_G_from_NM_for_CHROME: 0
+    - _NMScaleDetail: 400
     - _NormalIntensity: 0.45
     - _Normal_Detail_Intensity: 0.11
     - _Normal_Map_Detail_Scale: 3
@@ -150,6 +161,7 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _ChromeTint: {r: 0.22352937, g: 0.28627446, b: 0.38039213, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveTint_n_1_base: {r: 0.47450984, g: 0.5882353, b: 0.61960787, a: 0}
