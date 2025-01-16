@@ -10,7 +10,16 @@ using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour, IDamage
 {
+    public enum AttackType
+    {
+        Range,
+        Melee
+    }
+
     [SerializeField]
+    private AttackType m_attackType = AttackType.Range;
+
+    [Space][SerializeField]
     private Image m_healthBar = null;
     [SerializeField]
     private Renderer m_model = null;
@@ -73,6 +82,11 @@ public class EnemyAI : MonoBehaviour, IDamage
         UpdateUI();
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.UpdateGameGoal(-1);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -84,7 +98,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
             m_animator.SetFloat("Speed", Mathf.MoveTowards(animSpeed, agentSpeed, Time.deltaTime * m_speedTransition));
 
-            //m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+            m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
             if (m_isPlayerInRange && !CanSeePlayer())
             {
                 if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
@@ -173,9 +187,10 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         if(m_health <= 0)
         {
-            GameManager.Instance.UpdateGameGoal(-1);
+            m_animator.SetTrigger("death");
+            
             DropRandomPowerUp();
-            Destroy(gameObject);
+            //Destroy(gameObject); --> Animation State Destroys Game Object Now to Allow for Death Animation to Complete
         }
     }
 
@@ -189,8 +204,18 @@ public class EnemyAI : MonoBehaviour, IDamage
     private IEnumerator Shoot()
     {
         m_isShooting = true;
-        m_animator.SetTrigger("Shoot");
-        Instantiate(m_bullet, m_shootPos.position, transform.rotation);
+
+        switch(m_attackType)
+        {
+            case AttackType.Range:
+                m_animator.SetTrigger("Shoot");
+                Instantiate(m_bullet, m_shootPos.position, transform.rotation);                
+                break;
+            case AttackType.Melee:
+                m_animator.SetTrigger("attack1");
+                break;
+        }
+        
         yield return new WaitForSeconds(m_fireRate);
 
         m_isShooting = false;
@@ -221,7 +246,10 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     public void UpdateUI()
     {
-        m_healthBar.fillAmount = m_health / (float)m_originalHP;
+        if(m_healthBar != null)
+        {
+            m_healthBar.fillAmount = m_health / (float)m_originalHP;
+        }
         
     }
 
