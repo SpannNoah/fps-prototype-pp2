@@ -286,7 +286,7 @@ Transform:
   - {fileID: 6416789060556176611}
   - {fileID: 6416789060556176621}
   - {fileID: 6416789060556176623}
-  - {fileID: 1469945894204130912}
+  - {fileID: 7974146091482497929}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -366,8 +366,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isReward: 0
-  type: 0
-  gun: {fileID: 11400000, guid: 6c4c3c020d3afce4bbd63d6e6a681ffd, type: 2}
+  m_type: 0
+  m_gunStats: {fileID: 11400000, guid: 754b390b08ed7944ab8d1ffc6ef2d241, type: 2}
+  m_ammoCartridge: {fileID: -8243881101699314013, guid: 9e4994ce2c99b9b4badba69d34131b43, type: 3}
 --- !u!1 &6416789060556660941
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +542,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6416789060556176615}
     m_Modifications:
+    - target: {fileID: -313841157608422957, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 102057489531192377, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
       propertyPath: m_Name
       value: CFXR4 Bouncing Glows Bubble (Blue Purple)
@@ -591,8 +596,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
---- !u!4 &1469945894204130912 stripped
+--- !u!4 &7974146091482497929 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 102057489531192378, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
+  m_CorrespondingSourceObject: {fileID: -313841157608422957, guid: fcc0590c5a1b83643b696ebb67dd85e4, type: 3}
   m_PrefabInstance: {fileID: 1516825486502134362}
   m_PrefabAsset: {fileID: 0}

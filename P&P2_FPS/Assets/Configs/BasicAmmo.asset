@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a26a9ca6b61784f9ff4a41ce7bc164, type: 3}
   m_Name: BasicAmmo
   m_EditorClassIdentifier: 
-  m_ammoName: 
-  m_baseDamage: 0
+  m_ammoName: BasicAmmo
+  m_baseDamage: 5
   m_isProjectile: 0
+  m_projectilePrefab: {fileID: 0}
   m_projectileSpeed: 0
-  m_ammoPrefab: {fileID: 0}
+  m_range: 100
+  m_effectPrefab: {fileID: 0}
+  m_effectScript: {fileID: 0}

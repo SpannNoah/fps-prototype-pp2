@@ -13,13 +13,4 @@ public class AmmoTypeConfig : ScriptableObject
     public float m_range = 100.0f;
     public GameObject m_effectPrefab = null;
     public MonoBehaviour m_effectScript = null;
-    
-
-    public void ApplyEffect(Vector3 hitPosition, Collider hitTarget)
-    {
-        if(m_effectScript is IAmmoEffect effect)
-        {
-            effect.ApplyAmmoEffect(hitPosition, hitTarget);
-        }
-    }
 }
