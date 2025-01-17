@@ -214,7 +214,7 @@ public class EnemyAI : MonoBehaviour, IDamage
                 Instantiate(m_bullet, m_shootPos.position, transform.rotation);                
                 break;
             case AttackType.Melee:
-                if (m_angleToPlayer <= m_fieldOfView)
+                if (m_angleToPlayer <= m_fieldOfView && m_isPlayerInRange)
                 {
                     //yield return new WaitForSeconds(m_fireRate);
                     m_animator.SetTrigger("attack1");
