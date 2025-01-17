@@ -216,10 +216,10 @@ public class EnemyAI : MonoBehaviour, IDamage
             case AttackType.Melee:
                 if (m_angleToPlayer <= m_fieldOfView)
                 {
-                    yield return new WaitForSeconds(m_fireRate);
+                    //yield return new WaitForSeconds(m_fireRate);
                     m_animator.SetTrigger("attack1");
-                    yield return new WaitForSeconds(0.2f);
-                    GameManager.Instance.m_playerController.TakeDamage(damage);
+                    //yield return new WaitForSeconds(0.2f);
+                    
                 }
                 //yield return new WaitForSeconds(m_fireRate);
                 break;
@@ -271,5 +271,11 @@ public class EnemyAI : MonoBehaviour, IDamage
         {
             Instantiate(m_powerUps[Random.Range(0, m_powerUps.Count)].gameObject, gameObject.transform.position, quaternion.identity);
         }
+    }
+
+    // Used in enemy animator
+    public void DealDamage()
+    {
+        GameManager.Instance.m_playerController.TakeDamage(damage);
     }
 }
