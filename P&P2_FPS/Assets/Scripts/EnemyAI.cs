@@ -44,6 +44,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField]
     private Color m_damageColor = Color.red;
     [SerializeField]
+    int damage;
+    [SerializeField]
     GameObject m_bullet = null;
     [SerializeField]
     float m_fireRate = 10.0f;
@@ -212,7 +214,14 @@ public class EnemyAI : MonoBehaviour, IDamage
                 Instantiate(m_bullet, m_shootPos.position, transform.rotation);                
                 break;
             case AttackType.Melee:
-                m_animator.SetTrigger("attack1");
+                if (m_angleToPlayer <= m_fieldOfView)
+                {
+                    yield return new WaitForSeconds(m_fireRate);
+                    m_animator.SetTrigger("attack1");
+                    yield return new WaitForSeconds(0.2f);
+                    GameManager.Instance.m_playerController.TakeDamage(damage);
+                }
+                //yield return new WaitForSeconds(m_fireRate);
                 break;
         }
         
