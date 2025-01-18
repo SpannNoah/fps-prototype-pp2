@@ -8,9 +8,11 @@ using UnityEngine.UI;
 public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField]
-    private TextMeshProUGUI m_weaponNameText = null;
+    private TextMeshProUGUI m_ammoNameText = null;
     [SerializeField]
-    private GameObject m_weaponImage = null;
+    private TextMeshProUGUI m_ammoCountText = null;
+    [SerializeField]
+    private GameObject m_ammoImage = null;
     [SerializeField]
     private GameObject m_draggedImagePrefab = null;
 
@@ -26,15 +28,31 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         m_ammoCount = ammoCount;
         m_selectionUI = selectionUI;
 
-        m_weaponNameText.text = ammoType.m_ammoName;
-        m_originalParent = m_weaponImage.transform.parent;
+        m_ammoNameText.text = ammoType.m_ammoName;
+        m_ammoCountText.text = ammoCount.ToString();
+        m_originalParent = m_ammoImage.transform.parent;
     }
 
     public void Clear()
     {
-        m_weaponNameText.text = string.Empty;
+        m_ammoNameText.text = string.Empty;
+        m_ammoCountText.text = string.Empty;
         m_ammoType = null;
         m_ammoCount = 0;
+    }
+
+    public void UpdateAmmoCounts()
+    {
+        foreach(AmmoSlotUI inventorySlot in m_selectionUI.m_inventorySpaces)
+        {
+            if(inventorySlot.m_ammoType == null)
+            {
+                continue;
+            }
+
+            int ammoCount = AmmoManager.Instance.GetRemaining(inventorySlot.m_ammoType);
+            inventorySlot.m_ammoCountText.text = ammoCount.ToString();
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -73,8 +91,8 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         }
         else
         {
-            m_weaponImage.transform.SetParent(m_originalParent);
-            m_weaponImage.transform.localPosition = Vector3.zero;
+            m_ammoImage.transform.SetParent(m_originalParent);
+            m_ammoImage.transform.localPosition = Vector3.zero;
         }
     }
 
@@ -98,7 +116,15 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
 
             AmmoManager.Instance.RemoveAmmoFromInventory(m_ammoType, 1);
             AmmoManager.Instance.UpdateCartridge();
-            Clear(); // Clear the previous slot name
+
+            if(AmmoManager.Instance.GetRemaining(m_ammoType) <= 0)
+            {
+                Clear(); // Clear the previous slot name
+            }
+            else
+            {
+                Setup(m_ammoType, AmmoManager.Instance.GetRemaining(m_ammoType), m_selectionUI);
+            }
 
             bool foundSlot = false;
             foreach (AmmoSlotUI inventorySlot in m_selectionUI.m_inventorySpaces)
@@ -137,7 +163,14 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
 
             AmmoManager.Instance.RemoveAmmoFromInventory(m_ammoType, 1);
             AmmoManager.Instance.UpdateCartridge();
-            Clear(); // Clear the previous slot name
+            if (AmmoManager.Instance.GetRemaining(m_ammoType) <= 0)
+            {
+                Clear(); // Clear the previous slot name
+            }
+            else
+            {
+                Setup(m_ammoType, AmmoManager.Instance.GetRemaining(m_ammoType), m_selectionUI);
+            }
         }
     }
 
@@ -145,28 +178,43 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     {
         if (m_ammoType == null) return;
 
+        bool foundSlot = false;
         foreach (AmmoSlotUI inventorySlot in m_selectionUI.m_inventorySpaces)
         {
-            if (inventorySlot.m_ammoType == null)
+            if (inventorySlot.m_ammoType == m_ammoType)
             {
-                inventorySlot.Setup(m_ammoType, 1, m_selectionUI);
-
                 AmmoManager.Instance.AddAmmoToInventory(m_ammoType, 1);
-
-                if (m_selectionUI.m_cartridgeSlotLeft.m_ammoType == m_ammoType)
-                {
-                    AmmoManager.Instance.SetLeftAmmoType(null);
-                    m_selectionUI.m_cartridgeSlotLeft.Clear();
-                }
-                else if (m_selectionUI.m_cartridgeSlotRight.m_ammoType == m_ammoType)
-                {
-                    AmmoManager.Instance.SetRightAmmoType(null);
-                    m_selectionUI.m_cartridgeSlotRight.Clear();
-                }
-
-                AmmoManager.Instance.UpdateCartridge();
+                UpdateAmmoCounts();
+                foundSlot = true;
                 break;
             }
         }
+
+        if (!foundSlot)
+        {
+            foreach (AmmoSlotUI inventorySlot in m_selectionUI.m_inventorySpaces)
+            {
+                if (inventorySlot.m_ammoType == null)
+                {
+                    inventorySlot.Setup(m_ammoType, 1, m_selectionUI);
+                    break;
+                }
+            }
+        }
+
+        if (m_selectionUI.m_cartridgeSlotLeft.m_ammoType == m_ammoType)
+        {
+            AmmoManager.Instance.SetLeftAmmoType(null);
+            m_selectionUI.m_cartridgeSlotLeft.Clear();
+        }
+        else if (m_selectionUI.m_cartridgeSlotRight.m_ammoType == m_ammoType)
+        {
+            AmmoManager.Instance.SetRightAmmoType(null);
+            m_selectionUI.m_cartridgeSlotRight.Clear();
+        }
+
+        AmmoManager.Instance.UpdateCartridge();
     }
+
+    
 }

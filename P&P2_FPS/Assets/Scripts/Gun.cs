@@ -17,7 +17,7 @@ public class Gun : MonoBehaviour
         m_nextFiretime = Time.time + (1f / m_gunStats.shootRate);
 
 
-        if (!m_ammoCartridge.ConsumeAmmo(isLeft)) return; // don't fire if no ammo left
+        //if (!m_ammoCartridge.ConsumeAmmo(isLeft)) return; // don't fire if no ammo left
         AmmoTypeConfig selectedAmmo = isLeft ? AmmoManager.Instance.GetLeftAmmoType() : AmmoManager.Instance.GetRightAmmoType();
 
         if(m_gunStats.m_isProjectile)

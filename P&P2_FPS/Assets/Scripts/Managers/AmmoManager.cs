@@ -99,6 +99,11 @@ public class AmmoManager : MonoBehaviour
         
     }
 
+    public int GetRemaining(AmmoTypeConfig ammoType)
+    {
+        return m_ammoInventory[ammoType];
+    }
+
     public AmmoCartridge GetCurrentAmmoCartridge()
     {
         return m_currentCartridge;

@@ -61,12 +61,12 @@ public class AmmoSelectionUI : MonoBehaviour
 
         if(cartridge.m_leftAmmoType)
         {
-            m_cartridgeSlotLeft.Setup(cartridge.m_leftAmmoType, cartridge.m_leftAmmoCount, this);
+            m_cartridgeSlotLeft.Setup(cartridge.m_leftAmmoType, 1, this);
         }
 
         if(cartridge.m_rightAmmoType)
         {
-            m_cartridgeSlotRight.Setup(cartridge.m_rightAmmoType, cartridge.m_rightAmmoCount, this);
+            m_cartridgeSlotRight.Setup(cartridge.m_rightAmmoType, 1, this);
         }
     }
 }
