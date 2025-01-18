@@ -67,6 +67,10 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         {
             SwapAmmoInCartridge(false);
         }
+        else if (RectTransformUtility.RectangleContainsScreenPoint(m_selectionUI.m_inventoryGrid.GetComponent<RectTransform>(), Input.mousePosition))
+        {
+            MoveAmmoToInventory();
+        }
         else
         {
             m_weaponImage.transform.SetParent(m_originalParent);
@@ -122,7 +126,47 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         else
         {
             targetSlot.Setup(m_ammoType, 1, m_selectionUI);
+            if (isLeft)
+            {
+                AmmoManager.Instance.SetLeftAmmoType(m_ammoType);
+            }
+            else
+            {
+                AmmoManager.Instance.SetRightAmmoType(m_ammoType);
+            }
+
+            AmmoManager.Instance.RemoveAmmoFromInventory(m_ammoType, 1);
+            AmmoManager.Instance.UpdateCartridge();
             Clear(); // Clear the previous slot name
+        }
+    }
+
+    private void MoveAmmoToInventory()
+    {
+        if (m_ammoType == null) return;
+
+        foreach (AmmoSlotUI inventorySlot in m_selectionUI.m_inventorySpaces)
+        {
+            if (inventorySlot.m_ammoType == null)
+            {
+                inventorySlot.Setup(m_ammoType, 1, m_selectionUI);
+
+                AmmoManager.Instance.AddAmmoToInventory(m_ammoType, 1);
+
+                if (m_selectionUI.m_cartridgeSlotLeft.m_ammoType == m_ammoType)
+                {
+                    AmmoManager.Instance.SetLeftAmmoType(null);
+                    m_selectionUI.m_cartridgeSlotLeft.Clear();
+                }
+                else if (m_selectionUI.m_cartridgeSlotRight.m_ammoType == m_ammoType)
+                {
+                    AmmoManager.Instance.SetRightAmmoType(null);
+                    m_selectionUI.m_cartridgeSlotRight.Clear();
+                }
+
+                AmmoManager.Instance.UpdateCartridge();
+                break;
+            }
         }
     }
 }

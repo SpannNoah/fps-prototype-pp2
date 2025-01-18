@@ -106,13 +106,16 @@ public class AmmoManager : MonoBehaviour
 
     public void SetCurrentCartridge(AmmoCartridge ammoCartridge)
     {
-        m_currentCartridge = ammoCartridge;
-        m_currentLeftAmmo = ammoCartridge.m_leftAmmoType;
-        m_currentRightAmmo = ammoCartridge.m_rightAmmoType;
+        m_currentCartridge = Instantiate(ammoCartridge);
+
+        m_currentLeftAmmo = m_currentCartridge.m_leftAmmoType;
+        m_currentRightAmmo = m_currentCartridge.m_rightAmmoType;
     }
 
     public void UpdateCartridge()
     {
+        if (m_currentCartridge == null) return;
+
         m_currentCartridge.m_rightAmmoType = m_currentRightAmmo;
         m_currentCartridge.m_leftAmmoType = m_currentLeftAmmo;
     }
