@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     private int m_goalCount = 0;
     private gunStats m_gun;
 
+  
+
     public static GameManager Instance { get; private set; }
 
     void Awake()
@@ -97,14 +99,14 @@ public class GameManager : MonoBehaviour
             if (waveManager != null)
             {
                 int currentWaveNumber = waveManager.GetCurrentWave();
-                if(currentWaveNumber >= m_wavesRequired)
+                if (currentWaveNumber >= m_wavesRequired)
                 {
                     StatePaused();
                     m_menuActive = m_menuWin;
                     m_menuActive.SetActive(true);
                     return;
                 }
-                
+
                 Debug.Log("No enemies left. Starting next wave...");
                 waveManager.StartNextWave();
                 m_waveNumText.text = waveManager.GetCurrentWave().ToString();
@@ -131,6 +133,9 @@ public class GameManager : MonoBehaviour
         m_currentAmmo.text = ammoCurr;
         m_MaxAmmo.text = ammoMax;
     }
+
+   
+
 }
 
 
