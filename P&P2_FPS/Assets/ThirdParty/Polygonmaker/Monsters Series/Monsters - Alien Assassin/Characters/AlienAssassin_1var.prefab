@@ -12,6 +12,10 @@ PrefabInstance:
       value: AlienAssassin_1var
       objectReference: {fileID: 0}
     - target: {fileID: 463008, guid: eb515fc803b51cc46a46ce6bffd0b620, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 463008, guid: eb515fc803b51cc46a46ce6bffd0b620, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -24,6 +28,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 463008, guid: eb515fc803b51cc46a46ce6bffd0b620, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 463008, guid: eb515fc803b51cc46a46ce6bffd0b620, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
@@ -33,14 +41,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 463008, guid: eb515fc803b51cc46a46ce6bffd0b620, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 463008, guid: eb515fc803b51cc46a46ce6bffd0b620, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 463008, guid: eb515fc803b51cc46a46ce6bffd0b620, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 463008, guid: eb515fc803b51cc46a46ce6bffd0b620, type: 3}

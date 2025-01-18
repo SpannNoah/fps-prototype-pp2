@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a26a9ca6b61784f9ff4a41ce7bc164, type: 3}
   m_Name: LightningAmmo
   m_EditorClassIdentifier: 
-  m_ammoName: 
+  m_ammoName: LightningAmmo
   m_baseDamage: 1
   m_isProjectile: 0
   m_projectilePrefab: {fileID: 0}

@@ -17,8 +17,8 @@ public class Gun : MonoBehaviour
         m_nextFiretime = Time.time + (1f / m_gunStats.shootRate);
 
 
-        if (!m_ammoCartridge.ConsumeAmmo(isLeft)) return; // don't fire if no ammo left
-        AmmoTypeConfig selectedAmmo = isLeft ? m_ammoCartridge.m_leftAmmoType : m_ammoCartridge.m_rightAmmoType;
+        //if (!m_ammoCartridge.ConsumeAmmo(isLeft)) return; // don't fire if no ammo left
+        AmmoTypeConfig selectedAmmo = isLeft ? AmmoManager.Instance.GetLeftAmmoType() : AmmoManager.Instance.GetRightAmmoType();
 
         if(m_gunStats.m_isProjectile)
         {
@@ -39,6 +39,8 @@ public class Gun : MonoBehaviour
 
     private void FireHitScan(AmmoTypeConfig ammoType)
     {
+        if (ammoType == null) return;
+
         RaycastHit hit;
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_gunStats.shootDist, ~m_ignoreMask))
