@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
             else if (m_menuActive == m_menuPause)
             {
                 StateUnpaused();
+                m_menuActive.SetActive(false);
+                m_menuActive = null;
             }
         }
     }
@@ -77,9 +79,7 @@ public class GameManager : MonoBehaviour
         m_isPaused = !m_isPaused;
         Time.timeScale = m_timeScaleOriginal;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        m_menuActive.SetActive(false);
-        m_menuActive = null;
+        Cursor.lockState = CursorLockMode.Locked;  
     }
 
     public void UpdateGameGoal(int amount)

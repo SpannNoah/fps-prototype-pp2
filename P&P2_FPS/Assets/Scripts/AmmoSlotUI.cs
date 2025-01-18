@@ -1,0 +1,128 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+{
+    [SerializeField]
+    private TextMeshProUGUI m_weaponNameText = null;
+    [SerializeField]
+    private GameObject m_weaponImage = null;
+    [SerializeField]
+    private GameObject m_draggedImagePrefab = null;
+
+    private GameObject m_tempDraggedImage = null;
+    private AmmoTypeConfig m_ammoType = null;
+    private int m_ammoCount = 0;
+    private AmmoSelectionUI m_selectionUI = null;
+    private Transform m_originalParent = null;
+
+    public void Setup(AmmoTypeConfig ammoType, int ammoCount, AmmoSelectionUI selectionUI)
+    {
+        m_ammoType = ammoType;
+        m_ammoCount = ammoCount;
+        m_selectionUI = selectionUI;
+
+        m_weaponNameText.text = ammoType.m_ammoName;
+        m_originalParent = m_weaponImage.transform.parent;
+    }
+
+    public void Clear()
+    {
+        m_weaponNameText.text = string.Empty;
+        m_ammoType = null;
+        m_ammoCount = 0;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        m_tempDraggedImage = Instantiate(m_draggedImagePrefab, m_selectionUI.transform);
+        m_tempDraggedImage.GetComponent<Image>().sprite = GetComponent<Image>().sprite;
+        m_tempDraggedImage.transform.SetAsLastSibling();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (m_tempDraggedImage != null)
+        {
+            m_tempDraggedImage.transform.position = eventData.position;
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (m_tempDraggedImage != null)
+        {
+            Destroy(m_tempDraggedImage);
+        }
+
+        if (RectTransformUtility.RectangleContainsScreenPoint(m_selectionUI.m_cartridgeSlotLeft.GetComponent<RectTransform>(), Input.mousePosition))
+        {
+            SwapAmmoInCartridge(true);
+        }
+        else if(RectTransformUtility.RectangleContainsScreenPoint(m_selectionUI.m_cartridgeSlotRight.GetComponent<RectTransform>(), Input.mousePosition))
+        {
+            SwapAmmoInCartridge(false);
+        }
+        else
+        {
+            m_weaponImage.transform.SetParent(m_originalParent);
+            m_weaponImage.transform.localPosition = Vector3.zero;
+        }
+    }
+
+    private void SwapAmmoInCartridge(bool isLeft)
+    {
+        AmmoSlotUI targetSlot = isLeft ? m_selectionUI.m_cartridgeSlotLeft : m_selectionUI.m_cartridgeSlotRight;
+
+        if (targetSlot.m_ammoType != null)
+        {
+            // Swap out the ammo
+            AmmoTypeConfig previousAmmo = targetSlot.m_ammoType;
+            targetSlot.Setup(m_ammoType, 1, m_selectionUI);
+            if (isLeft)
+            {
+                AmmoManager.Instance.SetLeftAmmoType(m_ammoType);
+            }
+            else
+            {
+                AmmoManager.Instance.SetRightAmmoType(m_ammoType);
+            }
+
+            AmmoManager.Instance.RemoveAmmoFromInventory(m_ammoType, 1);
+            AmmoManager.Instance.UpdateCartridge();
+            Clear(); // Clear the previous slot name
+
+            bool foundSlot = false;
+            foreach (AmmoSlotUI inventorySlot in m_selectionUI.m_inventorySpaces)
+            {
+                if (inventorySlot.m_ammoType == previousAmmo)
+                {
+                    foundSlot = true;
+                    break;
+                }
+            }
+
+            if (!foundSlot)
+            {
+                foreach (AmmoSlotUI inventorySlot in m_selectionUI.m_inventorySpaces)
+                {
+                    if (inventorySlot.m_ammoType == null)
+                    {
+                        inventorySlot.Setup(previousAmmo, 1, m_selectionUI);
+                        AmmoManager.Instance.AddAmmoToInventory(previousAmmo, 1);
+                        break;
+                    }
+                }
+            }
+        }
+        else
+        {
+            targetSlot.Setup(m_ammoType, 1, m_selectionUI);
+            Clear(); // Clear the previous slot name
+        }
+    }
+}
