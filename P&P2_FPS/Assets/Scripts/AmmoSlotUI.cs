@@ -132,6 +132,8 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
                 if (inventorySlot.m_ammoType == previousAmmo)
                 {
                     foundSlot = true;
+                    AmmoManager.Instance.AddAmmoToInventory(previousAmmo, 1);
+                    UpdateAmmoCounts();
                     break;
                 }
             }
@@ -144,6 +146,7 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
                     {
                         inventorySlot.Setup(previousAmmo, 1, m_selectionUI);
                         AmmoManager.Instance.AddAmmoToInventory(previousAmmo, 1);
+                        UpdateAmmoCounts();
                         break;
                     }
                 }
@@ -196,18 +199,19 @@ public class AmmoSlotUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
             {
                 if (inventorySlot.m_ammoType == null)
                 {
+                    AmmoManager.Instance.AddAmmoToInventory(m_ammoType, 1);
                     inventorySlot.Setup(m_ammoType, 1, m_selectionUI);
                     break;
                 }
             }
         }
 
-        if (m_selectionUI.m_cartridgeSlotLeft.m_ammoType == m_ammoType)
+        if (this == m_selectionUI.m_cartridgeSlotLeft)
         {
             AmmoManager.Instance.SetLeftAmmoType(null);
             m_selectionUI.m_cartridgeSlotLeft.Clear();
         }
-        else if (m_selectionUI.m_cartridgeSlotRight.m_ammoType == m_ammoType)
+        else if (this == m_selectionUI.m_cartridgeSlotRight)
         {
             AmmoManager.Instance.SetRightAmmoType(null);
             m_selectionUI.m_cartridgeSlotRight.Clear();

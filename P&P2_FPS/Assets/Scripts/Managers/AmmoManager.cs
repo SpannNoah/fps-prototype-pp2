@@ -101,7 +101,14 @@ public class AmmoManager : MonoBehaviour
 
     public int GetRemaining(AmmoTypeConfig ammoType)
     {
-        return m_ammoInventory[ammoType];
+        if (!m_ammoInventory.ContainsKey(ammoType))
+        {
+            return 0;
+        }
+        else
+        {
+            return m_ammoInventory[ammoType];
+        }
     }
 
     public AmmoCartridge GetCurrentAmmoCartridge()
