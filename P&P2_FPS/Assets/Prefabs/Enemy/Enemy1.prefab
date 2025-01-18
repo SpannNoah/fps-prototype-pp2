@@ -1029,6 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0125ed9afea1f9d4baf75acdda982254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_attackType: 0
   m_healthBar: {fileID: 7943763710822274547}
   m_model: {fileID: 2656379725374189776}
   m_shootPos: {fileID: 5636851919044724014}
@@ -1043,6 +1044,7 @@ MonoBehaviour:
   m_health: 3
   m_faceTargetSpeed: 20
   m_damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damage: 0
   m_bullet: {fileID: 1793486040539745426, guid: 9d722aa10d4e9dc438118d1444c4a178, type: 3}
   m_fireRate: 0.25
   m_fieldOfView: 90

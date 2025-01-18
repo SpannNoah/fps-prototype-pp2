@@ -6292,6 +6292,7 @@ MonoBehaviour:
   m_health: 100
   m_faceTargetSpeed: 20
   m_damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damage: 0
   m_bullet: {fileID: 0}
   m_fireRate: 10
   m_fieldOfView: 90
@@ -6309,6 +6310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758508, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 5553137498959758510, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
       propertyPath: m_RootOrder
       value: 0
