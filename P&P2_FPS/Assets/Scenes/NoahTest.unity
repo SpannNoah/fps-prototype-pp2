@@ -122,6 +122,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 52b33260deb18034296d9ea3051d7b59, type: 2}
+--- !u!1 &209390067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209390068}
+  m_Layer: 0
+  m_Name: AmmoManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209390068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209390067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &488946708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7009968432437276778, guid: 6e70614d2ff13f04db62236f5c3fdd59, type: 3}
@@ -383,6 +414,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1fa32467e8e6b41b6bcce3cf8d7b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1098876240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098876238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e7bf08375055a4788d1fa261e27bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gunHolder: {fileID: 0}
 --- !u!1001 &1277794949
 PrefabInstance:
   m_ObjectHideFlags: 0
