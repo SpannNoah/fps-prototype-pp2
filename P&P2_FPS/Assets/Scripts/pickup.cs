@@ -5,14 +5,14 @@ public class pickup : MonoBehaviour
     enum pickupType { gun, HP, armor, ammo}
 
     public bool m_isReward = false;
-    [SerializeField] pickupType type;
-    [SerializeField] gunStats gun;
-
+    [SerializeField] pickupType m_type;
+    [SerializeField] gunStats m_gunStats;
+    [SerializeField] AmmoCartridge m_ammoCartridge = null;
     void Start()
     {
-        if(type == pickupType.gun)
+        if(m_type == pickupType.gun)
         {
-            gun.ammoCur = gun.ammoMax;
+            m_gunStats.ammoCur = m_gunStats.ammoMax;
         }
     }
 
@@ -20,11 +20,14 @@ public class pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(type == pickupType.gun)
+            if(m_type == pickupType.gun)
             {
-                GameManager.Instance.m_playerController.getGunStats(gun);
+                if(other.TryGetComponent(out GunManager gunManager))
+                {
+                    gunManager.EquipGun(m_gunStats, m_ammoCartridge);
+                    Destroy(gameObject);
+                }
             }
-            Destroy(gameObject);
         }
     }
 }

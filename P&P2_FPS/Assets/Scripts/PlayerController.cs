@@ -196,10 +196,10 @@ public class PlayerController : MonoBehaviour, IDamage
             m_playerVelocity.y -= m_jumpSpeed;
         }
 
-        if (Input.GetButton("Fire1") && weaponInventory.Count > 0 && weaponInventory[weaponInvPos].ammoCur > 0 && !m_isShooting)
-        {
-            StartCoroutine(ShootingCoroutine());
-        }
+        //if (Input.GetButton("Fire1") && weaponInventory.Count > 0 && weaponInventory[weaponInvPos].ammoCur > 0 && !m_isShooting)
+        //{
+        //    StartCoroutine(ShootingCoroutine());
+        //}
     }
 
     private void Jump()
@@ -250,25 +250,25 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
-    private IEnumerator ShootingCoroutine()
-    {
-        weaponInventory[weaponInvPos].ammoCur--;
-        GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
-        m_isShooting = true;
-        RaycastHit hit;
+    //private IEnumerator ShootingCoroutine()
+    //{
+    //    weaponInventory[weaponInvPos].ammoCur--;
+    //    GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
+    //    m_isShooting = true;
+    //    RaycastHit hit;
 
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_shootDistance, ~m_ignoreMask))
-        {
-            IDamage damage;
+    //    if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_shootDistance, ~m_ignoreMask))
+    //    {
+    //        IDamage damage;
 
-            if (hit.collider.TryGetComponent<IDamage>(out damage))
-            {
-                damage.TakeDamage(m_shootDamage);
-            }
-        }
-        yield return new WaitForSeconds(m_fireRate);
-        m_isShooting = false;
-    }
+    //        if (hit.collider.TryGetComponent<IDamage>(out damage))
+    //        {
+    //            damage.TakeDamage(m_shootDamage);
+    //        }
+    //    }
+    //    yield return new WaitForSeconds(m_fireRate);
+    //    m_isShooting = false;
+    //}
 
     public void TakeDamage(int amount)
     {

@@ -5,7 +5,10 @@ using UnityEngine;
 public class gunStats : ScriptableObject
 {
     [Header("Stats")]
+    public string m_gunName = string.Empty;
     public GameObject gunModel;
+    public bool m_isProjectile;
+    public GameObject m_projectilePrefab = null;
     public int shootDamage;
     public float shootRate;
     public float shootDist;
