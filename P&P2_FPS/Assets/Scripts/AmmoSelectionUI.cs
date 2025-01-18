@@ -17,19 +17,18 @@ public class AmmoSelectionUI : MonoBehaviour
 
     private Dictionary<AmmoTypeConfig, int> m_playerAmmoInventory;
 
-    public void OpenSelectionUI(Dictionary<AmmoTypeConfig, int> inventory)
+    private void OnEnable()
     {
-        if(m_ammoMenu.activeSelf)
-        {
-            m_ammoMenu.SetActive(false);
-            GameManager.Instance.StateUnpaused();
-            return;
-        }
-        m_ammoMenu.SetActive(true);
+        OpenSelectionUI();
+    }
+    public void Setup(Dictionary<AmmoTypeConfig, int> inventory)
+    {
         m_playerAmmoInventory = inventory;
+    }
+    public void OpenSelectionUI()
+    {
         PopulateInventoryGrid();
         PopulateCartridgeGrid();
-        GameManager.Instance.StatePaused();
     }
 
     private void PopulateInventoryGrid()

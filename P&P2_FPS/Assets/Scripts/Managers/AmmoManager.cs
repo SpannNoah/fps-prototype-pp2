@@ -24,6 +24,8 @@ public class AmmoManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(this);
+
+        m_ammoSelectionUI.Setup(m_ammoInventory);
     }
 
     private void Start()
@@ -33,13 +35,8 @@ public class AmmoManager : MonoBehaviour
             AddAmmoToInventory(ammo, 1);
         }
     }
-    private void Update()
-    {
-        if(Input.GetButtonDown("OpenInventory"))
-        {
-            m_ammoSelectionUI.OpenSelectionUI(m_ammoInventory);
-        }
-    }
+
+
     public void AddAmmoToInventory(AmmoTypeConfig ammoType, int amount)
     {
         if(!m_ammoInventory.ContainsKey(ammoType))

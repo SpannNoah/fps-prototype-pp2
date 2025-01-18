@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject m_menuActive = null;
     [SerializeField] private GameObject m_menuPause = null;
     [SerializeField] private GameObject m_menuWin, m_menuLoss = null;
+    [SerializeField] private GameObject m_ammoMenu = null;
     [SerializeField] private TMP_Text m_waveNumText = null;
     [SerializeField] private TMP_Text m_goalCountText = null;
     [SerializeField] private int m_wavesRequired = 2;
@@ -53,6 +54,11 @@ public class GameManager : MonoBehaviour
         {
             if (m_menuActive == null)
             {
+                if(m_ammoMenu.activeSelf)
+                {
+                    m_ammoMenu.SetActive(false);
+                }
+
                 StatePaused();
                 m_menuActive = m_menuPause;
                 m_menuActive.SetActive(true);
@@ -64,11 +70,25 @@ public class GameManager : MonoBehaviour
                 m_menuActive = null;
             }
         }
+
+        if (Input.GetButtonDown("OpenInventory") && m_menuActive == null)
+        {
+            if(!m_ammoMenu.activeSelf)
+            {
+                StatePaused();
+                m_ammoMenu.SetActive(true);
+            }
+            else
+            {
+                StateUnpaused();
+                m_ammoMenu.SetActive(false);
+            }
+        }
     }
 
     public void StatePaused()
     {
-        m_isPaused = !m_isPaused;
+        m_isPaused = true;
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
@@ -76,7 +96,7 @@ public class GameManager : MonoBehaviour
 
     public void StateUnpaused()
     {
-        m_isPaused = !m_isPaused;
+        m_isPaused = false;
         Time.timeScale = m_timeScaleOriginal;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;  
