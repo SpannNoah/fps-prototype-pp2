@@ -50,8 +50,8 @@ public class Wraith : EnemyAI, IDamage
         if (m_phase == 2)
         {
             // summon two sub-bosses
-            SummonSubBoss(GameManager.Instance.golemPrefab); // summon a golem
-            SummonSubBoss(GameManager.Instance.giantSpiderPrefab); // summon a giant spider
+         SummonSubBoss(GameManager.Instance.golem); // summon a golem
+         SummonSubBoss(GameManager.Instance.giantSpider); // summon a giant spider
             BecomeImmune();
         } else if (m_phase == 3)
         {
@@ -73,25 +73,28 @@ public class Wraith : EnemyAI, IDamage
         m_isShooting = true;
 
         // randomly select one of the three attack animations 
-        int attackIndex = Random.Range(1, 4); // randomly select an attack type (1, 2, or 3)
+        int attackIndex = Random.Range(1, 5);// randomly select an attack type (1, 2, or 3)
         switch (attackIndex)
         {
-            case 1:
-                m_animator.SetTrigger("Attack1");
+            case 1: // if attackIndex is 1
+                m_animator.SetTrigger("WAttack1"); // play the attack animation
                 break;
-            case 2:
-                m_animator.SetTrigger("Attack2");
+            case 2: // if attackIndex is 2
+                m_animator.SetTrigger("WAttack2"); //  play the attack animation
                 break;
-            case 3:
-                m_animator.SetTrigger("Attack3");
+            case 3: // if attackIndex is 3
+                m_animator.SetTrigger("WAttack3"); //  play the attack animation
+                break;
+            case 4: // if attackIndex is 4
+                m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
                 break;
         }
 
-        yield return new WaitForSeconds(1.0f / m_fireRate);
-        DealDamage();
+        yield return new WaitForSeconds(1.0f / m_fireRate); // wait for the fire rate
+        DealDamage(); // deal damage to the player
 
-        yield return new WaitForSeconds(1.0f / m_fireRate);
-        m_isShooting = false;
+        yield return new WaitForSeconds(1.0f / m_fireRate); 
+        m_isShooting = false; 
 
     }
     public void BecomeImmune()

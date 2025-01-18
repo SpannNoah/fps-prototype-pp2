@@ -29,7 +29,12 @@ public class GameManager : MonoBehaviour
     private int m_goalCount = 0;
     private gunStats m_gun;
 
-  
+    // boss/sub-boss management
+    public Wraith Wraith; // reference to the Wraith script
+    public GameObject golem; // reference to the golem prefab
+    public GameObject giantSpider; // reference to the giant spider prefab
+    private bool bossFightActive = false; // tracks if the boss fight is active
+
 
     public static GameManager Instance { get; private set; }
 
@@ -120,6 +125,30 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    public void StartBossFight()
+    {
+        if (!bossFightActive)
+        {
+            bossFightActive = true;
+            Wraith.gameObject.SetActive(true);
+            Wraith.ChangePhase(1);
+            Debug.Log("Boss fight started.");
+        }
+       
+    }
+
+    public void EndBossFight()
+    {
+        if (bossFightActive)
+        {
+            bossFightActive = false;
+            Wraith.gameObject.SetActive(false);
+            Debug.Log("Boss fight ended.");
+        }
+    }
+
+  
 
     public void Lose()
     {
