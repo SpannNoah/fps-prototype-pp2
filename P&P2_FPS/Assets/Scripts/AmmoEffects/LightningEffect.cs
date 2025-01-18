@@ -10,14 +10,16 @@ public class LightningEffect : MonoBehaviour, IAmmoEffect
     public GameObject m_lightningEffectPrefab;
     public LayerMask m_enemyLayerMask;
 
-    public void ApplyAmmoEffect(Vector3 hitPosition, Collider hitTarget)
+    public void ApplyAmmoEffect(Vector3 hitPosition, Collider hitTarget, AmmoTypeConfig ammoType)
     {
         HashSet<Collider> affectedTargets = new HashSet<Collider>(); // Hash set has O(1) lookup
-        ChainLightning(hitPosition, hitTarget, m_chainCount, affectedTargets);
+        
+
+        ChainLightning(hitPosition, hitTarget, m_chainCount, affectedTargets, ammoType);
     }
 
     // Recursive Method that chains until remaining chains = 0
-    private void ChainLightning(Vector3 position, Collider currentTarget, int remainingChains, HashSet<Collider> affectedTargets)
+    private void ChainLightning(Vector3 position, Collider currentTarget, int remainingChains, HashSet<Collider> affectedTargets, AmmoTypeConfig ammoType)
     {
         if (remainingChains <= 0) return;
 
@@ -28,6 +30,11 @@ public class LightningEffect : MonoBehaviour, IAmmoEffect
             {
                 Instantiate(m_lightningEffectPrefab, position, Quaternion.identity);
             }
+
+            if (ammoType.m_currentUpgrade.m_upgradeEffect is IAmmoEffect effect)
+            {
+                effect.ApplyAmmoEffect(position, currentTarget, ammoType);
+        }
         }
 
         Collider[] nearbyEnemies = Physics.OverlapSphere(position, m_chainRadius, m_enemyLayerMask);
@@ -53,7 +60,7 @@ public class LightningEffect : MonoBehaviour, IAmmoEffect
 
         if (nextTarget != null)
         {
-            ChainLightning(nextTarget.transform.position, nextTarget, remainingChains - 1, affectedTargets); 
+            ChainLightning(nextTarget.transform.position, nextTarget, remainingChains - 1, affectedTargets, ammoType); 
         }
     }
 }

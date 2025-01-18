@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour
 
         if(m_ammoType.m_effectScript != null && m_ammoType.m_effectScript is IAmmoEffect effect)
         {
-            effect.ApplyAmmoEffect(transform.position, other);
+            effect.ApplyAmmoEffect(transform.position, other, m_ammoType);
         }
 
         Destroy(gameObject);

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAmmoEffect
 {
-    void ApplyAmmoEffect(Vector3 hitPosition, Collider hitTarget);
+    void ApplyAmmoEffect(Vector3 hitPosition, Collider hitTarget, AmmoTypeConfig ammoType);
 }

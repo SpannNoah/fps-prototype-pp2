@@ -9,17 +9,23 @@ public class AmmoCartridge : MonoBehaviour
     public int m_rightAmmoCount = 0;
     public int m_leftAmmoCount = 0;
 
+    private int m_currentRightAmmo = 0;
+    private int m_currentLeftAmmo = 0;
+
+    private void Start()
+    {
+        m_currentRightAmmo = m_rightAmmoCount;
+        m_currentLeftAmmo = m_leftAmmoCount;
+    }
     public void AssignAmmo(bool isLeftSlot, AmmoTypeConfig ammoType, int count)
     {
         if(isLeftSlot)
         {
             m_leftAmmoType = ammoType;
-            m_leftAmmoCount = count;
         }
         else
         {
             m_rightAmmoType = ammoType;
-            m_rightAmmoCount = count;
         }
     }
 
@@ -27,12 +33,12 @@ public class AmmoCartridge : MonoBehaviour
     {
         if (isLeftSlot && m_leftAmmoCount > 0)
         {
-            m_leftAmmoCount--;
+            m_currentLeftAmmo--;
             return true;
         }
         else if (!isLeftSlot && m_rightAmmoCount > 0)
         {
-            m_rightAmmoCount--;
+            m_currentRightAmmo--;
             return true;
         }
         return false;

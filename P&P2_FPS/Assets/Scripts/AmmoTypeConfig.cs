@@ -13,4 +13,13 @@ public class AmmoTypeConfig : ScriptableObject
     public float m_range = 100.0f;
     public GameObject m_effectPrefab = null;
     public MonoBehaviour m_effectScript = null;
+    public List<AmmoUpgrade> m_possibleUpgrades = new List<AmmoUpgrade>();
+    public AmmoUpgrade m_currentUpgrade = null;
+
+    [System.Serializable]
+    public class AmmoUpgrade
+    {
+        public string m_upgradeName = string.Empty;
+        public MonoBehaviour m_upgradeEffect = null;
+    }
 }

@@ -20,3 +20,9 @@ MonoBehaviour:
   m_range: 100
   m_effectPrefab: {fileID: 0}
   m_effectScript: {fileID: 2147622521353544089, guid: d2224efd134a35a4abe5545e7b8ef5cd, type: 3}
+  m_possibleUpgrades:
+  - m_upgradeName: Stun
+    m_upgradeEffect: {fileID: -7232820157526396233, guid: 1d9c780ffad34b84b92824ad908fd036, type: 3}
+  m_currentUpgrade:
+    m_upgradeName: Stun
+    m_upgradeEffect: {fileID: -7232820157526396233, guid: 1d9c780ffad34b84b92824ad908fd036, type: 3}

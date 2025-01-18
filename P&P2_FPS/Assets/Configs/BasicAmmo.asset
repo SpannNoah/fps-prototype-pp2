@@ -19,4 +19,8 @@ MonoBehaviour:
   m_projectileSpeed: 0
   m_range: 100
   m_effectPrefab: {fileID: 0}
-  m_effectScript: {fileID: 0}
+  m_effectScript: {fileID: -5887013076108337001, guid: 4d583f50ac482184daa9040a2909a0c2, type: 3}
+  m_possibleUpgrades: []
+  m_currentUpgrade:
+    m_upgradeName: 
+    m_upgradeEffect: {fileID: 0}

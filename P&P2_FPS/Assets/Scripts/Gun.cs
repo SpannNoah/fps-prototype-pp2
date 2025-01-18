@@ -52,7 +52,7 @@ public class Gun : MonoBehaviour
 
             if(ammoType.m_effectScript != null && ammoType.m_effectScript is IAmmoEffect effect)
             {
-                effect.ApplyAmmoEffect(hit.point, hit.collider);
+                effect.ApplyAmmoEffect(hit.point, hit.collider, ammoType);
             }
         }
     }
