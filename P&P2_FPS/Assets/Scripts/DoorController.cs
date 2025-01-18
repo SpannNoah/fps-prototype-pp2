@@ -5,7 +5,6 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    private bool isInrange = false;
 
     void start()
     {

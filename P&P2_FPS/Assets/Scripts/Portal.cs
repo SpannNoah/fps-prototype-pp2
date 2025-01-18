@@ -9,7 +9,7 @@ public class Portal : MonoBehaviour
     [FormerlySerializedAs("m_targetPortalPos")]
     [SerializeField]
     private GameObject m_targetPortal = null;
-
+    public int currentLevel;
     [SerializeField]
     private float m_teleportDelay = .25f;
 
@@ -34,6 +34,8 @@ public class Portal : MonoBehaviour
         controller.enabled = true;
         
         yield return new WaitForSeconds(m_teleportDelay);
+        
+        currentLevel = currentLevel + 1;
 
         m_isTeleporting = false;
         m_targetPortal.GetComponent<Portal>().m_isTeleporting = false;

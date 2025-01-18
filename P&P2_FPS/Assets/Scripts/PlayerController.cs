@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private CharacterController m_characterController = null;
     [SerializeField]
     private LayerMask m_ignoreMask = 0;
+    public PlayerController player;
 
     [Header("Collider Settings")]
     private CapsuleCollider playerCollider;
