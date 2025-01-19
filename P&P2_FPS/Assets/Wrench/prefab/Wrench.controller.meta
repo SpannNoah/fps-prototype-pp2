@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:P&P2_FPS/Assets/ThirdParty/Polygonmaker/Monsters Series/Monsters - Giant Spider/Source/Materials/Giant Spider [AO].mat.meta
+guid: 615c080ad711a8c48b60c3b5f4ab0ba7
+========
 guid: 3039ca7d9efbf394db8428c730e83968
+>>>>>>>> JM-MergeTest:P&P2_FPS/Assets/Wrench/prefab/Wrench.controller.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
