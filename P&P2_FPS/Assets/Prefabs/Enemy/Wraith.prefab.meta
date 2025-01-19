@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:P&P2_FPS/Assets/Prefabs/Enemy/Wraith.prefab.meta
 guid: 1065d8ff03156b9409af8a7691cba892
 PrefabImporter:
+========
+guid: 4a27aaa03dab5e2449620d3a8b3c73dc
+NativeFormatImporter:
+>>>>>>>> 9254975 (merge into test):P&P2_FPS/Assets/Scenes/Level 2/NavMesh.asset.meta
   externalObjects: {}
+  mainObjectFileID: 23800000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

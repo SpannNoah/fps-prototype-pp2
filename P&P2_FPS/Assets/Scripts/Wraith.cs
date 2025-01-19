@@ -98,7 +98,30 @@ public class Wraith : MonoBehaviour,  IDamage
 
     public void Update()
    {
-        
+        if (m_navMeshAgent.isActiveAndEnabled)
+        {
+            float agentSpeed = m_navMeshAgent.velocity.normalized.magnitude;
+            float animSpeed = m_animator.GetFloat("Speed");
+
+
+            m_animator.SetFloat("Speed", Mathf.MoveTowards(animSpeed, agentSpeed, Time.deltaTime * m_speedTransition));
+
+            m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+            if (m_isPlayerInRange && !CanSeePlayer())
+            {
+                if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+                {
+                    m_coroutine = StartCoroutine(RoamCoroutine());
+                }
+            }
+            else if (!m_isPlayerInRange)
+            {
+                if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+                {
+                    m_coroutine = StartCoroutine(RoamCoroutine());
+                }
+            }
+        }
 
 
         if (m_health <= 75 && m_phase == 1)
@@ -170,9 +193,23 @@ public class Wraith : MonoBehaviour,  IDamage
             case AttackType.Melee:
                 if (m_angleToPlayer <= m_fieldOfView && m_isPlayerInRange)
                 {
-                    //yield return new WaitForSeconds(m_fireRate);
-                   m_animator.SetTrigger("attack1");
-                    //yield return new WaitForSeconds(0.2f);
+                    int attackIndex = Random.Range(1, 5);// randomly select an attack type (1, 2, or 3)
+
+                    switch (attackIndex)
+                    {
+                        case 1: // if attackIndex is 1
+                            m_animator.SetTrigger("WAttack1"); // play the attack animation
+                            break;
+                        case 2: // if attackIndex is 2
+                            m_animator.SetTrigger("WAttack2"); //  play the attack animation
+                            break;
+                        case 3: // if attackIndex is 3
+                            m_animator.SetTrigger("WAttack3"); //  play the attack animation
+                            break;
+                        case 4: // if attackIndex is 4
+                            m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
+                            break;
+                    }
 
                 }
                 //yield return new WaitForSeconds(m_fireRate);
@@ -180,23 +217,23 @@ public class Wraith : MonoBehaviour,  IDamage
         }
 
     //   randomly select one of the three attack animations 
-        int attackIndex = Random.Range(1, 5);// randomly select an attack type (1, 2, or 3)
-        if (m_angleToPlayer <= m_fieldOfView && m_isPlayerInRange)
-            switch (attackIndex)
-        {
-            case 1: // if attackIndex is 1
-                m_animator.SetTrigger("WAttack1"); // play the attack animation
-                break;
-            case 2: // if attackIndex is 2
-                m_animator.SetTrigger("WAttack2"); //  play the attack animation
-                break;
-            case 3: // if attackIndex is 3
-                m_animator.SetTrigger("WAttack3"); //  play the attack animation
-               break;
-            case 4: // if attackIndex is 4
-                m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
-                break;
-        }
+        //int attackIndex = Random.Range(1, 5);// randomly select an attack type (1, 2, or 3)
+        
+        //    switch (attackIndex)
+        //{
+        //    case 1: // if attackIndex is 1
+        //        m_animator.SetTrigger("WAttack1"); // play the attack animation
+        //        break;
+        //    case 2: // if attackIndex is 2
+        //        m_animator.SetTrigger("WAttack2"); //  play the attack animation
+        //        break;
+        //    case 3: // if attackIndex is 3
+        //        m_animator.SetTrigger("WAttack3"); //  play the attack animation
+        //       break;
+        //    case 4: // if attackIndex is 4
+        //        m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
+        //        break;
+        
 
        yield return new WaitForSeconds(1.0f / m_fireRate); // wait for the fire rate
         DealDamage(); // deal damage to the player
@@ -277,7 +314,7 @@ public class Wraith : MonoBehaviour,  IDamage
 
         if (m_health <= 0)
         {
-            m_animator.SetTrigger("death");
+            m_animator.SetTrigger("Death");
 
             DropRandomPowerUp();
             //Destroy(gameObject); --> Animation State Destroys Game Object Now to Allow for Death Animation to Complete

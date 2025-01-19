@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class Portal : MonoBehaviour
@@ -19,26 +20,12 @@ public class Portal : MonoBehaviour
     {
         if(other.CompareTag("Player") && m_isTeleporting == false)
         {
-            m_isTeleporting = true;
-            m_targetPortal.GetComponent<Portal>().m_isTeleporting = true;
-            StartCoroutine(TeleportCoroutine(other));
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
-    }
-
-    private IEnumerator TeleportCoroutine(Collider player)
-    {
-        CharacterController controller = player.GetComponent<CharacterController>();
-        controller.enabled = false;
-        player.gameObject.transform.position = m_targetPortal.transform.position;
-        player.gameObject.transform.Rotate(0, 180, 0);
-        controller.enabled = true;
-        
-        yield return new WaitForSeconds(m_teleportDelay);
-
-        SaveSystem.SavePlayer(GameManager.Instance.m_playerController);
-
-        m_isTeleporting = false;
-        m_targetPortal.GetComponent<Portal>().m_isTeleporting = false;
     }
 
 }

@@ -1,0 +1,3167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6435617481731967287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731786543}
+  m_Layer: 6
+  m_Name: SpiderLLeg13
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731786543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967287}
+  m_LocalRotation: {x: -0.0071402295, y: 0.021623325, z: 0.07895524, w: 0.99661803}
+  m_LocalPosition: {x: -0.8810423, y: 0, z: -0.000000019073486}
+  m_LocalScale: {x: 1.0000076, y: 0.999999, z: 0.9999927}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731790991}
+  m_Father: {fileID: 6435617481731742453}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731967865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731751651}
+  - component: {fileID: 6435617481747200554}
+  - component: {fileID: 6435617481747200557}
+  - component: {fileID: 6435617481724659343}
+  - component: {fileID: 6435617481747200545}
+  - component: {fileID: 6435617481747200556}
+  - component: {fileID: 6435617481747200559}
+  - component: {fileID: 6435617481747200558}
+  m_Layer: 6
+  m_Name: GiantSpider_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6435617481731751651
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967865}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731799511}
+  - {fileID: 6435617481731761543}
+  - {fileID: 6435617481731794617}
+  - {fileID: 6435617481731753293}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6435617481747200554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65f4b71c5d4cb6d45b35ce64b5f7a38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_phase: 2
+  m_attackType: 1
+  m_healthBar: {fileID: 0}
+  m_model: {fileID: 6435617481720486165}
+  m_shootPos: {fileID: 6435617481731798047}
+  m_headPos: {fileID: 6435617481731798047}
+  m_navMeshAgent: {fileID: 6435617481747200558}
+  m_animator: {fileID: 6435617481724659343}
+  m_powerUps: []
+  m_chanceToDropPowerUp: 25
+  m_health: 100
+  m_faceTargetSpeed: 20
+  m_damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damage: 0
+  m_bullet: {fileID: 0}
+  m_fireRate: 10
+  m_fieldOfView: 90
+  m_roamDistance: 10
+  m_roamTimer: 3
+  m_speedTransition: 3
+  m_isShooting: 0
+  m_isPlayerInRange: 0
+  m_colorOriginal: {r: 1, g: 1, b: 1, a: 1}
+  m_playerDirection: {x: 0, y: 0, z: 0}
+  m_angleToPlayer: 0
+  m_isRoaming: 0
+  m_startingPos: {x: 0, y: 0, z: 0}
+  m_originalStoppingDist: 0
+  m_originalHP: 0
+--- !u!114 &6435617481747200557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967865}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0125ed9afea1f9d4baf75acdda982254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_attackType: 1
+  m_healthBar: {fileID: 0}
+  m_model: {fileID: 6435617481720486165}
+  m_shootPos: {fileID: 6435617481731803429}
+  m_headPos: {fileID: 6435617481731798047}
+  m_navMeshAgent: {fileID: 6435617481747200558}
+  m_animator: {fileID: 6435617481724659343}
+  m_powerUps: []
+  m_chanceToDropPowerUp: 25
+  m_health: 100
+  m_faceTargetSpeed: 20
+  m_damageColor: {r: 1, g: 0, b: 0, a: 1}
+  damage: 0
+  m_bullet: {fileID: 0}
+  m_fireRate: 10
+  m_fieldOfView: 90
+  m_roamDistance: 10
+  m_roamTimer: 3
+  m_speedTransition: 3
+  m_isShooting: 0
+  m_isPlayerInRange: 0
+  m_colorOriginal: {r: 1, g: 1, b: 1, a: 1}
+  m_playerDirection: {x: 0, y: 0, z: 0}
+  m_angleToPlayer: 0
+  m_isRoaming: 0
+  m_startingPos: {x: 0, y: 0, z: 0}
+  m_originalStoppingDist: 0
+  m_originalHP: 0
+--- !u!95 &6435617481724659343
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967865}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 23ab773bcf6fee047acd574a1533e380, type: 3}
+  m_Controller: {fileID: 9100000, guid: c109260296e6e9f45a8e578e975278f3, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!205 &6435617481747200545
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967865}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.000011205673, y: 0.78747934, z: -0.42044306}
+  m_Size: 7.2369018
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.25
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6435617481720486165}
+  - screenRelativeHeight: 0.125
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6435617481720457193}
+  - screenRelativeHeight: 0.01
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6435617481720414227}
+  m_Enabled: 1
+--- !u!135 &6435617481747200556
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &6435617481747200559
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!195 &6435617481747200558
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731967865}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 3
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!1 &6435617481731969721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731803989}
+  m_Layer: 6
+  m_Name: SpiderJaw1_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731803989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731969721}
+  m_LocalRotation: {x: 0.014767246, y: 0.47445178, z: -0.332776, w: 0.8148236}
+  m_LocalPosition: {x: 0.06666306, y: 0.1517271, z: 0.20191915}
+  m_LocalScale: {x: 1.0000005, y: 1.0000001, z: 0.99999917}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731799541}
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731972815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731742453}
+  m_Layer: 6
+  m_Name: SpiderLLeg12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731742453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731972815}
+  m_LocalRotation: {x: 0.023053017, y: -0.016989365, z: 0.6562001, w: 0.7540434}
+  m_LocalPosition: {x: -1.1799808, y: -0.000000019073486, z: -0.00000064849854}
+  m_LocalScale: {x: 1.0000031, y: 0.99998885, z: 1.0000076}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731786543}
+  m_Father: {fileID: 6435617481731799571}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731976017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731829413}
+  m_Layer: 6
+  m_Name: SpiderLLeg22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731829413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731976017}
+  m_LocalRotation: {x: -0.034265753, y: -0.022658868, z: 0.5848705, w: 0.8100858}
+  m_LocalPosition: {x: -1.2493782, y: -0.00000019073485, z: -0.0000005912781}
+  m_LocalScale: {x: 1.0000013, y: 1.0000042, z: 0.999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731815239}
+  m_Father: {fileID: 6435617481731854319}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731976811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731739803}
+  m_Layer: 6
+  m_Name: SpiderEyeL_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731739803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731976811}
+  m_LocalRotation: {x: 0.010447849, y: 0.0028999175, z: 0.04628476, w: 0.9988695}
+  m_LocalPosition: {x: -0.02072052, y: -0.15011115, z: 0.034152523}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731976999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731854107}
+  m_Layer: 6
+  m_Name: SpiderFrontHub
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731854107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731976999}
+  m_LocalRotation: {x: 0.000000041849383, y: 0.000000008728902, z: -0.22631013, w: 0.9740553}
+  m_LocalPosition: {x: 0.009757843, y: 0.11495708, z: -0.000064521846}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731977881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731760641}
+  m_Layer: 6
+  m_Name: SpiderJawSmall_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731760641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731977881}
+  m_LocalRotation: {x: 0.01846391, y: 0.0096824905, z: 0.9220516, w: -0.38650507}
+  m_LocalPosition: {x: 0.113411255, y: 0.29823428, z: -0.06035388}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731979759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731783023}
+  m_Layer: 6
+  m_Name: SpiderLLeg41
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731783023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731979759}
+  m_LocalRotation: {x: -0.42863283, y: 0.21912573, z: 0.3552481, w: 0.8012844}
+  m_LocalPosition: {x: 0.27029067, y: -0.2470828, z: 0.37750202}
+  m_LocalScale: {x: 0.9999998, y: 0.9999994, z: 1.0000002}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731773599}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731979921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731753293}
+  m_Layer: 6
+  m_Name: SpiderHub
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731753293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731979921}
+  m_LocalRotation: {x: 0.5000001, y: -0.49999994, z: -0.49999997, w: 0.5000001}
+  m_LocalPosition: {x: 0.000000030994414, y: 0.72129047, z: -0.000000114440915}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731809369}
+  - {fileID: 6435617481731831671}
+  - {fileID: 6435617481731789295}
+  - {fileID: 6435617481731746299}
+  - {fileID: 6435617481731751765}
+  - {fileID: 6435617481731799571}
+  - {fileID: 6435617481731854319}
+  - {fileID: 6435617481731748449}
+  - {fileID: 6435617481731783023}
+  - {fileID: 6435617481731765123}
+  - {fileID: 6435617481731803429}
+  - {fileID: 6435617481731832833}
+  - {fileID: 6435617481731819377}
+  - {fileID: 6435617481731852737}
+  - {fileID: 6435617481731801027}
+  - {fileID: 6435617481731773157}
+  - {fileID: 6435617481731753241}
+  m_Father: {fileID: 6435617481731751651}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731982277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731824603}
+  m_Layer: 6
+  m_Name: SpiderTailTop2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731824603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731982277}
+  m_LocalRotation: {x: -0.000000069779134, y: 0.00000002625338, z: -0.7299065, w: 0.683547}
+  m_LocalPosition: {x: -0.28046784, y: 0.61426663, z: -0.00000012650077}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765217}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731983783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731824367}
+  m_Layer: 6
+  m_Name: SpiderEyeL_7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731824367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731983783}
+  m_LocalRotation: {x: -0.018989671, y: 0.20477998, z: -0.095175184, w: 0.9739847}
+  m_LocalPosition: {x: 0.0020863342, y: -0.03371624, z: 0.15544912}
+  m_LocalScale: {x: 1, y: 0.9999998, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731984695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731743031}
+  m_Layer: 6
+  m_Name: SpiderRLeg33
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731743031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731984695}
+  m_LocalRotation: {x: 0.011858521, y: -0.009523493, z: 0.059813235, w: 0.9980937}
+  m_LocalPosition: {x: -0.943188, y: 0.00000045776366, z: -0.0000004196167}
+  m_LocalScale: {x: 1.0000006, y: 0.9999973, z: 1.0000014}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731774973}
+  m_Father: {fileID: 6435617481731739735}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731985041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731751299}
+  m_Layer: 6
+  m_Name: SpiderLLeg33
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731751299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731985041}
+  m_LocalRotation: {x: -0.011871716, y: 0.009523348, z: 0.059816122, w: 0.9980934}
+  m_LocalPosition: {x: -0.943188, y: 0.00000030517577, z: 0.0000005340576}
+  m_LocalScale: {x: 0.9999995, y: 1.0000029, z: 0.99999803}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731765411}
+  m_Father: {fileID: 6435617481731741195}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731985217
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731748449}
+  m_Layer: 6
+  m_Name: SpiderLLeg31
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731748449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731985217}
+  m_LocalRotation: {x: -0.6534193, y: 0.27352634, z: 0.31327277, w: 0.6325241}
+  m_LocalPosition: {x: 0.29327175, y: -0.0409114, z: 0.39159194}
+  m_LocalScale: {x: 0.99999934, y: 1.0000008, z: 0.9999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731741195}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731985709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731832683}
+  m_Layer: 6
+  m_Name: SpiderTailL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731832683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731985709}
+  m_LocalRotation: {x: -0.50223, y: -0.47033277, z: 0.5296479, w: -0.49600932}
+  m_LocalPosition: {x: -0.30874404, y: 0.18366012, z: 0.5743444}
+  m_LocalScale: {x: 0.999999, y: 0.99999994, z: 1.000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765217}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731986191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731801277}
+  m_Layer: 6
+  m_Name: SpiderJaw1_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731801277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731986191}
+  m_LocalRotation: {x: -0.014767345, y: -0.47445172, z: -0.33277643, w: 0.8148235}
+  m_LocalPosition: {x: 0.06666306, y: 0.1517271, z: -0.20191915}
+  m_LocalScale: {x: 0.9999997, y: 0.99999917, z: 1.0000005}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731791309}
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731987653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731798047}
+  m_Layer: 6
+  m_Name: SpiderHead
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731798047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731987653}
+  m_LocalRotation: {x: 0.00005345566, y: -0.00008996662, z: 0.09056835, w: 0.99589026}
+  m_LocalPosition: {x: -0.31745642, y: 0.000000114440915, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731773207}
+  - {fileID: 6435617481731762765}
+  - {fileID: 6435617481731739803}
+  - {fileID: 6435617481731856359}
+  - {fileID: 6435617481731746389}
+  - {fileID: 6435617481731751847}
+  - {fileID: 6435617481731824367}
+  - {fileID: 6435617481731830139}
+  - {fileID: 6435617481731798617}
+  - {fileID: 6435617481731826093}
+  - {fileID: 6435617481731803059}
+  - {fileID: 6435617481731853435}
+  - {fileID: 6435617481731786137}
+  - {fileID: 6435617481731769381}
+  - {fileID: 6435617481731854107}
+  - {fileID: 6435617481731803989}
+  - {fileID: 6435617481731801277}
+  - {fileID: 6435617481731743821}
+  - {fileID: 6435617481731760641}
+  m_Father: {fileID: 6435617481731832833}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731989727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731801027}
+  m_Layer: 6
+  m_Name: SpiderRLeg31
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731801027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731989727}
+  m_LocalRotation: {x: 0.6534307, y: -0.27352327, z: 0.3132637, w: 0.6325181}
+  m_LocalPosition: {x: 0.29327202, y: -0.040911343, z: -0.3915924}
+  m_LocalScale: {x: 1.0000004, y: 0.9999994, z: 1.0000006}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731739735}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731990207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731856359}
+  m_Layer: 6
+  m_Name: SpiderEyeL_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731856359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731990207}
+  m_LocalRotation: {x: 0.04493406, y: 0.018521136, z: 0.01166923, w: 0.9987501}
+  m_LocalPosition: {x: -0.013806305, y: -0.14489712, z: 0.074042045}
+  m_LocalScale: {x: 0.99999887, y: 0.9999988, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731990619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731803059}
+  m_Layer: 6
+  m_Name: SpiderEyeR_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731803059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731990619}
+  m_LocalRotation: {x: -0.044934012, y: -0.018521111, z: 0.011669232, w: 0.9987501}
+  m_LocalPosition: {x: -0.013806305, y: -0.14489712, z: -0.07404206}
+  m_LocalScale: {x: 0.99999887, y: 0.9999988, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731992451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731773157}
+  m_Layer: 6
+  m_Name: SpiderRLeg41
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731773157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731992451}
+  m_LocalRotation: {x: 0.42866272, y: -0.21913041, z: 0.35523868, w: 0.8012713}
+  m_LocalPosition: {x: 0.27029094, y: -0.24708286, z: -0.3775017}
+  m_LocalScale: {x: 1.0000005, y: 0.9999997, z: 0.9999993}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731808803}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731992733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731789295}
+  m_Layer: 6
+  m_Name: SpiderEar1_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731789295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731992733}
+  m_LocalRotation: {x: 0.12679155, y: -0.3289193, z: -0.20260105, w: 0.9136131}
+  m_LocalPosition: {x: -0.124027096, y: 0.52862436, z: -0.3152252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731992985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731796911}
+  m_Layer: 6
+  m_Name: SpiderRLeg12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731796911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731992985}
+  m_LocalRotation: {x: -0.023044622, y: 0.016980065, z: 0.6561877, w: 0.75405467}
+  m_LocalPosition: {x: -1.1799811, y: -0.00000032424927, z: 0.0000005149841}
+  m_LocalScale: {x: 1.0000033, y: 0.9999895, z: 1.0000064}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731770505}
+  m_Father: {fileID: 6435617481731819377}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731993467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731798617}
+  m_Layer: 6
+  m_Name: SpiderEyeR_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731798617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731993467}
+  m_LocalRotation: {x: 0.06155621, y: -0.2024549, z: -0.09932192, w: 0.9722952}
+  m_LocalPosition: {x: -0.018538512, y: -0.070605546, z: -0.08111535}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731995733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731806565}
+  m_Layer: 6
+  m_Name: SpiderTailBotton3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731806565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731995733}
+  m_LocalRotation: {x: -0.000000026883498, y: -0.000000047199162, z: 0.51040214, w: 0.8599358}
+  m_LocalPosition: {x: -0.31703475, y: -0.2937071, z: -0.0000000066799974}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765187}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731998145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731751847}
+  m_Layer: 6
+  m_Name: SpiderEyeL_6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731751847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731998145}
+  m_LocalRotation: {x: -0.025960775, y: 0.13019583, z: -0.113071, w: 0.9846776}
+  m_LocalPosition: {x: 0.020055465, y: -0.06682701, z: 0.17458312}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731998193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731743821}
+  m_Layer: 6
+  m_Name: SpiderJawSmall_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731743821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731998193}
+  m_LocalRotation: {x: -0.018463679, y: -0.009682911, z: 0.92205155, w: -0.3865053}
+  m_LocalPosition: {x: 0.113411255, y: 0.29823428, z: 0.060359277}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481731999613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731746389}
+  m_Layer: 6
+  m_Name: SpiderEyeL_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731746389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481731999613}
+  m_LocalRotation: {x: 0.014923175, y: 0.19596887, z: -0.07994923, w: 0.9772316}
+  m_LocalPosition: {x: 0.016799774, y: -0.11669109, z: 0.1460291}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732000165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731803817}
+  m_Layer: 6
+  m_Name: SpiderRLeg44
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731803817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732000165}
+  m_LocalRotation: {x: -0.11230391, y: -0.043973032, z: -0.14909829, w: 0.98143977}
+  m_LocalPosition: {x: -0.8179437, y: 0.00000015258789, z: -0.000000076293944}
+  m_LocalScale: {x: 0.99999875, y: 0.99999994, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731769217}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732003025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731799511}
+  - component: {fileID: 6435617481720486165}
+  m_Layer: 6
+  m_Name: giant_spider_LOD0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731799511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732003025}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -0.37392965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731751651}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &6435617481720486165
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732003025}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9122241dc20159b43b2318cf360e9fdc, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300000, guid: 23ab773bcf6fee047acd574a1533e380, type: 3}
+  m_Bones:
+  - {fileID: 6435617481731765187}
+  - {fileID: 6435617481731806723}
+  - {fileID: 6435617481731765217}
+  - {fileID: 6435617481731764609}
+  - {fileID: 6435617481731772291}
+  - {fileID: 6435617481731765123}
+  - {fileID: 6435617481731753293}
+  - {fileID: 6435617481731803429}
+  - {fileID: 6435617481731824603}
+  - {fileID: 6435617481731832683}
+  - {fileID: 6435617481731783023}
+  - {fileID: 6435617481731753241}
+  - {fileID: 6435617481731746299}
+  - {fileID: 6435617481731745559}
+  - {fileID: 6435617481731748449}
+  - {fileID: 6435617481731831671}
+  - {fileID: 6435617481731798047}
+  - {fileID: 6435617481731751847}
+  - {fileID: 6435617481731809369}
+  - {fileID: 6435617481731824367}
+  - {fileID: 6435617481731803989}
+  - {fileID: 6435617481731746389}
+  - {fileID: 6435617481731806565}
+  - {fileID: 6435617481731799541}
+  - {fileID: 6435617481731854107}
+  - {fileID: 6435617481731773207}
+  - {fileID: 6435617481731799571}
+  - {fileID: 6435617481731760641}
+  - {fileID: 6435617481731782553}
+  - {fileID: 6435617481731856359}
+  - {fileID: 6435617481731739803}
+  - {fileID: 6435617481731808961}
+  - {fileID: 6435617481731854319}
+  - {fileID: 6435617481731832833}
+  - {fileID: 6435617481731803091}
+  - {fileID: 6435617481731743821}
+  - {fileID: 6435617481731751765}
+  - {fileID: 6435617481731830139}
+  - {fileID: 6435617481731762765}
+  - {fileID: 6435617481731826093}
+  - {fileID: 6435617481731773599}
+  - {fileID: 6435617481731801277}
+  - {fileID: 6435617481731786543}
+  - {fileID: 6435617481731742453}
+  - {fileID: 6435617481731790991}
+  - {fileID: 6435617481731829413}
+  - {fileID: 6435617481731815239}
+  - {fileID: 6435617481731781487}
+  - {fileID: 6435617481731740957}
+  - {fileID: 6435617481731806939}
+  - {fileID: 6435617481731751299}
+  - {fileID: 6435617481731741195}
+  - {fileID: 6435617481731765411}
+  - {fileID: 6435617481731803059}
+  - {fileID: 6435617481731773157}
+  - {fileID: 6435617481731853435}
+  - {fileID: 6435617481731789295}
+  - {fileID: 6435617481731746557}
+  - {fileID: 6435617481731852737}
+  - {fileID: 6435617481731801027}
+  - {fileID: 6435617481731786137}
+  - {fileID: 6435617481731769381}
+  - {fileID: 6435617481731798617}
+  - {fileID: 6435617481731791309}
+  - {fileID: 6435617481731819377}
+  - {fileID: 6435617481731808803}
+  - {fileID: 6435617481731770505}
+  - {fileID: 6435617481731796911}
+  - {fileID: 6435617481731744375}
+  - {fileID: 6435617481731785483}
+  - {fileID: 6435617481731820055}
+  - {fileID: 6435617481731798109}
+  - {fileID: 6435617481731769217}
+  - {fileID: 6435617481731803817}
+  - {fileID: 6435617481731743031}
+  - {fileID: 6435617481731739735}
+  - {fileID: 6435617481731774973}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 6435617481731753293}
+  m_AABB:
+    m_Center: {x: -0.06237346, y: -0.42044282, z: 0.0000113248825}
+    m_Extent: {x: 1.102514, y: 2.6101322, z: 3.6184502}
+  m_DirtyAABB: 0
+--- !u!1 &6435617481732003361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731782553}
+  m_Layer: 6
+  m_Name: SpiderBackSpikeR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731782553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732003361}
+  m_LocalRotation: {x: 0.06514476, y: 0.015203818, z: -0.31111616, w: 0.9480147}
+  m_LocalPosition: {x: -0.62143767, y: -0.164254, z: -0.17604215}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765187}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732003527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731753241}
+  m_Layer: 6
+  m_Name: SpiderTail1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731753241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732003527}
+  m_LocalRotation: {x: 0.000000047069765, y: 0.000000038727737, z: 0.6353593, w: 0.7722167}
+  m_LocalPosition: {x: -0, y: -0.5190813, z: 0.000000078379124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731765217}
+  - {fileID: 6435617481731803091}
+  - {fileID: 6435617481731745559}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732005509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731774973}
+  m_Layer: 6
+  m_Name: SpiderRLeg34
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731774973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732005509}
+  m_LocalRotation: {x: -0.10210746, y: -0.0048215655, z: -0.14915846, w: 0.98351544}
+  m_LocalPosition: {x: -0.803641, y: 0, z: -0.000000038146972}
+  m_LocalScale: {x: 1.0000002, y: 0.9999967, z: 1.0000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731743031}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732006691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731769381}
+  m_Layer: 6
+  m_Name: SpiderEyeR_7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731769381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732006691}
+  m_LocalRotation: {x: 0.018989734, y: -0.20477986, z: -0.09517523, w: 0.9739847}
+  m_LocalPosition: {x: 0.0020863342, y: -0.033716165, z: -0.1554491}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732007019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731740957}
+  m_Layer: 6
+  m_Name: SpiderLLeg43
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731740957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732007019}
+  m_LocalRotation: {x: -0.014937581, y: -0.016353346, z: 0.03363939, w: 0.9991886}
+  m_LocalPosition: {x: -0.9552363, y: 0.0000009155273, z: 0.00000064849854}
+  m_LocalScale: {x: 1.0000001, y: 0.99999964, z: 1.0000002}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731806939}
+  m_Father: {fileID: 6435617481731773599}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732007777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731761543}
+  - component: {fileID: 6435617481720457193}
+  m_Layer: 6
+  m_Name: giant_spider_LOD1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731761543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732007777}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -0.37392965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731751651}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &6435617481720457193
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732007777}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9122241dc20159b43b2318cf360e9fdc, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300002, guid: 23ab773bcf6fee047acd574a1533e380, type: 3}
+  m_Bones:
+  - {fileID: 6435617481731753293}
+  - {fileID: 6435617481731765123}
+  - {fileID: 6435617481731803429}
+  - {fileID: 6435617481731803989}
+  - {fileID: 6435617481731753241}
+  - {fileID: 6435617481731765217}
+  - {fileID: 6435617481731832683}
+  - {fileID: 6435617481731824603}
+  - {fileID: 6435617481731799571}
+  - {fileID: 6435617481731801277}
+  - {fileID: 6435617481731798047}
+  - {fileID: 6435617481731765187}
+  - {fileID: 6435617481731764609}
+  - {fileID: 6435617481731806565}
+  - {fileID: 6435617481731806723}
+  - {fileID: 6435617481731832833}
+  - {fileID: 6435617481731772291}
+  - {fileID: 6435617481731831671}
+  - {fileID: 6435617481731799541}
+  - {fileID: 6435617481731854319}
+  - {fileID: 6435617481731746299}
+  - {fileID: 6435617481731748449}
+  - {fileID: 6435617481731854107}
+  - {fileID: 6435617481731809369}
+  - {fileID: 6435617481731803091}
+  - {fileID: 6435617481731783023}
+  - {fileID: 6435617481731808961}
+  - {fileID: 6435617481731745559}
+  - {fileID: 6435617481731746557}
+  - {fileID: 6435617481731819377}
+  - {fileID: 6435617481731852737}
+  - {fileID: 6435617481731789295}
+  - {fileID: 6435617481731791309}
+  - {fileID: 6435617481731773157}
+  - {fileID: 6435617481731782553}
+  - {fileID: 6435617481731801027}
+  - {fileID: 6435617481731751765}
+  - {fileID: 6435617481731769381}
+  - {fileID: 6435617481731762765}
+  - {fileID: 6435617481731773207}
+  - {fileID: 6435617481731824367}
+  - {fileID: 6435617481731798617}
+  - {fileID: 6435617481731830139}
+  - {fileID: 6435617481731739803}
+  - {fileID: 6435617481731826093}
+  - {fileID: 6435617481731742453}
+  - {fileID: 6435617481731786543}
+  - {fileID: 6435617481731790991}
+  - {fileID: 6435617481731829413}
+  - {fileID: 6435617481731815239}
+  - {fileID: 6435617481731781487}
+  - {fileID: 6435617481731740957}
+  - {fileID: 6435617481731773599}
+  - {fileID: 6435617481731806939}
+  - {fileID: 6435617481731751299}
+  - {fileID: 6435617481731741195}
+  - {fileID: 6435617481731765411}
+  - {fileID: 6435617481731770505}
+  - {fileID: 6435617481731796911}
+  - {fileID: 6435617481731744375}
+  - {fileID: 6435617481731820055}
+  - {fileID: 6435617481731785483}
+  - {fileID: 6435617481731798109}
+  - {fileID: 6435617481731769217}
+  - {fileID: 6435617481731808803}
+  - {fileID: 6435617481731803817}
+  - {fileID: 6435617481731743031}
+  - {fileID: 6435617481731739735}
+  - {fileID: 6435617481731774973}
+  - {fileID: 6435617481731856359}
+  - {fileID: 6435617481731751847}
+  - {fileID: 6435617481731746389}
+  - {fileID: 6435617481731803059}
+  - {fileID: 6435617481731786137}
+  - {fileID: 6435617481731853435}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 6435617481731753293}
+  m_AABB:
+    m_Center: {x: -0.12602004, y: -0.3908825, z: 0.00002026558}
+    m_Extent: {x: 1.0464977, y: 2.560789, z: 3.5760844}
+  m_DirtyAABB: 0
+--- !u!1 &6435617481732007927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731765411}
+  m_Layer: 6
+  m_Name: SpiderLLeg34
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731765411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732007927}
+  m_LocalRotation: {x: 0.10217696, y: 0.004978125, z: -0.14937805, w: 0.9834741}
+  m_LocalPosition: {x: -0.80364096, y: -0.00000015258789, z: -0.000000038146972}
+  m_LocalScale: {x: 0.99999976, y: 1.0000105, z: 0.9999929}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731751299}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732009221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731765187}
+  m_Layer: 6
+  m_Name: SpiderTail3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731765187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732009221}
+  m_LocalRotation: {x: 0.00000002106922, y: 0.0000000636389, z: 0.1806402, w: 0.9835493}
+  m_LocalPosition: {x: -0.77108914, y: 0.000000076293944, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731772291}
+  - {fileID: 6435617481731782553}
+  - {fileID: 6435617481731764609}
+  - {fileID: 6435617481731806565}
+  - {fileID: 6435617481731806723}
+  m_Father: {fileID: 6435617481731765217}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732009331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731806723}
+  m_Layer: 6
+  m_Name: SpiderTailTop3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731806723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732009331}
+  m_LocalRotation: {x: 0.000000033475555, y: -0.00000006586225, z: -0.6003287, w: 0.79975337}
+  m_LocalPosition: {x: -0.17360382, y: 0.3627623, z: 0.0000000034713457}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765187}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732010133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731746299}
+  m_Layer: 6
+  m_Name: SpiderEar2_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731746299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732010133}
+  m_LocalRotation: {x: 0.00000006787205, y: 0.4165952, z: -0.00000006290424, w: 0.9090921}
+  m_LocalPosition: {x: -0.2577462, y: 0.10387608, z: 0.4091703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732013025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731770505}
+  m_Layer: 6
+  m_Name: SpiderRLeg13
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731770505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732013025}
+  m_LocalRotation: {x: 0.0071410323, y: -0.021623138, z: 0.07895055, w: 0.99661845}
+  m_LocalPosition: {x: -0.881042, y: 0.00000015258789, z: 0.0000001335144}
+  m_LocalScale: {x: 0.9999921, y: 1.0000006, z: 1.000007}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731744375}
+  m_Father: {fileID: 6435617481731796911}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732013475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731751765}
+  m_Layer: 6
+  m_Name: SpiderEar2_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731751765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732013475}
+  m_LocalRotation: {x: -0.000000018446986, y: -0.4165953, z: -0.00000004025491, w: 0.90909207}
+  m_LocalPosition: {x: -0.2577462, y: 0.10387608, z: -0.4091703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732016435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731765123}
+  m_Layer: 6
+  m_Name: SpiderMouth_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731765123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732016435}
+  m_LocalRotation: {x: -0.13270812, y: -0.026480539, z: 0.9716465, w: -0.19388261}
+  m_LocalPosition: {x: 0.123127095, y: 0.35401928, z: 0.07164755}
+  m_LocalScale: {x: 1, y: 0.99999905, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732017257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731790991}
+  m_Layer: 6
+  m_Name: SpiderLLeg14
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731790991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732017257}
+  m_LocalRotation: {x: 0.09034885, y: 0.0043237247, z: -0.16833493, w: 0.9815711}
+  m_LocalPosition: {x: -0.73640805, y: 0.00000015258789, z: 0.000000038146972}
+  m_LocalScale: {x: 1.000022, y: 0.99999666, z: 0.9999783}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731786543}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732018763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731798109}
+  m_Layer: 6
+  m_Name: SpiderRLeg24
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731798109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732018763}
+  m_LocalRotation: {x: -0.10225062, y: -0.0046743616, z: -0.14543003, w: 0.9840595}
+  m_LocalPosition: {x: -0.8161098, y: 0.00000015258789, z: 0.000000038146972}
+  m_LocalScale: {x: 1.0000005, y: 1.000019, z: 0.9999809}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731820055}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732019589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731791309}
+  m_Layer: 6
+  m_Name: SpiderJaw2_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731791309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732019589}
+  m_LocalRotation: {x: -0.22045709, y: 0.13996594, z: -0.5173917, w: 0.8149319}
+  m_LocalPosition: {x: -0.35067657, y: 0.3069892, z: 0.02644905}
+  m_LocalScale: {x: 1.0000004, y: 0.99999934, z: 1.0000002}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731801277}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732020643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731794617}
+  - component: {fileID: 6435617481720414227}
+  m_Layer: 6
+  m_Name: giant_spider_LOD2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731794617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732020643}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -0.37392965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731751651}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &6435617481720414227
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732020643}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9122241dc20159b43b2318cf360e9fdc, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300004, guid: 23ab773bcf6fee047acd574a1533e380, type: 3}
+  m_Bones:
+  - {fileID: 6435617481731753293}
+  - {fileID: 6435617481731765123}
+  - {fileID: 6435617481731803429}
+  - {fileID: 6435617481731803989}
+  - {fileID: 6435617481731753241}
+  - {fileID: 6435617481731765217}
+  - {fileID: 6435617481731832683}
+  - {fileID: 6435617481731824603}
+  - {fileID: 6435617481731799571}
+  - {fileID: 6435617481731801277}
+  - {fileID: 6435617481731798047}
+  - {fileID: 6435617481731765187}
+  - {fileID: 6435617481731764609}
+  - {fileID: 6435617481731806565}
+  - {fileID: 6435617481731806723}
+  - {fileID: 6435617481731832833}
+  - {fileID: 6435617481731772291}
+  - {fileID: 6435617481731799541}
+  - {fileID: 6435617481731854319}
+  - {fileID: 6435617481731746299}
+  - {fileID: 6435617481731748449}
+  - {fileID: 6435617481731854107}
+  - {fileID: 6435617481731809369}
+  - {fileID: 6435617481731803091}
+  - {fileID: 6435617481731783023}
+  - {fileID: 6435617481731808961}
+  - {fileID: 6435617481731831671}
+  - {fileID: 6435617481731745559}
+  - {fileID: 6435617481731746557}
+  - {fileID: 6435617481731819377}
+  - {fileID: 6435617481731852737}
+  - {fileID: 6435617481731789295}
+  - {fileID: 6435617481731791309}
+  - {fileID: 6435617481731773157}
+  - {fileID: 6435617481731782553}
+  - {fileID: 6435617481731751765}
+  - {fileID: 6435617481731801027}
+  - {fileID: 6435617481731769381}
+  - {fileID: 6435617481731762765}
+  - {fileID: 6435617481731773207}
+  - {fileID: 6435617481731824367}
+  - {fileID: 6435617481731798617}
+  - {fileID: 6435617481731830139}
+  - {fileID: 6435617481731742453}
+  - {fileID: 6435617481731786543}
+  - {fileID: 6435617481731790991}
+  - {fileID: 6435617481731829413}
+  - {fileID: 6435617481731815239}
+  - {fileID: 6435617481731781487}
+  - {fileID: 6435617481731740957}
+  - {fileID: 6435617481731773599}
+  - {fileID: 6435617481731806939}
+  - {fileID: 6435617481731741195}
+  - {fileID: 6435617481731751299}
+  - {fileID: 6435617481731765411}
+  - {fileID: 6435617481731770505}
+  - {fileID: 6435617481731796911}
+  - {fileID: 6435617481731744375}
+  - {fileID: 6435617481731820055}
+  - {fileID: 6435617481731785483}
+  - {fileID: 6435617481731798109}
+  - {fileID: 6435617481731769217}
+  - {fileID: 6435617481731808803}
+  - {fileID: 6435617481731803817}
+  - {fileID: 6435617481731743031}
+  - {fileID: 6435617481731739735}
+  - {fileID: 6435617481731774973}
+  - {fileID: 6435617481731856359}
+  - {fileID: 6435617481731739803}
+  - {fileID: 6435617481731751847}
+  - {fileID: 6435617481731746389}
+  - {fileID: 6435617481731803059}
+  - {fileID: 6435617481731826093}
+  - {fileID: 6435617481731786137}
+  - {fileID: 6435617481731853435}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 6435617481731753293}
+  m_AABB:
+    m_Center: {x: -0.12601972, y: -0.39409518, z: 0.000016212463}
+    m_Extent: {x: 1.0464973, y: 2.5575764, z: 3.5717912}
+  m_DirtyAABB: 0
+--- !u!1 &6435617481732022471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731806939}
+  m_Layer: 6
+  m_Name: SpiderLLeg44
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731806939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732022471}
+  m_LocalRotation: {x: 0.112239525, y: 0.043774866, z: -0.14923377, w: 0.98143536}
+  m_LocalPosition: {x: -0.8179439, y: 0, z: -0.000000114440915}
+  m_LocalScale: {x: 1.0000001, y: 0.9999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731740957}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732027479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731819377}
+  m_Layer: 6
+  m_Name: SpiderRLeg11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731819377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732027479}
+  m_LocalRotation: {x: 0.84150463, y: -0.26731834, z: 0.23261623, w: 0.4077997}
+  m_LocalPosition: {x: 0.3676621, y: 0.48774365, z: -0.35297748}
+  m_LocalScale: {x: 1.0000004, y: 0.9999973, z: 1.0000027}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731796911}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732029781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731803429}
+  m_Layer: 6
+  m_Name: SpiderMouth_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731803429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732029781}
+  m_LocalRotation: {x: 0.13270856, y: 0.026480868, z: 0.9716464, w: -0.19388261}
+  m_LocalPosition: {x: 0.123127095, y: 0.35401928, z: -0.071647555}
+  m_LocalScale: {x: 1, y: 0.999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732030031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731803091}
+  m_Layer: 6
+  m_Name: SpiderTailBotton1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731803091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732030031}
+  m_LocalRotation: {x: -0.000000075141934, y: -0.00000001645742, z: 0.8252631, w: 0.5647485}
+  m_LocalPosition: {x: -0.37778288, y: -0.37676123, z: 0.000000031417404}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753241}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732036095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731815239}
+  m_Layer: 6
+  m_Name: SpiderLLeg23
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731815239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732036095}
+  m_LocalRotation: {x: -0.011932345, y: 0.00807368, z: 0.041391414, w: 0.9990392}
+  m_LocalPosition: {x: -0.9831455, y: 0.00000045776366, z: 0.0000004196167}
+  m_LocalScale: {x: 0.9999995, y: 1.000006, z: 0.9999944}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731781487}
+  m_Father: {fileID: 6435617481731829413}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732036717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731831671}
+  m_Layer: 6
+  m_Name: SpiderEar1_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731831671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732036717}
+  m_LocalRotation: {x: -0.12679164, y: 0.3289194, z: -0.20260094, w: 0.9136131}
+  m_LocalPosition: {x: -0.124027096, y: 0.52862436, z: 0.3152252}
+  m_LocalScale: {x: 1, y: 0.99999905, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732039561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731746557}
+  m_Layer: 6
+  m_Name: SpiderTailR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731746557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732039561}
+  m_LocalRotation: {x: 0.5022314, y: 0.47033137, z: 0.5296492, w: -0.4960079}
+  m_LocalPosition: {x: -0.30874375, y: 0.18366027, z: -0.5743444}
+  m_LocalScale: {x: 0.999999, y: 0.99999994, z: 1.000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765217}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732039661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731853435}
+  m_Layer: 6
+  m_Name: SpiderEyeR_5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731853435
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732039661}
+  m_LocalRotation: {x: -0.014923121, y: -0.19596882, z: -0.07994927, w: 0.9772316}
+  m_LocalPosition: {x: 0.016799774, y: -0.11669109, z: -0.14602908}
+  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732041687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731765217}
+  m_Layer: 6
+  m_Name: SpiderTail2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731765217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732041687}
+  m_LocalRotation: {x: -0.000000041750333, y: -0.000000064607015, z: 0.18807131, w: 0.9821554}
+  m_LocalPosition: {x: -0.7290342, y: 0.000000038146972, z: -9.094947e-15}
+  m_LocalScale: {x: 0.999999, y: 0.999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731765187}
+  - {fileID: 6435617481731808961}
+  - {fileID: 6435617481731832683}
+  - {fileID: 6435617481731746557}
+  - {fileID: 6435617481731824603}
+  m_Father: {fileID: 6435617481731753241}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732042143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731769217}
+  m_Layer: 6
+  m_Name: SpiderRLeg43
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731769217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732042143}
+  m_LocalRotation: {x: 0.014937227, y: 0.01635541, z: 0.033646204, w: 0.99918836}
+  m_LocalPosition: {x: -0.9552366, y: 0.0000010681152, z: -0.0000003814697}
+  m_LocalScale: {x: 1.0000001, y: 1.0000005, z: 1.0000004}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731803817}
+  m_Father: {fileID: 6435617481731808803}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732043815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731832833}
+  m_Layer: 6
+  m_Name: SpiderNeck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731832833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732043815}
+  m_LocalRotation: {x: -0.000010048085, y: 0.000104165905, z: -0.50609505, w: 0.8624777}
+  m_LocalPosition: {x: -0.050016556, y: 0.41841152, z: -0.0000000010209237}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731798047}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732043937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731781487}
+  m_Layer: 6
+  m_Name: SpiderLLeg24
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731781487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732043937}
+  m_LocalRotation: {x: 0.102254845, y: 0.004644044, z: -0.14544775, w: 0.9840566}
+  m_LocalPosition: {x: -0.8161096, y: -0.00000015258789, z: 0}
+  m_LocalScale: {x: 0.9999996, y: 0.9999951, z: 1.0000092}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731815239}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732044525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731820055}
+  m_Layer: 6
+  m_Name: SpiderRLeg23
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731820055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732044525}
+  m_LocalRotation: {x: 0.011933882, y: -0.008073732, z: 0.041385904, w: 0.99903935}
+  m_LocalPosition: {x: -0.98314565, y: 0.00000030517577, z: -0.00000045776366}
+  m_LocalScale: {x: 1.0000001, y: 0.99999356, z: 1.000005}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731798109}
+  m_Father: {fileID: 6435617481731785483}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732045349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731762765}
+  m_Layer: 6
+  m_Name: SpiderEyeL_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731762765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732045349}
+  m_LocalRotation: {x: -0.061556168, y: 0.20245503, z: -0.09932192, w: 0.9722952}
+  m_LocalPosition: {x: -0.018538512, y: -0.070605546, z: 0.081115365}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732046225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731830139}
+  m_Layer: 6
+  m_Name: SpiderEyeR_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731830139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732046225}
+  m_LocalRotation: {x: 0.07424448, y: -0.004499664, z: -0.27295968, w: 0.9591457}
+  m_LocalPosition: {x: 0.0001713562, y: -0.0108358, z: -0.039728027}
+  m_LocalScale: {x: 0.9999989, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732048027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731741195}
+  m_Layer: 6
+  m_Name: SpiderLLeg32
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731741195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732048027}
+  m_LocalRotation: {x: -0.092932776, y: -0.10911155, z: 0.5711701, w: 0.80822206}
+  m_LocalPosition: {x: -1.215332, y: -0.0000004005432, z: -0.0000006961822}
+  m_LocalScale: {x: 1.0000006, y: 1.0000011, z: 0.99999887}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731751299}
+  m_Father: {fileID: 6435617481731748449}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732048303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731745559}
+  m_Layer: 6
+  m_Name: SpiderTailTop1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731745559
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732048303}
+  m_LocalRotation: {x: 0.000000032650707, y: -0.000000108051175, z: -0.72990644, w: 0.6835471}
+  m_LocalPosition: {x: -0.42088598, y: 0.61175346, z: 0.0000000013491263}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753241}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732048349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731772291}
+  m_Layer: 6
+  m_Name: SpiderBackSpikeL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731772291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732048349}
+  m_LocalRotation: {x: -0.06514475, y: -0.015203896, z: -0.31111655, w: 0.94801456}
+  m_LocalPosition: {x: -0.62143767, y: -0.164254, z: 0.17604211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765187}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732048457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731785483}
+  m_Layer: 6
+  m_Name: SpiderRLeg22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731785483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732048457}
+  m_LocalRotation: {x: 0.03434318, y: 0.022549456, z: 0.58486736, w: 0.8100878}
+  m_LocalPosition: {x: -1.2493784, y: -0.00000032424927, z: 0.00000079154967}
+  m_LocalScale: {x: 0.99999803, y: 0.9999957, z: 1.0000057}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731820055}
+  m_Father: {fileID: 6435617481731852737}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732050389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731744375}
+  m_Layer: 6
+  m_Name: SpiderRLeg14
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731744375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732050389}
+  m_LocalRotation: {x: -0.090366185, y: -0.004279706, z: -0.16834882, w: 0.9815673}
+  m_LocalPosition: {x: -0.73640794, y: -0.00000015258789, z: -0.00000017166137}
+  m_LocalScale: {x: 0.9999924, y: 0.9999989, z: 1.000011}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731770505}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732054091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731809369}
+  m_Layer: 6
+  m_Name: SpiderBotton Hub
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731809369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732054091}
+  m_LocalRotation: {x: -1.8848806e-15, y: 1.5980793e-14, z: 0.99999934, w: -0.0011422195}
+  m_LocalPosition: {x: 0.3396792, y: -0.07519585, z: 2.046363e-14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732054431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731852737}
+  m_Layer: 6
+  m_Name: SpiderRLeg21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731852737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732054431}
+  m_LocalRotation: {x: 0.7291783, y: -0.33087814, z: 0.25922316, w: 0.5400205}
+  m_LocalPosition: {x: 0.27291846, y: 0.20695724, z: -0.3179085}
+  m_LocalScale: {x: 1.0000018, y: 0.999997, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731785483}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732055401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731786137}
+  m_Layer: 6
+  m_Name: SpiderEyeR_6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731786137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732055401}
+  m_LocalRotation: {x: 0.025960822, y: -0.13019589, z: -0.11307098, w: 0.9846776}
+  m_LocalPosition: {x: 0.020055389, y: -0.06682697, z: -0.17458312}
+  m_LocalScale: {x: 0.9999998, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732056401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731799571}
+  m_Layer: 6
+  m_Name: SpiderLLeg11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731799571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732056401}
+  m_LocalRotation: {x: 0.8415104, y: -0.26730072, z: -0.23260717, w: -0.40780458}
+  m_LocalPosition: {x: 0.36766315, y: 0.4877447, z: 0.3529758}
+  m_LocalScale: {x: 1.0000032, y: 0.9999995, z: 0.99999774}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731742453}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732059299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731826093}
+  m_Layer: 6
+  m_Name: SpiderEyeR_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731826093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732059299}
+  m_LocalRotation: {x: -0.010447667, y: -0.0028999972, z: 0.046284758, w: 0.9988695}
+  m_LocalPosition: {x: -0.02072052, y: -0.15011115, z: -0.034152523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732059469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731808803}
+  m_Layer: 6
+  m_Name: SpiderRLeg42
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731808803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732059469}
+  m_LocalRotation: {x: 0.13083392, y: 0.089890525, z: 0.58303833, w: 0.7967864}
+  m_LocalPosition: {x: -1.194059, y: -0.00000064849854, z: 0.00000077724457}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1.0000005}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731769217}
+  m_Father: {fileID: 6435617481731773157}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732059587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731764609}
+  m_Layer: 6
+  m_Name: SpiderTailBack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731764609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732059587}
+  m_LocalRotation: {x: 9.724768e-10, y: -0.00000007276978, z: 0.000000029802322, w: 1}
+  m_LocalPosition: {x: -0.601741, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765187}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732060967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731799541}
+  m_Layer: 6
+  m_Name: SpiderJaw2_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731799541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732060967}
+  m_LocalRotation: {x: 0.22045743, y: -0.13996607, z: -0.5173917, w: 0.8149318}
+  m_LocalPosition: {x: -0.3506766, y: 0.30698928, z: -0.026448822}
+  m_LocalScale: {x: 1.0000004, y: 0.99999976, z: 0.9999996}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731803989}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732085397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731739735}
+  m_Layer: 6
+  m_Name: SpiderRLeg32
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731739735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732085397}
+  m_LocalRotation: {x: 0.09292808, y: 0.10912357, z: 0.5711539, w: 0.8082324}
+  m_LocalPosition: {x: -1.2153314, y: -0.0000005340576, z: 0.0000007224083}
+  m_LocalScale: {x: 0.9999996, y: 0.9999998, z: 1.0000012}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731743031}
+  m_Father: {fileID: 6435617481731801027}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732086731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731854319}
+  m_Layer: 6
+  m_Name: SpiderLLeg21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731854319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732086731}
+  m_LocalRotation: {x: -0.72924525, y: 0.33089024, z: 0.25919193, w: 0.5399377}
+  m_LocalPosition: {x: 0.27291745, y: 0.20695838, z: 0.31790856}
+  m_LocalScale: {x: 0.99999774, y: 1.0000026, z: 1.0000002}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731829413}
+  m_Father: {fileID: 6435617481731753293}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732087215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731773207}
+  m_Layer: 6
+  m_Name: SpiderEyeL_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731773207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732087215}
+  m_LocalRotation: {x: -0.07424458, y: 0.0044996035, z: -0.27295965, w: 0.9591457}
+  m_LocalPosition: {x: 0.00017150879, y: -0.010835762, z: 0.039728027}
+  m_LocalScale: {x: 0.9999989, y: 0.9999999, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731798047}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732087359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731773599}
+  m_Layer: 6
+  m_Name: SpiderLLeg42
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731773599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732087359}
+  m_LocalRotation: {x: -0.1308671, y: -0.08984219, z: 0.5830562, w: 0.79677325}
+  m_LocalPosition: {x: -1.1940591, y: -0.0000004959106, z: -0.00000082969666}
+  m_LocalScale: {x: 1.0000006, y: 0.99999946, z: 1.0000005}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6435617481731740957}
+  m_Father: {fileID: 6435617481731783023}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6435617481732087513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6435617481731808961}
+  m_Layer: 6
+  m_Name: SpiderTailBotton2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6435617481731808961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435617481732087513}
+  m_LocalRotation: {x: 0.00000008075439, y: 0.00000006861907, z: 0.6902846, w: 0.7235379}
+  m_LocalPosition: {x: -0.39504898, y: -0.46521038, z: 0.000000045804224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6435617481731765217}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
