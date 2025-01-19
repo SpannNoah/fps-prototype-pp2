@@ -300,7 +300,7 @@ public class Wraith : MonoBehaviour,  IDamage
 
         if (m_health <= 0)
         {
-            m_animator.SetTrigger("death");
+            m_animator.SetTrigger("Death");
 
             DropRandomPowerUp();
             //Destroy(gameObject); --> Animation State Destroys Game Object Now to Allow for Death Animation to Complete
