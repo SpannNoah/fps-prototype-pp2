@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:P&P2_FPS/Assets/Prefabs/Enemy/Wraith.prefab.meta
-guid: 1065d8ff03156b9409af8a7691cba892
-PrefabImporter:
-========
+<<<<<<< Updated upstream
 guid: 4a27aaa03dab5e2449620d3a8b3c73dc
+=======
+<<<<<<<< Updated upstream:P&P2_FPS/Assets/KriptoFX/Magic Effects Pack v5/EffectResources/Materials/Effect2/TrailSmoke.mat.meta
+guid: 392ae2f05a67f684da3480cf27ffd672
+========
+guid: b23e67c6050bf0a43b0cfc32befbfdd3
+>>>>>>>> Stashed changes:P&P2_FPS/Assets/Scenes/Level 2/NavMesh.asset.meta
+>>>>>>> Stashed changes
 NativeFormatImporter:
->>>>>>>> 9254975 (merge into test):P&P2_FPS/Assets/Scenes/Level 2/NavMesh.asset.meta
   externalObjects: {}
   mainObjectFileID: 23800000
   userData: 
