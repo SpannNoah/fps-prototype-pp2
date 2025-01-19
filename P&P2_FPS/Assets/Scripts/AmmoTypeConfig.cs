@@ -15,6 +15,7 @@ public class AmmoTypeConfig : ScriptableObject
     public MonoBehaviour m_effectScript = null;
     public List<AmmoUpgrade> m_possibleUpgrades = new List<AmmoUpgrade>();
     public AmmoUpgrade m_currentUpgrade = null;
+    public AudioSource m_audioSource = null;
 
     [System.Serializable]
     public class AmmoUpgrade
