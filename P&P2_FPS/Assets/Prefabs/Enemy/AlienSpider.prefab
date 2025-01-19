@@ -915,6 +915,15 @@ MonoBehaviour:
   m_roamDistance: 10
   m_roamTimer: 3
   m_speedTransition: 3
+  m_isShooting: 0
+  m_isPlayerInRange: 0
+  m_colorOriginal: {r: 1, g: 1, b: 1, a: 0.89411765}
+  m_playerDirection: {x: 0, y: 0, z: 0}
+  m_angleToPlayer: 0
+  m_isRoaming: 0
+  m_startingPos: {x: 0, y: 0, z: 0}
+  m_originalStoppingDist: 0
+  m_originalHP: 0
 --- !u!95 &9555924
 Animator:
   serializedVersion: 5

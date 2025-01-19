@@ -2,19 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Alien_Spider_1
+  m_Name: Alien_Spider Armor_4
   m_Shader: {fileID: 4800000, guid: 901cb4d38cc5df3478328f726618464c, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
-  - _METALLICGLOSSMAP
-  - _NORMALMAP
-  - _SPECGLOSSMAP
+  m_ShaderKeywords: _EMISSION _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 12429df6e6c760e418583b3749b69dfb, type: 3}
+        m_Texture: {fileID: 2800000, guid: e442627171d44f640b14d18a61169c41, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -41,19 +36,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 39c3ad8e4f8a20b448b5475c2f83a106, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2f00cdd52f4e16d4a98e73fb3032e115, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 00ccc2e8712969247ac2abfc84e552b5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9e847e8ccaffec54bb09e9896eaa92f1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 994fd28ca67241a4ba89c8f55c6bc275, type: 3}
+        m_Texture: {fileID: 2800000, guid: c172f021620c2e64a9e1351c4a0efe37, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: fc1a3a0f12cfb3a44ab95baacd242a11, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -65,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: 994fd28ca67241a4ba89c8f55c6bc275, type: 3}
+        m_Texture: {fileID: 2800000, guid: c172f021620c2e64a9e1351c4a0efe37, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tatoo:
@@ -80,15 +75,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
-    - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EmissionIntensity: 1
-    - _EmissionScaleUI: 1
     - _GlossMapScale: 1
     - _Glossiness: 1.54
     - _GlossyReflections: 1
@@ -103,11 +95,9 @@ Material:
     - _SrcBlend: 1
     - _TransAmbient: 0.2
     - _TransDirect: 1
-    - _TransNormal: 0.5
     - _TransNormalDistortion: 0.1
     - _TransScattering: 2
     - _TransShadow: 0.9
-    - _TransStrength: 1
     - _Translucency: 1
     - _UVSec: 0
     - _ZWrite: 1
@@ -120,9 +110,7 @@ Material:
     - _ColorTatooB: {r: 1, g: 1, b: 1, a: 0}
     - _ColorTatooG: {r: 1, g: 1, b: 1, a: 0}
     - _ColorTatooR: {r: 1, g: 1, b: 1, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 2, g: 2, b: 2, a: 1}
     - _SSS: {r: 0.35294116, g: 0, b: 0, a: 0}
     - _SkinHairColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 0}
-    - _SpecColor: {r: 0.41911763, g: 0.41911763, b: 0.41911763, a: 1}
-  m_BuildTextureStacks: []
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

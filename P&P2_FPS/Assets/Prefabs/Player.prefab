@@ -137,14 +137,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600155309}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7072005, z: -0, w: 0.70701313}
+  m_LocalPosition: {x: 0.203, y: -0.899, z: 0.756}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5553137498546427665}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.015, z: 0}
 --- !u!1 &5553137498546427668
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_jumpMax: 1
   m_jumpSpeed: 12
   m_gravity: 28
-  m_health: 10
+  m_health: 100
   m_healthLerpSpeed: 0.25
   m_shootDamage: 0
   m_shootDistance: 0
@@ -369,6 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_gunHolder: {fileID: 52257180}
+  m_meleeHolder: {fileID: 600155310}
 --- !u!23 &5553137498959758508
 MeshRenderer:
   m_ObjectHideFlags: 0

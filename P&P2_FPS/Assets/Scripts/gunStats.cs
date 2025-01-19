@@ -13,6 +13,7 @@ public class gunStats : ScriptableObject
     public float shootRate;
     public float shootDist;
     public int ammoCur, ammoMax;
+    public bool m_isMelee = false;
 
     [Header("Effects")]
     public ParticleSystem hitEffect;
