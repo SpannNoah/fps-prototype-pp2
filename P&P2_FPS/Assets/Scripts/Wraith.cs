@@ -193,9 +193,23 @@ public class Wraith : MonoBehaviour,  IDamage
             case AttackType.Melee:
                 if (m_angleToPlayer <= m_fieldOfView && m_isPlayerInRange)
                 {
-                    //yield return new WaitForSeconds(m_fireRate);
-                   m_animator.SetTrigger("attack1");
-                    //yield return new WaitForSeconds(0.2f);
+                    int attackIndex = Random.Range(1, 5);// randomly select an attack type (1, 2, or 3)
+
+                    switch (attackIndex)
+                    {
+                        case 1: // if attackIndex is 1
+                            m_animator.SetTrigger("WAttack1"); // play the attack animation
+                            break;
+                        case 2: // if attackIndex is 2
+                            m_animator.SetTrigger("WAttack2"); //  play the attack animation
+                            break;
+                        case 3: // if attackIndex is 3
+                            m_animator.SetTrigger("WAttack3"); //  play the attack animation
+                            break;
+                        case 4: // if attackIndex is 4
+                            m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
+                            break;
+                    }
 
                 }
                 //yield return new WaitForSeconds(m_fireRate);
@@ -203,23 +217,23 @@ public class Wraith : MonoBehaviour,  IDamage
         }
 
     //   randomly select one of the three attack animations 
-        int attackIndex = Random.Range(1, 5);// randomly select an attack type (1, 2, or 3)
-        if (m_angleToPlayer <= m_fieldOfView && m_isPlayerInRange)
-            switch (attackIndex)
-        {
-            case 1: // if attackIndex is 1
-                m_animator.SetTrigger("WAttack1"); // play the attack animation
-                break;
-            case 2: // if attackIndex is 2
-                m_animator.SetTrigger("WAttack2"); //  play the attack animation
-                break;
-            case 3: // if attackIndex is 3
-                m_animator.SetTrigger("WAttack3"); //  play the attack animation
-               break;
-            case 4: // if attackIndex is 4
-                m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
-                break;
-        }
+        //int attackIndex = Random.Range(1, 5);// randomly select an attack type (1, 2, or 3)
+        
+        //    switch (attackIndex)
+        //{
+        //    case 1: // if attackIndex is 1
+        //        m_animator.SetTrigger("WAttack1"); // play the attack animation
+        //        break;
+        //    case 2: // if attackIndex is 2
+        //        m_animator.SetTrigger("WAttack2"); //  play the attack animation
+        //        break;
+        //    case 3: // if attackIndex is 3
+        //        m_animator.SetTrigger("WAttack3"); //  play the attack animation
+        //       break;
+        //    case 4: // if attackIndex is 4
+        //        m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
+        //        break;
+        
 
        yield return new WaitForSeconds(1.0f / m_fireRate); // wait for the fire rate
         DealDamage(); // deal damage to the player
