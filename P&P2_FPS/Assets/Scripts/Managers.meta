@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:P&P2_FPS/Assets/Scripts/Managers.meta
 guid: b1953dd550dd25c47964546bf357175a
 folderAsset: yes
+========
+guid: 10cf7fb218625514bb6c643da7716bf9
+>>>>>>>> Stashed changes:P&P2_FPS/Assets/Scenes/Level 2.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
