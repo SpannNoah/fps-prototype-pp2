@@ -1,0 +1,169 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7404324643867841359
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: IceLit
+  m_Shader: {fileID: -6465566751694194690, guid: 4eb6bd2af581ef14190954952690d371, type: 3}
+  m_ValidKeywords:
+  - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  - _USESCRIPTROTATIONVECTOR
+  - _USEVERTEXOFFSET
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: e16a7811e9620274f9dc8ee4224ee03d, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _CutoutTex:
+        m_Texture: {fileID: 2800000, guid: 8008b488a2ddb5c4696561e0694ae7d0, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _IciclesMask:
+        m_Texture: {fileID: 2800000, guid: bd6f3b42de9121c4e86cd8834e84cbdf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 9b8ef4c09d59a5c47bb359f4d547856d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AORemapMax: 1
+    - _AORemapMin: 0
+    - _AlphaClipThresholdBlend: 0
+    - _AlphaCutoff: 0
+    - _BUILTIN_AlphaClip: 0
+    - _BUILTIN_Blend: 0
+    - _BUILTIN_CullMode: 0
+    - _BUILTIN_DstBlend: 10
+    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueOffset: 0
+    - _BUILTIN_SrcBlend: 5
+    - _BUILTIN_Surface: 1
+    - _BUILTIN_ZTest: 4
+    - _BUILTIN_ZWrite: 1
+    - _BUILTIN_ZWriteControl: 1
+    - _BumpScale: 1
+    - _Cutoff: 1.11
+    - _Cutout: 1
+    - _CutoutOffset: 0
+    - _DetailAlbedoScale: 1
+    - _DetailNormalMapScale: 1
+    - _DetailNormalScale: 1
+    - _DetailSmoothnessScale: 1
+    - _Displacement: 0.3
+    - _DissolveColorThreshold: 0.13
+    - _DissolveThreshold: 0
+    - _DistortScale: 0.5
+    - _DstBlend: 0
+    - _EnableDetail: 0
+    - _FresnelDistortionStrength: 0.82
+    - _FresnelPower: 1.25
+    - _FresnelPowerOuter: 1.25
+    - _GlossMapScale: 0.367
+    - _Glossiness: 0.6
+    - _GlossyReflections: 1
+    - _IceStrength: 1
+    - _IceVertexOffset: 1.5
+    - _IciclesLength: 2
+    - _LinkDetailsWithBase: 1
+    - _Metallic: 0.75
+    - _Mode: 0
+    - _NormalScale: 1
+    - _NormalStrenth: 3
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _ParallaxFresnelPower: 1
+    - _ParallaxStrength: 1
+    - _ParralaxAlbedoStrength: 0.025
+    - _Rotation: 0
+    - _SmoothnessRemapMax: 1
+    - _SmoothnessRemapMin: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Steps: 9
+    - _TexWorldScale: 1
+    - _USEALPHACUTOUT: 0
+    - _USEEMISSION: 0
+    - _USEROTATIONVECTOR: 0
+    - _USESCRIPTROTATIONVECTOR: 1
+    - _USEVERTEXOFFSET: 1
+    - _UVBase: 0
+    - _UVDetail: 0
+    - _UVSec: 0
+    - _UseNormalOffset: 1
+    - _UseParticlesCustomIciclesLength_uv0_z: 0
+    - _VertexAlphaMultiplier: 3
+    - _WorldMapping: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseColorMap_TO: {r: 1, g: 1, b: 0, a: 0}
+    - _Color: {r: 0.41039923, g: 0.9649928, b: 2.1185474, a: 1}
+    - _DetailMap_TO: {r: 1, g: 1, b: 0, a: 0}
+    - _DissolveColor: {r: 83.46362, g: 10.487576, b: 0, a: 1}
+    - _DissolveColor1: {r: 0, g: 0, b: 0, a: 1}
+    - _DissolveColor2: {r: 0, g: 0, b: 0, a: 1}
+    - _DissolveColor3: {r: 0, g: 0, b: 0, a: 1}
+    - _DissolveColorEnd: {r: 0, g: 0.06900835, b: 1, a: 1}
+    - _DissolveColorStart: {r: 1, g: 0, b: 0, a: 1}
+    - _DissolveMinMaxIn: {r: 0.69, g: 0.83, b: 0, a: 0}
+    - _DissolveMinMaxOut: {r: 0.21, g: 1.88, b: 0, a: 0}
+    - _DissolveRemap: {r: 4, g: 1.5, b: 0, a: 0}
+    - _DissolveThreshold: {r: 0, g: 0.02, b: 0.29, a: 0}
+    - _DistortionSpeed: {r: 0.05, g: 0.15, b: 0, a: 0}
+    - _EmissionColor: {r: 51.377857, g: 0.7943645, b: 0, a: 1}
+    - _FresnelEmissionColor: {r: 0.22183743, g: 0.69878787, b: 1.4142135, a: 1}
+    - _FresnelOuterColor: {r: 0.22183743, g: 0.69878787, b: 1.4142135, a: 1}
+    - _FresnelPowerInner: {r: 1, g: 3, b: 0, a: 0}
+    - _FresnelPower_1: {r: 1, g: 3, b: 0, a: 0}
+    - _IceDirection: {r: 0, g: 0, b: 1, a: 0}
+    - _NormalVertexOffsetMinMax: {r: 0.03, g: 0.05, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _ParallaxColor: {r: 0.41039923, g: 0.9649928, b: 2.1185474, a: 1}
+    - _ParallaxTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _RE2_EffectDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _RE2_RotationVector: {r: 0.8984031, g: -0.036763504, b: -0.43763006, a: 0}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &9209920750790395679
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

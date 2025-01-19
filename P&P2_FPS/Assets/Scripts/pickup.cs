@@ -25,6 +25,7 @@ public class pickup : MonoBehaviour
                 if(other.TryGetComponent(out GunManager gunManager))
                 {
                     gunManager.EquipGun(m_gunStats, m_ammoCartridge);
+                    AmmoManager.Instance.SetCurrentCartridge(m_ammoCartridge);
                     Destroy(gameObject);
                 }
             }
