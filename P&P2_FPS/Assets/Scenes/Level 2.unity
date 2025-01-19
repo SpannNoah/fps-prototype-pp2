@@ -7840,6 +7840,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: m_fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: m_baseSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: m_shootDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: m_shootDistance
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5553137498959758498, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
+      propertyPath: m_baseSprintModifier
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5553137498959758499, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
       propertyPath: m_Name
       value: Player
@@ -7904,7 +7924,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1098876240, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8652441b594c6ad479084f0b9ba4fc41, type: 3}
 --- !u!4 &1987227255 stripped
 Transform:
