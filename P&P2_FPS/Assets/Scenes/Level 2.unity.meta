@@ -1,35 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<<< HEAD:P&P2_FPS/Assets/Scenes/Level 2.unity.meta
 guid: 10cf7fb218625514bb6c643da7716bf9
-========
-guid: 6ade83c7657310546aeb27165ea3ef41
-folderAsset: yes
->>>>>>>> mergemain:P&P2_FPS/Assets/Scenes/BossScene.meta
-=======
-<<<<<<<< Updated upstream:P&P2_FPS/Assets/Polygonmaker.meta
-guid: 3b83fb6285c8a0a4c9784c5d6abc84dc
-=======
-<<<<<<<< Updated upstream:P&P2_FPS/Assets/Scripts/Managers.meta
-guid: b1953dd550dd25c47964546bf357175a
->>>>>>> Stashed changes
-=======
-<<<<<<<< Updated upstream:P&P2_FPS/Assets/Settings.meta
-guid: 516abe62fe236304bb0010a278f615c7
->>>>>>> Stashed changes
-folderAsset: yes
-========
-guid: 10cf7fb218625514bb6c643da7716bf9
->>>>>>>> Stashed changes:P&P2_FPS/Assets/Scenes/Level 2.unity.meta
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 DefaultImporter:
   externalObjects: {}
   userData: 
