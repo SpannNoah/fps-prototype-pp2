@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3881133582180176368}
   m_Layer: 0
-  m_Name: Door
+  m_Name: SlidingDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1031020115, guid: abc00000000017638471881275473266, type: 3}
       propertyPath: m_Name
-      value: SM_Door1
+      value: doorLeft
       objectReference: {fileID: 0}
     - target: {fileID: 1031020116, guid: abc00000000017638471881275473266, type: 3}
       propertyPath: m_RootOrder
@@ -8240,7 +8240,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1031020115, guid: abc00000000017638471881275473266, type: 3}
       propertyPath: m_Name
-      value: SM_Door1 (1)
+      value: doorRight
       objectReference: {fileID: 0}
     - target: {fileID: 1031020116, guid: abc00000000017638471881275473266, type: 3}
       propertyPath: m_RootOrder
