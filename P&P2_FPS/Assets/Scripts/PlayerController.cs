@@ -584,5 +584,27 @@ public class PlayerController : MonoBehaviour, IDamage
         StartCoroutine(RemoveDeBuff(debuff));
     }
 
-    
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(player);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        crouchColliderHeight = data.m_crouchColliderHeight;
+        crouchCameraHeight = data.m_crouchColliderHeight;
+        m_baseSpeed = data.m_baseSpeed;
+        m_baseSprintModifier = data.m_sprintMod;
+        m_health = data.m_HP;
+        m_playerHealthOrig = data.m_ogHP;
+        m_speed = data.m_speed;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        player.transform.position = position;
+    }
 }
