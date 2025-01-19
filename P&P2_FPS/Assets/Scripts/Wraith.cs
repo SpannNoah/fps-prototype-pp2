@@ -98,7 +98,30 @@ public class Wraith : MonoBehaviour,  IDamage
 
     public void Update()
    {
-        
+        if (m_navMeshAgent.isActiveAndEnabled)
+        {
+            float agentSpeed = m_navMeshAgent.velocity.normalized.magnitude;
+            float animSpeed = m_animator.GetFloat("Speed");
+
+
+            m_animator.SetFloat("Speed", Mathf.MoveTowards(animSpeed, agentSpeed, Time.deltaTime * m_speedTransition));
+
+            m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+            if (m_isPlayerInRange && !CanSeePlayer())
+            {
+                if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+                {
+                    m_coroutine = StartCoroutine(RoamCoroutine());
+                }
+            }
+            else if (!m_isPlayerInRange)
+            {
+                if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
+                {
+                    m_coroutine = StartCoroutine(RoamCoroutine());
+                }
+            }
+        }
 
 
         if (m_health <= 75 && m_phase == 1)
