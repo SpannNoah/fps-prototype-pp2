@@ -50,17 +50,9 @@ public class PlayerController : MonoBehaviour, IDamage
     private List<scriptableDeBuff> activeDeBuff = new List<scriptableDeBuff>();
     private Coroutine currentDoTCoroutine;
 
-    [Space]
-    [Header("Shooting Settings")]
-    [SerializeField]
-    private int m_shootDamage = 25;
-    [SerializeField]
-    private float m_shootDistance = 50;
-    [SerializeField]
-    private float m_fireRate = 20;
-    [SerializeField] GameObject gunModel;
-    [SerializeField] List<gunStats> weaponInventory = new List<gunStats>();
-    private int weaponInvPos;
+
+   
+
 
     [Header("Crouching")]
     [SerializeField]
@@ -131,8 +123,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Move();
         Sprint();
         Crouch();
-        selectedGun();
-        reload();
+
     }
 
     private void Move()
@@ -336,40 +327,11 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
-    void reload()
-    {
-        if (Input.GetButtonDown("Reload") && weaponInventory.Count > 0)
-        {
-            weaponInventory[weaponInvPos].ammoCur = weaponInventory[weaponInvPos].ammoMax;
-            GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
-        }
-    }
 
-    void selectedGun()
-    {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && weaponInvPos < weaponInventory.Count - 1)
-        {
-            weaponInvPos++;
-            changeWeapon();
-        }
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && weaponInvPos > 0)
-        {
-            weaponInvPos--;
-            changeWeapon();
-        }
-    }
 
-    void changeWeapon()
-    {
-        m_shootDamage = weaponInventory[weaponInvPos].shootDamage;
-        m_shootDistance = weaponInventory[weaponInvPos].shootDist;
-        m_fireRate = weaponInventory[weaponInvPos].shootRate;
-        GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
 
-        gunModel.GetComponent<MeshFilter>().sharedMesh = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshFilter>().sharedMesh;
-        gunModel.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
-    }
+
 }
 
 
