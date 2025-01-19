@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class SlidingDoor : MonoBehaviour
 {
-    public Transform doorLeft;  // Left door parent object
-    public Transform doorRight; // Right door parent object
+    public Transform doorLeft;  // Parent object for the left door
+    public Transform doorRight; // Parent object for the right door
 
     public float moveDistance = 3f;  // Distance each door moves
     public float openSpeed = 2f;     // Speed of the door's movement
-
-    // Movement directions (can be adjusted in Inspector)
-    public Vector3 leftDoorMoveDirection = new Vector3(-1, 0, 0); // Default: Left door moves left on X-axis
-    public Vector3 rightDoorMoveDirection = new Vector3(1, 0, 0); // Default: Right door moves right on X-axis
 
     private Vector3 leftClosedPosition;
     private Vector3 rightClosedPosition;
@@ -29,11 +25,10 @@ public class SlidingDoor : MonoBehaviour
         leftClosedPosition = doorLeft.localPosition;
         rightClosedPosition = doorRight.localPosition;
 
-        // Calculate open positions based on movement directions
-        leftOpenPosition = leftClosedPosition + (leftDoorMoveDirection.normalized * moveDistance);
-        rightOpenPosition = rightClosedPosition + (rightDoorMoveDirection.normalized * moveDistance);
+        // Adjust these vectors based on intended movement direction
+        leftOpenPosition = leftClosedPosition + new Vector3(0, 0, -moveDistance); // Move left door "backward" along Z-axis
+        rightOpenPosition = rightClosedPosition + new Vector3(0, 0, moveDistance); // Move right door "forward" along Z-axis
 
-        // Get colliders
         leftCollider = doorLeft.GetComponent<Collider>();
         rightCollider = doorRight.GetComponent<Collider>();
     }
@@ -46,7 +41,6 @@ public class SlidingDoor : MonoBehaviour
             isOpen = !isOpen;
             Debug.Log($"Door toggled. IsOpen={isOpen}");
 
-            // Enable or disable colliders
             leftCollider.enabled = !isOpen;
             rightCollider.enabled = !isOpen;
         }
@@ -77,8 +71,6 @@ public class SlidingDoor : MonoBehaviour
         }
     }
 }
-
-
 
 
 
