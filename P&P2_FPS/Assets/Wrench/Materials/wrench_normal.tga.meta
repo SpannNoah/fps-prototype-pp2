@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:P&P2_FPS/Assets/Wrench/Materials/wrench_normal.tga.meta
 guid: b169683a67890e74d94cd64b4b8660f2
-=======
-guid: c586b0dd2e47f1c408b8eee61ee1bdf2
->>>>>>> Stashed changes:P&P2_FPS/Assets/ThirdParty/ToonSoldiers_WW2_demo/model/Materials/US_soldier_simple.tga.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -11,13 +7,8 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-<<<<<<< Updated upstream:P&P2_FPS/Assets/Wrench/Materials/wrench_normal.tga.meta
-    linearTexture: 1
-    correctGamma: 0
-=======
-    sRGBTexture: 1
+    sRGBTexture: 0
     linearTexture: 0
->>>>>>> Stashed changes:P&P2_FPS/Assets/ThirdParty/ToonSoldiers_WW2_demo/model/Materials/US_soldier_simple.tga.meta
     fadeOut: 0
     borderMipMap: 0
     mipMapsPreserveCoverage: 0
@@ -26,8 +17,8 @@ TextureImporter:
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
-    externalNormalMap: 1
-    heightScale: .25
+    externalNormalMap: 0
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   streamingMipmaps: 0
@@ -37,17 +28,9 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
-<<<<<<< Updated upstream:P&P2_FPS/Assets/Wrench/Materials/wrench_normal.tga.meta
-  cubemapConvolutionSteps: 8
-  cubemapConvolutionExponent: 1.5
-  seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
-=======
   seamlessCubemap: 0
   textureFormat: 1
   maxTextureSize: 2048
->>>>>>> Stashed changes:P&P2_FPS/Assets/ThirdParty/ToonSoldiers_WW2_demo/model/Materials/US_soldier_simple.tga.meta
   textureSettings:
     serializedVersion: 2
     filterMode: 1
@@ -63,24 +46,15 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-<<<<<<< Updated upstream:P&P2_FPS/Assets/Wrench/Materials/wrench_normal.tga.meta
-  spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-=======
   spritePivot: {x: 0.5, y: 0.5}
->>>>>>> Stashed changes:P&P2_FPS/Assets/ThirdParty/ToonSoldiers_WW2_demo/model/Materials/US_soldier_simple.tga.meta
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 0
-<<<<<<< Updated upstream:P&P2_FPS/Assets/Wrench/Materials/wrench_normal.tga.meta
-  textureType: 1
-  buildTargetSettings: []
-=======
   spriteTessellationDetail: -1
-  textureType: 0
-  textureShape: 1
+  textureType: 1
+  textureShape: 2
   singleChannelComponent: 0
   flipbookRows: 1
   flipbookColumns: 1
@@ -88,8 +62,8 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
-  cookieLightType: 0
+  applyGammaDecoding: 1
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -115,12 +89,9 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
->>>>>>> Stashed changes:P&P2_FPS/Assets/ThirdParty/ToonSoldiers_WW2_demo/model/Materials/US_soldier_simple.tga.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []
-<<<<<<< Updated upstream:P&P2_FPS/Assets/Wrench/Materials/wrench_normal.tga.meta
-=======
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +103,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable: {}
->>>>>>> Stashed changes:P&P2_FPS/Assets/ThirdParty/ToonSoldiers_WW2_demo/model/Materials/US_soldier_simple.tga.meta
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
