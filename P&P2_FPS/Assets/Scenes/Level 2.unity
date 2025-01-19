@@ -123,6 +123,7 @@ NavMeshSettings:
       m_Flags: 0
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_NavMeshData: {fileID: 23800000, guid: b23e67c6050bf0a43b0cfc32befbfdd3, type: 2}
 --- !u!1001 &272405998
 PrefabInstance:
@@ -204,6 +205,9 @@ Transform:
 =======
   m_NavMeshData: {fileID: 0}
 >>>>>>> Stashed changes
+=======
+  m_NavMeshData: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &456768728
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +220,10 @@ GameObject:
   - component: {fileID: 456768729}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   - component: {fileID: 456768731}
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -303,6 +310,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
   m_RootOrder: 2
@@ -409,6 +417,10 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 >>>>>>> Stashed changes
+=======
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &911365560
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +505,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 --- !u!1 &1057798663
@@ -858,6 +871,8 @@ Transform:
   m_Father: {fileID: 1057798664}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
