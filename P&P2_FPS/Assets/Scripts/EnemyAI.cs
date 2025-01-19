@@ -47,7 +47,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     [Range(0, 500)]
     public int damage;
     [SerializeField]
-    GameObject m_bullet = null;
+    public GameObject m_bullet = null;
     [SerializeField]
     public float m_fireRate = 10.0f;
     [SerializeField]
@@ -119,7 +119,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
     }
 
-    private IEnumerator RoamCoroutine()
+    public IEnumerator RoamCoroutine()
     {
         m_isRoaming = true;
         yield return new WaitForSeconds(m_roamTimer);

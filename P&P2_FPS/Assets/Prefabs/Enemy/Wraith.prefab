@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6704057471226873409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465772773141956303}
+  m_Layer: 0
+  m_Name: ScytheBlade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &465772773141956303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704057471226873409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7070398897379532327}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7066576618895775361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,21 +2325,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308984658a0f88642b39d0b0753e49a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_attackType: 0
-  m_healthBar: {fileID: 0}
-  m_model: {fileID: 0}
-  m_shootPos: {fileID: 0}
-  m_headPos: {fileID: 0}
-  m_navMeshAgent: {fileID: 0}
-  m_animator: {fileID: 0}
+  m_attackType: 1
+  m_healthBar: {fileID: 7983954555043983551, guid: 346460b1d3302ce4e909f4f2f4a77a61, type: 3}
+  m_model: {fileID: 7066576618898955203}
+  m_shootPos: {fileID: 465772773141956303}
+  m_headPos: {fileID: 7066576618895608683}
+  m_navMeshAgent: {fileID: 7066576618879475266}
+  m_animator: {fileID: 7066576618903069955}
   m_powerUps: []
   m_chanceToDropPowerUp: 25
   m_health: 100
   m_faceTargetSpeed: 20
   m_damageColor: {r: 1, g: 0, b: 0, a: 1}
   damage: 0
-  m_bullet: {fileID: 0}
-  m_fireRate: 10
+  m_bullet: {fileID: 6704057471226873409}
+  m_fireRate: 1
   m_fieldOfView: 90
   m_roamDistance: 10
   m_roamTimer: 3
@@ -6314,6 +6345,7 @@ Transform:
   - {fileID: 7062141823122800221}
   - {fileID: 7070250698384410799}
   - {fileID: 7061822992095643863}
+  - {fileID: 465772773141956303}
   m_Father: {fileID: 7066576618895608577}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -51.953, y: -63.429, z: 46.714}

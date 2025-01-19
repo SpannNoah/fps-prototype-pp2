@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
 
     // boss/sub-boss management
     public Wraith Wraith; // reference to the Wraith script
-    public GameObject golem; // reference to the golem prefab
-    public GameObject giantSpider; // reference to the giant spider prefab
+    public Golem golem; // reference to the golem script
+    public GiantSpider giantSpider; // reference to the giant spider script
     private bool bossFightActive = false; // tracks if the boss fight is active
 
 
