@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private Coroutine currentDoTCoroutine;
 
 
-   
+
 
 
     [Header("Crouching")]
@@ -326,12 +326,8 @@ public class PlayerController : MonoBehaviour, IDamage
             activeDeBuff.Remove(debuff);
         }
     }
-
-
-
-
-
-
 }
+
+
 
 
