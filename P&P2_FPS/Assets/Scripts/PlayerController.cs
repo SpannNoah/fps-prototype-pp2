@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private bool isImmune = false;
     private List<scriptableDeBuff> activeDeBuff = new List<scriptableDeBuff>();
     private Coroutine currentDoTCoroutine;
-
+    private int m_currentLevel = 0;
 
    
 
@@ -83,6 +84,20 @@ public class PlayerController : MonoBehaviour, IDamage
     public float Speed { get { return m_speed; } }
     public float SprintModifier { get { return m_sprintModifier; } }
     public int playerHealthOrig { get { return m_playerHealthOrig; } }
+
+    public int CurrentLevel
+    {
+        get { return m_currentLevel; }
+        set
+        {
+            if (value < 0)
+            {
+                return;
+            }
+
+            m_currentLevel = value;
+        }
+    }
 
     // Setters
     public void SetSpeed(float v)

@@ -93,6 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400002}
   - component: {fileID: -4663710024935098842}
+  - component: {fileID: 1922014990}
+  - component: {fileID: 1922014993}
   m_Layer: 0
   m_Name: WrenchPickup
   m_TagString: Untagged
@@ -109,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 400008}
@@ -135,6 +137,34 @@ MonoBehaviour:
   m_type: 4
   m_gunStats: {fileID: 11400000, guid: c296959d938637346aa21cb43dead51d, type: 2}
   m_ammoCartridge: {fileID: 0}
+--- !u!135 &1922014990
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.6160179
+  m_Center: {x: 0, y: 1.1160179, z: 0}
+--- !u!114 &1922014993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e53ce7e34b9c048aa438aba35f3f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
+  bobSpeed: 2
+  bobHeight: 0.5
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

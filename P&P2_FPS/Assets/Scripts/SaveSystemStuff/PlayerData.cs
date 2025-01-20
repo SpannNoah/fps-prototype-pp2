@@ -12,7 +12,7 @@ public class PlayerData
     public int m_ogHP;
     public float m_speed;
     public float[] position;
-    //public int levelNumber;
+    public int levelNumber;
 
     // Constructor
     public PlayerData(PlayerController player)
@@ -25,10 +25,10 @@ public class PlayerData
         m_HP = player.Health; // Assuming these properties exist
         m_ogHP = player.playerHealthOrig; // Assuming these properties exist
         m_speed = player.Speed; // Assuming these properties exist
-        position[0] = player.transform.position.x; //save player x pos
-        position[1] = player.transform.position.y; //save player y pos
-        position[2] = player.transform.position.z; //save player z pos
+        //position[0] = player.transform.position.x; //save player x pos
+        //position[1] = player.transform.position.y; //save player y pos
+        //position[2] = player.transform.position.z; //save player z pos
 
-        //levelNumber = currentLevel.currentLevel; //Stores current level
+        levelNumber = player.CurrentLevel; //Stores current level
     }
 }

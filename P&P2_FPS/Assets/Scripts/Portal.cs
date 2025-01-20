@@ -10,22 +10,29 @@ public class Portal : MonoBehaviour
     [FormerlySerializedAs("m_targetPortalPos")]
     [SerializeField]
     private GameObject m_targetPortal = null;
-    //public int currentLevel;
+
     [SerializeField]
-    private float m_teleportDelay = .25f;
+    private float m_teleportDelay = 0.25f;
 
     public bool m_isTeleporting = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && m_isTeleporting == false)
+        if (other.CompareTag("Player") && !m_isTeleporting)
         {
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            PlayerController player = other.GetComponent<PlayerController>();
+
+            if (player != null)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+                if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+                {
+                    //PlayerPrefs.SetInt("CurrentLevel", nextSceneIndex);
+
+                    SceneManager.LoadScene(nextSceneIndex);
+                }
             }
         }
     }
-
 }
