@@ -7,9 +7,6 @@ using UnityEngine.Serialization;
 
 public class Portal : MonoBehaviour
 {
-    [FormerlySerializedAs("m_targetPortalPos")]
-    [SerializeField]
-    private GameObject m_targetPortal = null;
 
     [SerializeField]
     private float m_teleportDelay = 0.25f;

@@ -26,6 +26,7 @@ Material:
   - _BUILTIN_ALPHATEST_ON
   - _BUILTIN_AlphaClip
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
   - _USEALPHACUTOUT
   - _USEDISTORTION
   - _UV_MODE_UV
@@ -37,7 +38,9 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -61,9 +64,22 @@ Material:
         m_Texture: {fileID: 2800000, guid: ea6d975c7e1d4c14f967a6a5dd1106f2, type: 3}
         m_Scale: {x: 3, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AffectAlphaMask: 0
+    - _AlphaClip: 0
     - _AlphaClipThresholdBlend: 0
     - _BUILTIN_AlphaClip: 1
     - _BUILTIN_Blend: 0
@@ -76,7 +92,10 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 1
     - _BUILTIN_ZWriteControl: 1
+    - _Blend: 2
     - _BumpScale: 1
+    - _CastShadows: 0
+    - _Cull: 2
     - _CustomTime: -1.33
     - _Cutoff: 0.5
     - _Cutout: 0.1
@@ -84,7 +103,7 @@ Material:
     - _DecalBlendFactor: 10
     - _DepthOffset: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 1
     - _Float: 0
     - _Fps: 60
     - _FresnelFadeFactor: 0
@@ -97,10 +116,13 @@ Material:
     - _NoiseOverTrail: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
+    - _Surface: 1
     - _TriplanarBlendFactor: 3
     - _USEALPHACLIPTHRESHOLD: 1
     - _USEALPHACUTOUT: 1
@@ -123,7 +145,9 @@ Material:
     - _VertexAlphaMultiplier: 3
     - _VertexAlphaThreshold: 0.25
     - _VirtualVertexOffset: 0.1
-    - _ZWrite: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
     - _AlphaMaskRemap: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 253.79506, g: 22.58909, b: 0, a: 1}
