@@ -113,13 +113,13 @@ public class GameManager : MonoBehaviour
             m_goalCountText.text = m_goalCount.ToString("F0");
         }
 
-        if (m_goalCount <= 0)
-        {
-            Debug.Log("Game goal reached!");
-            StatePaused();
-            m_menuActive = m_menuWin;
-            m_menuActive.SetActive(true);
-        }
+        //if (m_goalCount <= 0)
+        //{
+        //    Debug.Log("Game goal reached!");
+        //    StatePaused();
+        //    m_menuActive = m_menuWin;
+        //    m_menuActive.SetActive(true);
+        //}
     }
 
     public void StartBossFight()
