@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class Portal : MonoBehaviour
@@ -11,32 +12,27 @@ public class Portal : MonoBehaviour
     private GameObject m_targetPortal = null;
 
     [SerializeField]
-    private float m_teleportDelay = .25f;
+    private float m_teleportDelay = 0.25f;
 
     public bool m_isTeleporting = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && m_isTeleporting == false)
+        if (other.CompareTag("Player") && !m_isTeleporting)
         {
-            m_isTeleporting = true;
-            m_targetPortal.GetComponent<Portal>().m_isTeleporting = true;
-            StartCoroutine(TeleportCoroutine(other));
+            PlayerController player = other.GetComponent<PlayerController>();
+
+            if (player != null)
+            {
+                int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+                if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+                {
+                    //PlayerPrefs.SetInt("CurrentLevel", nextSceneIndex);
+
+                    SceneManager.LoadScene(nextSceneIndex);
+                }
+            }
         }
     }
-
-    private IEnumerator TeleportCoroutine(Collider player)
-    {
-        CharacterController controller = player.GetComponent<CharacterController>();
-        controller.enabled = false;
-        player.gameObject.transform.position = m_targetPortal.transform.position;
-        player.gameObject.transform.Rotate(0, 180, 0);
-        controller.enabled = true;
-        
-        yield return new WaitForSeconds(m_teleportDelay);
-
-        m_isTeleporting = false;
-        m_targetPortal.GetComponent<Portal>().m_isTeleporting = false;
-    }
-
 }

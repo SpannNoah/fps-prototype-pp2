@@ -1,49 +1,125 @@
 fileFormatVersion: 2
 guid: abc00000000001449078103946610889
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: beacon_base
-    100004: beacon_cercle
-    100006: beacon_support
-    100008: beacon_anim
-    100010: beacon_light
-    100012: beacon_anim001
-    100014: beacon_alim
-    100016: beacon_base
-    100018: beacon_cercle
-    100020: beacon_support
-    100022: beacon_anim
-    100024: beacon_light
-    100026: beacon_anim001
-    100028: beacon_alim
-    400000: //RootNode
-    400002: beacon_base
-    400004: beacon_cercle
-    400006: beacon_support
-    400008: beacon_anim
-    400010: beacon_light
-    400012: beacon_anim001
-    400014: beacon_alim
-    400016: beacon_base
-    400018: beacon_cercle
-    400020: beacon_support
-    400022: beacon_anim
-    400024: beacon_light
-    400026: beacon_anim001
-    400028: beacon_alim
-    2100000: M_Inst_WallS06t1
-    2100002: M_Inst_SGrilles
-    2100004: M_Glass5c2
-    2100006: M_Hose1_Inst2
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: SK_Beacon
-    4300002: SK_Beacon_LOD0
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: beacon_base
+  - first:
+      1: 100004
+    second: beacon_cercle
+  - first:
+      1: 100006
+    second: beacon_support
+  - first:
+      1: 100008
+    second: beacon_anim
+  - first:
+      1: 100010
+    second: beacon_light
+  - first:
+      1: 100012
+    second: beacon_anim001
+  - first:
+      1: 100014
+    second: beacon_alim
+  - first:
+      1: 100016
+    second: beacon_base
+  - first:
+      1: 100018
+    second: beacon_cercle
+  - first:
+      1: 100020
+    second: beacon_support
+  - first:
+      1: 100022
+    second: beacon_anim
+  - first:
+      1: 100024
+    second: beacon_light
+  - first:
+      1: 100026
+    second: beacon_anim001
+  - first:
+      1: 100028
+    second: beacon_alim
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: beacon_base
+  - first:
+      4: 400004
+    second: beacon_cercle
+  - first:
+      4: 400006
+    second: beacon_support
+  - first:
+      4: 400008
+    second: beacon_anim
+  - first:
+      4: 400010
+    second: beacon_light
+  - first:
+      4: 400012
+    second: beacon_anim001
+  - first:
+      4: 400014
+    second: beacon_alim
+  - first:
+      4: 400016
+    second: beacon_base
+  - first:
+      4: 400018
+    second: beacon_cercle
+  - first:
+      4: 400020
+    second: beacon_support
+  - first:
+      4: 400022
+    second: beacon_anim
+  - first:
+      4: 400024
+    second: beacon_light
+  - first:
+      4: 400026
+    second: beacon_anim001
+  - first:
+      4: 400028
+    second: beacon_alim
+  - first:
+      21: 2100000
+    second: M_Inst_WallS06t1
+  - first:
+      21: 2100002
+    second: M_Inst_SGrilles
+  - first:
+      21: 2100004
+    second: M_Glass5c2
+  - first:
+      21: 2100006
+    second: M_Hose1_Inst2
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: SK_Beacon
+  - first:
+      43: 4300002
+    second: SK_Beacon_LOD0
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 1
     materialSearch: 1
     materialLocation: 0
@@ -52,6 +128,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -59,12 +136,15 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -72,28 +152,48 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
     importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
     keepQuads: 0
     weldVertices: 0
+    bakeAxisConversion: 0
     preserveHierarchy: 0
-    indexFormat : 2
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: 1
+    indexFormat: 2
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 0
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -103,15 +203,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
-  assetBundleVariant:
+  assetBundleVariant: 

@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.VisualScripting;
-using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+
 
 public class PlayerController : MonoBehaviour, IDamage
 {
@@ -26,7 +27,6 @@ public class PlayerController : MonoBehaviour, IDamage
     public Camera playerCamera; // Reference to the player camera
     public float crouchCameraHeight; // Camera Height when crouched
     private float originalCameraHeight; // Original camera's height
-
 
     [Space]
     [Header("Player Settings")]
@@ -50,59 +50,19 @@ public class PlayerController : MonoBehaviour, IDamage
     private bool isImmune = false;
     private List<scriptableDeBuff> activeDeBuff = new List<scriptableDeBuff>();
     private Coroutine currentDoTCoroutine;
+    private int m_currentLevel = 0;
 
-
-    [Space]
-    [Header("Shooting Settings")]
-    [SerializeField]
-    private int m_shootDamage = 25;
-    [SerializeField]
-    private float m_shootDistance = 50;
-    [SerializeField]
-    private float m_fireRate = 20;
-    [SerializeField] GameObject gunModel;
-    [SerializeField] List<gunStats> weaponInventory = new List<gunStats>();
-    private int weaponInvPos;
-
-    [Header("Weapon Attachments")]
-    [SerializeField] GameObject[] m4_Attachments;
-    [SerializeField] GameObject[] m1911_Attachments;
-    [SerializeField] GameObject[] m107_Attachments;
 
 
 
     [Header("Crouching")]
-    [SerializeField] 
+    [SerializeField]
     private float crouchSpeed = 3.5f;
     [SerializeField]
     private float crouchMoveSpeed = 5.0f;
-    [SerializeField]
-    private float crouchYScale = .5f;
-    
 
     [Header("Keybinds")]
     public KeyCode crouchKey = KeyCode.LeftControl;
-
-    [Header("IK Settings")]
-    [SerializeField] private TwoBoneIKConstraint rightHandIK;
-    [SerializeField] private Transform rightHandTarget;
-    [SerializeField] private Transform IKRightHandPos;
-    [SerializeField] private TwoBoneIKConstraint leftHandIK;
-    [SerializeField] private Transform leftHandTarget;
-    [SerializeField] private Transform IKLeftHandPos;
-
-    [Header("Stored Weapon POS")]
-    [SerializeField] private Transform m4_LeftHandPos;
-    [SerializeField] private Transform m4_RightHandPos;
-    [Space]
-
-    [SerializeField] private Transform m1911_LeftHandPos;
-    [SerializeField] private Transform m1911_RightHandPos;
-    [Space]
-
-    [SerializeField] private Transform m107_LeftHandPos;
-    [SerializeField] private Transform m107_RightHandPos;
-
 
     [Header("Other")]
     private Vector3 m_moveDir = Vector3.zero;
@@ -118,15 +78,28 @@ public class PlayerController : MonoBehaviour, IDamage
     private float m_originalHeight = 2.0f;
     private float startYScale = 1.0f;
     private bool isCrouched = false;
-    private bool isTakeDamage;
 
-    // getters
+    // Getters
     public int Health { get { return m_health; } }
     public float Speed { get { return m_speed; } }
     public float SprintModifier { get { return m_sprintModifier; } }
     public int playerHealthOrig { get { return m_playerHealthOrig; } }
 
-    // setters
+    public int CurrentLevel
+    {
+        get { return m_currentLevel; }
+        set
+        {
+            if (value < 0)
+            {
+                return;
+            }
+
+            m_currentLevel = value;
+        }
+    }
+
+    // Setters
     public void SetSpeed(float v)
     {
         m_speed = m_baseSpeed;
@@ -146,7 +119,7 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         m_originalHeight = m_characterController.height;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         originalCameraHeight = playerCamera.transform.localPosition.y;
@@ -158,20 +131,14 @@ public class PlayerController : MonoBehaviour, IDamage
         m_baseSpeed = m_speed;
         m_baseSprintModifier = m_sprintModifier;
         UpdatePlayerUI();
-
-        // Sets starting Y scale
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-        UnityEngine.Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * m_shootDistance, Color.red);
         Move();
         Sprint();
         Crouch();
-        selectedGun();
-        reload();
+
     }
 
     private void Move()
@@ -183,7 +150,6 @@ public class PlayerController : MonoBehaviour, IDamage
         }
 
         m_moveDir = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
-
         m_characterController.Move(m_moveDir * m_speed * Time.deltaTime);
 
         Jump();
@@ -194,11 +160,6 @@ public class PlayerController : MonoBehaviour, IDamage
         if ((m_characterController.collisionFlags & CollisionFlags.Above) != 0)
         {
             m_playerVelocity.y -= m_jumpSpeed;
-        }
-
-        if (Input.GetButton("Fire1") && weaponInventory.Count > 0 && weaponInventory[weaponInvPos].ammoCur > 0 && !m_isShooting)
-        {
-            StartCoroutine(ShootingCoroutine());
         }
     }
 
@@ -248,26 +209,6 @@ public class PlayerController : MonoBehaviour, IDamage
             m_speed = m_baseSpeed;
             m_isSprinting = false;
         }
-    }
-
-    private IEnumerator ShootingCoroutine()
-    {
-        weaponInventory[weaponInvPos].ammoCur--;
-        GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
-        m_isShooting = true;
-        RaycastHit hit;
-
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, m_shootDistance, ~m_ignoreMask))
-        {
-            IDamage damage;
-
-            if (hit.collider.TryGetComponent<IDamage>(out damage))
-            {
-                damage.TakeDamage(m_shootDamage);
-            }
-        }
-        yield return new WaitForSeconds(m_fireRate);
-        m_isShooting = false;
     }
 
     public void TakeDamage(int amount)
@@ -324,184 +265,6 @@ public class PlayerController : MonoBehaviour, IDamage
         GameManager.Instance.m_playerHealthBar.fillAmount = endValue;
     }
 
-    public void getGunStats(gunStats gun)
-    {
-        weaponInventory.Add(gun);
-        weaponInvPos = weaponInventory.Count - 1;
-        m_shootDamage = gun.shootDamage;
-        m_shootDistance = gun.shootDist;
-        m_fireRate = gun.shootRate;
-        GameManager.Instance.AmmoCount(gun.ammoMax.ToString(), gun.ammoCur.ToString());
-
-        gunModel.GetComponent<MeshFilter>().sharedMesh = gun.gunModel.GetComponent<MeshFilter>().sharedMesh;
-        gunModel.GetComponent<MeshRenderer>().sharedMaterial = gun.gunModel.GetComponent<MeshRenderer>().sharedMaterial;
-
-        if (gun.name == "M4")
-        {
-
-            IKRightHandPos = m4_RightHandPos;
-            IKLeftHandPos = m4_LeftHandPos;
-            changeIKTarget();
-
-            foreach (var item in m1911_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m107_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m4_Attachments)
-            {
-                item.SetActive(true);
-            }
-        }
-
-        if (gun.name == "M1911")
-        {
-            IKRightHandPos = m1911_RightHandPos;
-            IKLeftHandPos = m1911_LeftHandPos;
-            changeIKTarget();
-
-            foreach (var item in m4_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m107_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m1911_Attachments)
-            {
-                item.SetActive(true);
-            }
-        }
-
-
-        if (gun.name == "M107")
-        {
-            IKRightHandPos = m107_RightHandPos;
-            IKLeftHandPos = m107_LeftHandPos;
-            changeIKTarget();
-
-            foreach (var item in m4_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m1911_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m107_Attachments)
-            {
-                item.SetActive(true);
-            }
-        }
-    }
-
-    void selectedGun()
-    {
-        if(Input.GetAxis("Mouse ScrollWheel") > 0 && weaponInvPos < weaponInventory.Count - 1)
-        {
-            weaponInvPos++;
-            changeWeapon();
-        }
-
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && weaponInvPos > 0)
-        {
-            weaponInvPos--;
-            changeWeapon();
-        }
-    }
-
-    void changeWeapon()
-    {
-        m_shootDamage = weaponInventory[weaponInvPos].shootDamage;
-        m_shootDistance = weaponInventory[weaponInvPos].shootDist;
-        m_fireRate = weaponInventory[weaponInvPos].shootRate;
-        GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
-
-        gunModel.GetComponent<MeshFilter>().sharedMesh = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshFilter>().sharedMesh;
-        gunModel.GetComponent<MeshRenderer>().sharedMaterial = weaponInventory[weaponInvPos].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
-
-        if (weaponInventory[weaponInvPos].name == "M4")
-        {
-            foreach (var item in m1911_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m107_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m4_Attachments)
-            {
-                item.SetActive(true);
-            }
-            IKRightHandPos = m4_RightHandPos;
-            IKLeftHandPos = m4_LeftHandPos;
-            changeIKTarget();
-        }
-
-        if (weaponInventory[weaponInvPos].name == "M1911")
-        {
-            foreach (var item in m4_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m107_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m1911_Attachments)
-            {
-                item.SetActive(true);
-            }
-            IKRightHandPos = m1911_RightHandPos;
-            IKLeftHandPos = m1911_LeftHandPos;
-            changeIKTarget();
-        }
-
-        if (weaponInventory[weaponInvPos].name == "M107")
-        {
-            foreach (var item in m4_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m1911_Attachments)
-            {
-                item.SetActive(false);
-            }
-            foreach (var item in m107_Attachments)
-            {
-                item.SetActive(true);
-            }
-            IKRightHandPos = m107_RightHandPos;
-            IKLeftHandPos = m107_LeftHandPos;
-            changeIKTarget();
-        }
-    }
-
-    void reload()
-    {
-        if (Input.GetButtonDown("Reload") && weaponInventory.Count > 0)
-        {
-            weaponInventory[weaponInvPos].ammoCur = weaponInventory[weaponInvPos].ammoMax;
-            GameManager.Instance.AmmoCount(weaponInventory[weaponInvPos].ammoMax.ToString(), weaponInventory[weaponInvPos].ammoCur.ToString());
-        }
-    }
-
-    void changeIKTarget()
-    {
-        rightHandIK.weight = 1f;
-        leftHandIK.weight = 1f;
-        leftHandTarget.position = IKLeftHandPos.position;
-        leftHandTarget.rotation = IKLeftHandPos.rotation;
-
-        rightHandTarget.position = IKRightHandPos.position;
-        rightHandTarget.rotation = IKRightHandPos.rotation;
-    }
-
     public void ApplyJumpPadForce(float force)
     {
         m_playerVelocity.y = 0;
@@ -527,9 +290,7 @@ public class PlayerController : MonoBehaviour, IDamage
         if (buff.Immunity > 0)
         {
             isImmune = true;
-          
         }
-       
     }
 
     public void RemoveBuff(ScriptableBuff buff)
@@ -540,27 +301,6 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
-    private IEnumerator ApplyDamageOverTimeCoroutine()
-    {
-        while (true)
-        {
-            TakeDamage(1);
-            UpdatePlayerUI();
-            yield return new WaitForSeconds(1);
-        }
-        
-    }
-
-    public IEnumerator RemoveDeBuff(scriptableDeBuff debuff)
-    {
-        yield return new WaitForSeconds(debuff.Duration);
-        if (activeDeBuff.Contains(debuff))
-        {
-            activeDeBuff.Remove(debuff);
-        }
-    }
-
- 
     public void ApplyDeBuff(scriptableDeBuff debuff)
     {
         if (activeDeBuff.Contains(debuff))
@@ -583,5 +323,26 @@ public class PlayerController : MonoBehaviour, IDamage
         StartCoroutine(RemoveDeBuff(debuff));
     }
 
-    
+    private IEnumerator ApplyDamageOverTimeCoroutine()
+    {
+        while (true)
+        {
+            TakeDamage(1);
+            UpdatePlayerUI();
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    public IEnumerator RemoveDeBuff(scriptableDeBuff debuff)
+    {
+        yield return new WaitForSeconds(debuff.Duration);
+        if (activeDeBuff.Contains(debuff))
+        {
+            activeDeBuff.Remove(debuff);
+        }
+    }
 }
+
+
+
+

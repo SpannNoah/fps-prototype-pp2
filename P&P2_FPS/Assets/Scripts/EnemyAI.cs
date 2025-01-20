@@ -17,57 +17,62 @@ public class EnemyAI : MonoBehaviour, IDamage
     }
 
     [SerializeField]
-    private AttackType m_attackType = AttackType.Range;
+    public AttackType m_attackType = AttackType.Range;
 
     [Space][SerializeField]
-    private Image m_healthBar = null;
+    public Image m_healthBar = null;
     [SerializeField]
-    private Renderer m_model = null;
+    public Renderer m_model = null;
     [SerializeField]
-    private Transform m_shootPos = null;
+    public Transform m_shootPos = null;
     [SerializeField]
-    private Transform m_headPos = null;
+    public Transform m_headPos = null;
     [SerializeField]
-    private NavMeshAgent m_navMeshAgent = null;
+    public NavMeshAgent m_navMeshAgent = null;
     [SerializeField]
-    private Animator m_animator = null;
+    public Animator m_animator = null;
 
     [SerializeField]
-    private List<PowerUp> m_powerUps = new List<PowerUp>();
+    public List<PowerUp> m_powerUps = new List<PowerUp>();
     [SerializeField]
-    private int m_chanceToDropPowerUp = 25;
+    public int m_chanceToDropPowerUp = 25;
 
     [SerializeField]
-    private int m_health = 100;
+    public int m_health = 100;
     [SerializeField]
-    private int m_faceTargetSpeed = 20;
+    public int m_faceTargetSpeed = 20;
     [SerializeField]
-    private Color m_damageColor = Color.red;
+    public Color m_damageColor = Color.red;
     [SerializeField]
-    GameObject m_bullet = null;
+    [Range(0, 500)]
+    public int damage;
     [SerializeField]
-    float m_fireRate = 10.0f;
+    public GameObject m_bullet = null;
     [SerializeField]
-    private int m_fieldOfView = 90;
+    public float m_fireRate = 10.0f;
     [SerializeField]
-    private int m_roamDistance = 10;
+    public int m_fieldOfView = 90;
     [SerializeField]
-    private int m_roamTimer = 3;
+    public int m_roamDistance = 10;
     [SerializeField]
-    private int m_speedTransition = 3;
+    public int m_roamTimer = 3;
+    [SerializeField]
+    public int m_speedTransition = 3;
 
-    private bool m_isShooting = false;
-    private bool m_isPlayerInRange = false;
-    private Color m_colorOriginal = Color.white;
-    private Vector3 m_playerDirection = Vector3.zero;
-    private float m_angleToPlayer = 0f;
-    private bool m_isRoaming = false;
-    private Vector3 m_startingPos = Vector3.zero;
-    private float m_originalStoppingDist = 0.0f;
-    private Coroutine m_coroutine = null;
-    private int m_originalHP = 0;
+    public bool m_isShooting = false;
+    public bool m_isPlayerInRange = false;
+    public Color m_colorOriginal = Color.white;
+    public Vector3 m_playerDirection = Vector3.zero;
+    public float m_angleToPlayer = 0f;
+    public bool m_isRoaming = false;
+    public Vector3 m_startingPos = Vector3.zero;
+    public float m_originalStoppingDist = 0.0f;
+    public Coroutine m_coroutine = null;
+    public int m_originalHP = 0;
+
+    private bool m_isPlayingDeathAnim = false;
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         m_colorOriginal = m_model.material.color;
         m_startingPos = transform.position;
@@ -88,8 +93,13 @@ public class EnemyAI : MonoBehaviour, IDamage
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
+        if (m_isPlayingDeathAnim)
+        {
+            m_navMeshAgent.isStopped = true;
+            return;
+        }
         if (m_navMeshAgent.isActiveAndEnabled)
         {
             float agentSpeed = m_navMeshAgent.velocity.normalized.magnitude;
@@ -116,7 +126,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
     }
 
-    private IEnumerator RoamCoroutine()
+    public IEnumerator RoamCoroutine()
     {
         m_isRoaming = true;
         yield return new WaitForSeconds(m_roamTimer);
@@ -187,6 +197,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         if(m_health <= 0)
         {
+            m_isPlayingDeathAnim = true;
             m_animator.SetTrigger("death");
             
             DropRandomPowerUp();
@@ -201,7 +212,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         m_model.material.color = m_colorOriginal;
     }
 
-    private IEnumerator Shoot()
+    public virtual IEnumerator Shoot()
     {
         m_isShooting = true;
 
@@ -212,7 +223,14 @@ public class EnemyAI : MonoBehaviour, IDamage
                 Instantiate(m_bullet, m_shootPos.position, transform.rotation);                
                 break;
             case AttackType.Melee:
-                m_animator.SetTrigger("attack1");
+                if (m_angleToPlayer <= m_fieldOfView && m_isPlayerInRange)
+                {
+                    //yield return new WaitForSeconds(m_fireRate);
+                    m_animator.SetTrigger("attack1");
+                    //yield return new WaitForSeconds(0.2f);
+                    
+                }
+                //yield return new WaitForSeconds(m_fireRate);
                 break;
         }
         
@@ -262,5 +280,11 @@ public class EnemyAI : MonoBehaviour, IDamage
         {
             Instantiate(m_powerUps[Random.Range(0, m_powerUps.Count)].gameObject, gameObject.transform.position, quaternion.identity);
         }
+    }
+
+    // Used in enemy animator
+    public void DealDamage()
+    {
+        GameManager.Instance.m_playerController.TakeDamage(damage);
     }
 }

@@ -1,0 +1,448 @@
+fileFormatVersion: 2
+guid: a11ed9ff4c34b6f4bb54555696a1fe14
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: giant_spider_LOD2
+    100002: //RootNode
+    100004: Right Curve
+    100006: Right Fast
+    100008: SpiderBackSpikeL
+    100010: SpiderBackSpikeR
+    100012: SpiderBotton Hub
+    100014: SpiderEar1_L
+    100016: SpiderEar1_R
+    100018: SpiderEar2_L
+    100020: SpiderEar2_R
+    100022: SpiderEyeL_1
+    100024: SpiderEyeL_2
+    100026: SpiderEyeL_3
+    100028: SpiderEyeL_4
+    100030: SpiderEyeL_5
+    100032: SpiderEyeL_6
+    100034: SpiderEyeL_7
+    100036: SpiderEyeR_1
+    100038: SpiderEyeR_2
+    100040: SpiderEyeR_3
+    100042: SpiderEyeR_4
+    100044: SpiderEyeR_5
+    100046: SpiderEyeR_6
+    100048: SpiderEyeR_7
+    100050: SpiderFrontHub
+    100052: SpiderHead
+    100054: SpiderHub
+    100056: SpiderJaw1_L
+    100058: SpiderJaw1_R
+    100060: SpiderJaw2_L
+    100062: SpiderJaw2_R
+    100064: SpiderJawSmall_L
+    100066: SpiderJawSmall_R
+    100068: SpiderLLeg11
+    100070: SpiderLLeg12
+    100072: SpiderLLeg13
+    100074: SpiderLLeg14
+    100076: SpiderLLeg21
+    100078: SpiderLLeg22
+    100080: SpiderLLeg23
+    100082: SpiderLLeg24
+    100084: SpiderLLeg31
+    100086: SpiderLLeg32
+    100088: SpiderLLeg33
+    100090: SpiderLLeg34
+    100092: SpiderLLeg41
+    100094: SpiderLLeg42
+    100096: SpiderLLeg43
+    100098: SpiderLLeg44
+    100100: SpiderMouth_L
+    100102: SpiderMouth_R
+    100104: SpiderNeck
+    100106: SpiderRLeg11
+    100108: SpiderRLeg12
+    100110: SpiderRLeg13
+    100112: SpiderRLeg14
+    100114: SpiderRLeg21
+    100116: SpiderRLeg22
+    100118: SpiderRLeg23
+    100120: SpiderRLeg24
+    100122: SpiderRLeg31
+    100124: SpiderRLeg32
+    100126: SpiderRLeg33
+    100128: SpiderRLeg34
+    100130: SpiderRLeg41
+    100132: SpiderRLeg42
+    100134: SpiderRLeg43
+    100136: SpiderRLeg44
+    100138: SpiderTail1
+    100140: SpiderTail2
+    100142: SpiderTail3
+    100144: SpiderTailBack
+    100146: SpiderTailBotton1
+    100148: SpiderTailBotton2
+    100150: SpiderTailBotton3
+    100152: SpiderTailL
+    100154: SpiderTailR
+    100156: SpiderTailTop1
+    100158: SpiderTailTop2
+    100160: SpiderTailTop3
+    400000: giant_spider_LOD2
+    400002: //RootNode
+    400004: Right Curve
+    400006: Right Fast
+    400008: SpiderBackSpikeL
+    400010: SpiderBackSpikeR
+    400012: SpiderBotton Hub
+    400014: SpiderEar1_L
+    400016: SpiderEar1_R
+    400018: SpiderEar2_L
+    400020: SpiderEar2_R
+    400022: SpiderEyeL_1
+    400024: SpiderEyeL_2
+    400026: SpiderEyeL_3
+    400028: SpiderEyeL_4
+    400030: SpiderEyeL_5
+    400032: SpiderEyeL_6
+    400034: SpiderEyeL_7
+    400036: SpiderEyeR_1
+    400038: SpiderEyeR_2
+    400040: SpiderEyeR_3
+    400042: SpiderEyeR_4
+    400044: SpiderEyeR_5
+    400046: SpiderEyeR_6
+    400048: SpiderEyeR_7
+    400050: SpiderFrontHub
+    400052: SpiderHead
+    400054: SpiderHub
+    400056: SpiderJaw1_L
+    400058: SpiderJaw1_R
+    400060: SpiderJaw2_L
+    400062: SpiderJaw2_R
+    400064: SpiderJawSmall_L
+    400066: SpiderJawSmall_R
+    400068: SpiderLLeg11
+    400070: SpiderLLeg12
+    400072: SpiderLLeg13
+    400074: SpiderLLeg14
+    400076: SpiderLLeg21
+    400078: SpiderLLeg22
+    400080: SpiderLLeg23
+    400082: SpiderLLeg24
+    400084: SpiderLLeg31
+    400086: SpiderLLeg32
+    400088: SpiderLLeg33
+    400090: SpiderLLeg34
+    400092: SpiderLLeg41
+    400094: SpiderLLeg42
+    400096: SpiderLLeg43
+    400098: SpiderLLeg44
+    400100: SpiderMouth_L
+    400102: SpiderMouth_R
+    400104: SpiderNeck
+    400106: SpiderRLeg11
+    400108: SpiderRLeg12
+    400110: SpiderRLeg13
+    400112: SpiderRLeg14
+    400114: SpiderRLeg21
+    400116: SpiderRLeg22
+    400118: SpiderRLeg23
+    400120: SpiderRLeg24
+    400122: SpiderRLeg31
+    400124: SpiderRLeg32
+    400126: SpiderRLeg33
+    400128: SpiderRLeg34
+    400130: SpiderRLeg41
+    400132: SpiderRLeg42
+    400134: SpiderRLeg43
+    400136: SpiderRLeg44
+    400138: SpiderTail1
+    400140: SpiderTail2
+    400142: SpiderTail3
+    400144: SpiderTailBack
+    400146: SpiderTailBotton1
+    400148: SpiderTailBotton2
+    400150: SpiderTailBotton3
+    400152: SpiderTailL
+    400154: SpiderTailR
+    400156: SpiderTailTop1
+    400158: SpiderTailTop2
+    400160: SpiderTailTop3
+    4300000: giant_spider_LOD2
+    7400000: walk_R
+    9500000: //RootNode
+    13700000: giant_spider_LOD2
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk_R
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 90
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: giant_spider_LOD2
+        weight: 1
+      - path: Right Curve
+        weight: 1
+      - path: Right Fast
+        weight: 1
+      - path: SpiderHub
+        weight: 1
+      - path: SpiderHub/SpiderBotton Hub
+        weight: 1
+      - path: SpiderHub/SpiderEar1_L
+        weight: 1
+      - path: SpiderHub/SpiderEar1_R
+        weight: 1
+      - path: SpiderHub/SpiderEar2_L
+        weight: 1
+      - path: SpiderHub/SpiderEar2_R
+        weight: 1
+      - path: SpiderHub/SpiderLLeg11
+        weight: 1
+      - path: SpiderHub/SpiderLLeg11/SpiderLLeg12
+        weight: 1
+      - path: SpiderHub/SpiderLLeg11/SpiderLLeg12/SpiderLLeg13
+        weight: 1
+      - path: SpiderHub/SpiderLLeg11/SpiderLLeg12/SpiderLLeg13/SpiderLLeg14
+        weight: 1
+      - path: SpiderHub/SpiderLLeg21
+        weight: 1
+      - path: SpiderHub/SpiderLLeg21/SpiderLLeg22
+        weight: 1
+      - path: SpiderHub/SpiderLLeg21/SpiderLLeg22/SpiderLLeg23
+        weight: 1
+      - path: SpiderHub/SpiderLLeg21/SpiderLLeg22/SpiderLLeg23/SpiderLLeg24
+        weight: 1
+      - path: SpiderHub/SpiderLLeg31
+        weight: 1
+      - path: SpiderHub/SpiderLLeg31/SpiderLLeg32
+        weight: 1
+      - path: SpiderHub/SpiderLLeg31/SpiderLLeg32/SpiderLLeg33
+        weight: 1
+      - path: SpiderHub/SpiderLLeg31/SpiderLLeg32/SpiderLLeg33/SpiderLLeg34
+        weight: 1
+      - path: SpiderHub/SpiderLLeg41
+        weight: 1
+      - path: SpiderHub/SpiderLLeg41/SpiderLLeg42
+        weight: 1
+      - path: SpiderHub/SpiderLLeg41/SpiderLLeg42/SpiderLLeg43
+        weight: 1
+      - path: SpiderHub/SpiderLLeg41/SpiderLLeg42/SpiderLLeg43/SpiderLLeg44
+        weight: 1
+      - path: SpiderHub/SpiderMouth_L
+        weight: 1
+      - path: SpiderHub/SpiderMouth_R
+        weight: 1
+      - path: SpiderHub/SpiderNeck
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeL_1
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeL_2
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeL_3
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeL_4
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeL_5
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeL_6
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeL_7
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeR_1
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeR_2
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeR_3
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeR_4
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeR_5
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeR_6
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderEyeR_7
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderFrontHub
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderJaw1_L
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderJaw1_L/SpiderJaw2_L
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderJaw1_R
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderJaw1_R/SpiderJaw2_R
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderJawSmall_L
+        weight: 1
+      - path: SpiderHub/SpiderNeck/SpiderHead/SpiderJawSmall_R
+        weight: 1
+      - path: SpiderHub/SpiderRLeg11
+        weight: 1
+      - path: SpiderHub/SpiderRLeg11/SpiderRLeg12
+        weight: 1
+      - path: SpiderHub/SpiderRLeg11/SpiderRLeg12/SpiderRLeg13
+        weight: 1
+      - path: SpiderHub/SpiderRLeg11/SpiderRLeg12/SpiderRLeg13/SpiderRLeg14
+        weight: 1
+      - path: SpiderHub/SpiderRLeg21
+        weight: 1
+      - path: SpiderHub/SpiderRLeg21/SpiderRLeg22
+        weight: 1
+      - path: SpiderHub/SpiderRLeg21/SpiderRLeg22/SpiderRLeg23
+        weight: 1
+      - path: SpiderHub/SpiderRLeg21/SpiderRLeg22/SpiderRLeg23/SpiderRLeg24
+        weight: 1
+      - path: SpiderHub/SpiderRLeg31
+        weight: 1
+      - path: SpiderHub/SpiderRLeg31/SpiderRLeg32
+        weight: 1
+      - path: SpiderHub/SpiderRLeg31/SpiderRLeg32/SpiderRLeg33
+        weight: 1
+      - path: SpiderHub/SpiderRLeg31/SpiderRLeg32/SpiderRLeg33/SpiderRLeg34
+        weight: 1
+      - path: SpiderHub/SpiderRLeg41
+        weight: 1
+      - path: SpiderHub/SpiderRLeg41/SpiderRLeg42
+        weight: 1
+      - path: SpiderHub/SpiderRLeg41/SpiderRLeg42/SpiderRLeg43
+        weight: 1
+      - path: SpiderHub/SpiderRLeg41/SpiderRLeg42/SpiderRLeg43/SpiderRLeg44
+        weight: 1
+      - path: SpiderHub/SpiderTail1
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTail3
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTail3/SpiderBackSpikeL
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTail3/SpiderBackSpikeR
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTail3/SpiderTailBack
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTail3/SpiderTailBotton3
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTail3/SpiderTailTop3
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTailBotton2
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTailL
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTailR
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTail2/SpiderTailTop2
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTailBotton1
+        weight: 1
+      - path: SpiderHub/SpiderTail1/SpiderTailTop1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 2
+    tangentImportMode: 2
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 2
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: SpiderHub
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
