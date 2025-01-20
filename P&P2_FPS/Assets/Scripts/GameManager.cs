@@ -10,9 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject m_menuPause = null;
     [SerializeField] private GameObject m_menuWin, m_menuLoss = null;
     [SerializeField] private GameObject m_ammoMenu = null;
-    [SerializeField] private TMP_Text m_waveNumText = null;
     [SerializeField] private TMP_Text m_goalCountText = null;
-    [SerializeField] private int m_wavesRequired = 2;
 
     [SerializeField] private TMP_Text m_currentAmmo;
     [SerializeField] private TMP_Text m_MaxAmmo;
@@ -25,7 +23,6 @@ public class GameManager : MonoBehaviour
     public PlayerController m_playerController = null;
     public bool m_isBuffActive = false;
 
-    private WaveManager waveManager;
     private float m_timeScaleOriginal = 1.0f;
     private int m_goalCount = 0;
     private gunStats m_gun;
@@ -35,7 +32,6 @@ public class GameManager : MonoBehaviour
     public Golem golem; // reference to the golem script
     public GiantSpider giantSpider; // reference to the giant spider script
     private bool bossFightActive = false; // tracks if the boss fight is active
-
 
     public static GameManager Instance { get; private set; }
 
@@ -51,8 +47,7 @@ public class GameManager : MonoBehaviour
 
         m_timeScaleOriginal = Time.timeScale;
         m_player = GameObject.FindWithTag("Player");
-        m_playerController = m_player.GetComponent<PlayerController>();
-        waveManager = FindObjectOfType<WaveManager>();
+        m_playerController = m_player?.GetComponent<PlayerController>();
     }
 
     void Update()
@@ -61,7 +56,7 @@ public class GameManager : MonoBehaviour
         {
             if (m_menuActive == null)
             {
-                if(m_ammoMenu.activeSelf)
+                if (m_ammoMenu.activeSelf)
                 {
                     m_ammoMenu.SetActive(false);
                 }
@@ -80,7 +75,7 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetButtonDown("OpenInventory") && m_menuActive == null)
         {
-            if(!m_ammoMenu.activeSelf)
+            if (!m_ammoMenu.activeSelf)
             {
                 StatePaused();
                 m_ammoMenu.SetActive(true);
@@ -106,7 +101,7 @@ public class GameManager : MonoBehaviour
         m_isPaused = false;
         Time.timeScale = m_timeScaleOriginal;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;  
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void UpdateGameGoal(int amount)
@@ -120,29 +115,10 @@ public class GameManager : MonoBehaviour
 
         if (m_goalCount <= 0)
         {
-
-            if (waveManager != null)
-            {
-                int currentWaveNumber = waveManager.GetCurrentWave();
-                if (currentWaveNumber >= m_wavesRequired)
-                {
-                    StatePaused();
-                    m_menuActive = m_menuWin;
-                    m_menuActive.SetActive(true);
-                    return;
-                }
-
-                Debug.Log("No enemies left. Starting next wave...");
-                waveManager.StartNextWave();
-                m_waveNumText.text = waveManager.GetCurrentWave().ToString();
-            }
-            else
-            {
-                Debug.LogError("WaveManager not found! Ending the game.");
-                StatePaused();
-                m_menuActive = m_menuWin;
-                m_menuActive.SetActive(true);
-            }
+            Debug.Log("Game goal reached!");
+            StatePaused();
+            m_menuActive = m_menuWin;
+            m_menuActive.SetActive(true);
         }
     }
 
@@ -155,7 +131,6 @@ public class GameManager : MonoBehaviour
             Wraith.ChangePhase(1);
             Debug.Log("Boss fight started.");
         }
-       
     }
 
     public void EndBossFight()
@@ -167,8 +142,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Boss fight ended.");
         }
     }
-
-  
 
     public void Lose()
     {
@@ -182,9 +155,10 @@ public class GameManager : MonoBehaviour
         m_currentAmmo.text = ammoCurr;
         m_MaxAmmo.text = ammoMax;
     }
-
-   
-
 }
+
+
+
+
 
 
