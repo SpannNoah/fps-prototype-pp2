@@ -105,8 +105,8 @@ public class Wraith : MonoBehaviour,  IDamage
 
 
             m_animator.SetFloat("Speed", Mathf.MoveTowards(animSpeed, agentSpeed, Time.deltaTime * m_speedTransition));
-
             m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
+
             if (m_isPlayerInRange && !CanSeePlayer())
             {
                 if (!m_isRoaming && m_navMeshAgent.remainingDistance < .01f)
