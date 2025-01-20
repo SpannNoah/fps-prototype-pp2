@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class pickup : MonoBehaviour
 {
-    enum pickupType { gun, HP, armor, ammo}
+    enum pickupType { gun, HP, armor, ammo, melee}
 
     public bool m_isReward = false;
     [SerializeField] pickupType m_type;
@@ -20,12 +20,20 @@ public class pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(m_type == pickupType.gun)
+            if (m_type == pickupType.gun)
             {
-                if(other.TryGetComponent(out GunManager gunManager))
+                if (other.TryGetComponent(out GunManager gunManager))
                 {
                     gunManager.EquipGun(m_gunStats, m_ammoCartridge);
                     AmmoManager.Instance.SetCurrentCartridge(m_ammoCartridge);
+                    Destroy(gameObject);
+                }
+            }
+            else if (m_type == pickupType.melee)
+            {
+                if (other.TryGetComponent(out GunManager gunManager))
+                {
+                    gunManager.EquipMelee(m_gunStats);
                     Destroy(gameObject);
                 }
             }

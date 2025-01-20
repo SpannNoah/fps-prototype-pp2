@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f134695fd7c61d34cb1918467d620455, type: 3}
-  m_Name: M4
+  m_Name: Wrench
   m_EditorClassIdentifier: 
-  m_gunName: 
-  gunModel: {fileID: 1117582899397640, guid: 689946d975a0e55449b1e7ae41933e73, type: 3}
+  m_gunName: Wrench
+  gunModel: {fileID: 9173728385559944703, guid: fd728fda145b871469f03a4e706b67d4, type: 3}
   m_isProjectile: 0
   m_projectilePrefab: {fileID: 0}
-  shootDamage: 1
-  shootRate: 10
-  shootDist: 200
-  ammoCur: 25
-  ammoMax: 25
-  hitEffect: {fileID: 970440554703164915, guid: 47096eff328e11a418ace7db2d72aa97, type: 3}
-  shootSound:
-  - {fileID: 8300000, guid: 48a8732639761324ca743f811fe11d59, type: 3}
-  shootSoundVol: 0.25
+  shootDamage: 5
+  shootRate: 1
+  shootDist: 2
+  ammoCur: 0
+  ammoMax: 0
+  m_isMelee: 1
+  hitEffect: {fileID: 0}
+  shootSound: []
+  shootSoundVol: 0

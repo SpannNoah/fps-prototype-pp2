@@ -69,6 +69,8 @@ public class EnemyAI : MonoBehaviour, IDamage
     public float m_originalStoppingDist = 0.0f;
     public Coroutine m_coroutine = null;
     public int m_originalHP = 0;
+
+    private bool m_isPlayingDeathAnim = false;
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -93,6 +95,11 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Update is called once per frame
     public virtual void Update()
     {
+        if (m_isPlayingDeathAnim)
+        {
+            m_navMeshAgent.isStopped = true;
+            return;
+        }
         if (m_navMeshAgent.isActiveAndEnabled)
         {
             float agentSpeed = m_navMeshAgent.velocity.normalized.magnitude;
@@ -190,6 +197,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         if(m_health <= 0)
         {
+            m_isPlayingDeathAnim = true;
             m_animator.SetTrigger("death");
             
             DropRandomPowerUp();

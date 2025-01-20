@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8550356154096250237
+--- !u!114 &-1036755038476142614
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,7 +56,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Cull: 2
-    - _Cutoff: 0.333
+    - _Cutoff: 0
     - _RimPower: 5.2596154
     - _Shininess: 0.12661353
     - _WindQuality: 0
