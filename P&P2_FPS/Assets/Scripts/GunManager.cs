@@ -1,67 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class GunManager : MonoBehaviour
 {
     public List<gunStats> weaponInventory = new List<gunStats>();
-    [SerializeField] private Transform m_gunHolder = null;
-    [SerializeField] private Transform m_meleeHolder = null;
+    [SerializeField]
+    private Transform m_gunHolder = null;
+    [SerializeField]
+    private Transform m_meleeHolder = null;
 
     [Space]
     [Header("Shooting Settings")]
-    [SerializeField] private int m_shootDamage = 25;
-    [SerializeField] private float m_shootDistance = 50;
-    [SerializeField] private float m_fireRate = 20;
-    [SerializeField] private GameObject gunModel;
+    [SerializeField]
+    private int m_shootDamage = 25;
+    [SerializeField]
+    private float m_shootDistance = 50;
+    [SerializeField]
+    private float m_fireRate = 20;
+    [SerializeField] GameObject gunModel;
 
     private Gun m_currentGun = null;
     private MeleeWeapon m_currentMelee = null;
     private int weaponInvPos;
-
-    private void Start()
-    {
-        LoadWeaponsFromSave();
-    }
-
-    private void LoadWeaponsFromSave()
-    {
-        if (GameSaveManager.Instance.playerData.weaponInventory.Count > 0)
-        {
-            weaponInventory.Clear();
-            foreach (var savedWeapon in GameSaveManager.Instance.playerData.weaponInventory)
-            {
-                gunStats newWeapon = Resources.Load<gunStats>("Weapons/" + savedWeapon.weaponName);
-                if (newWeapon != null)
-                {
-                    weaponInventory.Add(newWeapon);
-                }
-            }
-            weaponInvPos = GameSaveManager.Instance.playerData.selectedWeaponIndex;
-            changeWeapon();
-        }
-    }
-
-    public void SaveWeaponsToGameData()
-    {
-        GameSaveManager.Instance.playerData.weaponInventory.Clear();
-        foreach (var weapon in weaponInventory)
-        {
-            WeaponSaveData saveData = new WeaponSaveData
-            {
-                weaponName = weapon.name,
-                ammoCurrent = weapon.ammoCur,
-                ammoMax = weapon.ammoMax,
-                isMelee = weapon.m_isMelee
-            };
-            GameSaveManager.Instance.playerData.weaponInventory.Add(saveData);
-        }
-        GameSaveManager.Instance.playerData.selectedWeaponIndex = weaponInvPos;
-        GameSaveManager.Instance.SaveGame();
-    }
 
     public void EquipGun(gunStats gunStats, AmmoCartridge ammoCartridge)
     {
@@ -69,7 +30,7 @@ public class GunManager : MonoBehaviour
         {
             Destroy(m_currentGun.gameObject);
         }
-        else if (m_currentMelee)
+        else if(m_currentMelee)
         {
             Destroy(m_currentMelee.gameObject);
         }
@@ -79,8 +40,6 @@ public class GunManager : MonoBehaviour
         m_currentGun.m_gunStats = gunStats;
         m_currentGun.m_ammoCartridge = ammoCartridge;
         weaponInventory.Add(m_currentGun.m_gunStats);
-
-        SaveWeaponsToGameData();
     }
 
     public void EquipMelee(gunStats gunStats)
@@ -99,15 +58,14 @@ public class GunManager : MonoBehaviour
         m_currentMelee.m_gunStats = gunStats;
         weaponInventory.Add(m_currentMelee.m_gunStats);
     }
-
     private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
+        if(Input.GetMouseButton(0))
+      {
             m_currentGun?.Fire(true); // Fire Left Ammo
             m_currentMelee?.Attack();
         }
-        if (Input.GetMouseButton(1))
+        if(Input.GetMouseButton(1))
         {
             m_currentGun?.Fire(false); // Fire Right Ammo
         }
@@ -177,12 +135,5 @@ public class GunManager : MonoBehaviour
         m_shootDistance = selectedWeapon.shootDist;
         m_fireRate = selectedWeapon.shootRate;
         GameManager.Instance.AmmoCount(selectedWeapon.ammoMax.ToString(), selectedWeapon.ammoCur.ToString());
-
-        SaveWeaponsToGameData();
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveWeaponsToGameData();
     }
 }
