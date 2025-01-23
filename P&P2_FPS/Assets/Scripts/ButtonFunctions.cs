@@ -14,13 +14,11 @@ public class ButtonFunctions : MonoBehaviour
     public void Load()
     {
         
-        if (SceneManager.sceneCountInBuildSettings > 0)
+        if (Portal.currentLevel > 0)
         {
-            PlayerController player = GameManager.Instance.m_playerController;
-            player = player.player;
-            PlayerData data = new PlayerData(player);
+            PlayerData data = new PlayerData(PlayerController.player);
             SaveSystem.LoadPlayer();
-            player.LoadPlayerData();
+            PlayerController.player.LoadPlayerData();
             SceneManager.LoadScene(GameManager.Instance.currentLevel);
             GameManager.Instance.StateUnpaused();
         }

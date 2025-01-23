@@ -346,11 +346,7 @@ MonoBehaviour:
   m_gravity: 28
   m_health: 100
   m_healthLerpSpeed: 0.25
-  m_shootDamage: 0
-  m_shootDistance: 0
-  m_fireRate: 0
-  gunModel: {fileID: 52257179}
-  weaponInventory: []
+  player: {fileID: 0}
   crouchSpeed: 3.5
   crouchMoveSpeed: 5
   crouchKey: 306
@@ -368,8 +364,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e7bf08375055a4788d1fa261e27bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponInventory: []
   m_gunHolder: {fileID: 52257180}
   m_meleeHolder: {fileID: 600155310}
+  m_maxHeat: 100
+  m_cooldownRate: 20
+  m_heatIncrement: 20
+  m_overheatCooldownTime: 3
+  m_shootDamage: 25
+  m_shootDistance: 50
+  m_fireRate: 20
+  gunModel: {fileID: 0}
 --- !u!23 &5553137498959758508
 MeshRenderer:
   m_ObjectHideFlags: 0

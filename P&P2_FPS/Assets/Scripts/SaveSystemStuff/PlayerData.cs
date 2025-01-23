@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable] // Make this class serializable
@@ -14,6 +15,10 @@ public class PlayerData
     public float m_speed;
     public float[] position; // Store position as an array
     public int levelNumber;
+    public static float[] gunPos; //stores gun pos
+    public static float[] meleePos; //stores melee pos
+    public List<gunStats> weapons;
+
 
     // Constructor
     public PlayerData(PlayerController player)
@@ -33,5 +38,12 @@ public class PlayerData
         position[2] = player.transform.position.z; // Z
 
         levelNumber = player.CurrentLevel; // Stores current level
+
+        bool isEmpty = GunManager.weaponInventory.Any();
+        Debug.Log(isEmpty);
+        if (!isEmpty)
+        {
+            weapons = GunManager.weaponInventory;
+        }
     }
 }

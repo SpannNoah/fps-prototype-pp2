@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private List<scriptableDeBuff> activeDeBuff = new List<scriptableDeBuff>();
     private Coroutine currentDoTCoroutine;
     private int m_currentLevel = 0;
-    public PlayerController player;
+    public static PlayerController player;
 
 
 
