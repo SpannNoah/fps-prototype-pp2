@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunManager : MonoBehaviour
 {
-    public static List<gunStats> weaponInventory = new List<gunStats>();
+    public List<gunStats> weaponInventory = new List<gunStats>();
     [SerializeField]
     private Transform m_gunHolder = null;
     [SerializeField]
@@ -36,9 +36,6 @@ public class GunManager : MonoBehaviour
 
     public void EquipGun(gunStats gunStats, AmmoCartridge ammoCartridge)
     {
-        //PlayerData.gunPos[0] = m_gunHolder.transform.position.x;
-        //PlayerData.gunPos[0] = m_gunHolder.transform.position.y;
-        //PlayerData.gunPos[0] = m_gunHolder.transform.position.z;
         if (m_currentGun)
         {
             Destroy(m_currentGun.gameObject);
@@ -57,9 +54,6 @@ public class GunManager : MonoBehaviour
 
     public void EquipMelee(gunStats gunStats)
     {
-        //PlayerData.meleePos[0] = m_gunHolder.transform.position.x;
-        //PlayerData.meleePos[0] = m_gunHolder.transform.position.y;
-        //PlayerData.meleePos[0] = m_gunHolder.transform.position.z;
         if (m_currentGun)
         {
             Destroy(m_currentGun.gameObject);
@@ -166,16 +160,6 @@ public class GunManager : MonoBehaviour
         m_fireRate = selectedWeapon.shootRate;
         GameManager.Instance.AmmoCount(selectedWeapon.ammoMax.ToString(), selectedWeapon.ammoCur.ToString());
     }
-<<<<<<< HEAD
-    public void LoadWeapons()
-    {
-        PlayerData data = SaveSystem.LoadPlayer();
-        if (data != null)
-        {
-            weaponInventory = data.weapons;
-        }
-    }
-=======
 
     private void IncreaseHeat(float amount)
     {
@@ -212,5 +196,4 @@ public class GunManager : MonoBehaviour
         m_isOverheated = false;
         Debug.Log("Weapon Cooled Down");
     }
->>>>>>> 04bb82452de7b8193a4a7a642953ebb0a7552de2
 }
