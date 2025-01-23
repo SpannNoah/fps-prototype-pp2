@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private List<scriptableDeBuff> activeDeBuff = new List<scriptableDeBuff>();
     private Coroutine currentDoTCoroutine;
     private int m_currentLevel = 0;
+    public PlayerController player;
 
 
 
@@ -126,10 +127,18 @@ public class PlayerController : MonoBehaviour, IDamage
         playerCollider = GetComponent<CapsuleCollider>();
         originalColliderHeight = playerCollider.height;
         originalColliderCenter = playerCollider.center;
+        //SaveSystem.SavePlayer(this);
 
         m_playerHealthOrig = m_health;
         m_baseSpeed = m_speed;
         m_baseSprintModifier = m_sprintModifier;
+        UnityEngine.Debug.Log(Portal.currentLevel);
+        if(Portal.currentLevel > 0)
+        {
+            LoadPlayerData();
+            GameManager.Instance.currentLevel = CurrentLevel;
+            UnityEngine.Debug.Log("Player Loaded");
+        }
         UpdatePlayerUI();
     }
 
@@ -341,8 +350,27 @@ public class PlayerController : MonoBehaviour, IDamage
             activeDeBuff.Remove(debuff);
         }
     }
+    public void LoadPlayerData()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        if (data != null)
+        {
+            // Restore player properties
+            crouchColliderHeight = data.m_crouchColliderHeight;
+            crouchCameraHeight = data.m_crouchCameraHeight;
+            m_baseSpeed = data.m_baseSpeed;
+            m_sprintModifier = data.m_sprintMod;
+            m_health = data.m_HP;
+            m_playerHealthOrig = data.m_ogHP;
+            m_speed = data.m_speed;
+
+            // Restore position
+            transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+
+            // Restore current level
+            CurrentLevel = data.levelNumber;
+
+            UpdatePlayerUI(); // Update UI to reflect loaded health
+        }
+    }
 }
-
-
-
-

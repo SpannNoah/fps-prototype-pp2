@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject m_player = null;
     public PlayerController m_playerController = null;
     public bool m_isBuffActive = false;
+    public int currentLevel = 0;
 
     private float m_timeScaleOriginal = 1.0f;
     private int m_goalCount = 0;

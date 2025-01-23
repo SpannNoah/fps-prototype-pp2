@@ -15,12 +15,15 @@ public class Portal : MonoBehaviour
     private float m_teleportDelay = 0.25f;
 
     public bool m_isTeleporting = false;
+    public static int currentLevel = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !m_isTeleporting)
         {
             PlayerController player = other.GetComponent<PlayerController>();
+            SaveSystem.SavePlayer(player);
+            Debug.Log("Game Saved");
 
             if (player != null)
             {
@@ -30,7 +33,11 @@ public class Portal : MonoBehaviour
                 {
                     //PlayerPrefs.SetInt("CurrentLevel", nextSceneIndex);
 
+                    currentLevel = nextSceneIndex;
                     SceneManager.LoadScene(nextSceneIndex);
+                    GameManager.Instance.currentLevel = nextSceneIndex;
+                    SaveSystem.SavePlayer(player);
+                    Debug.Log("Game Saved");
                 }
             }
         }
