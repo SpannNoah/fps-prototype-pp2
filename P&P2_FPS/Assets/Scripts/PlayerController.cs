@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
@@ -136,6 +137,12 @@ public class PlayerController : MonoBehaviour, IDamage
         if(Portal.currentLevel > 0)
         {
             LoadPlayerData();
+            bool isEmpty = GunManager.weaponInventory.Any();
+            UnityEngine.Debug.Log(isEmpty);
+            if (!isEmpty)
+            {
+                GunManager.LoadWeapons();
+            }
             GameManager.Instance.currentLevel = CurrentLevel;
             UnityEngine.Debug.Log("Player Loaded");
         }

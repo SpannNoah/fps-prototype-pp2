@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunManager : MonoBehaviour
 {
-    public List<gunStats> weaponInventory = new List<gunStats>();
+    public static List<gunStats> weaponInventory = new List<gunStats>();
     [SerializeField]
     private Transform m_gunHolder = null;
     [SerializeField]
@@ -160,7 +160,14 @@ public class GunManager : MonoBehaviour
         m_fireRate = selectedWeapon.shootRate;
         GameManager.Instance.AmmoCount(selectedWeapon.ammoMax.ToString(), selectedWeapon.ammoCur.ToString());
     }
-
+    public static void LoadWeapons()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        if (data != null)
+        {
+            weaponInventory = data.weapons;
+        }
+    }
     private void IncreaseHeat(float amount)
     {
         if (m_isOverheated) return; // Don't increase heat if already overheated

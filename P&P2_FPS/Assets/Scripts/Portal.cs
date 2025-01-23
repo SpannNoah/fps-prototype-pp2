@@ -36,8 +36,6 @@ public class Portal : MonoBehaviour
                     currentLevel = nextSceneIndex;
                     SceneManager.LoadScene(nextSceneIndex);
                     GameManager.Instance.currentLevel = nextSceneIndex;
-                    SaveSystem.SavePlayer(player);
-                    Debug.Log("Game Saved");
                 }
             }
         }
