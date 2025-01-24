@@ -51,6 +51,7 @@ public class VoiceSystemManager : MonoBehaviour
     {
         if (voiceQueue.Count > 0)
         {
+            AudioManger.instance.AdjustBackgroundMusicVolume(AudioManger.instance.backgroundMusicVolume / 10);
             StartCoroutine(PlayWithStatic(voiceQueue.Dequeue()));
         }
     }

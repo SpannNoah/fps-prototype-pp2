@@ -141,6 +141,11 @@ public class AudioManger : MonoBehaviour
 
     }
 
+    public void AdjustBackgroundMusicVolume(float targetVolume)
+    {
+        backgroundMusic.volume = targetVolume;
+    }
+
     private void LoadVolumeSettings()
     {
         backgroundMusicVolume = PlayerPrefs.GetFloat("BackgroundMusicVolume", 0.5f);
