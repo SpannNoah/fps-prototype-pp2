@@ -23,10 +23,14 @@ public class VoiceSystemManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
+        if (Instance != null)
+        {
             Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(this);
 
         if (audioSource == null)
             audioSource = GetComponent<AudioSource>();

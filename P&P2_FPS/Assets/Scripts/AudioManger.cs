@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -26,11 +28,17 @@ public class AudioManger : MonoBehaviour
 
     [Header("Background Music")]
     public AudioClip mainMenuMusic;
-    public AudioClip levelMusic;
+    public List<AudioClip> levelMusic = new List<AudioClip>();
 
     [Header("Volume Settings")]
     [Range(0, 1)] public float backgroundMusicVolume = 0.5f;
     [Range(0, 1)] public float soundEffectVolume = 0.5f;
+
+
+    private const string LEVEL1_NAME = "Level1";
+    private const string LEVEL2_NAME = "Level 2";
+    private const string LEVEL3_NAME = "Room3-Michael";
+    private const string LEVEL4_NAME = "BossScene";
 
     private bool isMuted = false;
 
@@ -45,6 +53,32 @@ public class AudioManger : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+
+        backgroundMusic = GetComponent<AudioSource>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
+    {
+        string levelName = scene.name;
+
+        switch (scene.name)
+        {
+            case LEVEL1_NAME:
+                PlayBackgroundMusic(levelMusic[0]);
+                break;
+            case LEVEL2_NAME:
+                PlayBackgroundMusic(levelMusic[1]);
+                break;
+            case LEVEL3_NAME:
+                PlayBackgroundMusic(levelMusic[2]);
+                break;
+            case LEVEL4_NAME:
+                PlayBackgroundMusic(levelMusic[3]);
+                break;
+            default:
+                break;
         }
     }
 
