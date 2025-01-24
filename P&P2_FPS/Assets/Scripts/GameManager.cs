@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+        AudioManger.instance.PlayBackgroundMusic(AudioManger.instance.mainMenuMusic);
     }
 
     public void StateUnpaused()

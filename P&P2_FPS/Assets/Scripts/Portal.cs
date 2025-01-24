@@ -21,7 +21,7 @@ public class Portal : MonoBehaviour
     {
         if (other.CompareTag("Player") && !m_isTeleporting)
         {
-            AudioManger.PlaySound(SoundType.Teleport);
+            
             PlayerController player = other.GetComponent<PlayerController>();
             SaveSystem.SavePlayer(player);
             Debug.Log("Game Saved");
