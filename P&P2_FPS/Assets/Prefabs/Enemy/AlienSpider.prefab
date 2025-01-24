@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 467880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLArmCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 458682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 439048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienJawL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 405678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464724}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 430938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 442330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 413090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRArmCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417532}
   - component: {fileID: 13730766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien_Spider_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462324}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 432836}
   - component: {fileID: 13796768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 484192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1030,7 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1062,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 496934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1126,7 +1126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 494354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,7 +1220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 429994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienJaw_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,7 +1251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1283,7 +1283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienHub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1355,7 +1355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1387,7 +1387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444210}
   - component: {fileID: 13755790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien_Spider_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,7 +1502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453534}
   - component: {fileID: 13701276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien_Spider_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,7 +1616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424208}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1650,7 @@ GameObject:
   - component: {fileID: 379708060}
   - component: {fileID: 379708062}
   - component: {fileID: 379708061}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1726,7 +1726,7 @@ GameObject:
   - component: {fileID: 1022684447}
   - component: {fileID: 1022684449}
   - component: {fileID: 1022684448}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: PlayerHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
