@@ -761,6 +761,10 @@ MonoBehaviour:
       primary ammo, the other fires your secondary. Simple enough."
     audioClip: {fileID: 8300000, guid: 1a1b223e5dd8c7a4fa1afbbe958b0a2e, type: 3}
     duration: 3
+  - subtitle: Looks like the entrance to the control room is frozen! Equip your lightning
+      ammo from your inventory to shatter it.
+    audioClip: {fileID: 8300000, guid: 4a2cfa45bbb8bfe479e45a934491e4a0, type: 3}
+    duration: 3
   - subtitle: "You made it\u2014thank god. That\u2019s the station\u2019s main control
       interface. Power\u2019s been rerouted, but if you can override the system,
       we might have a way out of this."
@@ -6161,6 +6165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7537610083316506835, guid: c42e839c1c5ac9a43846daadfe6a1ebb, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 1776134}
     - target: {fileID: 7537610083316506836, guid: c42e839c1c5ac9a43846daadfe6a1ebb, type: 3}
       propertyPath: m_RootOrder
       value: 2

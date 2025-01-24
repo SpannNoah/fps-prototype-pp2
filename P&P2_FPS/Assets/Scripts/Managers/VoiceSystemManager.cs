@@ -94,4 +94,17 @@ public class VoiceSystemManager : MonoBehaviour
         m_subtitlePanel.SetActive(false);
         subtitleText.gameObject.SetActive(false);
     }
+
+    public int GetVoiceLineIndex(AudioClip audioClip)
+    {
+        for (int i = 0; i < voiceLines.Length; i++)
+        {
+            if (voiceLines[i].audioClip == audioClip)
+            {
+                return i;
+            }
+        }
+
+        return -1; // Didn't find the audioClip
+    }
 }
