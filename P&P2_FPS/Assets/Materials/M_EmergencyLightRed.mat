@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_FloorX4_2_Light2
+  m_Name: M_EmergencyLightRed
   m_Shader: {fileID: -6465566751694194690, guid: 1baaccdac47945d49a5e7dbc95a3213a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -151,8 +151,8 @@ Material:
     - _ChromeTint: {r: 0.22352937, g: 0.28627446, b: 0.38039213, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveTint_n_1_base: {r: 1, g: 1, b: 1, a: 0}
-    - _Emissive_Sine_Tint: {r: 1, g: 0.9568628, b: 0.909804, a: 0}
+    - _EmissiveTint_n_1_base: {r: 0.9622642, g: 0.05900679, b: 0.05900679, a: 0}
+    - _Emissive_Sine_Tint: {r: 0.9607843, g: 0.05882353, b: 0.05882353, a: 0}
     - _Paint_Metal_Tint: {r: 0.4528302, g: 0.4207903, b: 0.4207903, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1265217685154130129
