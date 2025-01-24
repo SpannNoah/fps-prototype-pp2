@@ -42359,6 +42359,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4936554013222583927, guid: 1352d98cc3fa3de4398e13f361202c4d, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 6586271011048942074}
     - target: {fileID: 6586271010231548432, guid: 1352d98cc3fa3de4398e13f361202c4d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -42505,6 +42509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1352d98cc3fa3de4398e13f361202c4d, type: 3}
+--- !u!82 &6586271011048942074 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1776134, guid: 1352d98cc3fa3de4398e13f361202c4d, type: 3}
+  m_PrefabInstance: {fileID: 6586271011048942073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7146436876317139090
 PrefabInstance:
   m_ObjectHideFlags: 0
