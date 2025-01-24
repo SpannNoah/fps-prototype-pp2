@@ -172,7 +172,7 @@ public class AudioManger : MonoBehaviour
         iceAmmo.volume = isMuted ? 0 : soundEffectVolume;
         portalSound.volume = isMuted ? 0 : soundEffectVolume;
         enemyDeath.volume = isMuted ? 0 : soundEffectVolume;
-
+        
     }
 
     public void AdjustBackgroundMusicVolume(float targetVolume)

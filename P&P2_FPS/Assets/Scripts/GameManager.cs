@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     public GiantSpider giantSpider; // reference to the giant spider script
     private bool bossFightActive = false; // tracks if the boss fight is active
 
+    private AudioClip m_currentLevelMusic = null;
+
     public static GameManager Instance { get; private set; }
 
     void Awake()
@@ -49,6 +51,16 @@ public class GameManager : MonoBehaviour
         m_timeScaleOriginal = Time.timeScale;
         m_player = GameObject.FindWithTag("Player");
         m_playerController = m_player?.GetComponent<PlayerController>();
+        
+
+    }
+
+    private void Start()
+    {
+        if (AudioManger.instance != null)
+        {
+            m_currentLevelMusic = AudioManger.instance.backgroundMusic.clip;
+        }
     }
 
     void Update()
@@ -65,12 +77,21 @@ public class GameManager : MonoBehaviour
                 StatePaused();
                 m_menuActive = m_menuPause;
                 m_menuActive.SetActive(true);
+
+                if(m_currentLevelMusic != null)
+                {
+                    AudioManger.instance.PlayBackgroundMusic(AudioManger.instance.mainMenuMusic);
+                }
             }
             else if (m_menuActive == m_menuPause)
             {
                 StateUnpaused();
                 m_menuActive.SetActive(false);
                 m_menuActive = null;
+                if(m_currentLevelMusic != null)
+                {
+                    AudioManger.instance.PlayBackgroundMusic(m_currentLevelMusic);
+                }
             }
         }
 
@@ -95,7 +116,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        AudioManger.instance.PlayBackgroundMusic(AudioManger.instance.mainMenuMusic);
     }
 
     public void StateUnpaused()
