@@ -136,7 +136,7 @@ Material:
     - _NoiseVertexOffsetStrength: {r: 0.08, g: 0.08, b: 0.08, a: 0}
     - _UvFadingRemap: {r: 1, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6783180488238023995
+--- !u!114 &1121267022653163922
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

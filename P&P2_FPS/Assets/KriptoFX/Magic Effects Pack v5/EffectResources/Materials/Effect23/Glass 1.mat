@@ -109,7 +109,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelEmissionColor: {r: 0.10905614, g: 0, b: 0.38679248, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &3308839946295519768
+--- !u!114 &7524462554441275769
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

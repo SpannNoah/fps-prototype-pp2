@@ -107,7 +107,7 @@ Material:
     - _FlipbookSize: {r: 8, g: 8, b: 0, a: 0}
     - _NoiseVertexOffsetStrength: {r: 0.08, g: 0.08, b: 0.08, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &1020032025756451660
+--- !u!114 &3493108450579735150
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

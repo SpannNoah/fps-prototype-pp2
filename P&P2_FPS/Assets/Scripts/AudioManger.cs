@@ -6,6 +6,7 @@ using UnityEngine;
 public enum SoundType
 {
     BGM,
+    Buttons,
     Jump,
     Footsteps,
     TakeDamage,
