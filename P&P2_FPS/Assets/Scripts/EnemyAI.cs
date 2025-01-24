@@ -171,7 +171,7 @@ public class EnemyAI : MonoBehaviour, IDamage
                     FaceTarget();
                 }
 
-                if(!m_isShooting && distanceToPlayer - 1 <= m_navMeshAgent.stoppingDistance)
+                if(!m_isShooting)
                 {
                     StartCoroutine(Shoot());
                 }
@@ -292,6 +292,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Used in enemy animator
     public void DealDamage()
     {
+        if (!m_isPlayerInRange) return;
         GameManager.Instance.m_playerController.TakeDamage(damage);
     }
 }
