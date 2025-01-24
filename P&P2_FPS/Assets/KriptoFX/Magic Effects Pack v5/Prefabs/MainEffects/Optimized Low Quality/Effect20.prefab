@@ -427,7 +427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EffectSettings: {fileID: 5207559105437830028}
-  SpawnedObject: {fileID: 6515457559656655991, guid: 0b95df4098a0d874e9bcc7d59548bae6, type: 3}
+  SpawnedObject: {fileID: 6515457559656655991, guid: 0b95df4098a0d874e9bcc7d59548bae6,
+    type: 3}
   SpawnMode: 0
   TargetMode: 0
   InstanceLifeTime: 8
@@ -484,6 +485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets: []
   TargetCenterHeightOffset: 0.35
+  ProjectileSpeed: 15
   UseSkinMeshImpactEffects: 1
   UseCameraShakeCinemachine: 1
   UseForce: 1
@@ -495,3 +497,4 @@ MonoBehaviour:
   UseRagdollForce: 1
   UseAnimatorTriggerAfterCollision: 1
   AnimatorRandomTriggerNames: []
+  _isProjectile: 0

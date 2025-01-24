@@ -5728,7 +5728,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6, type: 3}
+    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6,
+      type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -14887,9 +14888,11 @@ ParticleSystemRenderer:
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 9153367734096747755, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_Mesh2: {fileID: 4119679015367213346, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -19783,9 +19786,11 @@ ParticleSystemRenderer:
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 9153367734096747755, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_Mesh2: {fileID: 4119679015367213346, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -29537,9 +29542,11 @@ ParticleSystemRenderer:
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 9153367734096747755, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_Mesh2: {fileID: 4119679015367213346, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -29983,6 +29990,7 @@ GameObject:
   - component: {fileID: 6165767166114940427}
   - component: {fileID: 6165767166114940421}
   - component: {fileID: 6165767166114940426}
+  - component: {fileID: 5183949310349801262}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -30137,6 +30145,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &5183949310349801262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165767166114940424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &8168861382469122448
 GameObject:
   m_ObjectHideFlags: 0
@@ -30310,6 +30338,7 @@ GameObject:
   - component: {fileID: 8168861382981761279}
   - component: {fileID: 8168861382981761277}
   - component: {fileID: 8168861382981761276}
+  - component: {fileID: 1753432238757564094}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -30344,7 +30373,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.495283, g: 0.63448524, b: 1, a: 1}
-  m_Intensity: 1.5
+  m_Intensity: 2.25
   m_Range: 6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -30473,6 +30502,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &1753432238757564094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8168861382981761278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &8168861383201066142
 GameObject:
   m_ObjectHideFlags: 0

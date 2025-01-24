@@ -4878,6 +4878,7 @@ GameObject:
   - component: {fileID: 1032851016449208492}
   - component: {fileID: 3344663718103866037}
   - component: {fileID: 5756588856511355113}
+  - component: {fileID: 8733119631745477128}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -4912,7 +4913,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.09803921, g: 0.4935481, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 0
   m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5050,6 +5051,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &8733119631745477128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583847437071872359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &4845103068249501418
 GameObject:
   m_ObjectHideFlags: 0
@@ -5779,7 +5800,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6, type: 3}
+    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6,
+      type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -9943,7 +9965,7 @@ ParticleSystemRenderer:
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 2
-  m_LightProbeUsage: 0
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0

@@ -21,9 +21,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: IceLit
-  m_Shader: {fileID: -6465566751694194690, guid: 4eb6bd2af581ef14190954952690d371, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 4eb6bd2af581ef14190954952690d371,
+    type: 3}
   m_ValidKeywords:
+  - _ALPHATEST_ON
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
   - _USESCRIPTROTATIONVECTOR
   - _USEVERTEXOFFSET
   m_InvalidKeywords: []
@@ -53,10 +56,23 @@ Material:
         m_Texture: {fileID: 2800000, guid: 9b8ef4c09d59a5c47bb359f4d547856d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AORemapMax: 1
     - _AORemapMin: 0
+    - _AlphaClip: 1
     - _AlphaClipThresholdBlend: 0
     - _AlphaCutoff: 0
     - _BUILTIN_AlphaClip: 0
@@ -70,7 +86,10 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 1
     - _BUILTIN_ZWriteControl: 1
+    - _Blend: 0
     - _BumpScale: 1
+    - _CastShadows: 1
+    - _Cull: 0
     - _Cutoff: 1.11
     - _Cutout: 1
     - _CutoutOffset: 0
@@ -82,7 +101,7 @@ Material:
     - _DissolveColorThreshold: 0.13
     - _DissolveThreshold: 0
     - _DistortScale: 0.5
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EnableDetail: 0
     - _FresnelDistortionStrength: 0.82
     - _FresnelPower: 1.25
@@ -103,13 +122,17 @@ Material:
     - _ParallaxFresnelPower: 1
     - _ParallaxStrength: 1
     - _ParralaxAlbedoStrength: 0.025
+    - _QueueControl: 1
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
     - _Rotation: 0
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _Steps: 9
+    - _Surface: 1
     - _TexWorldScale: 1
     - _USEALPHACUTOUT: 0
     - _USEEMISSION: 0
@@ -122,8 +145,11 @@ Material:
     - _UseNormalOffset: 1
     - _UseParticlesCustomIciclesLength_uv0_z: 0
     - _VertexAlphaMultiplier: 3
+    - _WorkflowMode: 1
     - _WorldMapping: 0
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 1
     m_Colors:
     - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMap_TO: {r: 1, g: 1, b: 0, a: 0}
@@ -154,7 +180,7 @@ Material:
     - _RE2_RotationVector: {r: 0.8984031, g: -0.036763504, b: -0.43763006, a: 0}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &3089419423739414109
+--- !u!114 &6342956643418833734
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

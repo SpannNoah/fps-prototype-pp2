@@ -21,8 +21,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Horse
-  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c,
+    type: 3}
   m_ValidKeywords:
+  - _ALPHATEST_ON
   - _BUILTIN_ALPHATEST_ON
   - _BUILTIN_AlphaClip
   - _USEALPHACUTOUT
@@ -59,9 +61,22 @@ Material:
         m_Texture: {fileID: 2800000, guid: 4a6205b5af3509e4ea47462f70cf6c42, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AffectAlphaMask: 0
+    - _AlphaClip: 1
     - _AlphaClipThresholdBlend: 0
     - _BUILTIN_AlphaClip: 1
     - _BUILTIN_Blend: 0
@@ -75,11 +90,13 @@ Material:
     - _BUILTIN_ZWrite: 1
     - _BUILTIN_ZWriteControl: 0
     - _BlackMask: 0.593
+    - _Blend: 0
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
+    - _CastShadows: 1
     - _ColorMode: 0
     - _Cull: 0
     - _Custout: 0.1
@@ -115,6 +132,8 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ParticlesRandomMultiplier: 0
+    - _QueueControl: 1
+    - _QueueOffset: 0
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
@@ -122,6 +141,7 @@ Material:
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _USEALPHACUTOUT: 1
     - _USEALPHANOISE: 1
     - _USEDISTORTION: 0
@@ -149,7 +169,9 @@ Material:
     - _VertexAlphaMultiplier: 2
     - _VertexAlphaThreshold: 0.3
     - _VirtualVertexOffset: 0.1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - _AlphaMaskRemap: {r: 1, g: 1, b: 0, a: 0}
     - _BorderScale: {r: 0.45, g: 0.025, b: 0, a: 0}
@@ -178,7 +200,7 @@ Material:
     - _TintColor: {r: 0, g: 1.0039216, b: 23.968628, a: 1}
     - _UvFadingRemap: {r: 1, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &6675701628867239619
+--- !u!114 &6998595368573388495
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

@@ -5529,9 +5529,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSettings: {fileID: 2057932310074891886}
   TargetBehindOffsetMeters: 2
-  ChainTrailEffect: {fileID: 971001724474364143, guid: 4ad54e094abb6d04384e70d99c4be46c, type: 3}
+  ChainTrailEffect: {fileID: 971001724474364143, guid: 4ad54e094abb6d04384e70d99c4be46c,
+    type: 3}
   ChainTrailEffectDestroyTime: 5
-  StartChainImpactEffect: {fileID: 6577283207209061804, guid: 17725457bce85f34fb5b90ef4d379212, type: 3}
+  StartChainImpactEffect: {fileID: 6577283207209061804, guid: 17725457bce85f34fb5b90ef4d379212,
+    type: 3}
   StartChainImpactEffectDestroyTime: 5
   ColliderSize: 0.25
   AnimationTimeToNextJump: 0.18
@@ -5615,8 +5617,10 @@ MonoBehaviour:
   ShaderNameColor: 0
   DestroyTime: 7
   ImpactSkinMaterial: {fileID: 2100000, guid: cf98c5a6237534749a2b996eabcf0591, type: 2}
-  ImpactSkinParticles: {fileID: 8326651277915163017, guid: 3572e36c43504564c92eb394b5b6847a, type: 3}
-  ImpactPrefab: {fileID: 2753496298539042510, guid: 86c2455f982de1e4da471f9e0f635974, type: 3}
+  ImpactSkinParticles: {fileID: 8326651277915163017, guid: 3572e36c43504564c92eb394b5b6847a,
+    type: 3}
+  ImpactPrefab: {fileID: 2753496298539042510, guid: 86c2455f982de1e4da471f9e0f635974,
+    type: 3}
   UseImpactZeroRotationInsteadHitNormal: 0
   UseMaterialDirection: 0
   DeactivateMesh: 0

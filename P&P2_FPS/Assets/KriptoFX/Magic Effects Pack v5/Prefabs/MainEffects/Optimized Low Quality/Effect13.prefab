@@ -9741,7 +9741,8 @@ ParticleSystemRenderer:
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
   m_Mesh: {fileID: -5974283864287332050, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
-  m_Mesh1: {fileID: -7787054587154366391, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
+  m_Mesh1: {fileID: -7787054587154366391, guid: 4349cc57313017440bbc015c10f1c669,
+    type: 3}
   m_Mesh2: {fileID: 7976089089792393225, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
   m_Mesh3: {fileID: -819314674608597017, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
   m_MeshWeighting: 1
@@ -14990,7 +14991,8 @@ MonoBehaviour:
   EffectSettings: {fileID: 3617480779371042510}
   TargetMode: 1
   OverrideStartPositionToChainCenter: 0
-  ChainPrefab: {fileID: 7144020802080509464, guid: 66767666d4015b9409f3226aa5aa5abc, type: 3}
+  ChainPrefab: {fileID: 7144020802080509464, guid: 66767666d4015b9409f3226aa5aa5abc,
+    type: 3}
   DestroyTime: 10
   LineRendererColorOverTime:
     serializedVersion: 2
@@ -15085,7 +15087,8 @@ MonoBehaviour:
   ShaderNameColor: 0
   DestroyTime: 10
   ImpactSkinMaterial: {fileID: 2100000, guid: 790b08a00fd65cc4dae169339d441b71, type: 2}
-  ImpactSkinParticles: {fileID: 4423655793651979655, guid: b54cd0da2b6edff46a988e4372bbbcea, type: 3}
+  ImpactSkinParticles: {fileID: 4423655793651979655, guid: b54cd0da2b6edff46a988e4372bbbcea,
+    type: 3}
   ImpactPrefab: {fileID: 0}
   UseImpactZeroRotationInsteadHitNormal: 0
   UseMaterialDirection: 0
@@ -15182,6 +15185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets: []
   TargetCenterHeightOffset: 0.35
+  ProjectileSpeed: 15
   UseSkinMeshImpactEffects: 1
   UseCameraShakeCinemachine: 1
   UseForce: 1
@@ -15193,6 +15197,7 @@ MonoBehaviour:
   UseRagdollForce: 1
   UseAnimatorTriggerAfterCollision: 0
   AnimatorRandomTriggerNames: []
+  _isProjectile: 0
 --- !u!1 &4933180309753206608
 GameObject:
   m_ObjectHideFlags: 0

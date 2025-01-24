@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 468429346915680013}
   - component: {fileID: 468429346915680003}
   - component: {fileID: 468429346915680012}
+  - component: {fileID: 3176119693646715284}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -173,7 +174,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.8768493, g: 0.2235294, b: 1, a: 1}
-  m_Intensity: 1.25
+  m_Intensity: 1.5625
   m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -311,6 +312,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &3176119693646715284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468429346915680014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1604400261243967821
 GameObject:
   m_ObjectHideFlags: 0
@@ -5182,7 +5203,8 @@ ParticleSystemRenderer:
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
   m_Mesh: {fileID: -5974283864287332050, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
-  m_Mesh1: {fileID: -7787054587154366391, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
+  m_Mesh1: {fileID: -7787054587154366391, guid: 4349cc57313017440bbc015c10f1c669,
+    type: 3}
   m_Mesh2: {fileID: 7976089089792393225, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
   m_Mesh3: {fileID: -819314674608597017, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
   m_MeshWeighting: 1
@@ -10789,7 +10811,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: -2126407174042690781, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
+    m_Mesh: {fileID: -2126407174042690781, guid: 4349cc57313017440bbc015c10f1c669,
+      type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -19816,7 +19839,8 @@ ParticleSystemRenderer:
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
   m_Mesh: {fileID: -5974283864287332050, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
-  m_Mesh1: {fileID: -7787054587154366391, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
+  m_Mesh1: {fileID: -7787054587154366391, guid: 4349cc57313017440bbc015c10f1c669,
+    type: 3}
   m_Mesh2: {fileID: 7976089089792393225, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
   m_Mesh3: {fileID: -819314674608597017, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
   m_MeshWeighting: 1
@@ -29612,6 +29636,7 @@ GameObject:
   - component: {fileID: 2471533596289139193}
   - component: {fileID: 2471533596289139195}
   - component: {fileID: 2471533596289139194}
+  - component: {fileID: 5636903100409219055}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -29646,7 +29671,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.6162314, g: 0.2235294, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 4
   m_Range: 12
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -29784,6 +29809,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &5636903100409219055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2471533596289139192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &2471533596441489696
 GameObject:
   m_ObjectHideFlags: 0

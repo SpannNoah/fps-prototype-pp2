@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3498573943128078127
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -21,9 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GroundWaves
-  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c,
+    type: 3}
   m_ValidKeywords:
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
   - _USE_DEPTH_FADE
   - _UV_MODE_UV
   m_InvalidKeywords:
@@ -34,7 +23,9 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -58,9 +49,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AffectAlphaMask: 0
+    - _AlphaClip: 0
     - _AlphaClipThresholdBlend: 0
     - _BUILTIN_AlphaClip: 0
     - _BUILTIN_Blend: 0
@@ -73,13 +77,16 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
+    - _Blend: 2
     - _BumpScale: 1
+    - _CastShadows: 0
+    - _Cull: 2
     - _Cutoff: 0.5
     - _CutoutThreshold: 0.01
     - _DecalBlendFactor: 10
     - _DepthOffset: 1
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 1
     - _Float: 0.68
     - _Fps: 30
     - _FresnelFadeFactor: 0
@@ -92,10 +99,13 @@ Material:
     - _NoiseOverTrail: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
+    - _Surface: 1
     - _TriplanarBlendFactor: 3
     - _USEALPHACLIPTHRESHOLD: 1
     - _USEALPHACUTOUT: 0
@@ -113,10 +123,12 @@ Material:
     - _UseWorldUVTrailRenderer: 0
     - _VertexAlphaMultiplier: 3
     - _VirtualVertexOffset: 0.2
-    - _ZWrite: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
     - _AlphaMaskRemap: {r: 0.5, g: 3, b: 0, a: 0}
-    - _Color: {r: 0.0735137, g: 0.104708895, b: 0.26415092, a: 0.44705883}
+    - _Color: {r: 0.026343895, g: 0.04711046, b: 0.1509434, a: 0.44705883}
     - _DistortScale: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _DistortionOffsetSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _DistortionSpeed: {r: 1, g: 1, b: 0, a: 0}
@@ -125,6 +137,19 @@ Material:
     - _MainColorRemap: {r: 1, g: 1, b: 0, a: 0}
     - _UvFadingRemap: {r: 1, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &806126146133465852
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!114 &2930473242583370472
 MonoBehaviour:
   m_ObjectHideFlags: 11

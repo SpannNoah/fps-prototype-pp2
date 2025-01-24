@@ -729,7 +729,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6, type: 3}
+    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6,
+      type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -19523,9 +19524,11 @@ ParticleSystemRenderer:
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 9153367734096747755, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_Mesh2: {fileID: 4119679015367213346, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -35203,7 +35206,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259467926112489495}
-  m_LocalRotation: {x: 0.24547489, y: -0.000000014901161, z: -0.0000000037252903, w: 0.96940297}
+  m_LocalRotation: {x: 0.24547489, y: -0.000000014901161, z: -0.0000000037252903,
+    w: 0.96940297}
   m_LocalPosition: {x: -0, y: 1.08, z: 9.61}
   m_LocalScale: {x: 0.5205833, y: 3.9773715, z: 1.3774606}
   m_ConstrainProportionsScale: 0
@@ -40495,7 +40499,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259467926978756889}
-  m_LocalRotation: {x: 0.24547489, y: -0.000000014901161, z: -0.0000000037252903, w: 0.96940297}
+  m_LocalRotation: {x: 0.24547489, y: -0.000000014901161, z: -0.0000000037252903,
+    w: 0.96940297}
   m_LocalPosition: {x: -0, y: 1.08, z: 9.61}
   m_LocalScale: {x: 0.5205833, y: 3.9773715, z: 1.3774606}
   m_ConstrainProportionsScale: 0
@@ -40540,7 +40545,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259467927032432260}
-  m_LocalRotation: {x: 0.24547489, y: -0.000000014901161, z: -0.0000000037252903, w: 0.96940297}
+  m_LocalRotation: {x: 0.24547489, y: -0.000000014901161, z: -0.0000000037252903,
+    w: 0.96940297}
   m_LocalPosition: {x: -0, y: 1.08, z: 9.61}
   m_LocalScale: {x: 0.5205833, y: 3.9773715, z: 1.3774606}
   m_ConstrainProportionsScale: 0
@@ -40750,6 +40756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets: []
   TargetCenterHeightOffset: 0.35
+  ProjectileSpeed: 15
   UseSkinMeshImpactEffects: 1
   UseCameraShakeCinemachine: 1
   UseForce: 1
@@ -40761,6 +40768,7 @@ MonoBehaviour:
   UseRagdollForce: 1
   UseAnimatorTriggerAfterCollision: 0
   AnimatorRandomTriggerNames: []
+  _isProjectile: 0
 --- !u!1 &259467927189417134
 GameObject:
   m_ObjectHideFlags: 0

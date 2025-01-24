@@ -5390,8 +5390,10 @@ ParticleSystemRenderer:
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 7702779526387289552, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
   m_Mesh1: {fileID: 5244915625381210605, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh2: {fileID: -3983063591393173388, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh2: {fileID: -3983063591393173388, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
+  m_Mesh3: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -15307,8 +15309,10 @@ ParticleSystemRenderer:
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 7702779526387289552, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
   m_Mesh1: {fileID: 5244915625381210605, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh2: {fileID: -3983063591393173388, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh2: {fileID: -3983063591393173388, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
+  m_Mesh3: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -30526,9 +30530,11 @@ ParticleSystemRenderer:
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 9153367734096747755, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh1: {fileID: -4118844776407336934, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_Mesh2: {fileID: 4119679015367213346, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh3: {fileID: -5889963883383171816, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -30581,6 +30587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets: []
   TargetCenterHeightOffset: 0.35
+  ProjectileSpeed: 15
   UseSkinMeshImpactEffects: 1
   UseCameraShakeCinemachine: 1
   UseForce: 1
@@ -30592,6 +30599,7 @@ MonoBehaviour:
   UseRagdollForce: 1
   UseAnimatorTriggerAfterCollision: 1
   AnimatorRandomTriggerNames: []
+  _isProjectile: 0
 --- !u!1 &6923853072519738065
 GameObject:
   m_ObjectHideFlags: 0
@@ -30603,6 +30611,7 @@ GameObject:
   - component: {fileID: 6923853072519738064}
   - component: {fileID: 6923853072519738066}
   - component: {fileID: 6923853072519738067}
+  - component: {fileID: 7533096047801686727}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -30618,7 +30627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6923853072519738065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30637,7 +30646,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.3700339, b: 0.031372547, a: 1}
-  m_Intensity: 3
+  m_Intensity: 150
   m_Range: 12
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -30766,6 +30775,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &7533096047801686727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923853072519738065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &6923853072734853489
 GameObject:
   m_ObjectHideFlags: 0

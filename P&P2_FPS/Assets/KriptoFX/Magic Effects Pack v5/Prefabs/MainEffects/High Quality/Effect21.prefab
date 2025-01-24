@@ -1501,7 +1501,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6461297695846733525, guid: 887193bc9ca6c5646a6bd6a5d68266ff, type: 3}
+    m_Mesh: {fileID: 6461297695846733525, guid: 887193bc9ca6c5646a6bd6a5d68266ff,
+      type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -11291,7 +11292,8 @@ MonoBehaviour:
   ShaderNameColor: 0
   DestroyTime: 4
   ImpactSkinMaterial: {fileID: 2100000, guid: 125e281cca30aa5429c27e4425b8c7c1, type: 2}
-  ImpactSkinParticles: {fileID: 6135444816322857037, guid: c658c863c7db5154da21d7d13d29a1eb, type: 3}
+  ImpactSkinParticles: {fileID: 6135444816322857037, guid: c658c863c7db5154da21d7d13d29a1eb,
+    type: 3}
   ImpactPrefab: {fileID: 0}
   UseImpactZeroRotationInsteadHitNormal: 0
   UseMaterialDirection: 0

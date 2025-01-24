@@ -21,11 +21,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LavaExplosionCore
-  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c,
+    type: 3}
   m_ValidKeywords:
   - _BUILTIN_ALPHATEST_ON
   - _BUILTIN_AlphaClip
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
   - _USEALPHACUTOUT
   - _USE_DEPTH_FADE
   - _UV_MODE_UV
@@ -36,7 +38,9 @@ Material:
   m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -60,9 +64,22 @@ Material:
         m_Texture: {fileID: 2800000, guid: 0cf646652af921c4aad83ab298fcda79, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AffectAlphaMask: 0
+    - _AlphaClip: 0
     - _AlphaClipThresholdBlend: 0
     - _BUILTIN_AlphaClip: 1
     - _BUILTIN_Blend: 0
@@ -75,7 +92,10 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 2
+    - _Blend: 0
     - _BumpScale: 1
+    - _CastShadows: 0
+    - _Cull: 2
     - _Custout: 0.1
     - _Cutoff: 0.5
     - _Cutout: 0.01
@@ -83,7 +103,7 @@ Material:
     - _DecalBlendFactor: 10
     - _DepthOffset: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _Float: 0
     - _Fps: 30
     - _FresnelFadeFactor: 0
@@ -96,10 +116,13 @@ Material:
     - _NoiseOverTrail: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 1
+    - _QueueOffset: 0
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
+    - _Surface: 1
     - _TriplanarBlendFactor: 3
     - _USEALPHACUTOUT: 1
     - _USEALPHANOISE: 1
@@ -121,7 +144,9 @@ Material:
     - _VertexAlphaMultiplier: 3
     - _VertexAlphaThreshold: 0
     - _VirtualVertexOffset: 0.5
-    - _ZWrite: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
     - _AlphaMaskRemap: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 8.091872, g: 0.2965608, b: 0, a: 1}
@@ -135,7 +160,7 @@ Material:
     - _NoiseVertexOffsetStrength: {r: 0.4, g: 0.4, b: 0.4, a: 0}
     - _UvFadingRemap: {r: 1, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &4830422050248242790
+--- !u!114 &6347289699138480096
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

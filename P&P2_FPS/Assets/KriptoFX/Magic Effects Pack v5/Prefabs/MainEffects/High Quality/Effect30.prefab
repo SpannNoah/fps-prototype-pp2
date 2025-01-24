@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 4842307656839187600}
   - component: {fileID: 4842307656839187602}
   - component: {fileID: 4842307656839187603}
+  - component: {fileID: 378210927}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -301,7 +302,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 4
   m_Range: 12
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -414,7 +415,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  Duration: 3.2
+  Duration: 3.3
   Loop: 0
   AutoDeactivation: 1
   UseColor: 1
@@ -448,6 +449,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &378210927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842307656839187601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &4842307657125940228
 GameObject:
   m_ObjectHideFlags: 0
@@ -45394,6 +45415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets: []
   TargetCenterHeightOffset: 0.35
+  ProjectileSpeed: 15
   UseSkinMeshImpactEffects: 1
   UseCameraShakeCinemachine: 1
   UseForce: 1
@@ -45405,6 +45427,7 @@ MonoBehaviour:
   UseRagdollForce: 1
   UseAnimatorTriggerAfterCollision: 1
   AnimatorRandomTriggerNames: []
+  _isProjectile: 0
 --- !u!1 &4842307658477418542
 GameObject:
   m_ObjectHideFlags: 0
@@ -46101,7 +46124,8 @@ MonoBehaviour:
   ShaderNameColor: 0
   DestroyTime: 3.5
   ImpactSkinMaterial: {fileID: 2100000, guid: ceb582ff1041bf443b182345f1dc6bb9, type: 2}
-  ImpactSkinParticles: {fileID: 5481011114841699282, guid: 97b68d533f7e0e24a8c84e4b1e5c8e43, type: 3}
+  ImpactSkinParticles: {fileID: 5481011114841699282, guid: 97b68d533f7e0e24a8c84e4b1e5c8e43,
+    type: 3}
   ImpactPrefab: {fileID: 0}
   UseImpactZeroRotationInsteadHitNormal: 0
   UseMaterialDirection: 0
@@ -51515,6 +51539,7 @@ GameObject:
   - component: {fileID: 4842307658807870481}
   - component: {fileID: 4842307658807870483}
   - component: {fileID: 4842307658807870480}
+  - component: {fileID: 3119006760475424918}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -51549,7 +51574,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.27058828, g: 0.34835422, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 6
   m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -51696,3 +51721,23 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &3119006760475424918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4842307658807870486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}

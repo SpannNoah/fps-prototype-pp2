@@ -5064,8 +5064,10 @@ ParticleSystemRenderer:
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 7702779526387289552, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
   m_Mesh1: {fileID: 5244915625381210605, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh2: {fileID: -3983063591393173388, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh2: {fileID: -3983063591393173388, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
+  m_Mesh3: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -5364,7 +5366,8 @@ MonoBehaviour:
   EffectSettings: {fileID: 765516178751309457}
   TargetMode: 0
   OverrideStartPositionToChainCenter: 0
-  ChainPrefab: {fileID: 3705548232980287424, guid: 8516ae28ef9d97d4580ae15a64189555, type: 3}
+  ChainPrefab: {fileID: 3705548232980287424, guid: 8516ae28ef9d97d4580ae15a64189555,
+    type: 3}
   DestroyTime: 10
   LineRendererColorOverTime:
     serializedVersion: 2

@@ -20603,8 +20603,10 @@ ParticleSystemRenderer:
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 7702779526387289552, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
   m_Mesh1: {fileID: 5244915625381210605, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh2: {fileID: -3983063591393173388, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh2: {fileID: -3983063591393173388, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
+  m_Mesh3: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
@@ -60189,6 +60191,7 @@ GameObject:
   - component: {fileID: 1333109869496672297}
   - component: {fileID: 1333109869496672299}
   - component: {fileID: 1333109869496672298}
+  - component: {fileID: 4998375793773345183}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -60204,7 +60207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333109869496672296}
   m_LocalRotation: {x: 0.59184813, y: 0.38693127, z: -0.38693127, w: 0.59184813}
-  m_LocalPosition: {x: 0, y: 2.62, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60223,8 +60226,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.49953297, b: 0.11764705, a: 1}
-  m_Intensity: 4
-  m_Range: 12
+  m_Intensity: 30
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -60388,6 +60391,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &4998375793773345183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333109869496672296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1333109869500463186
 GameObject:
   m_ObjectHideFlags: 0

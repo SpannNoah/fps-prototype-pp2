@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 0
---- !u!114 &-1048306244351251455
+--- !u!114 &-6536642251853272844
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -34,8 +34,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FireRingOpaque
-  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c,
+    type: 3}
   m_ValidKeywords:
+  - _ALPHATEST_ON
   - _BUILTIN_ALPHATEST_ON
   - _BUILTIN_AlphaClip
   - _USEALPHACUTOUT
@@ -48,7 +50,8 @@ Material:
   m_CustomRenderQueue: 2450
   stringTagMap:
     RenderType: TransparentCutout
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -72,9 +75,22 @@ Material:
         m_Texture: {fileID: 2800000, guid: 005a78d20d6b32b40a4b1969d8c75aeb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AffectAlphaMask: 1
+    - _AlphaClip: 1
     - _AlphaClipThresholdBlend: 0
     - _BUILTIN_AlphaClip: 1
     - _BUILTIN_Blend: 0
@@ -88,17 +104,19 @@ Material:
     - _BUILTIN_ZWrite: 1
     - _BUILTIN_ZWriteControl: 0
     - _BlackMask: 0.593
+    - _Blend: 2
     - _BlendOp: 0
     - _BumpScale: 1
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
+    - _CastShadows: 0
     - _ColorMode: 0
     - _Cull: 0
     - _Custout: 0.1
     - _Cutoff: 1
     - _Cutout: 0
-    - _CutoutThreshold: 0.1
+    - _CutoutThreshold: 0.02
     - _DecalBlendFactor: 10
     - _DepthOffset: 0.5
     - _DetailNormalMapScale: 1
@@ -128,6 +146,8 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ParticlesRandomMultiplier: 0
+    - _QueueControl: 1
+    - _QueueOffset: 0
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 0
@@ -135,6 +155,7 @@ Material:
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _USEALPHACUTOUT: 1
     - _USEALPHANOISE: 1
     - _USEDISTORTION: 1
@@ -162,7 +183,9 @@ Material:
     - _VertexAlphaMultiplier: 3
     - _VertexAlphaThreshold: 0.3
     - _VirtualVertexOffset: 0.1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - _AlphaMaskRemap: {r: 2, g: 1, b: 0, a: 0}
     - _BorderScale: {r: 0.45, g: 0.025, b: 0, a: 0}

@@ -427,7 +427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EffectSettings: {fileID: 5207559105437830028}
-  SpawnedObject: {fileID: 6515457559656655991, guid: 0b95df4098a0d874e9bcc7d59548bae6, type: 3}
+  SpawnedObject: {fileID: 6515457559656655991, guid: 0b95df4098a0d874e9bcc7d59548bae6,
+    type: 3}
   SpawnMode: 0
   TargetMode: 0
   InstanceLifeTime: 8

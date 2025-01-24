@@ -9933,8 +9933,10 @@ ParticleSystemRenderer:
   m_VertexStreams: 000103040209
   m_Mesh: {fileID: 7702779526387289552, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
   m_Mesh1: {fileID: 5244915625381210605, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh2: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
-  m_Mesh3: {fileID: -6880262858201208964, guid: cb70a005f6d44954d9d93f7ffa609ec0, type: 3}
+  m_Mesh2: {fileID: -9085331004972601494, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
+  m_Mesh3: {fileID: -6880262858201208964, guid: cb70a005f6d44954d9d93f7ffa609ec0,
+    type: 3}
   m_MeshWeighting: 1
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1

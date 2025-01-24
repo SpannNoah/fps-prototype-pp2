@@ -1446,7 +1446,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: -7787054587154366391, guid: 4349cc57313017440bbc015c10f1c669, type: 3}
+    m_Mesh: {fileID: -7787054587154366391, guid: 4349cc57313017440bbc015c10f1c669,
+      type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -5613,6 +5614,7 @@ GameObject:
   - component: {fileID: 3288749558800607903}
   - component: {fileID: 3288749558800607897}
   - component: {fileID: 3288749558800607902}
+  - component: {fileID: 1350087876083074869}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -5628,7 +5630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3288749558800607900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5647,7 +5649,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.33033526, b: 0.15566039, a: 1}
-  m_Intensity: 1.3
+  m_Intensity: 15
   m_Range: 12
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5776,6 +5778,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &1350087876083074869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3288749558800607900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &3288749558827890764
 GameObject:
   m_ObjectHideFlags: 0
@@ -12217,7 +12239,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6, type: 3}
+    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6,
+      type: 3}
     m_MeshRenderer: {fileID: 3288749559195468796}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -26660,6 +26683,7 @@ GameObject:
   - component: {fileID: 3288749559703896413}
   - component: {fileID: 3288749559703896415}
   - component: {fileID: 3288749559703896412}
+  - component: {fileID: 453859849993190124}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -26694,8 +26718,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.33033526, b: 0.15566039, a: 1}
-  m_Intensity: 3
-  m_Range: 15
+  m_Intensity: 60
+  m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -26850,6 +26874,26 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   UseSixPointLighting: 0
+--- !u!114 &453859849993190124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3288749559703896386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &3288749559744432513
 GameObject:
   m_ObjectHideFlags: 0
@@ -27579,7 +27623,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6461297695846733525, guid: 887193bc9ca6c5646a6bd6a5d68266ff, type: 3}
+    m_Mesh: {fileID: 6461297695846733525, guid: 887193bc9ca6c5646a6bd6a5d68266ff,
+      type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -32531,7 +32576,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6, type: 3}
+    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6,
+      type: 3}
     m_MeshRenderer: {fileID: 3288749559195468796}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -51678,8 +51724,10 @@ MonoBehaviour:
   ShaderNameColor: 0
   DestroyTime: 7
   ImpactSkinMaterial: {fileID: 2100000, guid: bb08e3d539cc3b24eb4205a32e81e002, type: 2}
-  ImpactSkinParticles: {fileID: 1436822767035414468, guid: dc166684caaffd04eb915c145407574f, type: 3}
-  ImpactPrefab: {fileID: 8093395062775689638, guid: 85aa690c8d0ee79418655b01b5d40e9d, type: 3}
+  ImpactSkinParticles: {fileID: 1436822767035414468, guid: dc166684caaffd04eb915c145407574f,
+    type: 3}
+  ImpactPrefab: {fileID: 8093395062775689638, guid: 85aa690c8d0ee79418655b01b5d40e9d,
+    type: 3}
   UseImpactZeroRotationInsteadHitNormal: 0
   UseMaterialDirection: 0
   DeactivateMesh: 0
@@ -52413,7 +52461,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6, type: 3}
+    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6,
+      type: 3}
     m_MeshRenderer: {fileID: 3288749559426288610}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -76792,7 +76841,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6, type: 3}
+    m_Mesh: {fileID: 6690141603448424749, guid: 8718507af57a4074aa5a2faa711e11a6,
+      type: 3}
     m_MeshRenderer: {fileID: 3288749559426288610}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}

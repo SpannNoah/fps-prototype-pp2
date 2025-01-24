@@ -13,19 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 0
---- !u!114 &-3434122604478615906
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -34,9 +21,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LightningParticles
-  m_Shader: {fileID: -6465566751694194690, guid: 482790da9e6ee014b93589bbc3fa82cd, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 482790da9e6ee014b93589bbc3fa82cd,
+    type: 3}
   m_ValidKeywords:
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
   - _USEALPHANOISE
   m_InvalidKeywords:
   - _USEVERTEXCOLOR
@@ -46,7 +35,9 @@ Material:
   m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -66,8 +57,21 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0
     - _BUILTIN_AlphaClip: 0
     - _BUILTIN_Blend: 2
     - _BUILTIN_CullMode: 0
@@ -79,12 +83,15 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
+    - _Blend: 2
     - _BumpScale: 1
+    - _CastShadows: 0
+    - _Cull: 0
     - _Custout: 0.1
     - _Cutoff: 0.5
     - _Cutout: 0.01
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 1
     - _Fps: 30
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -94,9 +101,12 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ParticlesRandomMultiplier: 0
+    - _QueueControl: 1
+    - _QueueOffset: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
+    - _Surface: 1
     - _USEALPHANOISE: 1
     - _USEFLIPBOOK: 0
     - _USENOISEVERTEXOFFSET: 0
@@ -107,7 +117,9 @@ Material:
     - _UseTrailColorAsRandomMultiplier: 0
     - _VertexAlphaMultiplier: 1
     - _VertexAlphaThreshold: 0
-    - _ZWrite: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
     - _Color: {r: 6.8351717, g: 11.0873785, b: 96.603775, a: 0.9137255}
     - _DistortionSpeed: {r: 0.05, g: 1.85, b: 0, a: 0}
@@ -116,3 +128,16 @@ Material:
     - _FlipbookSize: {r: 8, g: 8, b: 0, a: 0}
     - _NoiseVertexOffsetStrength: {r: 0.4, g: 0.4, b: 0.4, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &8065695459308220663
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

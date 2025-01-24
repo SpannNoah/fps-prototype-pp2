@@ -1501,7 +1501,8 @@ ParticleSystem:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-    m_Mesh: {fileID: 6461297695846733525, guid: 887193bc9ca6c5646a6bd6a5d68266ff, type: 3}
+    m_Mesh: {fileID: 6461297695846733525, guid: 887193bc9ca6c5646a6bd6a5d68266ff,
+      type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -11165,6 +11166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets: []
   TargetCenterHeightOffset: 0.35
+  ProjectileSpeed: 15
   UseSkinMeshImpactEffects: 1
   UseCameraShakeCinemachine: 1
   UseForce: 1
@@ -11176,6 +11178,7 @@ MonoBehaviour:
   UseRagdollForce: 1
   UseAnimatorTriggerAfterCollision: 1
   AnimatorRandomTriggerNames: []
+  _isProjectile: 0
 --- !u!1 &6288375119545707377
 GameObject:
   m_ObjectHideFlags: 0
@@ -11277,7 +11280,8 @@ MonoBehaviour:
   ShaderNameColor: 0
   DestroyTime: 4
   ImpactSkinMaterial: {fileID: 2100000, guid: 125e281cca30aa5429c27e4425b8c7c1, type: 2}
-  ImpactSkinParticles: {fileID: 6135444816322857037, guid: 91256ee6a2c09c741b736fbaf656c579, type: 3}
+  ImpactSkinParticles: {fileID: 6135444816322857037, guid: 91256ee6a2c09c741b736fbaf656c579,
+    type: 3}
   ImpactPrefab: {fileID: 0}
   UseImpactZeroRotationInsteadHitNormal: 0
   UseMaterialDirection: 0

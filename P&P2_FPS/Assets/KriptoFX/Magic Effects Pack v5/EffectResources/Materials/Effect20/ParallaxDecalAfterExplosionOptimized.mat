@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ParallaxDecalAfterExplosionOptimized
-  m_Shader: {fileID: -6465566751694194690, guid: 28282d4f83c28ef41a15c9c548b2b2b3, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 28282d4f83c28ef41a15c9c548b2b2b3,
+    type: 3}
   m_ValidKeywords:
   - _BUILTIN_ALPHATEST_ON
   - _BUILTIN_AlphaClip
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 0
---- !u!114 &6710260754968521737
+--- !u!114 &7346120550541009819
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
