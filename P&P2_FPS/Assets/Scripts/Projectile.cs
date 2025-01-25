@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.TryGetComponent(out IDamage damageable))
         {
-            damageable.TakeDamage(m_ammoType.m_baseDamage);
+            damageable.TakeDamage(m_ammoType.m_baseDamage, m_ammoType.m_damageType);
         }
 
         if(m_ammoType.m_effectScript != null && m_ammoType.m_effectScript is IAmmoEffect effect)

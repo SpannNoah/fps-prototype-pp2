@@ -185,7 +185,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         return false;
     }
     
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, DamageType damageType)
     {
         m_health -= amount;
 
@@ -293,6 +293,6 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void DealDamage()
     {
         if (!m_isPlayerInRange) return;
-        GameManager.Instance.m_playerController.TakeDamage(damage);
+        GameManager.Instance.m_playerController.TakeDamage(damage, DamageType.Basic);
     }
 }

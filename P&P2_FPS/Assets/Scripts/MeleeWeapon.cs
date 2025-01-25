@@ -35,7 +35,7 @@ public class MeleeWeapon : MonoBehaviour
         {
             if (enemy.TryGetComponent(out IDamage damageable))
             {
-                damageable.TakeDamage(m_gunStats.shootDamage);
+                damageable.TakeDamage(m_gunStats.shootDamage, DamageType.Basic);
             }
         }
         m_canAttack = true;

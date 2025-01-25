@@ -10,7 +10,7 @@ public class DoorPowerBox : MonoBehaviour, IDamage
     [SerializeField] private bool m_playVoiceLine = false;
     [SerializeField] private List<int> m_voiceLineIndexes = new List<int>();
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, DamageType damageType)
     {
         m_doorToOpen.Interact();
 
