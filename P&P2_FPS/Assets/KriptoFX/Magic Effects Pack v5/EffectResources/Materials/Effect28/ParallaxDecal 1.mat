@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8199302310330421823
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ParallaxDecal 1
+  m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c,
+    type: 3}
+  m_ValidKeywords:
+  - _BUILTIN_ALPHATEST_ON
+  - _BUILTIN_AlphaClip
+  - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
+  - _USEALPHACUTOUT
+  - _USEDISTORTION
+  - _UV_MODE_UV
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaMask:
+        m_Texture: {fileID: 2800000, guid: 073a4b9418a84b34384123f54f426bef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CutoutTex:
+        m_Texture: {fileID: 2800000, guid: 527b7b52ea6bce04f98f06e08bbd6fdc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DepthTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistortionTex:
+        m_Texture: {fileID: 2800000, guid: 527b7b52ea6bce04f98f06e08bbd6fdc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 43ab4412d04fefd47811a5c19c7fe075, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AffectAlphaMask: 0
+    - _AlphaClip: 0
+    - _AlphaClipThresholdBlend: 0
+    - _AlphaMaskStrength: 2.56
+    - _BUILTIN_AlphaClip: 1
+    - _BUILTIN_Blend: 0
+    - _BUILTIN_CullMode: 2
+    - _BUILTIN_DstBlend: 10
+    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueOffset: 0
+    - _BUILTIN_SrcBlend: 5
+    - _BUILTIN_Surface: 1
+    - _BUILTIN_ZTest: 4
+    - _BUILTIN_ZWrite: 0
+    - _BUILTIN_ZWriteControl: 0
+    - _Blend: 0
+    - _Boolean: 0
+    - _BumpScale: 1
+    - _CastShadows: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _CutoutThreshold: 0.01
+    - _DecalBlendFactor: 10
+    - _DecalTransitionFactor: 6.94
+    - _DepthOffset: 0.5
+    - _DetailNormalMapScale: 1
+    - _Displacement: 0
+    - _DistortScale: 1
+    - _DistortionStrength: 0.05
+    - _DstBlend: 10
+    - _EmissionAlphaMaskStrength: 1.07
+    - _EmissionCuoutAlphaMaskOffset: -1
+    - _FLOWMAPEDITORMODE: 0
+    - _Float: 0.87
+    - _FlowSpeed: 0.5
+    - _FlowStrength: 0.1
+    - _FlowTiling: 2
+    - _Fps: 30
+    - _FresnelFadeFactor: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _JumpX: 0.25
+    - _JumpY: 0.25
+    - _Metallic: 0.397
+    - _Mode: 0
+    - _MultiplyBlendFactor: 0
+    - _MultuplyAlpha: 0
+    - _NoiseOverTrail: 0.5
+    - _NoiseStrength: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _QueueControl: 1
+    - _QueueOffset: 0
+    - _Rotation: 0
+    - _Sharpness: 3.4
+    - _SmoothnessTextureChannel: 0
+    - _Smothness: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 5
+    - _Steps: 2
+    - _Surface: 1
+    - _TriplanarBlendFactor: 3
+    - _USEALPHACUTOUT: 1
+    - _USEDISTORTION: 1
+    - _USEEMISSION: 1
+    - _USEFLIPBOOK: 0
+    - _USEFLOWMAP: 1
+    - _USEFRAMEBLENDING: 0
+    - _USETRIPLANARMESHMAPPING: 0
+    - _USEUVNOISE: 0
+    - _USE_DEPTH_FADE: 0
+    - _UVSec: 0
+    - _UV_MODE: 0
+    - _UseEncodedCutoutAnimation: 1
+    - _UseNoiseOverTrail: 0
+    - _UseParticlesCustomOffset: 0
+    - _UsePolarCoordinates: 0
+    - _UsePositionAsOffset: 1
+    - _UseUvFading: 0
+    - _UseWorldUVTrailRenderer: 0
+    - _VertexAlphaMultiplier: 1.25
+    - _VirtualOffset: 0.323
+    - _VirtualVertexOffset: 0.1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
+    m_Colors:
+    - _AlphaMaskRemap: {r: 1, g: 1, b: 0, a: 0}
+    - _Color: {r: 95.87451, g: 2.627553, b: 0, a: 1}
+    - _CutoutMaskRemap_In: {r: 0, g: 1.05, b: 0, a: 0}
+    - _CutoutMaskRemap_Out: {r: 0, g: 1, b: 0, a: 0}
+    - _DistortScale: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _DistortStrength: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - _DistortionOffsetSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _DistortionSpeed: {r: -0.025, g: -0.05, b: 0, a: 0}
+    - _DistortionTiling: {r: 4, g: 4, b: 0, a: 0}
+    - _EmissionAlphaMaskRemap: {r: 2, g: 2, b: 0, a: 0}
+    - _EmissionColor: {r: 196.68475, g: 19.255848, b: 0, a: 1}
+    - _FlipbookSize: {r: 8, g: 8, b: 0, a: 0}
+    - _FlowTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _MainColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
+    - _MainColorRemap: {r: 1, g: 2, b: 0, a: 0}
+    - _MinMax: {r: 0, g: 0, b: 0, a: 0}
+    - _TangentScale: {r: 1, g: 1, b: 1, a: 0}
+    - _UvFadingRemap: {r: 1, g: 5, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &2503752753341744365
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
