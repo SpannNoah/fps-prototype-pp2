@@ -48,7 +48,7 @@ public class LightningEffect : MonoBehaviour, IAmmoEffect
             
             if(enemy.TryGetComponent(out IDamage damage))
             {
-                damage.TakeDamage(m_chainDamage);
+                damage.TakeDamage(m_chainDamage, ammoType.m_damageType);
             }
             float distance = Vector3.Distance(position, enemy.transform.position);
             if (distance < minDistance)

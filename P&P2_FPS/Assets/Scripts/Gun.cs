@@ -49,7 +49,7 @@ public class Gun : MonoBehaviour
 
             if (hit.collider.TryGetComponent<IDamage>(out damage))
             {
-                damage.TakeDamage(m_gunStats.shootDamage);
+                damage.TakeDamage(m_gunStats.shootDamage, ammoType.m_damageType);
             }
 
             if(ammoType.m_effectScript != null && ammoType.m_effectScript is IAmmoEffect effect)

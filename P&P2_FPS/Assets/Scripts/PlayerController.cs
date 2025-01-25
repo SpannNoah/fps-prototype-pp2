@@ -227,7 +227,7 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, DamageType damageType)
     {
         if (isImmune)
         {
@@ -343,7 +343,7 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         while (true)
         {
-            TakeDamage(1);
+            TakeDamage(1, DamageType.Basic);
             UpdatePlayerUI();
             yield return new WaitForSeconds(1);
         }

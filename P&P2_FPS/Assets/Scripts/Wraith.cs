@@ -295,7 +295,7 @@ public class Wraith : MonoBehaviour,  IDamage
         return false;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, DamageType damageType)
     {
         m_health -= amount;
 
@@ -376,7 +376,7 @@ public class Wraith : MonoBehaviour,  IDamage
     // Used in enemy animator
     public void DealDamage()
     {
-        GameManager.Instance.m_playerController.TakeDamage(damage);
+        GameManager.Instance.m_playerController.TakeDamage(damage, DamageType.Basic);
     }
     public void BecomeImmune()
     {

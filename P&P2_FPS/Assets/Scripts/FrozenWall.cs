@@ -8,8 +8,13 @@ public class FrozenWall : MonoBehaviour, IDamage
     [SerializeField] private LayerMask m_ignoreMask;
     [SerializeField] private float m_force = 0.0f;
     [SerializeField] private List<GameObject> m_ParticleSystems = new List<GameObject>();
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, DamageType damageType)
     {
+        if(damageType != DamageType.Lightning)
+        {
+            return;
+        }
+
         foreach(GameObject ps in m_ParticleSystems)
         {
             Instantiate(ps, gameObject.transform.position, Quaternion.identity);
