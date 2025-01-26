@@ -69,8 +69,10 @@ public class EnemyAI : MonoBehaviour, IDamage
     public float m_originalStoppingDist = 0.0f;
     public Coroutine m_coroutine = null;
     public int m_originalHP = 0;
+    public float distanceToPlayer = 0f;
 
     private bool m_isPlayingDeathAnim = false;
+    private Transform playerTransform = null;
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -83,7 +85,8 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
 
         m_originalHP = m_health;
-        
+        playerTransform = GameObject.FindWithTag("Player").transform;
+
         UpdateUI();
     }
 
@@ -95,6 +98,11 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Update is called once per frame
     public virtual void Update()
     {
+        if (playerTransform != null)
+        {
+            distanceToPlayer = Vector3.Distance(this.transform.position, playerTransform.position);
+            Debug.Log("Distance to Player: " + distanceToPlayer);
+        }
         if (m_isPlayingDeathAnim)
         {
             m_navMeshAgent.isStopped = true;
@@ -157,8 +165,8 @@ public class EnemyAI : MonoBehaviour, IDamage
         {
             if(hit.collider.CompareTag("Player") && m_angleToPlayer <= m_fieldOfView)
             {
-
-                if(m_navMeshAgent.remainingDistance < m_navMeshAgent.stoppingDistance)
+                m_navMeshAgent.stoppingDistance = m_originalStoppingDist;
+                if (m_navMeshAgent.remainingDistance < m_navMeshAgent.stoppingDistance)
                 {
                     FaceTarget();
                 }
@@ -168,7 +176,6 @@ public class EnemyAI : MonoBehaviour, IDamage
                     StartCoroutine(Shoot());
                 }
 
-                m_navMeshAgent.stoppingDistance = m_originalStoppingDist;
                 return true;
             }
 
@@ -178,7 +185,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         return false;
     }
     
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, DamageType damageType)
     {
         m_health -= amount;
 
@@ -285,6 +292,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Used in enemy animator
     public void DealDamage()
     {
-        GameManager.Instance.m_playerController.TakeDamage(damage);
+        if (!m_isPlayerInRange) return;
+        GameManager.Instance.m_playerController.TakeDamage(damage, DamageType.Basic);
     }
 }

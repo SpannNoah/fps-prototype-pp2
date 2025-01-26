@@ -132,7 +132,7 @@ Material:
     - _MainColorRemap: {r: 1, g: 1, b: 0, a: 0}
     - _UvFadingRemap: {r: 1, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &8845014975714129322
+--- !u!114 &7399061463303657255
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

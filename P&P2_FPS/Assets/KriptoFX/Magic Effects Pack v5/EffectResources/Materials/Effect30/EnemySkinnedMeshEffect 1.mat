@@ -156,7 +156,7 @@ Material:
     - _TintColor: {r: 0, g: 1.0039216, b: 23.968628, a: 1}
     - _UvFadingRemap: {r: 1, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &7874727951150350720
+--- !u!114 &5774154537651526230
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

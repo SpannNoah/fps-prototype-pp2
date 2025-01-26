@@ -126,7 +126,7 @@ Material:
     - _MainColorRemap: {r: 1.5, g: 1, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &642959061751356678
+--- !u!114 &1552234112615167315
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

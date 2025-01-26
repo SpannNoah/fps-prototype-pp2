@@ -1,37 +1,24 @@
-using UnityEngine;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine;
 
-public class SaveSystem
+public static class SaveSystem
 {
+    private static string playerSaveFilePath = Path.Combine(Application.persistentDataPath, "playerSave.json");
+
     public static void SavePlayer(PlayerController player)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player.fun";
-        FileStream stream = new FileStream(path, FileMode.Create);
-
-        PlayerData data = new PlayerData(player);
-
-        formatter.Serialize(stream, data);
-        stream.Close();
+        PlayerData playerData = new PlayerData(player);
+        string json = JsonUtility.ToJson(playerData);
+        File.WriteAllText(playerSaveFilePath, json);
     }
 
     public static PlayerData LoadPlayer()
     {
-        string path = Application.persistentDataPath + "/player.fun";
-        if (File.Exists(path)){
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
-            stream.Close();
-
-            return data;
-        }
-        else
+        if (File.Exists(playerSaveFilePath))
         {
-            Debug.LogError("Save file not found in " + path);
-            return null;
+            string json = File.ReadAllText(playerSaveFilePath);
+            return JsonUtility.FromJson<PlayerData>(json);
         }
+        return null;
     }
 }

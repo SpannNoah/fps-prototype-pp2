@@ -2,9 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DamageType
+{
+    Basic,
+    Lightning,
+    Fire,
+    Ice
+}
+
 [CreateAssetMenu(fileName ="NewAmmoType", menuName ="Ammo/AmmoType")]
 public class AmmoTypeConfig : ScriptableObject
 {
+    public DamageType m_damageType = DamageType.Basic;
     public string m_ammoName = string.Empty;
     public int m_baseDamage = 0;
     public bool m_isProjectile = false;
