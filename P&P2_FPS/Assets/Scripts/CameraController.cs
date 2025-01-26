@@ -12,9 +12,10 @@ public class CameraController : MonoBehaviour
     int m_lockVertMax = 90;
     [SerializeField]
     bool m_invertY = false;
-
+    [SerializeField]
+    private PlayerController m_playerController = null;
     private float m_currentRotationX = 0.0f;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_playerController.m_isInCutScene) return;
         // get input
         float mouseX = Input.GetAxis("Mouse X") * m_sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * m_sensitivity * Time.deltaTime;

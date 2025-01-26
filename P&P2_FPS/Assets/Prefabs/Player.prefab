@@ -250,6 +250,7 @@ MonoBehaviour:
   m_lockVertMin: -90
   m_lockVertMax: 90
   m_invertY: 0
+  m_playerController: {fileID: 5553137498959758498}
 --- !u!114 &1432850888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +341,7 @@ MonoBehaviour:
   crouchColliderHeight: 1
   playerCamera: {fileID: 5553137498546427670}
   crouchCameraHeight: 0.25
+  m_isInCutScene: 0
   m_speed: 10
   m_sprintModifier: 2
   m_jumpMax: 1
