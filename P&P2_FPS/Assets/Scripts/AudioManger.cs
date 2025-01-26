@@ -13,18 +13,22 @@ public class AudioManger : MonoBehaviour
 
     public static AudioManger instance;
 
-    [Header("Audio Clips")]
+    [Header("Audio Sources")]
     public AudioSource backgroundMusic;
+    public AudioSource leftAmmoAudioSource;
+    public AudioSource rightAmmoAudioSource;
     public AudioSource buttonClick;
     public AudioSource playerJump;
     public AudioSource playerHurt;
     public AudioSource playerDeath;
-    public AudioSource fireGun;
-    public AudioSource lightningAmmo;
-    public AudioSource fireAmmo;
-    public AudioSource iceAmmo;
     public AudioSource portalSound;
     public AudioSource enemyDeath;
+
+    [Header("Audio Clips")]
+    public AudioClip basicAmmoSFX;
+    public AudioClip lightningAmmoSFX;
+    public AudioClip fireAmmoSFX;
+    public AudioClip iceAmmoSFX;
 
     [Header("Background Music")]
     public AudioClip mainMenuMusic;
@@ -122,28 +126,53 @@ public class AudioManger : MonoBehaviour
         playerDeath.Play();
     }
 
-    public void PlayFireGun()
+    public void PlayAmmoSFX(DamageType damageType, bool isLeft)
     {
-        fireGun.volume = isMuted ? 0 : soundEffectVolume;
-        fireGun.Play();
-    }
-
-    public void PlayLightningAmmo()
-    {
-        lightningAmmo.volume = isMuted ? 0 : soundEffectVolume;
-        lightningAmmo.Play();
-    }
-
-    public void PlayFireAmmo()
-    {
-        fireAmmo.volume = isMuted ? 0 : soundEffectVolume;
-        fireAmmo.Play();
-    }
-
-    public void PlayIceAmmo()
-    {
-        iceAmmo.volume = isMuted ? 0 : soundEffectVolume;
-        iceAmmo.Play();
+        switch(damageType)
+        {
+            case DamageType.Basic:
+                if(isLeft)
+                {
+                    leftAmmoAudioSource.PlayOneShot(basicAmmoSFX);
+                }
+                else
+                {
+                    rightAmmoAudioSource.PlayOneShot(basicAmmoSFX);
+                }
+                break;
+            case DamageType.Lightning:
+                if(isLeft)
+                {
+                    leftAmmoAudioSource.PlayOneShot(lightningAmmoSFX);
+                }
+                else
+                {
+                    rightAmmoAudioSource.PlayOneShot(lightningAmmoSFX);
+                }
+                break;
+            case DamageType.Ice:
+                if (isLeft)
+                {
+                    leftAmmoAudioSource.PlayOneShot(iceAmmoSFX);
+                }
+                else
+                {
+                    rightAmmoAudioSource.PlayOneShot(iceAmmoSFX);
+                }
+                break;
+            case DamageType.Fire:
+                if(isLeft)
+                {
+                    leftAmmoAudioSource.PlayOneShot(fireAmmoSFX);
+                }
+                else
+                {
+                    rightAmmoAudioSource.PlayOneShot(fireAmmoSFX);
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     public void PlayPortalSound()
@@ -166,10 +195,8 @@ public class AudioManger : MonoBehaviour
         playerJump.volume = isMuted ? 0 : soundEffectVolume;
         playerHurt.volume = isMuted ? 0 : soundEffectVolume;
         playerDeath.volume = isMuted ? 0 : soundEffectVolume;
-        fireGun.volume = isMuted ? 0 : soundEffectVolume;
-        lightningAmmo.volume = isMuted ? 0 : soundEffectVolume;
-        fireAmmo.volume = isMuted ? 0 : soundEffectVolume;
-        iceAmmo.volume = isMuted ? 0 : soundEffectVolume;
+        leftAmmoAudioSource.volume = isMuted ? 0 : soundEffectVolume;
+        rightAmmoAudioSource.volume = isMuted ? 0 : soundEffectVolume;
         portalSound.volume = isMuted ? 0 : soundEffectVolume;
         enemyDeath.volume = isMuted ? 0 : soundEffectVolume;
         

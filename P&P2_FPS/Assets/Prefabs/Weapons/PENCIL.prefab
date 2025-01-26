@@ -49,10 +49,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gunStats: {fileID: 0}
   m_firePoint: {fileID: 1142791059636940878}
+  m_gunTransform: {fileID: 4293507465783136}
   m_ignoreMask:
     serializedVersion: 2
     m_Bits: 8
   m_ammoCartridge: {fileID: 0}
+  m_recoilDuration: 0.1
+  m_cameraTransform: {fileID: 0}
+  m_recoilSettings:
+  - damageType: 0
+    verticalKick: 0.5
+    horizontalKick: 0.3
+    gunKickBack: 0.1
+  - damageType: 2
+    verticalKick: 0.5
+    horizontalKick: 0.3
+    gunKickBack: 0.2
+  - damageType: 1
+    verticalKick: 0.25
+    horizontalKick: 0.2
+    gunKickBack: 0.05
+  - damageType: 3
+    verticalKick: 0.6
+    horizontalKick: 0.3
+    gunKickBack: 0.1
 --- !u!1 &1522410602166846
 GameObject:
   m_ObjectHideFlags: 0

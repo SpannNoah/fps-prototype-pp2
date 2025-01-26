@@ -31,6 +31,9 @@ public class EnemyAI : MonoBehaviour, IDamage
     public NavMeshAgent m_navMeshAgent = null;
     [SerializeField]
     public Animator m_animator = null;
+    public Transform m_bloodHitPFXPosition = null;
+    public GameObject m_bloodHitFX = null;
+    public GameObject m_bloodPoolFX = null;
 
     [SerializeField]
     public List<PowerUp> m_powerUps = new List<PowerUp>();
@@ -58,6 +61,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     public int m_roamTimer = 3;
     [SerializeField]
     public int m_speedTransition = 3;
+    public float m_staggerThreshold = 5;
 
     public bool m_isShooting = false;
     public bool m_isPlayerInRange = false;
@@ -71,6 +75,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     public int m_originalHP = 0;
     public float distanceToPlayer = 0f;
 
+    private float m_currentStagger = 0f;
     private bool m_isPlayingDeathAnim = false;
     private Transform playerTransform = null;
     // Start is called before the first frame update
@@ -189,6 +194,13 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         m_health -= amount;
 
+        m_currentStagger += amount;
+        if(m_currentStagger >= m_staggerThreshold)
+        {
+            m_animator.SetTrigger("hit");
+            m_currentStagger = 0f;
+        }
+
         if(m_navMeshAgent.isActiveAndEnabled)
         {
             m_navMeshAgent.SetDestination(GameManager.Instance.m_player.transform.position);
@@ -202,12 +214,20 @@ public class EnemyAI : MonoBehaviour, IDamage
         StartCoroutine(DamageFlashCoroutine());
         UpdateUI();
 
+        if(m_bloodHitFX != null && m_bloodHitPFXPosition != null)
+        {
+            Instantiate(m_bloodHitFX, m_bloodHitPFXPosition.position, Quaternion.identity);
+        }
         if(m_health <= 0)
         {
             m_isPlayingDeathAnim = true;
             m_animator.SetTrigger("death");
-            
-            DropRandomPowerUp();
+            if(m_bloodPoolFX != null)
+            {
+                Instantiate(m_bloodPoolFX, new Vector3(transform.position.x, 0.01f, transform.position.z), Quaternion.identity);
+            }
+
+            //DropRandomPowerUp();
             //Destroy(gameObject); --> Animation State Destroys Game Object Now to Allow for Death Animation to Complete
         }
     }

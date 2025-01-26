@@ -336,6 +336,7 @@ MonoBehaviour:
   m_ignoreMask:
     serializedVersion: 2
     m_Bits: 8
+  m_gunManager: {fileID: 7409468319407462124}
   crouchColliderHeight: 1
   playerCamera: {fileID: 5553137498546427670}
   crouchCameraHeight: 0.25
@@ -346,7 +347,6 @@ MonoBehaviour:
   m_gravity: 28
   m_health: 100
   m_healthLerpSpeed: 0.25
-  player: {fileID: 0}
   crouchSpeed: 3.5
   crouchMoveSpeed: 5
   crouchKey: 306
@@ -364,7 +364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e7bf08375055a4788d1fa261e27bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponInventory: []
   m_gunHolder: {fileID: 52257180}
   m_meleeHolder: {fileID: 600155310}
   m_maxHeat: 100

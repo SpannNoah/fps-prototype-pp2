@@ -74,12 +74,12 @@ public class AmmoManager : MonoBehaviour
 
     public AmmoTypeConfig GetLeftAmmoType()
     {
-        return m_currentLeftAmmo;
+        return m_currentLeftAmmo ? m_currentLeftAmmo : null;
     }
 
     public AmmoTypeConfig GetRightAmmoType()
     {
-        return m_currentRightAmmo;
+        return m_currentRightAmmo ? m_currentRightAmmo : null;
     }
 
     public void ClearAmmo(bool isLeft)

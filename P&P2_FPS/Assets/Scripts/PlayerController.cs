@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private CharacterController m_characterController = null;
     [SerializeField]
     private LayerMask m_ignoreMask = 0;
+    public GunManager m_gunManager = null;
 
     [Header("Collider Settings")]
     private CapsuleCollider playerCollider;
@@ -115,6 +116,11 @@ public class PlayerController : MonoBehaviour, IDamage
     public void SetHealth(int v)
     {
         m_health = m_playerHealthOrig;
+    }
+
+    public Camera GetCamera()
+    {
+        return playerCamera;
     }
 
     private void Awake()
