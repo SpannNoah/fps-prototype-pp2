@@ -70,29 +70,46 @@ public class GunManager : MonoBehaviour
     }
     private void Update()
     {
+        bool leftFired = false;
+        bool rightFired = false;
         if (!m_isOverheated)
         {
-            if(Input.GetMouseButton(0)) // Left Mouse Button
+            if(Input.GetMouseButton(0) && Input.GetMouseButton(1))
             {
-                if(m_currentGun)
-                {
-                    m_currentGun.Fire(true);
-                    IncreaseHeat(m_heatIncrement * Time.deltaTime);
-                }
-                else
-                {
-                    m_currentMelee?.Attack();
-                }
+                m_currentGun.FireDouble();
+                IncreaseHeat(m_heatIncrement * 2 * Time.deltaTime);
             }
-            if(Input.GetMouseButton(1)) // Right Mouse Button
+            else
             {
-                if(m_currentGun)
+                if(Input.GetMouseButton(0)) // Left Mouse Button
                 {
-                    m_currentGun.Fire(false);
+                    if(m_currentGun)
+                    {
+                        m_currentGun.Fire(true);
+                        leftFired = true;
+                        //IncreaseHeat(m_heatIncrement * Time.deltaTime);
+                    }
+                    else
+                    {
+                        m_currentMelee?.Attack();
+                    }
+                }
+                if(Input.GetMouseButton(1)) // Right Mouse Button
+                {
+                    if(m_currentGun)
+                    {
+                        m_currentGun.Fire(false);
+                        rightFired = true;
+                        //IncreaseHeat(m_heatIncrement * Time.deltaTime);
+                    }
+                }
+                if (leftFired || rightFired)
+                {
                     IncreaseHeat(m_heatIncrement * Time.deltaTime);
                 }
             }
         }
+
         Cooldown();
         selectedGun();
         reload();

@@ -20,6 +20,11 @@ public class Gun : MonoBehaviour
         //if (!m_ammoCartridge.ConsumeAmmo(isLeft)) return; // don't fire if no ammo left
         AmmoTypeConfig selectedAmmo = isLeft ? AmmoManager.Instance.GetLeftAmmoType() : AmmoManager.Instance.GetRightAmmoType();
 
+        if(AudioManger.instance != null && selectedAmmo != null)
+        {
+            AudioManger.instance.PlayAmmoSFX(selectedAmmo.m_damageType, isLeft);
+        }
+
         if(m_gunStats.m_isProjectile)
         {
             FireProjectile(selectedAmmo);
@@ -28,6 +33,21 @@ public class Gun : MonoBehaviour
         {
             FireHitScan(selectedAmmo);
         }
+    }
+
+    public void FireDouble()
+    {
+        if (Time.time < m_nextFiretime) return;
+        m_nextFiretime = Time.time + (1f / m_gunStats.shootRate);
+
+        AmmoTypeConfig rightAmmo = AmmoManager.Instance.GetRightAmmoType();
+        AmmoTypeConfig leftAmmo = AmmoManager.Instance.GetLeftAmmoType();
+
+        AudioManger.instance.PlayAmmoSFX(rightAmmo.m_damageType, false);
+        AudioManger.instance.PlayAmmoSFX(leftAmmo.m_damageType, true);
+
+        FireHitScan(rightAmmo);
+        FireHitScan(leftAmmo);
     }
 
     private void FireProjectile(AmmoTypeConfig ammoType)
