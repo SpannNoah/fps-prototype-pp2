@@ -117,6 +117,11 @@ public class PlayerController : MonoBehaviour, IDamage
         m_health = m_playerHealthOrig;
     }
 
+    public Camera GetCamera()
+    {
+        return playerCamera;
+    }
+
     private void Awake()
     {
         m_originalHeight = m_characterController.height;
