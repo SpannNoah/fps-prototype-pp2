@@ -506,6 +506,9 @@ MonoBehaviour:
   m_headPos: {fileID: 419656}
   m_navMeshAgent: {fileID: 470396102530461429}
   m_animator: {fileID: 9586166}
+  m_bloodHitPFXPosition: {fileID: 6857667194095966558}
+  m_bloodHitFX: {fileID: 161038, guid: e49d054adba5f2745876b3a7d815fd13, type: 3}
+  m_bloodPoolFX: {fileID: 121710, guid: 20b610c7b46fa9e4fb2aeface4a06248, type: 3}
   m_powerUps: []
   m_chanceToDropPowerUp: 25
   m_health: 100
@@ -518,6 +521,16 @@ MonoBehaviour:
   m_roamDistance: 10
   m_roamTimer: 3
   m_speedTransition: 3
+  m_isShooting: 0
+  m_isPlayerInRange: 0
+  m_colorOriginal: {r: 1, g: 1, b: 1, a: 1}
+  m_playerDirection: {x: 0, y: 0, z: 0}
+  m_angleToPlayer: 0
+  m_isRoaming: 0
+  m_startingPos: {x: 0, y: 0, z: 0}
+  m_originalStoppingDist: 0
+  m_originalHP: 0
+  distanceToPlayer: 0
 --- !u!95 &9586166
 Animator:
   serializedVersion: 5
@@ -706,6 +719,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 442758}
+  - {fileID: 6857667194095966558}
   m_Father: {fileID: 425164}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2475,4 +2489,35 @@ Transform:
   - {fileID: 403896}
   m_Father: {fileID: 463008}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8609280389133899628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6857667194095966558}
+  m_Layer: 6
+  m_Name: BloodHitPFXPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6857667194095966558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8609280389133899628}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 424250}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

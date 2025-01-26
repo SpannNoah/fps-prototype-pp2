@@ -1348,6 +1348,9 @@ MonoBehaviour:
   m_headPos: {fileID: 483992}
   m_navMeshAgent: {fileID: 8495182570423985795}
   m_animator: {fileID: 9563236}
+  m_bloodHitPFXPosition: {fileID: 2357157659741254432}
+  m_bloodHitFX: {fileID: 161038, guid: 2be2b2819a0e05e4a853164e6a9f5e68, type: 3}
+  m_bloodPoolFX: {fileID: 121710, guid: 3d0e894632a93d04aac62e4e0139e5af, type: 3}
   m_powerUps: []
   m_chanceToDropPowerUp: 25
   m_health: 10
@@ -1369,6 +1372,7 @@ MonoBehaviour:
   m_startingPos: {x: 0, y: 0, z: 0}
   m_originalStoppingDist: 0
   m_originalHP: 0
+  distanceToPlayer: 0
 --- !u!95 &9563236
 Animator:
   serializedVersion: 5
@@ -1844,6 +1848,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 426322}
+  - {fileID: 2357157659741254432}
   m_Father: {fileID: 441634}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2268,6 +2273,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5991155552156477259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2357157659741254432}
+  m_Layer: 6
+  m_Name: BloodHitPFXPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2357157659741254432
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5991155552156477259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 450174}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6609428598835203919
 GameObject:
   m_ObjectHideFlags: 0

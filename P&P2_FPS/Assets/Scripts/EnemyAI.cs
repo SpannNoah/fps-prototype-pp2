@@ -31,6 +31,9 @@ public class EnemyAI : MonoBehaviour, IDamage
     public NavMeshAgent m_navMeshAgent = null;
     [SerializeField]
     public Animator m_animator = null;
+    public Transform m_bloodHitPFXPosition = null;
+    public GameObject m_bloodHitFX = null;
+    public GameObject m_bloodPoolFX = null;
 
     [SerializeField]
     public List<PowerUp> m_powerUps = new List<PowerUp>();
@@ -202,12 +205,20 @@ public class EnemyAI : MonoBehaviour, IDamage
         StartCoroutine(DamageFlashCoroutine());
         UpdateUI();
 
+        if(m_bloodHitFX != null && m_bloodHitPFXPosition != null)
+        {
+            Instantiate(m_bloodHitFX, m_bloodHitPFXPosition.position, Quaternion.identity);
+        }
         if(m_health <= 0)
         {
             m_isPlayingDeathAnim = true;
             m_animator.SetTrigger("death");
-            
-            DropRandomPowerUp();
+            if(m_bloodPoolFX != null)
+            {
+                Instantiate(m_bloodPoolFX, new Vector3(transform.position.x, 0.01f, transform.position.z), Quaternion.identity);
+            }
+
+            //DropRandomPowerUp();
             //Destroy(gameObject); --> Animation State Destroys Game Object Now to Allow for Death Animation to Complete
         }
     }
