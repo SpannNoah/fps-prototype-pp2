@@ -34,6 +34,9 @@ public class GunManager : MonoBehaviour
     private float m_currentHeat = 0f;
     private bool m_isOverheated = false;
 
+    public delegate void IncreaseHeatEventHandler(float amount);
+    public static event IncreaseHeatEventHandler HeatIncreased;
+
     public void EquipGun(gunStats gunStats, AmmoCartridge ammoCartridge)
     {
         if (m_currentGun)
@@ -189,6 +192,9 @@ public class GunManager : MonoBehaviour
     {
         if (m_isOverheated) return; // Don't increase heat if already overheated
 
+        float normalizedAmount = amount / m_maxHeat;
+        HeatIncreased?.Invoke(normalizedAmount); // event to communicate to ui element
+
         m_currentHeat += amount;
         //m_currentHeat = Mathf.Clamp(m_currentHeat, 0, m_maxHeat); // Ensure heat stays within range
 
@@ -208,16 +214,29 @@ public class GunManager : MonoBehaviour
             && !Input.GetMouseButton(0) && !Input.GetMouseButton(1))
         {
             m_currentHeat -= m_cooldownRate * Time.deltaTime;
+            HeatIncreased?.Invoke(-m_cooldownRate / m_maxHeat * Time.deltaTime);
             Debug.Log("Weapon Cooling Down: " + m_currentHeat);
         }
     }
 
     private IEnumerator CooldownCoroutine()
     {
-        yield return new WaitForSeconds(3f);
+        float cooldownDuration = m_overheatCooldownTime;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < cooldownDuration)
+        {
+            float cooldownStep = (m_maxHeat / cooldownDuration) * Time.deltaTime;
+            m_currentHeat -= cooldownStep;
+            HeatIncreased?.Invoke(-cooldownStep / m_maxHeat); 
+
+            m_currentHeat = Mathf.Clamp(m_currentHeat, 0, m_maxHeat); 
+            elapsedTime += Time.deltaTime;
+            yield return null; 
+        }
 
         m_currentHeat = 0f;
+        HeatIncreased?.Invoke(0f); 
         m_isOverheated = false;
-        Debug.Log("Weapon Cooled Down");
     }
 }
