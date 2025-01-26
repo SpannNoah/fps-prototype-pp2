@@ -61,6 +61,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     public int m_roamTimer = 3;
     [SerializeField]
     public int m_speedTransition = 3;
+    public float m_staggerThreshold = 5;
 
     public bool m_isShooting = false;
     public bool m_isPlayerInRange = false;
@@ -74,6 +75,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     public int m_originalHP = 0;
     public float distanceToPlayer = 0f;
 
+    private float m_currentStagger = 0f;
     private bool m_isPlayingDeathAnim = false;
     private Transform playerTransform = null;
     // Start is called before the first frame update
@@ -191,6 +193,13 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void TakeDamage(int amount, DamageType damageType)
     {
         m_health -= amount;
+
+        m_currentStagger += amount;
+        if(m_currentStagger >= m_staggerThreshold)
+        {
+            m_animator.SetTrigger("hit");
+            m_currentStagger = 0f;
+        }
 
         if(m_navMeshAgent.isActiveAndEnabled)
         {

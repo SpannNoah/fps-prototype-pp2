@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_bloodPoolFX: {fileID: 121710, guid: 3d0e894632a93d04aac62e4e0139e5af, type: 3}
   m_powerUps: []
   m_chanceToDropPowerUp: 25
-  m_health: 10
+  m_health: 20
   m_faceTargetSpeed: 20
   m_damageColor: {r: 1, g: 0, b: 0, a: 1}
   damage: 4
@@ -1363,6 +1363,7 @@ MonoBehaviour:
   m_roamDistance: 10
   m_roamTimer: 3
   m_speedTransition: 3
+  m_staggerThreshold: 10
   m_isShooting: 0
   m_isPlayerInRange: 0
   m_colorOriginal: {r: 1, g: 1, b: 1, a: 1}

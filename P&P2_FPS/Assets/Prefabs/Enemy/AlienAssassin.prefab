@@ -521,6 +521,7 @@ MonoBehaviour:
   m_roamDistance: 10
   m_roamTimer: 3
   m_speedTransition: 3
+  m_staggerThreshold: 20
   m_isShooting: 0
   m_isPlayerInRange: 0
   m_colorOriginal: {r: 1, g: 1, b: 1, a: 1}
