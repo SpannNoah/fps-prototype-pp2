@@ -742,50 +742,61 @@ MonoBehaviour:
       core, and you need to get to me. Now."
     audioClip: {fileID: 8300000, guid: 0d3ab0c6db79e914b82e82ae96a93387, type: 3}
     duration: 7
+    skipPrevious: 0
   - subtitle: The door in front of you is locked. The system's fried. You see that
       electrical panel on the wall? Smash it open. You might be able to override
       the lock manually.
     audioClip: {fileID: 8300000, guid: d772a6802334b60478b3f5a8340e5f97, type: 3}
     duration: 3
+    skipPrevious: 0
   - subtitle: "Nice work! Door\u2019s open\u2014move! In the next room, you\u2019ll
       find your Programmable Energy Networked Combustion and Impact Launcher... or,
       you know, P.E.N.C.I.L. for short."
     audioClip: {fileID: 8300000, guid: 9665f707ab4c2cb4385a1990d41ace3a, type: 3}
     duration: 3
+    skipPrevious: 1
   - subtitle: "Yeah, I know\u2014dumb name. But trust me, it\u2019ll hit harder than
       a sledgehammer and burn hotter than a reactor meltdown. Grab it\u2014you\u2019re
       gonna need it."
     audioClip: {fileID: 8300000, guid: 1fea7a200ea6c2b46bd978cb621bb1b1, type: 3}
     duration: 3
+    skipPrevious: 0
   - subtitle: "Alright, that thing\u2019s loaded and ready. One trigger fires your
       primary ammo, the other fires your secondary. Simple enough."
     audioClip: {fileID: 8300000, guid: 1a1b223e5dd8c7a4fa1afbbe958b0a2e, type: 3}
     duration: 3
+    skipPrevious: 0
   - subtitle: Looks like the entrance to the control room is frozen! Equip your lightning
       ammo from your inventory to shatter it.
     audioClip: {fileID: 8300000, guid: 4a2cfa45bbb8bfe479e45a934491e4a0, type: 3}
     duration: 3
+    skipPrevious: 0
   - subtitle: "You made it\u2014thank god. That\u2019s the station\u2019s main control
       interface. Power\u2019s been rerouted, but if you can override the system,
       we might have a way out of this."
     audioClip: {fileID: 8300000, guid: c99e25009fdf7494c838cb20b006b8cc, type: 3}
     duration: 3
+    skipPrevious: 1
   - subtitle: "There should be a core relay access\u2026 yes, there. If you can jumpstart
       the reactor and sync it to the auxiliary grid, it might just\u2014"
     audioClip: {fileID: 8300000, guid: 1b563a327f157824fb11126311e1afb0, type: 3}
     duration: 3
+    skipPrevious: 0
   - subtitle: "Wait\u2014something\u2019s wrong. That\u2014That\u2019s not just a
       power cycle\u2026 You triggered something else."
     audioClip: {fileID: 8300000, guid: 282a4ee172536ea4987a07d2f5607417, type: 3}
     duration: 3
+    skipPrevious: 0
   - subtitle: "A rift\u2014!? That\u2019s\u2026 definitely not part of the station\u2019s
       systems. It must be connected to whatever attacked us"
     audioClip: {fileID: 8300000, guid: 9aad229c26237bb4488da0dca0bcfac9, type: 3}
     duration: 3
+    skipPrevious: 0
   - subtitle: "Look, I don\u2019t know what\u2019s on the other side, but this station
       is a deathtrap. That portal\u2014might be our only way forward."
     audioClip: {fileID: 8300000, guid: f1e93cec307575d46a3b79e88f4d3211, type: 3}
     duration: 3
+    skipPrevious: 0
   subtitleText: {fileID: 2126716288}
   m_subtitlePanel: {fileID: 314420798}
 --- !u!1 &1546493818
@@ -3680,8 +3691,6 @@ MonoBehaviour:
   m_isBuffActive: 0
   currentLevel: 0
   Wraith: {fileID: 0}
-  golem: {fileID: 0}
-  giantSpider: {fileID: 0}
 --- !u!1 &6586271010866010123
 GameObject:
   m_ObjectHideFlags: 0

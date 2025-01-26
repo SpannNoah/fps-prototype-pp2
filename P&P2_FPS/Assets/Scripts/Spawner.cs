@@ -9,15 +9,17 @@ public class Spawner : MonoBehaviour
     [SerializeField] int timeBetweenSpawns;
     [SerializeField] float spawnRadius;
     [SerializeField] Transform[] spawnPos;
+    [SerializeField] bool isTriggeredBySomethingElse = false;
 
     int spawnCount;
 
     bool StartSpawning;
     bool isSpawning;
-
     // Start is called before the first frame update
     void Start()
     {
+        if (isTriggeredBySomethingElse) return;
+
         GameManager.Instance.UpdateGameGoal(numToSpawn);
         StartSpawning = true;
     }
@@ -25,6 +27,11 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(isTriggeredBySomethingElse && !StartSpawning)
+        {
+            return;
+        }
+
         if (StartSpawning && spawnCount < numToSpawn && !isSpawning)
         {
             StartCoroutine(Spawn());
@@ -43,5 +50,10 @@ public class Spawner : MonoBehaviour
 
         isSpawning = false;
 
+    }
+
+    public void SpawnTrigger()
+    {
+        StartSpawning = true;
     }
 }
