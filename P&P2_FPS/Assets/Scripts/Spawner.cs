@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         GameManager.Instance.UpdateGameGoal(numToSpawn);
+        StartSpawning = true;
     }
 
     // Update is called once per frame

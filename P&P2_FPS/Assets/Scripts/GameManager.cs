@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour
 
     // boss/sub-boss management
     public Wraith Wraith; // reference to the Wraith script
-    public Golem golem; // reference to the golem script
-    public GiantSpider giantSpider; // reference to the giant spider script
+    
     private bool bossFightActive = false; // tracks if the boss fight is active
 
     private AudioClip m_currentLevelMusic = null;
