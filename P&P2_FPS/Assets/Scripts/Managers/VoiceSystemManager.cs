@@ -20,6 +20,7 @@ public class VoiceSystemManager : MonoBehaviour
     private bool isPlaying = false;
 
     private Queue<VoiceLine> voiceQueue = new Queue<VoiceLine>();
+    private Coroutine currentVoiceLineCoroutine = null;
 
     void Awake()
     {
@@ -43,6 +44,17 @@ public class VoiceSystemManager : MonoBehaviour
     {
         if (index < voiceLines.Length)
         {
+            if (voiceLines[index].skipPrevious && isPlaying)
+            {
+                if(currentVoiceLineCoroutine != null)
+                {
+                    StopCoroutine(currentVoiceLineCoroutine);
+                }
+                isPlaying = false;
+                audioSource.Stop();
+                m_subtitlePanel.SetActive(false);
+                subtitleText.gameObject.SetActive(false);
+            }
             voiceQueue.Enqueue(voiceLines[index]);
             if (!isPlaying)
             {
@@ -56,7 +68,7 @@ public class VoiceSystemManager : MonoBehaviour
         if (voiceQueue.Count > 0)
         {
             AudioManger.instance.AdjustBackgroundMusicVolume(AudioManger.instance.backgroundMusicVolume / 10);
-            StartCoroutine(PlayWithStatic(voiceQueue.Dequeue()));
+            currentVoiceLineCoroutine = StartCoroutine(PlayWithStatic(voiceQueue.Dequeue()));
         }
     }
 

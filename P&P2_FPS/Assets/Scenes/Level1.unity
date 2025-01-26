@@ -18813,7 +18813,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 404d4d2fe9c35c44cb943c5cc24db987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_voiceLines: []
+  m_voiceLines:
+  - {fileID: 8300000, guid: c99e25009fdf7494c838cb20b006b8cc, type: 3}
 --- !u!114 &876671751
 MonoBehaviour:
   m_ObjectHideFlags: 0
