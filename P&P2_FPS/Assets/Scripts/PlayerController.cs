@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public Camera playerCamera; // Reference to the player camera
     public float crouchCameraHeight; // Camera Height when crouched
     private float originalCameraHeight; // Original camera's height
+    public bool m_isInCutScene = false;
 
     [Space]
     [Header("Player Settings")]
@@ -157,6 +158,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     void Update()
     {
+        if (m_isInCutScene) return;
         Move();
         Sprint();
         Crouch();
