@@ -297,10 +297,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "PRODUCED BY\n\nNoah Spann \nJesse Fierro\nMicheal Ghisoui\nColton Schaubschlager\n\nPROGRAMMERS\n\nNoah
-    Spann\nJesse Fierro\nMicheal Ghisoui\nColton Schaubschlager\n\nGAME DESIGN\n\nNoah
-    Spann\nJesse Fierro\nMicheal Ghisoui\nColton Schaubschlager\n\nART & ANIMATION\n\nNoah
-    Spann\nJesse Fierro\nMicheal Ghisoui\nColton Schaubschlager\n\nSOUND & MUSIC\n\nNoah
+  m_text: "PRODUCED BY\n\nNoah Spann \nJesse Martinez\nMicheal Ghisoui\nColton Schaubschlager\n\nPROGRAMMERS\n\nNoah
+    Spann\nJesse Martinez\nMicheal Ghisoui\nColton Schaubschlager\n\nGAME DESIGN\n\nNoah
+    Spann\nJesse Martinez\nMicheal Ghisoui\nColton Schaubschlager\n\nART & ANIMATION\n\nNoah
+    Spann\nJesse Martinez\nMicheal Ghisoui\nColton Schaubschlager\n\nSOUND & MUSIC\n\nNoah
     Spann\nColton Schaubschlager\n\n \n       \n       \n      \n       \n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
