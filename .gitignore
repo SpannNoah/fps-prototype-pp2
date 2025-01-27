@@ -10,3 +10,5 @@ P&P2_FPS/.idea/.idea.P&P2_FPS/.idea/workspace.xml
 /P&P2_FPS/ProjectSettings/Packages/com.unity.probuilder/Settings.json
 /.vs
 /P&P2_FPS/Assets/Scenes/BossScene.unity
+/P&P2_FPS/Assets/Scenes/BossScene.unity
+/.gitignore
