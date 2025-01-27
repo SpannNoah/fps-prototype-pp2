@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField]
     private LayerMask m_ignoreMask = 0;
     public GunManager m_gunManager = null;
+    [SerializeField] private GameObject m_flashlight = null;
 
     [Header("Collider Settings")]
     private CapsuleCollider playerCollider;
@@ -164,6 +165,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Sprint();
         Crouch();
         Interact();
+        Flashlight();
     }
 
     private void Move()
@@ -201,6 +203,21 @@ public class PlayerController : MonoBehaviour, IDamage
                 {
                     interactable.Interact();
                 }
+            }
+        }
+    }
+
+    private void Flashlight()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            if(m_flashlight.activeSelf)
+            {
+                m_flashlight.SetActive(false);
+            }
+            else
+            {
+                m_flashlight.SetActive(true);
             }
         }
     }
