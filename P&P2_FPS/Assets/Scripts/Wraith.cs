@@ -188,15 +188,27 @@ public class Wraith : MonoBehaviour,  IDamage
                     {
                         case 1: // if attackIndex is 1
                             m_animator.SetTrigger("WAttack1"); // play the attack animation
+
+                            yield return new WaitForSeconds(m_fireRate);
+                            DealDamage(); // deal damage to the player
                             break;
                         case 2: // if attackIndex is 2
                             m_animator.SetTrigger("WAttack2"); //  play the attack animation
+
+                            yield return new WaitForSeconds(m_fireRate);
+                            DealDamage(); // deal damage to the player
                             break;
                         case 3: // if attackIndex is 3
                             m_animator.SetTrigger("WAttack3"); //  play the attack animation
+
+                            yield return new WaitForSeconds(m_fireRate);
+                            DealDamage(); // deal damage to the player
                             break;
                         case 4: // if attackIndex is 4
                             m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
+
+                            yield return new WaitForSeconds(m_fireRate);
+                            DealDamage(); // deal damage to the player
                             break;
                     }
 
@@ -208,8 +220,8 @@ public class Wraith : MonoBehaviour,  IDamage
 
 
 
-        yield return new WaitForSeconds(1.5f);
-        DealDamage(); // deal damage to the player
+        //yield return new WaitForSeconds(1.5f);
+        //DealDamage(); // deal damage to the player
 
         yield return new WaitForSeconds(1.0f); 
         m_isShooting = false; 

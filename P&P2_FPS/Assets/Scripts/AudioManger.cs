@@ -128,10 +128,10 @@ public class AudioManger : MonoBehaviour
 
     public void PlayAmmoSFX(DamageType damageType, bool isLeft)
     {
-        switch(damageType)
+        switch (damageType)
         {
             case DamageType.Basic:
-                if(isLeft)
+                if (isLeft)
                 {
                     leftAmmoAudioSource.PlayOneShot(basicAmmoSFX);
                 }
@@ -141,7 +141,7 @@ public class AudioManger : MonoBehaviour
                 }
                 break;
             case DamageType.Lightning:
-                if(isLeft)
+                if (isLeft)
                 {
                     leftAmmoAudioSource.PlayOneShot(lightningAmmoSFX);
                 }
@@ -161,7 +161,7 @@ public class AudioManger : MonoBehaviour
                 }
                 break;
             case DamageType.Fire:
-                if(isLeft)
+                if (isLeft)
                 {
                     leftAmmoAudioSource.PlayOneShot(fireAmmoSFX);
                 }
@@ -172,6 +172,15 @@ public class AudioManger : MonoBehaviour
                 break;
             default:
                 break;
+        }
+
+        if (isLeft)
+        {
+            leftAmmoAudioSource.volume = isMuted ? 0 : soundEffectVolume;
+        }
+        else
+        {
+            rightAmmoAudioSource.volume = isMuted ? 0 : soundEffectVolume;
         }
     }
 
@@ -204,7 +213,23 @@ public class AudioManger : MonoBehaviour
 
     public void AdjustBackgroundMusicVolume(float targetVolume)
     {
+        backgroundMusicVolume = targetVolume;
         backgroundMusic.volume = targetVolume;
+        SaveVolumeSettings();
+    }
+
+    public void AdjustSoundEffectVolume(float targetVolume)
+    {
+        soundEffectVolume = targetVolume;
+        buttonClick.volume = isMuted ? 0 : soundEffectVolume;
+        playerJump.volume = isMuted ? 0 : soundEffectVolume;
+        playerHurt.volume = isMuted ? 0 : soundEffectVolume;
+        playerDeath.volume = isMuted ? 0 : soundEffectVolume;
+        leftAmmoAudioSource.volume = isMuted ? 0 : soundEffectVolume;
+        rightAmmoAudioSource.volume = isMuted ? 0 : soundEffectVolume;
+        portalSound.volume = isMuted ? 0 : soundEffectVolume;
+        enemyDeath.volume = isMuted ? 0 : soundEffectVolume;
+        SaveVolumeSettings();
     }
 
     private void LoadVolumeSettings()
