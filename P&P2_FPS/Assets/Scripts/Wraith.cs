@@ -93,7 +93,7 @@ public class Wraith : MonoBehaviour,  IDamage
 
     private void OnDestroy()
     {
-        GameManager.Instance.UpdateGameGoal(-1);
+        GameManager.Instance.WinGame();
     }
 
     public void Update()
