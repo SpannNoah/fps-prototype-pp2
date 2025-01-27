@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
@@ -162,7 +163,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Move();
         Sprint();
         Crouch();
-
+        Interact();
     }
 
     private void Move()
@@ -187,6 +188,22 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
+    private void Interact()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, ~m_ignoreMask))
+            {
+                IInteractable interactable;
+
+                if (hit.collider.TryGetComponent<IInteractable>(out interactable))
+                {
+                    interactable.Interact();
+                }
+            }
+        }
+    }
     private void Jump()
     {
         if (Input.GetButtonDown("Jump") && m_jumpCount < m_jumpMax)
