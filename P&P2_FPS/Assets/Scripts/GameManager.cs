@@ -143,6 +143,13 @@ public class GameManager : MonoBehaviour
         //}
     }
 
+    public void WinGame()
+    {
+        StatePaused();
+        m_menuActive = m_menuWin;
+        m_menuActive.SetActive(true);
+    }
+
     public void StartBossFight()
     {
         if (!bossFightActive)
