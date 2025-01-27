@@ -13,7 +13,7 @@ public class PlayerData
     public int m_HP;
     public int m_ogHP;
     public float m_speed;
-    public float[] position; // Store position as an array
+    //public float[] position; // Store position as an array
     public int levelNumber;
     public static float[] gunPos; //stores gun pos
     public static float[] meleePos; //stores melee pos
@@ -32,10 +32,10 @@ public class PlayerData
         m_speed = player.Speed;
 
         // Save player position
-        position = new float[3];
-        position[0] = player.transform.position.x; // X
-        position[1] = player.transform.position.y; // Y
-        position[2] = player.transform.position.z; // Z
+        //position = new float[3];
+        //position[0] = player.transform.position.x; // X
+        //position[1] = player.transform.position.y; // Y
+        //position[2] = player.transform.position.z; // Z
 
         levelNumber = player.CurrentLevel; // Stores current level
 
