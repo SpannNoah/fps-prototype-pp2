@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409764144483941110}
   - component: {fileID: 8280333314461436084}
+  - component: {fileID: 2528272665087170733}
   m_Layer: 0
   m_Name: SlidingDoorFramed
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409764144483941113}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.5000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -52,6 +53,20 @@ MonoBehaviour:
   m_leftPanel: {fileID: 1409764144028804073}
   m_slideDistance: 2
   m_slideSpeed: 1
+  m_slideAlongZ: 0
+--- !u!65 &2528272665087170733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409764144483941113}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3, z: 1}
+  m_Center: {x: 3.5, y: 1.5, z: 0.7}
 --- !u!1001 &583364374929026591
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,6 +121,14 @@ PrefabInstance:
     - target: {fileID: 1984112489107312121, guid: 4d617589796ac594196dde74556d4a9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984112489107312122, guid: 4d617589796ac594196dde74556d4a9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984112489107312122, guid: 4d617589796ac594196dde74556d4a9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d617589796ac594196dde74556d4a9d, type: 3}
@@ -174,6 +197,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 550035542125303608, guid: 18eb32a9ae539b24c9d0207bfedf8663, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eb32a9ae539b24c9d0207bfedf8663, type: 3}
 --- !u!4 &1409764144429220614 stripped
@@ -188,6 +215,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1409764144483941110}
     m_Modifications:
+    - target: {fileID: 6262758154008224677, guid: 0317d66ee8436e7438d8d71c7e8a0764, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262758154008224677, guid: 0317d66ee8436e7438d8d71c7e8a0764, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6262758154008224678, guid: 0317d66ee8436e7438d8d71c7e8a0764, type: 3}
       propertyPath: m_RootOrder
       value: 2
