@@ -380,7 +380,7 @@ public class PlayerController : MonoBehaviour, IDamage
             m_speed = data.m_speed;
 
             // Restore position
-            transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+            //transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
 
             // Restore current level
             CurrentLevel = data.levelNumber;
