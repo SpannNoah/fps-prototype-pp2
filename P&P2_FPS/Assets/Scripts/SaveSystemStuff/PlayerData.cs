@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+[System.Serializable] // Make this class serializable
 public class PlayerData
 {
     public float m_crouchColliderHeight;
@@ -11,24 +13,37 @@ public class PlayerData
     public int m_HP;
     public int m_ogHP;
     public float m_speed;
-    public float[] position;
+    //public float[] position; // Store position as an array
     public int levelNumber;
+    public static float[] gunPos; //stores gun pos
+    public static float[] meleePos; //stores melee pos
+    public List<gunStats> weapons;
+
 
     // Constructor
     public PlayerData(PlayerController player)
     {
-        // Initialize the fields using the player's properties
-        m_crouchColliderHeight = player.crouchColliderHeight; // Assuming these properties exist
-        m_crouchCameraHeight = player.crouchCameraHeight; // Assuming these properties exist
-        m_baseSpeed = player.m_baseSpeed; // Assuming these properties exist
-        m_sprintMod = player.m_baseSprintModifier; // Assuming these properties exist
-        m_HP = player.Health; // Assuming these properties exist
-        m_ogHP = player.playerHealthOrig; // Assuming these properties exist
-        m_speed = player.Speed; // Assuming these properties exist
-        //position[0] = player.transform.position.x; //save player x pos
-        //position[1] = player.transform.position.y; //save player y pos
-        //position[2] = player.transform.position.z; //save player z pos
+        m_crouchColliderHeight = player.crouchColliderHeight;
+        m_crouchCameraHeight = player.crouchCameraHeight;
+        m_baseSpeed = player.m_baseSpeed;
+        m_sprintMod = player.m_baseSprintModifier;
+        m_HP = player.Health;
+        m_ogHP = player.playerHealthOrig;
+        m_speed = player.Speed;
 
-        levelNumber = player.CurrentLevel; //Stores current level
+        // Save player position
+        //position = new float[3];
+        //position[0] = player.transform.position.x; // X
+        //position[1] = player.transform.position.y; // Y
+        //position[2] = player.transform.position.z; // Z
+
+        levelNumber = player.CurrentLevel; // Stores current level
+
+        bool isEmpty = GunManager.weaponInventory.Any();
+        Debug.Log(isEmpty);
+        if (!isEmpty)
+        {
+            weapons = GunManager.weaponInventory;
+        }
     }
 }

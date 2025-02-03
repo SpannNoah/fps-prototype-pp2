@@ -15,7 +15,7 @@ GameObject:
   m_Name: SM_WallS013b5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1031027307
@@ -98,7 +98,7 @@ GameObject:
   m_Name: SM_WallS013b5_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1031027311
@@ -136,7 +136,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2776e83566dae44198e0b53e0399b56, type: 2}
+  - {fileID: 2100000, guid: dbd0329986252d94e860b4f539ff11e6, type: 2}
   - {fileID: 2100000, guid: ee5c58771b9aa204286a8758f96862c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -182,7 +182,7 @@ GameObject:
   m_Name: SM_WallS013b5_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1031027315
@@ -220,8 +220,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2776e83566dae44198e0b53e0399b56, type: 2}
-  - {fileID: 2100000, guid: ee5c58771b9aa204286a8758f96862c3, type: 2}
+  - {fileID: 2100000, guid: dbd0329986252d94e860b4f539ff11e6, type: 2}
+  - {fileID: 2100000, guid: dbd0329986252d94e860b4f539ff11e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -266,7 +266,7 @@ GameObject:
   m_Name: SM_WallS013b5_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1031027319
@@ -304,7 +304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2776e83566dae44198e0b53e0399b56, type: 2}
+  - {fileID: 2100000, guid: dbd0329986252d94e860b4f539ff11e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -349,7 +349,7 @@ GameObject:
   m_Name: SM_WallS013b5_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1031027323
@@ -387,7 +387,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2776e83566dae44198e0b53e0399b56, type: 2}
+  - {fileID: 2100000, guid: dbd0329986252d94e860b4f539ff11e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

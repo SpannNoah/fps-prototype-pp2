@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a26a9ca6b61784f9ff4a41ce7bc164, type: 3}
   m_Name: LightningAmmo
   m_EditorClassIdentifier: 
+  m_damageType: 1
   m_ammoName: LightningAmmo
   m_baseDamage: 1
   m_isProjectile: 0
@@ -26,3 +27,4 @@ MonoBehaviour:
   m_currentUpgrade:
     m_upgradeName: Stun
     m_upgradeEffect: {fileID: -7232820157526396233, guid: 1d9c780ffad34b84b92824ad908fd036, type: 3}
+  m_audioSource: {fileID: 0}

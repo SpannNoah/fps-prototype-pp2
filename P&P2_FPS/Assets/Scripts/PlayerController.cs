@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
@@ -16,6 +18,8 @@ public class PlayerController : MonoBehaviour, IDamage
     private CharacterController m_characterController = null;
     [SerializeField]
     private LayerMask m_ignoreMask = 0;
+    public GunManager m_gunManager = null;
+    [SerializeField] private GameObject m_flashlight = null;
 
     [Header("Collider Settings")]
     private CapsuleCollider playerCollider;
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public Camera playerCamera; // Reference to the player camera
     public float crouchCameraHeight; // Camera Height when crouched
     private float originalCameraHeight; // Original camera's height
+    public bool m_isInCutScene = false;
 
     [Space]
     [Header("Player Settings")]
@@ -51,6 +56,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private List<scriptableDeBuff> activeDeBuff = new List<scriptableDeBuff>();
     private Coroutine currentDoTCoroutine;
     private int m_currentLevel = 0;
+    public static PlayerController player;
 
 
 
@@ -115,6 +121,11 @@ public class PlayerController : MonoBehaviour, IDamage
         m_health = m_playerHealthOrig;
     }
 
+    public Camera GetCamera()
+    {
+        return playerCamera;
+    }
+
     private void Awake()
     {
         m_originalHeight = m_characterController.height;
@@ -126,19 +137,35 @@ public class PlayerController : MonoBehaviour, IDamage
         playerCollider = GetComponent<CapsuleCollider>();
         originalColliderHeight = playerCollider.height;
         originalColliderCenter = playerCollider.center;
+        //SaveSystem.SavePlayer(this);
 
         m_playerHealthOrig = m_health;
         m_baseSpeed = m_speed;
         m_baseSprintModifier = m_sprintModifier;
+        UnityEngine.Debug.Log(Portal.currentLevel);
+        if(Portal.currentLevel > 0)
+        {
+            LoadPlayerData();
+            bool isEmpty = GunManager.weaponInventory.Any();
+            UnityEngine.Debug.Log(isEmpty);
+            if (!isEmpty)
+            {
+                GunManager.LoadWeapons();
+            }
+            GameManager.Instance.currentLevel = CurrentLevel;
+            UnityEngine.Debug.Log("Player Loaded");
+        }
         UpdatePlayerUI();
     }
 
     void Update()
     {
+        if (m_isInCutScene) return;
         Move();
         Sprint();
         Crouch();
-
+        Interact();
+        Flashlight();
     }
 
     private void Move()
@@ -163,6 +190,37 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
+    private void Interact()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, ~m_ignoreMask))
+            {
+                IInteractable interactable;
+
+                if (hit.collider.TryGetComponent<IInteractable>(out interactable))
+                {
+                    interactable.Interact();
+                }
+            }
+        }
+    }
+
+    private void Flashlight()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            if(m_flashlight.activeSelf)
+            {
+                m_flashlight.SetActive(false);
+            }
+            else
+            {
+                m_flashlight.SetActive(true);
+            }
+        }
+    }
     private void Jump()
     {
         if (Input.GetButtonDown("Jump") && m_jumpCount < m_jumpMax)
@@ -211,7 +269,7 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, DamageType damageType)
     {
         if (isImmune)
         {
@@ -327,7 +385,7 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         while (true)
         {
-            TakeDamage(1);
+            TakeDamage(1, DamageType.Basic);
             UpdatePlayerUI();
             yield return new WaitForSeconds(1);
         }
@@ -341,8 +399,27 @@ public class PlayerController : MonoBehaviour, IDamage
             activeDeBuff.Remove(debuff);
         }
     }
+    public void LoadPlayerData()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        if (data != null)
+        {
+            // Restore player properties
+            crouchColliderHeight = data.m_crouchColliderHeight;
+            crouchCameraHeight = data.m_crouchCameraHeight;
+            m_baseSpeed = data.m_baseSpeed;
+            m_sprintModifier = data.m_sprintMod;
+            m_health = data.m_HP;
+            m_playerHealthOrig = data.m_ogHP;
+            m_speed = data.m_speed;
+
+            // Restore position
+            //transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+
+            // Restore current level
+            CurrentLevel = data.levelNumber;
+
+            UpdatePlayerUI(); // Update UI to reflect loaded health
+        }
+    }
 }
-
-
-
-

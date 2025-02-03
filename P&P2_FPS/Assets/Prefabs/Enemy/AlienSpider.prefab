@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 467880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLArmCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 458682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 439048}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490154}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 431442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienJawL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 405678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464724}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRArmIKTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 430938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienNeck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 474244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 421306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 442330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 413090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRArmCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -582,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417532}
   - component: {fileID: 13730766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien_Spider_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462324}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 432836}
   - component: {fileID: 13796768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 484192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,6 +903,9 @@ MonoBehaviour:
   m_headPos: {fileID: 442330}
   m_navMeshAgent: {fileID: 5009917197193912757}
   m_animator: {fileID: 9555924}
+  m_bloodHitPFXPosition: {fileID: 2961866866529727032}
+  m_bloodHitFX: {fileID: 161038, guid: 98d854c700d41324d9e20a0fb8ec4349, type: 3}
+  m_bloodPoolFX: {fileID: 180546, guid: fd5e308a7a259714faa477997fb1756f, type: 3}
   m_powerUps: []
   m_chanceToDropPowerUp: 25
   m_health: 10
@@ -915,6 +918,7 @@ MonoBehaviour:
   m_roamDistance: 10
   m_roamTimer: 3
   m_speedTransition: 3
+  m_staggerThreshold: 2
   m_isShooting: 0
   m_isPlayerInRange: 0
   m_colorOriginal: {r: 1, g: 1, b: 1, a: 0.89411765}
@@ -924,6 +928,7 @@ MonoBehaviour:
   m_startingPos: {x: 0, y: 0, z: 0}
   m_originalStoppingDist: 0
   m_originalHP: 0
+  distanceToPlayer: 0
 --- !u!95 &9555924
 Animator:
   serializedVersion: 5
@@ -1030,7 +1035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1067,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 496934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRArm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1126,7 +1131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1157,7 +1162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 494354}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLArm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1220,7 +1225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 429994}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienJaw_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1251,7 +1256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 402094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienRLeg42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1283,7 +1288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432988}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienHub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1343,6 +1348,7 @@ Transform:
   - {fileID: 422616}
   - {fileID: 463574}
   - {fileID: 474244}
+  - {fileID: 2961866866529727032}
   m_Father: {fileID: 490154}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 1.6472148, y: -89.97051, z: -168.65811}
@@ -1355,7 +1361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 463474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1387,7 +1393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444210}
   - component: {fileID: 13755790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien_Spider_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,7 +1508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 453534}
   - component: {fileID: 13701276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Alien_Spider_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,7 +1622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424208}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spider alienLLeg31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1656,7 @@ GameObject:
   - component: {fileID: 379708060}
   - component: {fileID: 379708062}
   - component: {fileID: 379708061}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1726,7 +1732,7 @@ GameObject:
   - component: {fileID: 1022684447}
   - component: {fileID: 1022684449}
   - component: {fileID: 1022684448}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: PlayerHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1876,3 +1882,34 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
+--- !u!1 &6032773253767180707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2961866866529727032}
+  m_Layer: 6
+  m_Name: BloodHitPFXPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2961866866529727032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032773253767180707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 432988}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

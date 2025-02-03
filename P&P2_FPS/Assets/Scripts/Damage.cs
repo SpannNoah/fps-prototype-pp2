@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    private enum DamageType { moving, stationary}
-    [SerializeField] DamageType m_damageType = DamageType.moving;
+    private enum MovementType { moving, stationary}
+    [SerializeField] MovementType m_damageType = MovementType.moving;
     [SerializeField] Rigidbody m_rb = null;
 
     [SerializeField] int m_damageAmount = 0;
@@ -35,10 +35,10 @@ public class Damage : MonoBehaviour
         }
         else
         {
-            damage.TakeDamage(m_damageAmount);
+            damage.TakeDamage(m_damageAmount, DamageType.Basic);
         }
 
-        if(m_damageType == DamageType.moving)
+        if(m_damageType == MovementType.moving)
         {
             Destroy(gameObject);
         }
@@ -56,7 +56,7 @@ public class Damage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(m_damageType == DamageType.moving)
+        if(m_damageType == MovementType.moving)
         {
             m_rb.velocity = transform.forward * m_speed;
             Destroy(gameObject, m_destroyTime);
@@ -67,7 +67,7 @@ public class Damage : MonoBehaviour
     {
         while (true)
         {
-            dmg.TakeDamage(m_damageAmount);
+            dmg.TakeDamage(m_damageAmount, DamageType.Basic);
             yield return new WaitForSeconds(1.0f);
         }
     }

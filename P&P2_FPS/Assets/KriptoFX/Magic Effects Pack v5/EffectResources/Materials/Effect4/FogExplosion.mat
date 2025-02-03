@@ -11,6 +11,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 948f04b7690e0014e8082239964ad10c, type: 3}
   m_ValidKeywords:
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
+  - _SURFACE_TYPE_TRANSPARENT
   - _USEALPHACUTOUT
   - _USEFRAMEBLENDING
   - _USE_DEPTH_FADE
@@ -22,7 +23,9 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: Transparent
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -46,9 +49,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _AffectAlphaMask: 0
+    - _AlphaClip: 0
     - _AlphaClipThresholdBlend: 1
     - _BUILTIN_AlphaClip: 0
     - _BUILTIN_Blend: 2
@@ -61,13 +77,16 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
+    - _Blend: 2
     - _BumpScale: 1
+    - _CastShadows: 0
+    - _Cull: 2
     - _Cutoff: 0.5
     - _CutoutThreshold: 0.01
     - _DecalBlendFactor: 10
     - _DepthOffset: 0.3
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 1
     - _Fps: 30
     - _FresnelFadeFactor: 0
     - _GlossMapScale: 1
@@ -79,10 +98,13 @@ Material:
     - _NoiseOverTrail: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
+    - _Surface: 1
     - _USEALPHACUTOUT: 1
     - _USEDISTORTION: 0
     - _USEFLIPBOOK: 0
@@ -98,7 +120,9 @@ Material:
     - _UseWorldUVTrailRenderer: 0
     - _VertexAlphaMultiplier: 2
     - _VirtualVertexOffset: 0.2
-    - _ZWrite: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
     - _AlphaMaskRemap: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 0.07289071, g: 0.13668948, b: 0.24528301, a: 1}
@@ -110,6 +134,19 @@ Material:
     - _MainColorRemap: {r: 1, g: 1, b: 0, a: 0}
     - _UvFadingRemap: {r: 1, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &368682310326109317
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!114 &2159408846469264212
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -123,16 +160,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 0
---- !u!114 &9128813223852089346
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5

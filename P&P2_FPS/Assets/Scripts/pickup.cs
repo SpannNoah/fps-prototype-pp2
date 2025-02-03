@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class pickup : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class pickup : MonoBehaviour
     [SerializeField] pickupType m_type;
     [SerializeField] gunStats m_gunStats;
     [SerializeField] AmmoCartridge m_ammoCartridge = null;
+
+    [SerializeField] bool m_playVoiceLineOnPickup = false;
+    [SerializeField] List<AudioClip> m_voiceLines = new List<AudioClip>();
+
     void Start()
     {
         if(m_type == pickupType.gun)
@@ -20,6 +25,14 @@ public class pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if(m_playVoiceLineOnPickup)
+            {
+                foreach(AudioClip voiceLine in m_voiceLines)
+                {
+                    int voiceLineIndex = VoiceSystemManager.Instance.GetVoiceLineIndex(voiceLine);
+                    VoiceSystemManager.Instance.QueueVoiceLine(voiceLineIndex);
+                }
+            }
             if (m_type == pickupType.gun)
             {
                 if (other.TryGetComponent(out GunManager gunManager))

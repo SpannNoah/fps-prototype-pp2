@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:P&P2_FPS/Assets/Audio/VoiceLines.meta
+guid: 44d0b9a189276f746a360514f19bbec6
+folderAsset: yes
+========
 guid: 51ecc3d5a4af5a04fa6dbbae5c1874da
+>>>>>>>> main:P&P2_FPS/Assets/Scenes/MainMenu/Forgotten Aresenal.webp.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

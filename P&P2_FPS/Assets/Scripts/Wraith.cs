@@ -93,7 +93,7 @@ public class Wraith : MonoBehaviour,  IDamage
 
     private void OnDestroy()
     {
-        GameManager.Instance.UpdateGameGoal(-1);
+        GameManager.Instance.WinGame();
     }
 
     public void Update()
@@ -149,10 +149,8 @@ public class Wraith : MonoBehaviour,  IDamage
         m_phase = newPhase; // update phase
         if (m_phase == 2)
         {
-            // summon two sub-bosses
-            SummonGolem(); // summon a golem
-            SummonGiantSpider(); // summon a giant spider
-            BecomeImmune();
+           
+            
         } else if (m_phase == 3)
         {
             // no summons, but becomes more aggressive
@@ -161,16 +159,7 @@ public class Wraith : MonoBehaviour,  IDamage
         Debug.Log("Phase: " + m_phase);
     }
 
-    private void SummonGiantSpider()
-    {
-        GameManager.Instance.giantSpider.gameObject.SetActive(true);
-
-    }
-
-    private void SummonGolem()
-    {
-       GameManager.Instance.golem.gameObject.SetActive(true);
-    }
+  
 
 
     private void StartAggressivePhase()
@@ -199,46 +188,42 @@ public class Wraith : MonoBehaviour,  IDamage
                     {
                         case 1: // if attackIndex is 1
                             m_animator.SetTrigger("WAttack1"); // play the attack animation
+
+                            yield return new WaitForSeconds(m_fireRate);
+                            DealDamage(); // deal damage to the player
                             break;
                         case 2: // if attackIndex is 2
                             m_animator.SetTrigger("WAttack2"); //  play the attack animation
+
+                            yield return new WaitForSeconds(m_fireRate);
+                            DealDamage(); // deal damage to the player
                             break;
                         case 3: // if attackIndex is 3
                             m_animator.SetTrigger("WAttack3"); //  play the attack animation
+
+                            yield return new WaitForSeconds(m_fireRate);
+                            DealDamage(); // deal damage to the player
                             break;
                         case 4: // if attackIndex is 4
                             m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
+
+                            yield return new WaitForSeconds(m_fireRate);
+                            DealDamage(); // deal damage to the player
                             break;
                     }
 
                 }
-                //yield return new WaitForSeconds(m_fireRate);
+                
                 break;
         }
 
-    //   randomly select one of the three attack animations 
-        //int attackIndex = Random.Range(1, 5);// randomly select an attack type (1, 2, or 3)
-        
-        //    switch (attackIndex)
-        //{
-        //    case 1: // if attackIndex is 1
-        //        m_animator.SetTrigger("WAttack1"); // play the attack animation
-        //        break;
-        //    case 2: // if attackIndex is 2
-        //        m_animator.SetTrigger("WAttack2"); //  play the attack animation
-        //        break;
-        //    case 3: // if attackIndex is 3
-        //        m_animator.SetTrigger("WAttack3"); //  play the attack animation
-        //       break;
-        //    case 4: // if attackIndex is 4
-        //        m_animator.SetTrigger("WAttackspecial"); //  play the attack animation
-        //        break;
-        
 
-       yield return new WaitForSeconds(1.0f / m_fireRate); // wait for the fire rate
-        DealDamage(); // deal damage to the player
 
-        yield return new WaitForSeconds(1.0f / m_fireRate); 
+
+        //yield return new WaitForSeconds(1.5f);
+        //DealDamage(); // deal damage to the player
+
+        yield return new WaitForSeconds(1.0f); 
         m_isShooting = false; 
 
     }
@@ -295,7 +280,7 @@ public class Wraith : MonoBehaviour,  IDamage
         return false;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, DamageType damageType)
     {
         m_health -= amount;
 
@@ -376,12 +361,9 @@ public class Wraith : MonoBehaviour,  IDamage
     // Used in enemy animator
     public void DealDamage()
     {
-        GameManager.Instance.m_playerController.TakeDamage(damage);
+        GameManager.Instance.m_playerController.TakeDamage(damage, DamageType.Basic);
     }
-    public void BecomeImmune()
-    {
-    //  TakeDamage() = false;
-    }
+    
 
     
 } 

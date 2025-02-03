@@ -56,7 +56,7 @@ public class SlidingDoor : MonoBehaviour
         doorRight.localPosition = Vector3.Lerp(doorRight.localPosition, isOpen ? rightOpenPosition : rightClosedPosition, Time.deltaTime * openSpeed);
 
         // Debugging positions
-        Debug.Log($"Left Door Position: {doorLeft.localPosition} | Right Door Position: {doorRight.localPosition}");
+        //Debug.Log($"Left Door Position: {doorLeft.localPosition} | Right Door Position: {doorRight.localPosition}");
     }
 
     private void OnTriggerEnter(Collider other)
